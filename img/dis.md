@@ -3,8 +3,6 @@
 
 # About/Features
 
-## ----------------------------------------------------------------------------------------
-
 ### About:
 
 This Pack provides an easy multiplayer experience with many new additions to the game, without being too heavy on the ram! Some of the features are listed below, this pack should bring a good balance of experience for everyone, enjoy playing.
@@ -30,8 +28,6 @@ This Pack provides an easy multiplayer experience with many new additions to the
 *And More!
 
 ## ModList
-
-## ----------------------------------------------------------------------------------------
 
 Biomes O' Plenty (by Forstride)
 
