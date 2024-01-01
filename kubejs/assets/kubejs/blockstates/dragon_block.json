@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"lit=false": {
+			"model": "kubejs:block/dragon_block"
+		},
+		"lit=true": {
+			"model": "kubejs:block/dragon_block_on"
+		}
+	}
+}
