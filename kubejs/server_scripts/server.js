@@ -22,6 +22,7 @@ ServerEvents.recipes(event => {
 	event.remove({ output: 'waystones:warp_dust' })
 	event.remove({ id: 'thermal:lightning_charge/witch_from_villager' })
 	event.remove({ id: 'thermal:lightning_charge/zombified_piglin_from_pig' })
+	event.remove({ id: 'thermal:devices/rock_gen/rock_gen_blackstone' })
 	event.remove({ output: 'sophisticatedbackpacks:xp_pump_upgrade' })
 	event.remove({ output: 'thermal:sugar_cane_block' })
 	event.remove({ output: 'thermal:bamboo_block' })
@@ -35,7 +36,9 @@ ServerEvents.recipes(event => {
 	event.remove({ output: 'decorative_blocks:lattice' })
 	event.remove({ output: 'create:copycat_step' })
 	event.remove({ output: 'create:copycat_panel' })
+	event.remove({ output: 'createdeco:netherite_sheet' })
 	event.remove({ mod: 'pipez' })
+	event.remove({ id: 'thermal:rubber_3' })
 
 	event.shaped('4x thermal:phyto_grenade', [
 			'CBC', 
@@ -189,6 +192,13 @@ ServerEvents.recipes(event => {
 	event.recipes.create.pressing('thermal:lumium_plate', 'thermal:lumium_ingot')
 	event.recipes.create.pressing('thermal:electrum_plate', 'thermal:electrum_ingot')
 
+	event.recipes.create.compacting('thermal:rubber', Fluid.of('thermal:latex',250))
+
+	event.shapeless('4x thermal:rubber', [
+			'thermal:latex_bucket'
+		]
+	)
+
 	event.shaped('create:belt_connector', [
 			'AAA'
 		], {
@@ -329,9 +339,51 @@ ServerEvents.recipes(event => {
 			E: 'minecraft:ender_pearl'
 		}
 	)
+
+	event.shapeless('kubejs:nugget_compound', [
+			'#forge:raw_chicken',
+			'#forge:eggs',
+			'#forge:flour/wheat',
+		]
+	)
+
+	event.smelting('8x kubejs:nugget', 'kubejs:nugget_compound')
+	event.smoking('8x kubejs:nugget', 'kubejs:nugget_compound')
+	event.campfireCooking('8x kubejs:nugget', 'kubejs:nugget_compound')
+
+	event.recipes.thermal.pulverizer('kubejs:brass_dust', 'create:brass_ingot').energy(2000)
+	event.recipes.thermal.pulverizer('kubejs:brass_dust', 'create:brass_sheet').energy(2000)
+
+	event.recipes.thermal.smelter('create:brass_ingot', 'kubejs:brass_dust').energy(1600)
+	event.recipes.thermal.smelter('create:brass_ingot', 'create:brass_sheet').energy(1600)
+
+	event.recipes.thermal.pulverizer('kubejs:zinc_dust', 'create:zinc_ingot').energy(2000)
+	event.recipes.thermal.pulverizer('kubejs:zinc_dust', 'createdeco:zinc_sheet').energy(2000)
+
+	event.recipes.thermal.smelter('create:zinc_ingot', 'kubejs:zinc_dust').energy(1600)
+	event.recipes.thermal.smelter('create:zinc_ingot', 'createdeco:zinc_sheet').energy(1600)
+
+	event.recipes.thermal.pulverizer(Item.of('kubejs:zinc_dust').withChance(1.25), 'create:raw_zinc').energy(4000)
+	event.recipes.thermal.pulverizer([Item.of('kubejs:zinc_dust').withChance(2), Item.of('minecraft:gravel').withChance(0.2)], '#forge:ores/zinc').energy(4000)
+	
+	event.recipes.thermal.smelter(Item.of('create:zinc_ingot').withChance(1.5), 'create:raw_zinc').energy(3200)
+	event.recipes.thermal.smelter([Item.of('create:zinc_ingot').withChance(1), Item.of('thermal:rich_slag').withChance(0.2)], '#forge:ores/zinc').energy(3200)
+
 })
 
-//BLOCK RIGHTCLICK
+//TAGS
+
+ServerEvents.tags('item', event => {
+
+	event.add('forge:dusts/zinc', 'kubejs:zinc_dust')
+	event.add('forge:dusts/brass', 'kubejs:brass_dust')
+
+})
+
+//BLOCK RIGHTCLICK - PLACE
+
+const SAT_TIME = 2.4
+const REG_TIME = 12
 
 BlockEvents.rightClicked("kubejs:dragon_block", event => {
 
@@ -344,27 +396,26 @@ BlockEvents.rightClicked("kubejs:dragon_block", event => {
 	if (bool == "true" && !event.player.crouching) {
 		event.server.runCommandSilent(`setblock ${x} ${y} ${z} kubejs:dragon_block[lit=false] replace`)
 		event.server.runCommandSilent(`playsound kubejs:dragon_dance record @a ${x} ${y} ${z} 2.5 1`)
-		event.server.runCommandSilent(`execute positioned ${x-5} ${y-5} ${z-5} run effect give @a[dx=10,dy=10,dz=10] minecraft:saturation ${20*0.5} 0 true`)
+		event.server.runCommandSilent(`execute positioned ${x-5} ${y-5} ${z-5} run effect give @a[dx=10,dy=10,dz=10] minecraft:saturation ${20*SAT_TIME} 0 true`)
+		event.server.runCommandSilent(`execute positioned ${x-5} ${y-5} ${z-5} run effect give @a[dx=10,dy=10,dz=10] minecraft:regeneration ${REG_TIME} 0 true`)
 		event.player.swing()
 	} 
 	
 	if (bool == "false" && event.item.id == "kubejs:dragon_food" && event.player.crouching) {
-		event.item.count--
+		if (!event.player.creative) {
+			event.item.count--
+		}
 		event.server.runCommandSilent(`setblock ${x} ${y} ${z} kubejs:dragon_block[lit=true] replace`)
 		event.player.swing()
 	}
 
 })
 
-//STARTING ITEMS
+BlockEvents.placed("kubejs:dragon_block", event => {
+	
+	let x = event.block.x
+	let y = event.block.y
+	let z = event.block.z
 
-//PlayerEvents.loggedIn(event => {
-//	  if (!event.player.stages.has('starting_items')) {
-//		event.player.stages.add('starting_items')
-//		event.player.give("minecraft:iron_sword")
-//		event.player.give("minecraft:iron_axe")
-//		event.player.give("minecraft:iron_pickaxe")
-//		event.player.give("16x minecraft:bread")
-//		event.player.give("32x minecraft:torch")
-//	  }
-//})
+	event.server.runCommandSilent(`setblock ${x} ${y} ${z} kubejs:dragon_block[lit=false] replace`)
+})

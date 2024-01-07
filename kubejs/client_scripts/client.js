@@ -30,7 +30,8 @@ JEIEvents.hideItems(event => {
 		'decorative_blocks:blockstate_copy_item',
 		'endertanks:ender_bucket',
 		'enderchests:ender_bag',
-		'enderchests:ender_pouch'
+		'enderchests:ender_pouch',
+		'createdeco:netherite_sheet'
 	])
 })
 
@@ -51,21 +52,20 @@ ItemEvents.tooltip(event => {
 
 	event.addAdvanced('thermal:device_tree_extractor', (item, advanced, text) => {
 		if (event.shift) {
-			text.add(1,Text.red("May be broken on some Trees!"))
-			text.add(2,Text.red("use on vanilla Trees for better,"))
-			text.add(3,Text.red("results."))
+			text.add(1,Text.red("Does Not Work with every Trees!").bold(true))
+			text.add(2,Text.yellow("Use on vanilla Trees for better results."))
 		} else {
 			text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
 		}
 	})
 
 	event.addAdvanced('kubejs:dragon_block',(item, advanced, text) => {
+		text.add(1,Text.green("Dancing Toothless <3"))
 		if (event.shift) {
-			text.add(1,Text.gray("Dancing Toothless <3"))
-			text.add(2,Text.yellow("Right Click to Play the Song."))
+			text.add(2,Text.yellow("Right Click to Cast the Song/Effect."))
 			text.add(3,Text.yellow("Sneak Right Click with Dragon Food to Recharge."))
+			text.add(4,Text.blue("Can be used as Framed Block Camo.").italic(true))
 		} else {
-			text.add(1,Text.gray("Dancing Toothless <3"))
 			text.add(2,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
 		}
 	})
