@@ -60,7 +60,7 @@ StartupEvents.registry("item", (event) => {
 		.food(food => {
 			food
 				.hunger(3)
-				.saturation(0.35)
+				.saturation(0.3)
 				.fastToEat()
 		})
 })

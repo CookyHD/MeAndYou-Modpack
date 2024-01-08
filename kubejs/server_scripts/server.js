@@ -1,7 +1,3 @@
-//CONSTS
-
-const UtilsJS = Java.loadClass('dev.latvian.mods.kubejs.util.UtilsJS');
-
 //RECIPES
 
 ServerEvents.recipes(event => {
@@ -39,6 +35,7 @@ ServerEvents.recipes(event => {
 	event.remove({ output: 'createdeco:netherite_sheet' })
 	event.remove({ mod: 'pipez' })
 	event.remove({ id: 'thermal:rubber_3' })
+	event.remove({ output: 'mobcapturingtool:mob_capturing_tool' })
 
 	event.shaped('4x thermal:phyto_grenade', [
 			'CBC', 
@@ -368,6 +365,38 @@ ServerEvents.recipes(event => {
 	
 	event.recipes.thermal.smelter(Item.of('create:zinc_ingot').withChance(1.5), 'create:raw_zinc').energy(3200)
 	event.recipes.thermal.smelter([Item.of('create:zinc_ingot').withChance(1), Item.of('thermal:rich_slag').withChance(0.2)], '#forge:ores/zinc').energy(3200)
+
+	event.smelting('create:brass_ingot','kubejs:brass_dust')
+	event.blasting('create:brass_ingot','kubejs:brass_dust')
+	event.smelting('create:zinc_ingot','kubejs:zinc_dust')
+	event.blasting('create:zinc_ingot','kubejs:zinc_dust')
+
+	event.recipes.thermal.pulverizer('redstone_arsenal:flux_dust', 'redstone_arsenal:flux_ingot').energy(2000)
+	event.recipes.thermal.smelter('redstone_arsenal:flux_ingot', 'redstone_arsenal:flux_dust').energy(1600)
+
+	event.shaped('mobcapturingtool:mob_capturing_tool', [
+			'ACA',
+			'BDB',
+			'ACA'
+		], {
+			A: '#forge:glass/lime',
+			B: 'minecraft:emerald',
+			C: 'minecraft:diamond',
+			D: '#forge:eggs',
+		}
+	)
+
+	event.shaped('mobcapturingtool:mob_capturing_tool', [
+			'ACA',
+			'BDB',
+			'ACA'
+		], {
+			A: '#forge:glass/lime',
+			B: 'minecraft:diamond',
+			C: 'minecraft:emerald',
+			D: '#forge:eggs',
+		}
+	)
 
 })
 

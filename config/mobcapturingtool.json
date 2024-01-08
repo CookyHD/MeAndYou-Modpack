@@ -1,0 +1,19 @@
+{
+  "blacklisted_entities": [
+    "minecraft:ender_dragon",
+	"minecraft:wither",
+	"minecraft:elder_guardian",
+	"minecraft:warden",
+	"aether:whirlwind",
+	"aether:evil_whirlwind",
+	"aether:aechor_plant",
+	"aether:cloud_minion",
+	"aether:fire_minion",
+	"aether:valkyrie",
+	"aether:valkyrie_queen",
+	"aether:slider",
+	"aether:sun_spirit",
+	"@botania"
+  ],
+  "enable_dispenser_behaviour": true
+}

@@ -69,4 +69,15 @@ ItemEvents.tooltip(event => {
 			text.add(2,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
 		}
 	})
+
+	event.addAdvanced('mobcapturingtool:mob_capturing_tool', (item, advanced, text) => {
+		if (!item.hasNBT()) {
+			if (event.shift) {
+				text.add(1,Text.red("Not all Mobs Are Captureble!").bold(true))
+				text.add(2,Text.red("May Couses Bugs Use with Care.").bold(true))
+			} else {
+				text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+			}
+		}
+	})
 })
