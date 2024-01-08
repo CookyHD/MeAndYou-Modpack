@@ -2,6 +2,12 @@
 
 ServerEvents.recipes(event => {
 
+	let caps = ['railways:blue_conductor_cap', 'railways:cyan_conductor_cap', 'railways:light_blue_conductor_cap', 'railways:green_conductor_cap', 'railways:lime_conductor_cap', 'railways:yellow_conductor_cap', 'railways:orange_conductor_cap', 'railways:red_conductor_cap', 'railways:purple_conductor_cap', 'railways:light_gray_conductor_cap', 'railways:gray_conductor_cap', 'railways:magenta_conductor_cap', 'railways:pink_conductor_cap', 'railways:brown_conductor_cap', 'railways:white_conductor_cap', 'railways:black_conductor_cap']
+
+	caps.forEach(e => {
+		event.remove({ output: `${e}` })
+	});
+
 	let hammocks = ['comforts:hammock_light_gray', 'comforts:hammock_gray', 'comforts:hammock_pink', 'comforts:hammock_lime', 'comforts:hammock_yellow', 'comforts:hammock_light_blue', 'comforts:hammock_magenta', 'comforts:hammock_orange', 'comforts:hammock_white', 'comforts:hammock_cyan', 'comforts:hammock_purple', 'comforts:hammock_blue', 'comforts:hammock_brown', 'comforts:hammock_green', 'comforts:hammock_red', 'comforts:hammock_black']
 
 	hammocks.forEach(e => {
@@ -36,6 +42,14 @@ ServerEvents.recipes(event => {
 	event.remove({ mod: 'pipez' })
 	event.remove({ id: 'thermal:rubber_3' })
 	event.remove({ output: 'mobcapturingtool:mob_capturing_tool' })
+	event.remove({ mod: 'createaddition' })
+	event.remove({ output: 'createaddition:electrum_nugget' })
+	event.remove({ output: 'railways:smokestack_streamlined' })
+	event.remove({ output: 'railways:smokestack_long' })
+	event.remove({ output: 'railways:smokestack_caboosestyle' })
+	event.remove({ output: 'railways:track_switch_brass' })
+	event.remove({ output: 'railways:remote_lens' })
+	event.remove({ output: 'railways:conductor_whistle' })
 
 	event.shaped('4x thermal:phyto_grenade', [
 			'CBC', 
@@ -396,6 +410,93 @@ ServerEvents.recipes(event => {
 			C: 'minecraft:emerald',
 			D: '#forge:eggs',
 		}
+	)
+
+	event.recipes.createMechanicalCrafting('createaddition:alternator', [
+			'  B  ',
+			' ACA ',
+			'ACECA',
+			' ADA '
+		], {
+			A: '#forge:plates/iron',
+			B: 'create:andesite_alloy',
+			C: 'createaddition:copper_spool',
+			D: 'createaddition:capacitor',
+			E: 'create:shaft'
+		}
+	)
+
+	event.recipes.createMechanicalCrafting('createaddition:electric_motor', [
+			'  B  ',
+			' ACA ',
+			'ACECA',
+			' ADA '
+		], {
+			A: '#forge:plates/brass',
+			B: 'create:andesite_alloy',
+			C: 'createaddition:copper_spool',
+			D: 'createaddition:capacitor',
+			E: 'create:shaft'
+		}
+	)
+
+	event.recipes.createCrushing('thermal:diamond_dust', 'minecraft:diamond')
+
+	event.shapeless('createaddition:diamond_grit_sandpaper', [
+			'minecraft:paper',
+			'#forge:dusts/diamond'
+		]
+	)
+
+	event.shaped('createaddition:modular_accumulator', [
+			' B ',
+			'ADA',
+			' C '
+		], {
+			A: 'createaddition:capacitor',
+			B: '#forge:plates/copper',
+			C: ['#forge:plates/gold','#forge:plates/electrum'],
+			D: 'create:brass_casing'
+		}
+	)
+
+	event.shaped('createaddition:capacitor', [
+			'A',
+			'B',
+			'C'
+		], {
+			A: 'createdeco:zinc_sheet',
+			B: '#forge:plates/copper',
+			C: 'minecraft:redstone'
+		}
+	)
+
+	event.shaped('createaddition:capacitor', [
+			'A',
+			'B',
+			'C'
+		], {
+			A: '#forge:plates/copper',
+			B: 'createdeco:zinc_sheet',
+			C: 'minecraft:redstone'
+		}
+	)
+
+	event.shaped('8x createaddition:copper_spool', [
+			'AAA',
+			'ABA',
+			'AAA'
+		], {
+			A: '#forge:plates/copper',
+			B: '#minecraft:planks'
+		}
+	)
+
+	event.shapeless('createaddition:portable_energy_interface', [
+			'create:brass_casing',
+			'create:chute',
+			'createaddition:copper_spool'
+		]
 	)
 
 })

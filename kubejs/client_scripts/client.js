@@ -1,7 +1,13 @@
 // JEI
 
+const createsteam = []
+const createadd = []
+
 JEIEvents.hideItems(event => {
+
+
 	event.hide([
+		'#railways:conductor_caps',
 		'#comforts:hammocks',
 		'comforts:rope_and_nai',
 		'waystones:warp_plate',
@@ -31,18 +37,66 @@ JEIEvents.hideItems(event => {
 		'endertanks:ender_bucket',
 		'enderchests:ender_bag',
 		'enderchests:ender_pouch',
-		'createdeco:netherite_sheet'
+		'createdeco:netherite_sheet',
+		'railways:smokestack_streamlined',
+		'railways:smokestack_long',
+		'railways:smokestack_caboosestyle',
+		'railways:track_switch_brass',
+		'railways:remote_lens',
+		'railways:conductor_whistle',
+		'createaddition:gold_rod',
+		'createaddition:electrum_rod',
+		'createaddition:brass_rod',
+		'createaddition:straw',
+		'createaddition:seed_oil_bucket',
+		'createaddition:bioethanol_bucket',
+		'createaddition:capacitor',
+		'createaddition:biomass_pellet_block',
+		'createaddition:redstone_relay',
+		'createaddition:large_connector',
+		'createaddition:small_light_connector',
+		'createaddition:connector',
+		'createaddition:rolling_mill',
+		'createaddition:barbed_wire',
+		'createaddition:tesla_coil',
+		'createaddition:copper_wire',
+		'createaddition:zinc_sheet',
+		'createaddition:electrum_sheet',
+		'createaddition:electrum_nugget',
+		'createaddition:electrum_ingot',
+		'createaddition:electrum_amulet',
+		'createaddition:biomass_pellet',
+		'createaddition:biomass',
+		'createaddition:diamond_grit',
+		'createaddition:iron_rod',
+		'createaddition:copper_rod',
+		'createaddition:festive_spool',
+		'createaddition:electrum_spool',
+		'createaddition:gold_spool',
+		'createaddition:spool',
+		'createaddition:electrum_wire',
+		'createaddition:gold_wire',
+		'createaddition:iron_wire'
 	])
 })
 
 JEIEvents.hideFluids(event => {
-	event.hide('sophisticatedcore:xp_still')
+	event.hide([
+		'sophisticatedcore:xp_still',
+		'createaddition:seed_oil',
+		'createaddition:bioethanol'
+	])
 })
 
 JEIEvents.addItems(event => {
 	event.add([
 		'craftingstation:crafting_station',
-		'craftingstation:crafting_station_slab'
+		'craftingstation:crafting_station_slab',
+		'thermal:rf_coil',
+		'thermal:redstone_servo',
+		'createaddition:cake_base',
+		'createaddition:cake_base_baked',
+		'createaddition:capacitor'
 	])
 })
 
