@@ -50,6 +50,10 @@ ServerEvents.recipes(event => {
 	event.remove({ output: 'railways:track_switch_brass' })
 	event.remove({ output: 'railways:remote_lens' })
 	event.remove({ output: 'railways:conductor_whistle' })
+	event.remove({ id: 'create:industrial_iron_block_from_ingots_iron_stonecutting' })
+	event.remove({ id: 'create:industrial_iron_block_from_iron_ingots_stonecutting' })
+	event.remove({ id: 'createdeco:compacting/industrial_iron_ingot' })
+	//event.remove({ output: 'thermal:copper_nugget' })
 
 	event.shaped('4x thermal:phyto_grenade', [
 			'CBC', 
@@ -498,6 +502,29 @@ ServerEvents.recipes(event => {
 			'createaddition:copper_spool'
 		]
 	)
+
+	event.recipes.create.compacting('createaddition:cake_base', ['#forge:eggs', '2x minecraft:sugar', '#forge:dough/wheat'])
+
+	event.smelting('createaddition:cake_base_baked', 'createaddition:cake_base')
+	event.smoking('createaddition:cake_base_baked', 'createaddition:cake_base')
+	event.campfireCooking('createaddition:cake_base_baked', 'createaddition:cake_base')
+
+	event.recipes.create.filling('createaddition:honey_cake', [Fluid.of('create:honey',500), 'createaddition:cake_base_baked'])
+	event.recipes.create.filling('createaddition:chocolate_cake', [Fluid.of('create:chocolate',500), 'createaddition:cake_base_baked'])
+	event.recipes.create.filling('minecraft:cake', [Fluid.of('minecraft:milk',1000), 'createaddition:cake_base_baked'])
+
+	event.shaped('minecraft:enchanted_golden_apple', [
+			'AAA',
+			'ABA',
+			'AAA'
+		], {
+			A: 'minecraft:gold_block',
+			B: 'minecraft:apple'
+		}
+	)
+
+	event.recipes.create.compacting('8x create:industrial_iron_block', 'minecraft:iron_block').heated()
+	event.recipes.create.compacting('8x createdeco:industrial_iron_ingot', 'minecraft:iron_ingot').heated()
 
 })
 

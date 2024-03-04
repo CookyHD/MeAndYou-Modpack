@@ -90,8 +90,8 @@ JEIEvents.hideFluids(event => {
 
 JEIEvents.addItems(event => {
 	event.add([
-		'craftingstation:crafting_station',
-		'craftingstation:crafting_station_slab',
+		//'craftingstation:crafting_station',
+		//'craftingstation:crafting_station_slab',
 		'thermal:rf_coil',
 		'thermal:redstone_servo',
 		'createaddition:cake_base',
