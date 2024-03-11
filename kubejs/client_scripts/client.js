@@ -5,7 +5,6 @@ const createadd = []
 
 JEIEvents.hideItems(event => {
 
-
 	event.hide([
 		'#railways:conductor_caps',
 		'#comforts:hammocks',
@@ -76,24 +75,43 @@ JEIEvents.hideItems(event => {
 		'createaddition:spool',
 		'createaddition:electrum_wire',
 		'createaddition:gold_wire',
-		'createaddition:iron_wire'
+		'createaddition:iron_wire',
+		'biggerreactors:heat_exchanger_casing',
+		'biggerreactors:liquid_obsidian_bucket',
+		'biggerreactors:heat_exchanger_condenser_channel',
+		'biggerreactors:heat_exchanger_computer_port',
+		'biggerreactors:heat_exchanger_terminal',
+		'biggerreactors:heat_exchanger_glass',
+		'biggerreactors:heat_exchanger_fluid_port',
+		'biggerreactors:heat_exchanger_evaporator_channel',
+		'biggerreactors:wrench',
+		'thermal:copper_nugget',
+		'@quartz',
+		'@phosphophyllite'
 	])
 })
 
 JEIEvents.hideFluids(event => {
+
 	event.hide([
-		'sophisticatedcore:xp_still',
-		'createaddition:seed_oil',
-		'createaddition:bioethanol'
+		//'sophisticatedcore:xp_still',
+		//'createaddition:seed_oil',
+		//'createaddition:bioethanol',
+		//'biggerreactors:liquid_uranium',
+		//'biggerreactors:liquid_obsidian'
 	])
 })
 
 JEIEvents.addItems(event => {
+
 	event.add([
-		//'craftingstation:crafting_station',
-		//'craftingstation:crafting_station_slab',
 		'thermal:rf_coil',
 		'thermal:redstone_servo',
+		'thermal:press_unpacking_die',
+		'thermal:press_packing_3x3_die',
+		'thermal:press_packing_2x2_die',
+		'thermal:press_coin_die',
+		'thermal:press_gear_die',
 		'createaddition:cake_base',
 		'createaddition:cake_base_baked',
 		'createaddition:capacitor'

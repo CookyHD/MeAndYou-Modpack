@@ -39,6 +39,7 @@ ServerEvents.recipes(event => {
 	event.remove({ output: 'create:copycat_step' })
 	event.remove({ output: 'create:copycat_panel' })
 	event.remove({ output: 'createdeco:netherite_sheet' })
+	event.remove({ input: 'createdeco:netherite_sheet' })
 	event.remove({ mod: 'pipez' })
 	event.remove({ id: 'thermal:rubber_3' })
 	event.remove({ output: 'mobcapturingtool:mob_capturing_tool' })
@@ -53,7 +54,39 @@ ServerEvents.recipes(event => {
 	event.remove({ id: 'create:industrial_iron_block_from_ingots_iron_stonecutting' })
 	event.remove({ id: 'create:industrial_iron_block_from_iron_ingots_stonecutting' })
 	event.remove({ id: 'createdeco:compacting/industrial_iron_ingot' })
-	//event.remove({ output: 'thermal:copper_nugget' })
+	event.remove({ output: 'biggerreactors:heat_exchanger_casing' })
+	event.remove({ output: 'biggerreactors:liquid_obsidian_bucket' })
+	event.remove({ output: 'biggerreactors:heat_exchanger_condenser_channel' })
+	event.remove({ output: 'biggerreactors:heat_exchanger_computer_port' })
+	event.remove({ output: 'biggerreactors:heat_exchanger_terminal' })
+	event.remove({ output: 'biggerreactors:heat_exchanger_glass' })
+	event.remove({ output: 'biggerreactors:heat_exchanger_fluid_port' })
+	event.remove({ output: 'biggerreactors:heat_exchanger_evaporator_channel' })
+	event.remove({ output: 'biggerreactors:wrench' })
+	event.remove({ id: 'biggerreactors:crafting/ludicrite_block_nether_star' })
+	event.remove({ id: 'thermal:machine/biggerreactors/pulverizer_mod_uranium_ingot' })
+	event.remove({ id: 'thermal:machine/biggerreactors/pulverizer_mod_blutonium_ingot' })
+	event.remove({ id: 'thermal:machine/biggerreactors/pulverizer_mod_cyanite_ingot' })
+	event.remove({ id: 'thermal:machine/biggerreactors/pulverizer_mod_graphite_ingot' })
+	event.remove({ id: 'thermal:machine/biggerreactors/pulverizer_mod_luducrute_ingot' })
+
+	//event.remove({ output: 'sophisticatedcore:xp_still' })
+	//event.remove({ output: 'createaddition:seed_oil' })
+	//event.remove({ output: 'createaddition:bioethanol' })
+	//event.remove({ output: 'biggerreactors:liquid_uranium' })
+	//event.remove({ output: 'biggerreactors:liquid_obsidian' })
+
+	//event.remove({ input: 'sophisticatedcore:xp_still' })
+	//event.remove({ input: 'createaddition:seed_oil' })
+	//event.remove({ input: 'createaddition:bioethanol' })
+	//event.remove({ input: 'biggerreactors:liquid_uranium' })
+	//event.remove({ input: 'biggerreactors:liquid_obsidian' })
+
+	event.replaceOutput(
+		{ output: 'thermal:copper_nugget' },
+		'thermal:copper_nugget',
+		'create:copper_nugget'
+	)
 
 	event.shaped('4x thermal:phyto_grenade', [
 			'CBC', 
@@ -526,6 +559,52 @@ ServerEvents.recipes(event => {
 	event.recipes.create.compacting('8x create:industrial_iron_block', 'minecraft:iron_block').heated()
 	event.recipes.create.compacting('8x createdeco:industrial_iron_ingot', 'minecraft:iron_ingot').heated()
 
+	event.shaped('biggerreactors:uranium_ingot', [
+			'AAA',
+			'AAA',
+			'AAA'
+		], {
+			A: 'kubejs:uranium_nugget',
+		}
+	)
+
+	event.shapeless('9x kubejs:uranium_nugget', 'biggerreactors:uranium_ingot')
+	event.recipes.createSplashing('9x kubejs:uranium_nugget', 'create:crushed_raw_uranium')
+
+	event.recipes.thermal.press('biggerreactors:uranium_ingot', ['9x kubejs:uranium_nugget', 'thermal:press_packing_3x3_die'])
+	event.recipes.thermal.press('9x kubejs:uranium_nugget', ['biggerreactors:uranium_ingot', 'thermal:press_unpacking_die'])
+
+	event.smelting('biggerreactors:uranium_ingot', 'create:crushed_raw_uranium')
+	event.blasting('biggerreactors:uranium_ingot', 'create:crushed_raw_uranium')
+
+	event.recipes.thermal.smelter('biggerreactors:uranium_ingot', 'biggerreactors:uranium_dust').energy(1600)
+	event.recipes.thermal.smelter('biggerreactors:ludicrite_ingot', 'biggerreactors:ludicrite_dust').energy(1600)
+	event.recipes.thermal.smelter('biggerreactors:graphite_ingot', 'biggerreactors:graphite_dust').energy(1600)
+	event.recipes.thermal.smelter('biggerreactors:cyanite_ingot', 'biggerreactors:cyanite_dust').energy(1600)
+	event.recipes.thermal.smelter('biggerreactors:blutonium_ingot', 'biggerreactors:blutonium_dust').energy(1600)
+
+	event.recipes.thermal.smelter(Item.of('biggerreactors:uranium_ingot').withChance(1.5), 'biggerreactors:uranium_chunk').energy(3200)
+	event.recipes.thermal.smelter([Item.of('biggerreactors:uranium_ingot').withChance(1), Item.of('thermal:rich_slag').withChance(0.2)], '#forge:ores/uranium').energy(3200)
+
+	event.recipes.thermal.press('biggerreactors:raw_uranium_block', ['9x biggerreactors:uranium_chunk', 'thermal:press_packing_3x3_die'])
+	event.recipes.thermal.press('9x biggerreactors:uranium_chunk', ['biggerreactors:raw_uranium_block', 'thermal:press_unpacking_die'])
+
+	function thermalpackun(input,output) {
+		event.recipes.thermal.press(input, ['9x '+output, 'thermal:press_packing_3x3_die'])
+		event.recipes.thermal.press('9x '+output, [input, 'thermal:press_unpacking_die'])
+	}
+
+	thermalpackun('biggerreactors:blutonium_block', 'biggerreactors:blutonium_ingot')
+	thermalpackun('biggerreactors:cyanite_block', 'biggerreactors:cyanite_ingot')
+	thermalpackun('biggerreactors:uranium_block', 'biggerreactors:uranium_ingot')
+	thermalpackun('biggerreactors:graphite_block', 'biggerreactors:graphite_ingot')
+	thermalpackun('biggerreactors:ludicrite_block', 'biggerreactors:ludicrite_ingot')
+
+	event.recipes.thermal.pulverizer('biggerreactors:blutonium_dust', 'biggerreactors:blutonium_ingot').energy(2000)
+	event.recipes.thermal.pulverizer('biggerreactors:cyanite_dust', 'biggerreactors:cyanite_ingot').energy(2000)
+	event.recipes.thermal.pulverizer('biggerreactors:uranium_dust', 'biggerreactors:uranium_ingot').energy(2000)
+	event.recipes.thermal.pulverizer('biggerreactors:graphite_dust', 'biggerreactors:graphite_ingot').energy(2000)
+	event.recipes.thermal.pulverizer('biggerreactors:ludicrite_dust', 'biggerreactors:ludicrite_ingot').energy(2000)
 })
 
 //TAGS
@@ -534,7 +613,7 @@ ServerEvents.tags('item', event => {
 
 	event.add('forge:dusts/zinc', 'kubejs:zinc_dust')
 	event.add('forge:dusts/brass', 'kubejs:brass_dust')
-
+	event.add('forge:nuggets/uranium', 'kubejs:uranium_nugget')
 })
 
 //BLOCK RIGHTCLICK - PLACE
@@ -565,7 +644,6 @@ BlockEvents.rightClicked("kubejs:dragon_block", event => {
 		event.server.runCommandSilent(`setblock ${x} ${y} ${z} kubejs:dragon_block[lit=true] replace`)
 		event.player.swing()
 	}
-
 })
 
 BlockEvents.placed("kubejs:dragon_block", event => {
