@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"enabled=false": {
+			"model": "kubejs:block/amplifyer_totem"
+		},
+		"enabled=true": {
+			"model": "kubejs:block/amplifyer_totem_on"
+		}
+	}
+}

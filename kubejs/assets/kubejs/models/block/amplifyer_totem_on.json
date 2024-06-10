@@ -1,0 +1,9 @@
+{
+	"parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"particle": "kubejs:block/totem_side",
+		"up": "kubejs:block/totem_top",
+		"side": "kubejs:block/totem_side_on",
+		"down": "kubejs:block/dark_stone"
+	}
+}

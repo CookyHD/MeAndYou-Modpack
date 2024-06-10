@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"enabled=false": {
+			"model": "kubejs:block/dragon_block"
+		},
+		"enabled=true": {
+			"model": "kubejs:block/dragon_block_on"
+		}
+	}
+}
