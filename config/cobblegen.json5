@@ -33,6 +33,42 @@
 					"weight": 33.0
 				}
 			]
+		},
+		"cobbleGen": {
+			"minecraft:bedrock": [
+				{
+					"id": "minecraft:diorite",
+					"weight": 33.0
+				},
+				{
+					"id": "minecraft:andesite",
+					"weight": 33.0
+				},
+				{
+					"id": "minecraft:granite",
+					"weight": 33.0
+				}
+			]
+		}
+	},
+	"advanced": {
+		"minecraft:lava": {
+			"b:minecraft:packed_ice": {
+				"results": {
+					"*": [
+						{
+							"id": "minecraft:cobbled_deepslate",
+							"weight": 100.0,
+						}
+					],
+					"minecraft:magma_block": [
+						{
+							"id": "minecraft:deepslate",
+							"weight": 100.0,
+						}
+					]
+				}
+			}
 		}
 	}
 }

@@ -1,0 +1,73 @@
+{
+	autofocus_id: "20BEEC42AEAE2D2C"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "overview"
+	group: ""
+	icon: "minecraft:crafting_table"
+	id: "77EA8ED37C0B576C"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Welcome to Cookie's me and You!"
+				"About this world, there are many new structures and ores spawning in this world with a vast variety of Biomes. Magic is in the air, so also the steam of new contraptions now Explore, Invent, Cast Spells and Build Have fun!"
+				""
+				"Check out the Main Quest if you look for a Challenge. "
+			]
+			icon: "kubejs:logo"
+			id: "20BEEC42AEAE2D2C"
+			rewards: [
+				{
+					id: "657B0757AF661DC6"
+					item: "minecraft:cookie"
+					random_bonus: 15
+					type: "item"
+				}
+				{
+					id: "6FB360DCA0E60878"
+					type: "xp"
+					xp: 55
+				}
+			]
+			size: 2.0d
+			tasks: [{
+				id: "2ED2CF393A207325"
+				title: "Read"
+				type: "checkmark"
+			}]
+			title: "Cookie's Me and You"
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["20BEEC42AEAE2D2C"]
+			description: [
+				"&cThis Pack Is Still in Development!&r"
+				"&cAnd at a Early State, Many things can be Subject to change or getting removed."
+				""
+				"&cAlways make sure to look at the recent Changelog before Updating to prevent Losing Items and Co."
+			]
+			icon: "pipez:wrench"
+			id: "65D4BDDC13E97894"
+			rewards: [{
+				command: "/give @p diamond 2"
+				icon: "minecraft:diamond"
+				id: "363D989947FF38B7"
+				title: "Compensation"
+				type: "command"
+			}]
+			shape: "gear"
+			tasks: [{
+				id: "19394A2FA9EFB6AF"
+				title: "Read"
+				type: "checkmark"
+			}]
+			title: "&cDisclaimer"
+			x: 0.0d
+			y: 5.0d
+		}
+	]
+	title: "Overview"
+}
