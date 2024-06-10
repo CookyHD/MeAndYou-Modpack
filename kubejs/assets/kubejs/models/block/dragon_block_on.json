@@ -1,9 +1,0 @@
-{
-	"parent": "minecraft:block/cube_bottom_top",
-	"textures": {
-		"particle": "kubejs:block/dark_stone",
-		"up": "kubejs:block/dragon_block_on",
-		"side": "kubejs:block/dragon_block",
-		"down": "kubejs:block/dark_stone"
-	}
-}
