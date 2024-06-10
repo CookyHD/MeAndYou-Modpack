@@ -1,0 +1,9 @@
+{
+	"type": "chipped:mason_table",
+	"tags": [
+		"chisel_chipped_integration:tyrian",
+		"chisel_chipped_integration:factory_block",
+		"chisel_chipped_integration:laboratory_block",
+		"chisel_chipped_integration:technical_block"
+	]
+}
