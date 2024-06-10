@@ -1,0 +1,6 @@
+{
+	"parent": "clickmachine:block/clicker",
+	"textures": {
+		"front": "clickmachine:block/clicker_front_off"
+	}
+}

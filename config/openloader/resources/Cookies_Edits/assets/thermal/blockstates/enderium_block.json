@@ -1,0 +1,10 @@
+{
+	"athena:loader": "athena:ctm",
+	"ctm_textures": {
+		"center": "thermal:block/ctm/enderium_block/0",
+		"empty": "thermal:block/ctm/enderium_block/1",
+		"horizontal": "thermal:block/ctm/enderium_block/2",
+		"vertical": "thermal:block/ctm/enderium_block/3",
+		"particle": "thermal:block/enderium_block"
+	}
+}

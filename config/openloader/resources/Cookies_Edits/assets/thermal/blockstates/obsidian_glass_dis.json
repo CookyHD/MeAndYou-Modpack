@@ -1,0 +1,10 @@
+{
+	"athena:loader": "athena:ctm",
+	"ctm_textures": {
+		"center": "thermal:block/ctm/obsidian_glass/0",
+		"empty": "thermal:block/ctm/obsidian_glass/1",
+		"horizontal": "thermal:block/ctm/obsidian_glass/2",
+		"vertical": "thermal:block/ctm/obsidian_glass/3",
+		"particle": "thermal:block/obsidian_glass"
+	}
+}

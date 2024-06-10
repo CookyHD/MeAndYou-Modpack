@@ -1,0 +1,10 @@
+{
+	"athena:loader": "athena:ctm",
+	"ctm_textures": {
+		"center": "thermal:block/ctm/lumium_block/0",
+		"empty": "thermal:block/ctm/lumium_block/1",
+		"horizontal": "thermal:block/ctm/lumium_block/2",
+		"vertical": "thermal:block/ctm/lumium_block/3",
+		"particle": "thermal:block/lumium_block"
+	}
+}
