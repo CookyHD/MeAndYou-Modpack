@@ -239,12 +239,6 @@ ServerEvents.recipes(event => {
 		'create:copper_nugget'
 	)
 
-	event.replaceInput(
-		{ input: 'minecraft:stick' },
-		'minecraft:stick',
-		'#minecraft:saplings'
-	)
-
 	event.shaped('4x thermal:nuke_grenade', [
 			'CBC', 
 			'BAB',
