@@ -6,55 +6,23 @@
 	group: ""
 	icon: "kubejs:galaxy_cookie"
 	id: "2270DF9F89A3370A"
-	images: [
-		{
-			alpha: 85
-			click: ""
-			corner: false
-			dev: false
-			height: 1.5d
-			hover: [ ]
-			image: "kubejs:item/redstone_sword_held"
-			rotation: 0.0d
-			width: 1.5d
-			x: 9.5d
-			y: -4.5d
-		}
-		{
-			alpha: 85
-			click: ""
-			corner: false
-			dev: false
-			height: 1.5d
-			hover: [ ]
-			image: "kubejs:item/farmer_axe_held"
-			rotation: 0.0d
-			width: 1.5d
-			x: 9.5d
-			y: -3.0d
-		}
-	]
 	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: [
+				"21F3BB748E227AD9"
 				"3A0233E89118AFA5"
-				"7802BD58FBD33625"
 			]
-			description: [
-				"Note:"
-				"&eCheck Out the Info in JEI."
-			]
+			description: [""]
 			id: "35BACC31C13BDD42"
 			tasks: [{
 				id: "20C327B08E49BE6E"
 				item: "kubejs:super_cookie"
 				type: "item"
 			}]
-			title: "3-1"
-			x: -3.0d
-			y: -2.5d
+			x: -5.5d
+			y: 2.5d
 		}
 		{
 			dependencies: [
@@ -68,25 +36,20 @@
 				item: "kubejs:dragon_block"
 				type: "item"
 			}]
-			title: "3-2"
-			x: -1.5d
-			y: -2.5d
+			x: -4.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["495A87CBC7F37892"]
-			description: [
-				"Note:"
-				"&eCheck Out the Info in JEI."
-			]
+			description: [""]
 			id: "1B51E220718EA882"
 			tasks: [{
 				id: "4A33DEE9757730A0"
 				item: "kubejs:charged_cookie"
 				type: "item"
 			}]
-			title: "3-3"
-			x: 0.0d
-			y: -2.5d
+			x: -2.5d
+			y: 2.5d
 		}
 		{
 			dependencies: [
@@ -99,14 +62,13 @@
 				item: "kubejs:powdered_wheat"
 				type: "item"
 			}]
-			title: "1-2"
-			x: -6.0d
-			y: -3.5d
+			x: -10.0d
+			y: 1.5d
 		}
 		{
 			dependencies: [
 				"67ED4BA4BB67D4DC"
-				"3FA2F9D8924509B2"
+				"05960CA97A6F7269"
 			]
 			id: "3A0233E89118AFA5"
 			tasks: [{
@@ -114,21 +76,20 @@
 				item: "kubejs:magic_wheat"
 				type: "item"
 			}]
-			title: "1-3"
-			x: -4.0d
-			y: -3.5d
+			x: -6.5d
+			y: 1.5d
 		}
 		{
-			dependencies: ["384F3897B67FCF90"]
+			dependencies: ["42DB7635D9FA2245"]
+			hide_dependency_lines: true
 			id: "67ED4BA4BB67D4DC"
 			tasks: [{
 				id: "2F467C472AB5570D"
 				item: "kubejs:mutation_catalyst"
 				type: "item"
 			}]
-			title: "S-2.1"
-			x: -3.0d
-			y: -4.5d
+			x: -7.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["1B51E220718EA882"]
@@ -138,9 +99,8 @@
 				item: "kubejs:charged_matter"
 				type: "item"
 			}]
-			title: "3-4"
-			x: 1.5d
-			y: -2.5d
+			x: -1.5d
+			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -148,17 +108,24 @@
 				"0E7A7B528AC14563"
 			]
 			id: "0B480742611869D1"
+			rewards: [{
+				id: "52A34312B86672CA"
+				type: "xp"
+				xp: 12550
+			}]
+			shape: "gear"
+			size: 2.0d
 			tasks: [{
 				id: "3F900EBE737D276F"
 				item: "kubejs:galaxy_cookie"
 				type: "item"
 			}]
-			title: "X-1"
-			x: 1.5d
-			y: -4.5d
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["02FFE23656A392CE"]
+			dependencies: ["42DB7635D9FA2245"]
+			hide_dependency_lines: true
 			id: "16A479D5C2CAC388"
 			tasks: [
 				{
@@ -167,74 +134,37 @@
 					type: "item"
 				}
 				{
-					id: "56AF7C895B2EEDAE"
-					item: "minecraft:wheat"
+					id: "15F427E6DC87657F"
+					item: "minecraft:wheat_seeds"
 					type: "item"
 				}
 			]
-			title: "1-1"
-			x: -8.0d
-			y: -3.5d
+			x: -11.5d
+			y: 1.5d
 		}
 		{
-			dependencies: ["384F3897B67FCF90"]
+			dependencies: ["42DB7635D9FA2245"]
+			hide_dependency_lines: true
 			id: "51749A7F6F3A0313"
 			tasks: [{
 				id: "5F7F4F0EB0888AB3"
 				item: "kubejs:spark_catalyst"
 				type: "item"
 			}]
-			title: "S-2.2"
-			x: 0.0d
-			y: -4.5d
+			x: 3.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["293477FE207F0D03"]
-			description: [
-				"Note:"
-				"&eWith this is Meant Bloody Tear Fluid! Put it in a bucket to check the quest!"
-			]
+			description: [""]
 			id: "0E7A7B528AC14563"
 			tasks: [{
 				id: "3ACC1C09D1C13991"
 				item: "kubejs:bloody_tear_fluid_bucket"
 				type: "item"
 			}]
-			title: "4-3"
 			x: 1.5d
-			y: -6.5d
-		}
-		{
-			dependencies: ["0B480742611869D1"]
-			id: "441687DACC8CC5C0"
-			tasks: [{
-				id: "5DFF7B3E8B9F55AF"
-				item: "kubejs:star_dust"
-				type: "item"
-			}]
-			title: "X-2"
-			x: 3.0d
-			y: -4.5d
-		}
-		{
-			dependencies: ["441687DACC8CC5C0"]
-			description: ["Now this is it the end of the Long chain of crafting recipes, with this all your wild dreams should come true!"]
-			id: "610FF8CC95603797"
-			rewards: [{
-				id: "75FE9F0D372D04CF"
-				type: "xp"
-				xp: 12000
-			}]
-			shape: "gear"
-			size: 2.0d
-			tasks: [{
-				id: "767835B232057562"
-				item: "kubejs:star_ingot"
-				type: "item"
-			}]
-			title: "END"
-			x: 5.0d
-			y: -4.5d
+			y: -1.5d
 		}
 		{
 			dependencies: [
@@ -247,9 +177,8 @@
 				item: "kubejs:bloody_tear"
 				type: "item"
 			}]
-			title: "4-2"
-			x: 0.0d
-			y: -6.5d
+			x: 2.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["0621A34705C31A5B"]
@@ -259,9 +188,8 @@
 				item: "kubejs:rich_beans"
 				type: "item"
 			}]
-			title: "2-3"
-			x: -4.0d
-			y: -1.5d
+			x: -8.5d
+			y: 3.5d
 		}
 		{
 			dependencies: [
@@ -274,100 +202,31 @@
 				item: "kubejs:powdered_beans"
 				type: "item"
 			}]
-			title: "2-2"
-			x: -6.0d
-			y: -1.5d
+			x: -10.0d
+			y: 3.5d
 		}
 		{
-			dependencies: ["5D9D1DBBEDD28627"]
-			id: "1B8747ACE50BCF3A"
-			tasks: [{
-				id: "369311F38159F9F1"
-				item: "botania:mana_pool"
-				type: "item"
-			}]
-			x: 3.5d
-			y: -10.0d
-		}
-		{
-			dependencies: ["5D9D1DBBEDD28627"]
-			id: "4F27ECF5392E3752"
-			tasks: [{
-				id: "4802A19451419112"
-				item: "thermal:machine_insolator"
-				type: "item"
-			}]
-			x: 2.0d
-			y: -10.0d
-		}
-		{
-			dependencies: ["02FFE23656A392CE"]
+			dependencies: ["42DB7635D9FA2245"]
+			hide_dependency_lines: true
 			id: "192A39AB26492860"
 			tasks: [{
 				id: "76E778D49DF6EE7C"
 				item: "kubejs:power_dust"
 				type: "item"
 			}]
-			title: "2-1"
-			x: -8.0d
-			y: -1.5d
+			x: -11.5d
+			y: 3.5d
 		}
 		{
-			dependencies: ["02FFE23656A392CE"]
+			dependencies: ["6EC429F4A2E8EA1A"]
 			id: "21EE0591600F934E"
 			tasks: [{
 				id: "38F069B63EE16D52"
 				item: "kubejs:droplet"
 				type: "item"
 			}]
-			title: "4-1"
-			x: -1.5d
-			y: -6.5d
-		}
-		{
-			dependencies: ["5D9D1DBBEDD28627"]
-			id: "6EEF02DE36B78EBB"
-			tasks: [{
-				id: "70062C4175FAB4EE"
-				item: "thermal:machine_centrifuge"
-				type: "item"
-			}]
-			x: 1.5d
-			y: -9.0d
-		}
-		{
-			dependencies: ["5D9D1DBBEDD28627"]
-			id: "71ACA3B831BDB266"
-			tasks: [{
-				id: "28CED72E8CAA7141"
-				item: "create:crushing_wheel"
-				type: "item"
-			}]
-			x: -2.5d
-			y: -10.0d
-		}
-		{
-			dependencies: ["5D9D1DBBEDD28627"]
-			id: "34E406ACC1FE15BD"
-			tasks: [{
-				id: "2F9DF7592CF2ED1A"
-				item: "create:mechanical_mixer"
-				type: "item"
-			}]
-			x: -0.5d
-			y: -10.0d
-		}
-		{
-			dependencies: ["02FFE23656A392CE"]
-			id: "384F3897B67FCF90"
-			tasks: [{
-				id: "57D087E91A6756AE"
-				item: "kubejs:dark_stone"
-				type: "item"
-			}]
-			title: "S-1"
-			x: -1.5d
-			y: -4.5d
+			x: 4.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["35BACC31C13BDD42"]
@@ -378,9 +237,8 @@
 				item: "kubejs:dragon_food"
 				type: "item"
 			}]
-			title: "3-H1"
-			x: -2.0d
-			y: -1.0d
+			x: -5.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["35BACC31C13BDD42"]
@@ -391,173 +249,73 @@
 				item: "kubejs:key_wrench"
 				type: "item"
 			}]
-			title: "3-H2"
-			x: -1.0d
-			y: -1.0d
+			x: -3.0d
+			y: 3.5d
 		}
 		{
-			dependencies: ["49ED760D7332EDDC"]
-			description: [
-				"Creator Item from CookyHD."
-				"&c&lWIP"
-			]
-			id: "755DC37F3351075C"
+			dependencies: ["72802DF7BDA5085D"]
+			id: "6EC429F4A2E8EA1A"
 			tasks: [{
-				id: "51D2C5EEAC535CC5"
-				item: {
-					Count: 1b
-					id: "kubejs:redstone_sword"
-					tag: {
-						Damage: 0
-					}
-				}
+				id: "660A72640E862E2E"
+				item: "kubejs:gue"
+				type: "item"
+			}]
+			x: 6.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["42DB7635D9FA2245"]
+			hide_dependency_lines: true
+			id: "72802DF7BDA5085D"
+			tasks: [{
+				id: "691ACF22E10DFDEC"
+				item: "kubejs:heavy_fluid_bucket"
 				type: "item"
 			}]
 			x: 8.5d
-			y: -4.5d
+			y: -2.5d
 		}
 		{
-			dependencies: ["336B637CEFB68673"]
-			description: [
-				"Creator Item from Cana."
-				"&c&lWIP"
+			dependencies: ["3FA2F9D8924509B2"]
+			id: "05960CA97A6F7269"
+			tasks: [{
+				id: "0D2D9B353F42BA19"
+				item: "kubejs:rich_wheat"
+				type: "item"
+			}]
+			x: -8.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"67ED4BA4BB67D4DC"
+				"7802BD58FBD33625"
 			]
-			id: "727DB3CFC3395ADB"
+			id: "21F3BB748E227AD9"
 			tasks: [{
-				id: "55A44B0663755BFF"
-				item: {
-					Count: 1b
-					id: "kubejs:farmer_axe"
-					tag: {
-						Damage: 0
-					}
-				}
+				id: "10149FC8CCB7E4AD"
+				item: "kubejs:magic_beans"
 				type: "item"
 			}]
-			x: 8.5d
-			y: -3.0d
-		}
-		{
-			dependencies: ["610FF8CC95603797"]
-			hide_dependency_lines: true
-			id: "49ED760D7332EDDC"
-			tasks: [{
-				id: "5B0971B03DD234FD"
-				item: "kubejs:redstone_ingot"
-				type: "item"
-			}]
-			x: 7.0d
-			y: -4.5d
-		}
-		{
-			dependencies: ["610FF8CC95603797"]
-			hide_dependency_lines: true
-			id: "336B637CEFB68673"
-			tasks: [{
-				id: "25D6D07AB16AFEF4"
-				item: "kubejs:farmer_ingot"
-				type: "item"
-			}]
-			x: 7.0d
-			y: -3.0d
-		}
-		{
-			dependencies: ["610FF8CC95603797"]
-			description: ["With this, removing Bedrock becomes an ease!"]
-			hide_dependency_lines: true
-			id: "545F0CBE523F5ED8"
-			tasks: [{
-				id: "72D75605793C05BF"
-				item: {
-					Count: 1b
-					id: "kubejs:star_pickaxe"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 7.0d
-			y: -6.0d
-		}
-		{
-			dependencies: ["5D9D1DBBEDD28627"]
-			id: "5E588E9BA202F677"
-			tasks: [{
-				id: "6FC5718D2F2C16CE"
-				item: "thermal:machine_furnace"
-				type: "item"
-			}]
-			x: 1.0d
-			y: -10.0d
-		}
-		{
-			dependencies: ["02FFE23656A392CE"]
-			description: ["Those Blocks are used for All the crafting recipes that come, make sure to have them, they help you on your Journey."]
-			hide_dependent_lines: true
-			id: "5D9D1DBBEDD28627"
-			tasks: [{
-				id: "63DA80203CA561D6"
-				title: "Utils"
-				type: "checkmark"
-			}]
-			x: 1.5d
-			y: -11.5d
+			x: -6.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["20BEEC42AEAE2D2C"]
-			description: [
-				"This quest line will bring you the ability to obtain Star Ingots! With those, you acquire Creative Items and New Weapons."
-				""
-				"The quest is split in multiple parts, indicated by the first number in the name of each quest, completing them step by step with the help of JEI should give you an overall direction for obtaining This New Resource."
-				""
-				"Good luck and have fun playing!"
-			]
-			hide_dependent_lines: true
-			id: "02FFE23656A392CE"
+			description: ["&eThis page is still a work in progress. Descriptions will be added soon. For now, just follow the flow of items and check recipes with JEI."]
+			icon: "minecraft:writable_book"
+			id: "42DB7635D9FA2245"
 			shape: "gear"
-			size: 1.5d
+			size: 2.0d
 			tasks: [{
-				id: "1F0657E387006C4B"
-				title: "Start"
+				id: "27DA6E5EFF30A0EF"
+				title: "Mark as read"
 				type: "checkmark"
 			}]
-			x: -8.0d
-			y: -11.5d
-		}
-		{
-			dependencies: ["5D9D1DBBEDD28627"]
-			id: "737654741E652136"
-			tasks: [{
-				id: "185570E074C693F5"
-				item: "create:deployer"
-				type: "item"
-			}]
-			x: -2.5d
-			y: -9.0d
-		}
-		{
-			dependencies: ["5D9D1DBBEDD28627"]
-			id: "05A54248A7C20B9D"
-			tasks: [{
-				id: "3880DBDBFCC5B8AC"
-				item: "create:spout"
-				type: "item"
-			}]
-			x: -0.5d
-			y: -9.0d
-		}
-		{
-			dependencies: ["5D9D1DBBEDD28627"]
-			id: "31DFB5C1C196565B"
-			tasks: [{
-				id: "2AFCBC6514BCEB62"
-				item: "create:mechanical_press"
-				type: "item"
-			}]
-			x: -1.5d
-			y: -9.5d
+			title: "&cWIP"
+			x: -3.0d
+			y: -3.0d
 		}
 	]
-	title: "Main Quest"
+	title: "Galaxy Cookie"
 }

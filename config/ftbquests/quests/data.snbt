@@ -8,7 +8,8 @@
 	disable_gui: false
 	disable_toast: true
 	drop_loot_crates: false
-	emergency_items_cooldown: 60
+	emergency_items: [{ Count: 4, id: "minecraft:cocoa_beans" }]
+	emergency_items_cooldown: 300
 	grid_scale: 0.5d
 	icon: "kubejs:logo"
 	lock_message: ""
@@ -19,6 +20,6 @@
 	}
 	pause_game: false
 	progression_mode: "linear"
-	title: "&c&oMe and You"
+	title: " &cMe and You"
 	version: 13
 }

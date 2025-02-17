@@ -1,0 +1,208 @@
+{
+	autofocus_id: "324AA7286F8B02D5"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "techit"
+	group: ""
+	icon: "kubejs:rainbow_ingot"
+	id: "54F022A7F7E6C598"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["6E017A0C59AEBCC6"]
+			hide_dependency_lines: true
+			id: "7FE10725B5D56B63"
+			tasks: [{
+				id: "1A392E3904B3CEB5"
+				item: "kubejs:heavy_fluid_bucket"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["7FE10725B5D56B63"]
+			id: "76D9EEC0A3C05D0E"
+			tasks: [{
+				id: "7A60123F7FB2EA5F"
+				item: "kubejs:tech_stage_1a"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"3787F6F0165D1A1A"
+				"76D9EEC0A3C05D0E"
+			]
+			id: "1335A8A76F51347A"
+			tasks: [{
+				id: "4E041B812944B28A"
+				item: "kubejs:tech_stage_2"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["1183AA86ABFB4D03"]
+			id: "3787F6F0165D1A1A"
+			tasks: [{
+				id: "3D8D7E5FDF12F2F9"
+				item: "kubejs:tech_stage_1b"
+				type: "item"
+			}]
+			x: 1.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["6E017A0C59AEBCC6"]
+			hide_dependency_lines: true
+			id: "1183AA86ABFB4D03"
+			tasks: [{
+				id: "35F924CC83C5C51B"
+				item: "kubejs:stick_blend"
+				type: "item"
+			}]
+			x: -0.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["1335A8A76F51347A"]
+			id: "108323D1DE7C8972"
+			tasks: [{
+				id: "3E2454A7A1BE257B"
+				item: "kubejs:tech_stage_3"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["108323D1DE7C8972"]
+			id: "22A53BBDF8032646"
+			rewards: [{
+				id: "112EF9E970609EDC"
+				type: "xp"
+				xp: 550
+			}]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{
+				id: "6DB2B0E0B174F622"
+				item: "kubejs:tech_ingot"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"22A53BBDF8032646"
+				"2270DF9F89A3370A"
+			]
+			hide_dependency_lines: true
+			id: "324AA7286F8B02D5"
+			size: 1.0d
+			tasks: [{
+				id: "2C6D3205B5DD11D2"
+				item: "kubejs:galaxy_dust"
+				type: "item"
+			}]
+			x: 3.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["324AA7286F8B02D5"]
+			id: "2BC71D954144B230"
+			rewards: [{
+				id: "0CDA2B2FC9D23A2E"
+				type: "xp"
+				xp: 550
+			}]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{
+				id: "2EBD2ADDE641A9A9"
+				item: "kubejs:star_ingot"
+				type: "item"
+			}]
+			x: 5.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["6A1B4B5F35C1C528"]
+			id: "3F3E1291CCD1609E"
+			rewards: [{
+				id: "6C1A907B68D53F05"
+				type: "xp"
+				xp: 24550
+			}]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{
+				id: "43B22E3F9C315562"
+				item: "kubejs:creativ_ingot"
+				type: "item"
+			}]
+			x: 5.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["2BC71D954144B230"]
+			hide_dependency_lines: true
+			id: "0A6A7C50A567620B"
+			size: 1.0d
+			tasks: [{
+				id: "3D9B51FEABC4CB55"
+				item: "kubejs:creativ_compound"
+				type: "item"
+			}]
+			x: -0.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["0A6A7C50A567620B"]
+			id: "5F4CDE9605E701A6"
+			size: 1.0d
+			tasks: [{
+				id: "3C6608382A60C643"
+				item: "kubejs:creativ_unstable"
+				type: "item"
+			}]
+			x: 1.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["5F4CDE9605E701A6"]
+			id: "6A1B4B5F35C1C528"
+			size: 1.0d
+			tasks: [{
+				id: "27B33336A504B32C"
+				item: "kubejs:seal_creativ"
+				type: "item"
+			}]
+			x: 3.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["20BEEC42AEAE2D2C"]
+			description: ["&eThis page is still a work in progress. Descriptions will be added soon. For now, just follow the flow of items and check recipes with JEI."]
+			icon: "minecraft:writable_book"
+			id: "6E017A0C59AEBCC6"
+			shape: "gear"
+			size: 2.0d
+			tasks: [{
+				id: "552C36ECAA6A9FDC"
+				title: "Mark as read"
+				type: "checkmark"
+			}]
+			title: "&cWIP"
+			x: 8.0d
+			y: -6.0d
+		}
+	]
+	title: "Materials"
+}

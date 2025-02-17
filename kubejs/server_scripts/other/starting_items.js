@@ -23,12 +23,6 @@ PlayerEvents.loggedIn(event => {
 		}
 		player.stages.add("Kubejs_StartingItems")
 	}
-	if (!player.stages.has("Kubejs_RemoveBook")) {
-		event.server.scheduleInTicks(20, () => {
-			event.level.runCommandSilent("clear "+player.username+' patchouli:guide_book{"patchouli:book":"irons_spellbooks:iss_guide_book"}')
-		})
-		player.stages.add("Kubejs_RemoveBook")
-	}
 })
 
 ServerEvents.commandRegistry(event => {
