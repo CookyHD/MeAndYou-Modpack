@@ -3,6 +3,7 @@
 JEIEvents.hideItems(event => {
 
 	event.hide([
+		'crabbersdelight:crab_claw',
 		'immersive_aircraft:gyrodyne',
 		'immersive_aircraft:warship',
 		'immersive_aircraft:sail',
