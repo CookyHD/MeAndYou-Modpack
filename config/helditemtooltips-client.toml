@@ -64,7 +64,7 @@ max_lines = 4
 	#A lore tag for this item, only present on custom items.
 	[components.lore]
 		#Should this tooltip component be included when rendering held item tooltips.
-		include = true
+		include = false
 		#Priority for rendering this tooltip. When not enough lines are available (like an item with enchantments), components with a low priority will be skipped.
 		#Range: > -2147483648
 		priority = 50

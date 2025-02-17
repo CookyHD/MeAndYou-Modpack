@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "grapplemod:block/grapplemodifier_top",
+		"side": "grapplemod:block/grapplemodifier"
+	}
+}
