@@ -1,0 +1,35 @@
+{
+  "key": "enderium_thermal",
+  "category": "metal",
+  "primary": 6,
+  "secondary": 5,
+  "tertiary": 2,
+  "durability": 840,
+  "integrityCost": 2,
+  "integrityGain": 6,
+  "magicCapacity": 110,
+  "toolLevel": "minecraft:iron",
+  "toolEfficiency": 8,
+  "tints": {
+    "glyph": "1d7d8a",
+    "texture": "1d7d8a"
+  },
+  "textures": [
+    "metal",
+    "shiny"
+  ],
+  "material": {
+    "items": [
+      "thermal:enderium_ingot"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:gold"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal"
+    }
+  ]
+}

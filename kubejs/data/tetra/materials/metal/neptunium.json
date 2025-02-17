@@ -1,0 +1,41 @@
+{
+  "key": "neptunium",
+  "category": "metal",
+  "primary": 7,
+  "secondary": 2.3,
+  "tertiary": 4,
+  "durability": 1796,
+  "integrityCost": 2,
+  "integrityGain": 8,
+  "magicCapacity": 235,
+  "toolLevel": "minecraft:netherite",
+  "toolEfficiency": 10,
+  "effects": {
+    "stabilizing": 15
+  },
+  "tints": {
+    "glyph": "1DD68E",
+    "texture": "1DD68E"
+  },
+  "textures": [
+    "metal",
+    "shiny"
+  ],
+  "material": {
+    "items": [
+      "aquaculture:neptunium_ingot"
+    ]
+  },
+  "improvements": {
+    "workable": 1
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:iron"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aquaculture"
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+	"processors": [
+		{
+			"processor_type": "minecraft:rule",
+			"rules": [
+				{
+					"location_predicate": {
+						"predicate_type": "minecraft:block_match",
+						"block": "minecraft:dirt"
+					},
+					"input_predicate": {
+						"predicate_type": "minecraft:block_match",
+						"block": "minecraft:stone"
+					},
+					"output_state": {
+						"Name": "minecraft:dirt"
+					}
+				},
+				{
+					"location_predicate": {
+						"predicate_type": "minecraft:block_match",
+						"block": "minecraft:grass_block"
+					},
+					"input_predicate": {
+						"predicate_type": "minecraft:block_match",
+						"block": "minecraft:stone"
+					},
+					"output_state": {
+						"Name": "minecraft:grass_block"
+					}
+				},
+				{
+					"location_predicate": {
+						"predicate_type": "minecraft:block_match",
+						"block": "minecraft:water"
+					},
+					"input_predicate": {
+						"predicate_type": "minecraft:block_match",
+						"block": "minecraft:air"
+					},
+					"output_state": {
+						"Name": "minecraft:air"
+					}
+				},
+				{
+					"location_predicate": {
+						"predicate_type": "minecraft:always_true"
+					},
+					"input_predicate": {
+						"predicate_type": "minecraft:random_block_match",
+						"block": "minecraft:cobblestone",
+						"probability": 0.5
+					},
+					"output_state": {
+						"Name": "minecraft:mossy_cobblestone"
+					}
+				},
+				{
+					"location_predicate": {
+						"predicate_type": "minecraft:always_true"
+					},
+					"input_predicate": {
+						"predicate_type": "minecraft:random_block_match",
+						"block": "minecraft:diamond_block",
+						"probability": 0.33
+					},
+					"output_state": {
+						"Name": "minecraft:spawner"
+					},
+					"block_entity_modifier": {
+						"type": "minecraft:append_static",
+						"data": {
+							"SpawnPotentials": [],
+							"SpawnData": {
+								"entity": {
+									"id": "minecraft:spider"
+								}
+							}
+						}
+					}
+				},
+				{
+					"location_predicate": {
+						"predicate_type": "minecraft:always_true"
+					},
+					"input_predicate": {
+						"predicate_type": "minecraft:random_block_match",
+						"block": "minecraft:diamond_block",
+						"probability": 0.33
+					},
+					"output_state": {
+						"Name": "minecraft:spawner"
+					},
+					"block_entity_modifier": {
+						"type": "minecraft:append_static",
+						"data": {
+							"SpawnData": {
+								"entity": {
+									"id": "minecraft:zombie"
+								}
+							}
+						}
+					}
+				},
+				{
+					"location_predicate": {
+						"predicate_type": "minecraft:always_true"
+					},
+					"input_predicate": {
+						"predicate_type": "minecraft:random_block_match",
+						"block": "minecraft:diamond_block",
+						"probability": 0.33
+					},
+					"output_state": {
+						"Name": "minecraft:spawner"
+					},
+					"block_entity_modifier": {
+						"type": "minecraft:append_static",
+						"data": {
+							"SpawnData": {
+								"entity": {
+									"id": "minecraft:skeleton"
+								}
+							}
+						}
+					}
+				},
+				{
+					"input_predicate": {
+						"predicate_type": "minecraft:block_match",
+						"block": "minecraft:diamond_block"
+					},
+					"location_predicate": {
+						"predicate_type": "minecraft:always_true"
+					},
+					"output_state": {
+						"Name": "minecraft:barrel",
+						"Properties": {
+							"facing": "up"
+						}
+					},
+					"block_entity_modifier": {
+						"type": "minecraft:append_static",
+						"data": {
+							"LootTable": "minecraft:chests/simple_dungeon"
+						}
+					}
+				}
+			]
+		}
+	]
+}

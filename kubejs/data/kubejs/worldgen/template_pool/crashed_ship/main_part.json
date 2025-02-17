@@ -1,0 +1,15 @@
+{
+	"name": "kubejs:crashed_ship/main_part",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "kubejs:crashed_ship/main_part",
+				"processors": "minecraft:empty"
+			}
+		}
+	]
+}

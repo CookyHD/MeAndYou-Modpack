@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal"
+    }
+  ],
+  "replace": false,
+  "slots": [
+    "sword/hilt"
+  ],
+  "materialSlotCount": 1,
+  "glyph": {
+    "textureX": 16
+  },
+  "displayType": "improvement",
+  "outcomes": [
+    {
+      "material": {
+        "tag": "forge:rubber",
+        "count": 2
+      },
+      "requiredTools": {
+        "cut": "minecraft:gold"
+      },
+      "improvements": {
+        "basic_hilt/rubber_grip": 1
+      }
+    }
+  ]
+}

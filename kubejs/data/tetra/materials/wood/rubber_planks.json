@@ -1,0 +1,30 @@
+{
+  "key": "rubber_planks",
+  "category": "wood",
+  "primary": 2,
+  "secondary": 1,
+  "tertiary": 9,
+  "durability": 36,
+  "integrityCost": 1,
+  "integrityGain": 3,
+  "magicCapacity": 76,
+  "toolLevel": "minecraft:wood",
+  "toolEfficiency": 1.5,
+  "tints": {
+    "glyph": "423f3d",
+    "texture": "423f3d"
+  },
+  "improvements": {
+    "workable": 1
+  },
+  "textures": [
+    "crude",
+    "wooden"
+  ],
+  "material": {
+    "tag": "forge:planks/rubber"
+  },
+  "requiredTools": {
+    "axe_dig": "minecraft:stone"
+  }
+}

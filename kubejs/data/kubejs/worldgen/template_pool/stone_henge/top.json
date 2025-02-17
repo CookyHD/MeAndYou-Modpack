@@ -1,0 +1,15 @@
+{
+	"name": "kubejs:stone_henge/top",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "kubejs:stone_henge/top",
+				"processors": "kubejs:henge_top"
+			}
+		}
+	]
+}

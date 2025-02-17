@@ -1,0 +1,57 @@
+{
+	"loader": "forge:separate_transforms",
+	"base": {
+		"parent": "minecraft:item/handheld",
+		"textures": {
+			"layer0": "kubejs:item/needle_gun_forged_held"
+		},
+		"display": {
+			"thirdperson_righthand": {
+				"rotation": [0, -90, 40],
+				"translation": [0, 4, -2.5],
+				"scale": [1.7, 1.7, 0.85]
+			},
+			"thirdperson_lefthand": {
+				"rotation": [0, 90, -40],
+				"translation": [0, 4, -2.5],
+				"scale": [1.7, 1.7, 0.85]
+			},
+			"firstperson_righthand": {
+				"rotation": [0, -90, 35],
+				"translation": [1.13, 6.4, -1.13],
+				"scale": [1.36, 1.36, 0.68]
+			},
+			"firstperson_lefthand": {
+				"rotation": [0, 90, -35],
+				"translation": [1.13, 6.4, -1.13],
+				"scale": [1.36, 1.36, 0.68]
+			},
+			"fixed": {
+				"rotation": [0, 180, 45],
+				"translation": [0, 0, 0],
+				"scale": [2, 2, 1]
+			}
+		}
+	},
+	"perspectives": {
+		"gui": {
+			"parent": "minecraft:item/handheld",
+			"textures": {
+				"layer0": "kubejs:item/needle_gun_forged"
+			}
+		},
+		"ground": {
+			"parent": "minecraft:item/handheld",
+			"textures": {
+				"layer0": "kubejs:item/needle_gun_forged"
+			}
+		},
+		"head": {
+			"parent": "minecraft:item/handheld",
+			"textures": {
+				"layer0": "kubejs:item/needle_gun_forged"
+			}
+		}
+	},
+	"gui_light": "front"
+}

@@ -1,0 +1,27 @@
+{
+  "key": "cinnabar",
+  "category": "gem",
+  "primary": 5,
+  "secondary": 2.3,
+  "tertiary": 0,
+  "durability": 850,
+  "integrityCost": 2,
+  "integrityGain": 2,
+  "magicCapacity": 80,
+  "toolLevel": "minecraft:iron",
+  "toolEfficiency": 7,
+  "tints": {
+    "glyph": "f0192a",
+    "texture": "f0192a"
+  },
+  "textures": [
+    "crude",
+    "default"
+  ],
+  "material": {
+    "tag": "forge:gems/cinnabar"
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:iron"
+  }
+}

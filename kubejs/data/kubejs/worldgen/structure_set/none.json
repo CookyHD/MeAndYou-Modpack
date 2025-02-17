@@ -1,0 +1,16 @@
+{
+	"structures": [
+		{
+			"structure": "kubejs:none",
+			"weight": 1
+		}
+	],
+	"placement": {
+		"type": "minecraft:random_spread",
+		"salt": 800850321,
+		"frequency": 1,
+		"spread_type": "linear",
+		"spacing": 4096,
+		"separation": 1
+	}
+}

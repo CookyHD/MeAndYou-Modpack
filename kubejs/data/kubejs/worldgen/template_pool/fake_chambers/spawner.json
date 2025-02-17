@@ -1,0 +1,105 @@
+{
+	"name": "kubejs:fake_chambers/spawner",
+	"fallback": "minecraft:empty",
+	"elements": [
+	  {
+		"weight": 5,
+		"element": {
+		  "element_type": "minecraft:single_pool_element",
+		  "projection": "rigid",
+		  "location": "kubejs:fake_chambers/spawners/blaze",
+		  "processors": "minecraft:empty"
+		}
+	  },
+	  {
+		"weight": 5,
+		"element": {
+		  "element_type": "minecraft:single_pool_element",
+		  "projection": "rigid",
+		  "location": "kubejs:fake_chambers/spawners/magma",
+		  "processors": "minecraft:empty"
+		}
+	  },
+	  {
+		"weight": 10,
+		"element": {
+		  "element_type": "minecraft:single_pool_element",
+		  "projection": "rigid",
+		  "location": "kubejs:fake_chambers/spawners/slime",
+		  "processors": "minecraft:empty"
+		}
+	  },
+	  {
+		"weight": 10,
+		"element": {
+		  "element_type": "minecraft:single_pool_element",
+		  "projection": "rigid",
+		  "location": "kubejs:fake_chambers/spawners/silverfish",
+		  "processors": "minecraft:empty"
+		}
+	  },
+	  {
+		"weight": 15,
+		"element": {
+		  "element_type": "minecraft:single_pool_element",
+		  "projection": "rigid",
+		  "location": "kubejs:fake_chambers/spawners/husk",
+		  "processors": "minecraft:empty"
+		}
+	  },
+	  {
+		"weight": 15,
+		"element": {
+		  "element_type": "minecraft:single_pool_element",
+		  "projection": "rigid",
+		  "location": "kubejs:fake_chambers/spawners/stray",
+		  "processors": "minecraft:empty"
+		}
+	  },
+	  {
+		"weight": 15,
+		"element": {
+		  "element_type": "minecraft:single_pool_element",
+		  "projection": "rigid",
+		  "location": "kubejs:fake_chambers/spawners/cave_spider",
+		  "processors": "minecraft:empty"
+		}
+	  },
+	  {
+		"weight": 25,
+		"element": {
+		  "element_type": "minecraft:single_pool_element",
+		  "projection": "rigid",
+		  "location": "kubejs:fake_chambers/spawners/spider",
+		  "processors": "minecraft:empty"
+		}
+	  },
+	  {
+		"weight": 25,
+		"element": {
+		  "element_type": "minecraft:single_pool_element",
+		  "projection": "rigid",
+		  "location": "kubejs:fake_chambers/spawners/skeleton",
+		  "processors": "minecraft:empty"
+		}
+	  },
+	  {
+		"weight": 25,
+		"element": {
+		  "element_type": "minecraft:single_pool_element",
+		  "projection": "rigid",
+		  "location": "kubejs:fake_chambers/spawners/zombie",
+		  "processors": "minecraft:empty"
+		}
+	  },
+	  {
+		"weight": 50,
+		"element": {
+		  "element_type": "minecraft:single_pool_element",
+		  "projection": "rigid",
+		  "location": "kubejs:fake_chambers/spawners/empty",
+		  "processors": "minecraft:empty"
+		}
+	  }
+	]
+  }

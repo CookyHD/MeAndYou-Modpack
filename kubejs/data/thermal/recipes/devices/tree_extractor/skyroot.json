@@ -1,0 +1,22 @@
+{
+	"type": "thermal:tree_extractor",
+	"trunk": {
+		"Name": "aether:skyroot_log"
+	},
+	"leaves": {
+		"Name": "aether:skyroot_leaves",
+		"Properties": {
+			"persistent": "false"
+		}
+	},
+	"sapling": "aether:skyroot_sapling",
+	"min_height": 1,
+	"max_height": 128,
+	"min_leaves": 1,
+	"max_leaves": 1024,
+	"result": {
+		"fluid": "thermal:resin",
+		"amount": 15 
+	}
+}
+	

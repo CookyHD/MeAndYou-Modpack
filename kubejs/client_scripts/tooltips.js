@@ -4,11 +4,21 @@ ItemEvents.tooltip(event => {
 
 	event.addAdvanced('kubejs:dragon_block',(item, advanced, text) => {
 		text.add(1,Text.green("Dancing Toothless <3"))
+		text.add(2,"")
 		if (event.shift) {
-			text.add(2,Text.yellow("Right Click with Energised Meat to Cast."))
-			text.add(3,Text.yellow("Transforms Certain Items in the Process."))
+			text.add(3,Text.yellow("Right Click with Energised Meat to Cast."))
+			text.add(4,Text.yellow("Transforms Certain Items in the Process."))
 		} else {
-			text.add(2,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+			text.add(3,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+		}
+	})
+
+	event.addAdvanced('kubejs:amplifyer_totem',(item, advanced, text) => {
+		if (event.shift) {
+			text.add(1,Text.yellow("Put under Dragon Caster,"))
+			text.add(2,Text.yellow("to Change Transform Outputs."))
+		} else {
+			text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
 		}
 	})
 
@@ -21,52 +31,230 @@ ItemEvents.tooltip(event => {
 		}
 	})
 
-	event.addAdvanced('kubejs:star_pickaxe',(item, advanced, text) => {
+	event.addAdvanced('kubejs:farmer_axe',(item, advanced, text) => {
+		text.add(1,Text.green("Cana_xd's Creator Item."))
+		text.add(2,"")
 		if (event.shift) {
-			text.add(1,Text.yellow("Right Click on Bedrock to obtain it,"))
-			text.add(2,Text.yellow("Cost Big Amount of Durability."))
-			text.add(3,Text.yellow("Cooldown for 5s after Use."))
+			text.add(3,Text.yellow("Right Click on Entity to make it Spawn,"))
+			text.add(4,Text.yellow("A Farm Animal on Death. Cost 1 Wheat."))
+			text.add(5,Text.yellow("Cooldown for 5s after Use."))
+		} else {
+			text.add(3,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+		}
+	})
+
+	event.addAdvanced('kubejs:redstone_sword',(item, advanced, text) => {
+		text.add(1,Text.green("CookyHD's Creator Item."))
+		text.add(2,"")
+		if (event.shift) {
+			text.add(3,Text.yellow("Right Click to Damage Entity's in a,"))
+			text.add(4,Text.yellow("5 Block Radius. Cost 3 Redstone Dust."))
+			text.add(5,Text.yellow("Cooldown for 3s after Use."))
+		} else {
+			text.add(3,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+		}
+	})
+
+
+	event.addAdvanced('kubejs:needle_gun',(item, advanced, text) => {
+		text.add(1,Text.blue(item.hasNBT() ? "Ammo: " + item.getNbt()["Ammo"] : "Ammo: undefined"))
+	})
+
+	event.addAdvanced('kubejs:jar_of_tears',(item, advanced, text) => {
+		if (event.shift) {
+			text.add(1,Text.yellow("Big Healing Potion Alike,"))
+			text.add(2,Text.yellow("Heal's 10 Hearts After 5s Use Time."))
+		} else {
+			text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+		}
+	})
+
+	event.addAdvanced('kubejs:beer',(item, advanced, text) => {
+		if (event.shift) {
+			text.add(1,Text.yellow("A mixture that enhances Brawling,"))
+			text.add(2,Text.yellow("but causes Nausea."))
+		} else {
+			text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+		}
+	})
+
+	event.addAdvanced('kubejs:tech_sword',(item, advanced, text) => {
+		if (event.shift) {
+			text.add(1,Text.yellow("Shatters into something new upon breaking."))
+		} else {
+			text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+		}
+	})
+
+	event.addAdvanced("kubejs:scattered_sword",(item, advanced, text) => {
+		if (event.shift) {
+			text.add(1,Text.yellow("Right Click To Shoot Sharpnell Around."))
+		} else {
+			text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+		}
+	})
+
+	event.addAdvanced('kubejs:xp_wand',(item, advanced, text) => {
+		if (event.shift) {
+			text.add(1,Text.yellow("Right Click to Enchant Entity's in a,"))
+			text.add(2,Text.yellow("5 Block Radius. Makes them drop Xp Nuggets on Death."))
+		} else {
+			text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+		}
+	})
+
+	event.addAdvanced('kubejs:copper_compass',(item, advanced, text) => {
+		if (event.shift) {
+			text.add(1,Text.yellow("Right Click to Locate the Nearest,"))
+			text.add(2,Text.yellow("Trial Chambers."))
+		} else if (event.ctrl) {
+			text.add(1,Text.red("Can give Multible Location,"))
+			text.add(2,Text.red("tho all are Valid Locations."))
+		} else {
+			text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info, or '), Text.red("Ctrl ").bold(true), Text.gray("for Warnings.")])
+		}
+	})
+
+	event.addAdvanced('kubejs:ship_locator',(item, advanced, text) => {
+		if (event.shift) {
+			text.add(1,Text.yellow("Right Click to Locate the Nearest,"))
+			text.add(2,Text.yellow("Crashed Ship."))
+		} else if (event.ctrl) {
+			text.add(1,Text.red("Can give Multible Location,"))
+			text.add(2,Text.red("tho all are Valid Locations."))
+		} else {
+			text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info, or '), Text.red("Ctrl ").bold(true), Text.gray("for Warnings.")])
+		}
+	})
+
+	event.addAdvanced('kubejs:library',(item, advanced, text) => {
+		if (event.shift) {
+			text.add(1,Text.yellow("Right Click to Obtain all the Guide Books"))
 		} else {
 			text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
 		}
 	})
 	
+	let tools = [
+		"sword",
+		"axe",
+		"shovel",
+		"hoe",
+		"hammer",
+		"pickaxe"
+	].forEach(e => {
+		event.addAdvanced('kubejs:star_'+e,(item, advanced, text) => {
+			if (event.shift) {
+				text.add(1,Text.yellow("Gain a Buff on Right Click."))
+			} else {
+				text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+			}
+		})
+
+		event.addAdvanced('kubejs:bread_'+e,(item, advanced, text) => {
+			if (event.shift) {
+				text.add(1,Text.yellow("Gain Hunger on Right Click,"))
+				text.add(2,Text.yellow("causing immense damage to the tool."))
+			} else {
+				text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+			}
+		})
+	})
+
+	let armors = [
+		"chestplate",
+		"helmet",
+		"boots",
+		"leggings"
+	].forEach(e => {
+		event.addAdvanced('kubejs:tech_'+e,(item, advanced, text) => {
+			if (event.shift) {
+				text.add(1,Text.yellow("Full set Bonus:"))
+				text.add(2,Text.yellow("    Gain Strength."))
+			} else {
+				text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+			}
+		})
+
+		event.addAdvanced('kubejs:bloody_'+e,(item, advanced, text) => {
+			if (event.shift) {
+				text.add(1,Text.yellow("Full set Bonus:"))
+				text.add(2,Text.yellow("    Constant Regenartion."))
+				text.add(3,Text.yellow("    If Bellow 20% Heatlh Gain Strong Buffs."))
+			} else {
+				text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+			}
+		})
+
+		event.addAdvanced('kubejs:star_'+e,(item, advanced, text) => {
+			if (event.shift) {
+				text.add(1,Text.yellow("Full set Bonus:"))
+				text.add(2,Text.yellow("    If Bellow 20% Heatlh Gain Strong Buffs."))
+			} else {
+				text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+			}
+		})
+	})
+
+	event.addAdvanced("kubejs:galaxy_cookie",(item, advanced, text) => {
+		if (global.getServerSetting == null) return
+		if (global.getServerSetting("UnstableGalaxyCookie")) {
+			text.add(1,Text.red("Do not eat! It could lead to severe consequences."))
+		} else {
+			text.add(1,Text.yellow("Nourishment at it Finest."))
+			text.add(2,Text.darkGray("Stats are not as Shown!"))
+		}
+	})
+
 	event.add('kubejs:dragon_food',"§eUsed For Dragon Casting.")
 
-	event.add('kubejs:galaxy_cookie',"§eCant be eaten.")
+	global.NessieColors.forEach(element => {
+		event.add("kubejs:nessie_"+element,"§c<3")
+	})
+
+	global.NessieColors.forEach(element => {
+		event.add("kubejs:nessie_"+element+"_enchanted",["§eReforged","§c<3"])
+	})
+
+	event.add("kubejs:xp_converter_knw", "§7Experience -> Knowledge")
+
+	event.add("kubejs:xp_converter_rel", "§7Knowledge -> Experience")
 	
-	event.add('botania:spawner_mover',"§c§lUNOPTAINABLE!")
+	event.add("quarryplus:book_mover", "§7Used for Putting Enchanted Books on Quarry's.")
 
-	let heart = [
-		'kubejs:nessie_green',
-		'kubejs:nessie_blue',
-		'kubejs:nessie_red',
-		'kubejs:nessie_pink'
-	].forEach(element => {
-		event.add(element,"§c<3")
+	event.addAdvanced("thermal:device_tree_extractor",(item, advanced, text) => {
+		if (event.ctrl) {
+			text.add(1,Text.red("Mahogany isn't fully functional yet. However,"))
+			text.add(2,Text.red("placing logs can help make it work."))
+		} else {
+			text.add(1,[Text.gray('Hold '), Text.red("Ctrl ").bold(true), Text.gray("for Warnings.")])
+		}
 	})
 
-	let wip = [
-		'kubejs:amplifyer_totem',
-		'kubejs:redstone_sword',
-		'kubejs:farmer_axe'
+	let types = [
+		"ice",
+		"fire",
+		"lightning"
 	].forEach(element => {
-		event.add(element,"§c§lWIP!")
+		let items = [
+			"helmet",
+			"chestplate",
+			"leggings",
+			"boots"
+		].forEach(item => {
+			event.addAdvanced("iceandfire:dragonsteel_"+element+"_"+item,(item, advanced, text) => {
+				if (event.ctrl) {
+					text.add(2,Text.red("Armor stats are subject to change."))
+				} else {
+					text.add(2,[Text.gray('Hold '), Text.red("Ctrl ").bold(true), Text.gray("for Warnings.")])
+				}
+			})
+		})
 	})
 
-	let ctmwip = [
-		'thermal:enderium_glass',
-		'thermal:lumium_glass',
-		'thermal:obsidian_glass',
-		'thermal:signalum_glass',
-		'minecraft:bookshelf',
-		'minecraft:sandstone',
-		'minecraft:red_sandstone'
-	].forEach(element => {
-		event.add(element,"§c§lCTM WIP!")
-	})
 
 	//ORES SECTION
+	//TODO: rewrite to look more like "Create Above And Beyond"
 
 	let setOre = (id,min,max,rate,peak,exposure,note) => {
 		let spawn = ['Very Low','Low','Normal','High','Very High']
@@ -99,6 +287,7 @@ ItemEvents.tooltip(event => {
 
 	let setThermalOre = (name,min,max,rate,exposure,note) => {
 		let calc = (min + max) / 2
+		if (calc == 0) calc = "0"
 		setWorldOre('thermal',name,min,max,rate,calc,exposure,note)
 	}
 
@@ -124,6 +313,9 @@ ItemEvents.tooltip(event => {
 
 	setThermalOre('tin_ore',-40,60,3)
 	setThermalOre('lead_ore',-60,40,2)
+	setThermalOre('lead_ore',-60,40,2)
+	setThermalOre('ruby_ore',-32,32,2)
+	setThermalOre('sapphire_ore',-32,32,2)
 	setThermalOre('silver_ore',-60,40,1)
 	setThermalOre('nickel_ore',-40,120,2)
 	setThermalOre('sulfur_ore',-16,32,2)
@@ -134,7 +326,7 @@ ItemEvents.tooltip(event => {
 	setOre('thermal:oil_sand',null,null,4,null,null,'to Find in Desert Biomes')
 	setOre('thermal:oil_red_sand',null,null,4,null,null,'to Find in Desert Biomes')
 
-	setWorldOre('thermal','ruby_ore',null,null,null,null,null,'ERROR: not found')
-	setWorldOre('thermal','sapphire_ore',null,null,null,null,null,'ERROR: not found')
+	//setWorldOre('thermal','ruby_ore',null,null,null,null,null,'ERROR: not found')
+	//setWorldOre('thermal','sapphire_ore',null,null,null,null,null,'ERROR: not found')
 
 })

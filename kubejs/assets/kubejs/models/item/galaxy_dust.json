@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+        "layer0": "kubejs:item/galaxy_dust",
+		"layer1": "kubejs:item/stars_sparkle"
+    }
+}

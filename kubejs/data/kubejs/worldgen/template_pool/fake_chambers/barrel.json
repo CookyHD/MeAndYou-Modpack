@@ -1,0 +1,33 @@
+{
+	"name": "kubejs:fake_chambers/barrel",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 10,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "kubejs:fake_chambers/barrels/rare",
+				"processors": "minecraft:empty"
+			}
+		},
+		{
+			"weight": 30,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "kubejs:fake_chambers/barrels/normal",
+				"processors": "minecraft:empty"
+			}
+		},
+		{
+			"weight": 50,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "kubejs:fake_chambers/barrels/empty",
+				"processors": "minecraft:empty"
+			}
+		}
+	]
+}

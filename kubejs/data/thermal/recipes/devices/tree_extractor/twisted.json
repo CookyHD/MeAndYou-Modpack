@@ -1,0 +1,22 @@
+{
+	"type": "thermal:tree_extractor",
+	"trunk": {
+		"Name": "architects_palette:twisted_log"
+	},
+	"leaves": {
+		"Name": "architects_palette:twisted_leaves",
+		"Properties": {
+			"persistent": "false"
+		}
+	},
+	"sapling": "architects_palette:twisted_sapling",
+	"min_height": 1,
+	"max_height": 128,
+	"min_leaves": 1,
+	"max_leaves": 1024,
+	"result": {
+		"fluid": "minecraft:lava",
+		"amount": 15 
+	}
+}
+	

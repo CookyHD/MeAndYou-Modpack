@@ -1,0 +1,74 @@
+{
+    "structures": [
+        {
+            "structure": "battletowers:jungle_tower",
+            "weight": 500
+        },
+		{
+            "structure": "battletowers:ice_tower",
+            "weight": 500
+        },
+		{
+            "structure": "battletowers:netherrack_tower",
+            "weight": 5
+        },
+		{
+            "structure": "battletowers:end_stone_tower",
+            "weight": 500
+        },
+        {
+            "structure": "battletowers:cobblestone_tower",
+            "weight": 500
+        },
+        {
+            "structure": "battletowers:red_sandstone_tower",
+            "weight": 500
+        },
+        {
+            "structure": "battletowers:sandstone_tower",
+            "weight": 500
+        },
+        {
+            "structure": "battletowers:stone_tower",
+            "weight": 500
+        },
+        {
+            "structure": "battletowers:underground_jungle_tower",
+            "weight": 100
+        },
+		{
+            "structure": "battletowers:underground_ice_tower",
+            "weight": 100
+        },
+		{
+            "structure": "battletowers:underground_netherrack_tower",
+            "weight": 1
+        },
+		{
+            "structure": "battletowers:underground_end_stone_tower",
+            "weight": 100
+        },
+        {
+            "structure": "battletowers:underground_cobblestone_tower",
+            "weight": 100
+        },
+        {
+            "structure": "battletowers:underground_red_sandstone_tower",
+            "weight": 100
+        },
+        {
+            "structure": "battletowers:underground_sandstone_tower",
+            "weight": 100
+        },
+        {
+            "structure": "battletowers:underground_stone_tower",
+            "weight": 100
+        }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 40,
+        "separation": 15,
+        "salt": 718165913
+    }
+}

@@ -7,7 +7,111 @@ ServerEvents.recipes(event => {
 		event.remove({ input: `${id}` })
 	}
 
+	let inter
+
 	let ban = [
+		'mace_port:heavy_core',
+		'biomesoplenty:orange_sandstone_slab',
+		'biomesoplenty:white_sandstone_slab',
+		'biomesoplenty:black_sandstone_slab',
+		'immersive_aircraft:quadrocopter',
+		'immersive_aircraft:airship',
+		'immersive_aircraft:biplane',
+		'man_of_many_planes:economy_plane',
+		'man_of_many_planes:scarlet_biplane',
+		'immersive_aircraft:cargo_airship',
+		'immersive_aircraft:industrial_gears',
+		'immersive_aircraft:engine',
+		'immersive_aircraft:sturdy_pipes',
+		'immersive_aircraft:rotary_cannon',
+		'immersive_aircraft:bomb_bay',
+		'immersive_aircraft:heavy_crossbow',
+		'immersive_aircraft:hull',
+		'immersive_aircraft:gyrodyne',
+		'immersive_aircraft:warship',
+		'immersive_aircraft:sail',
+		'immersive_aircraft:propeller',
+		'tesseract:tesseract',
+		'thermal:lumium_activator_rail',
+		'thermal:lumium_detector_rail',
+		'thermal:crossover_rail',
+		'thermal:prismarine_rail',
+		'thermal:prismarine_crossover_rail',
+		'thermal:prismarine_powered_rail',
+		'thermal:prismarine_activator_rail',
+		'thermal:prismarine_detector_rail',
+		'thermal:lumium_rail',
+		'thermal:lumium_powered_rail',
+		'thermal:lumium_crossover_rail',
+		'quarryplus:marker16',
+		'quarryplus:pump_module',
+		'quarryplus:exp_module',
+		'quarryplus:solid_fuel_quarry',
+		'quarryplus:filter_module',
+		'quarryplus:mini_quarry',
+		'quarryplus:waterlogged_marker16',
+		'quarryplus:waterlogged_flex_marker',
+		'quarryplus:waterlogged_marker',
+		'quarryplus:placer_plus',
+		'quarryplus:spawner_controller',
+		'quarryplus:creative_generator',
+		'quarryplus:workbench',
+		'quarryplus:replacer',
+		'quarryplus:exp_pump',
+		'quarryplus:adv_pump',
+		'quarryplus:adv_quarry',
+		'quarryplus:pump_plus',
+		'quarryplus:status_checker',
+		'quarryplus:mover',
+		'quarryplus:mining_well',
+		'quarryplus:fuel_module_normal',
+		'quarryplus:y_setter',
+		'quarryplus:filler',
+		'quarryplus:remote_placer',
+		'quarryplus:replacer_module',
+		'quarryplus:remove_bedrock_module',
+		'quarryplus:filler_module',
+		'sfm:manager',
+		'sfm:cable',
+		'sfm:disk',
+		'sfm:printing_press',
+		'sfm:xp_goop',
+		'sfm:xp_shard',
+		'sfm:water_tank',
+		"create_sa:slime_helmet",
+		'usefulslime:slippery_slime_block',
+		'usefulslime:slime_chestplate',
+		'usefulslime:slime_helmet',
+		'usefulslime:slime_leggings',
+		'usefulslime:jello',
+		'create_sa:copper_exoskeleton_chestplate',
+		'createdeco:brass_support',
+		'createdeco:andesite_support',
+		'createdeco:iron_support',
+		'createdeco:copper_support',
+		'createdeco:zinc_support',
+		'createdeco:industrial_iron_support',
+		'measurements:tape_measure',
+		'create_sa:copper_jetpack_chestplate',
+		'create_sa:grapplin_whisk',
+		'create_sa:portable_drill',
+		'create_sa:drone_controller',
+		'create_sa:brass_drone_item',
+		'create_sa:block_picker', 
+		'create_sa:hydraulic_engine',
+		'create_sa:heat_engine',
+		'create_sa:flamethrower',
+		'create_sa:copper_magnet',
+		'create_sa:vault_component',
+		'create_sa:fan_component', 
+		'create_sa:brass_drill_head',
+		'create_sa:brass_cube',
+		'create_sa:steam_engine',
+		'create_sa:andesite_jetpack_chestplate',
+		'create_sa:andesite_exoskeleton_chestplate',
+		'torchmaster:dreadlamp',
+		'torchmaster:feral_flare_lantern',
+		'torchmaster:frozen_pearl',
 		'railways:blue_conductor_cap',
 		'railways:cyan_conductor_cap',
 		'railways:light_blue_conductor_cap',
@@ -42,19 +146,14 @@ ServerEvents.recipes(event => {
 		'comforts:hammock_black',
 		'colossalchests:colossal_chest_copper',
 		'colossalchests:interface_obsidian',
-		'colossalchests:chest_wall_copper',
-		'colossalchests:chest_wall_iron',
 		'colossalchests:chest_wall_silver',
-		'colossalchests:chest_wall_gold',
-		'colossalchests:chest_wall_diamond',
-		'colossalchests:chest_wall_obsidian',
-		'colossalchests:upgrade_tool',
-		'colossalchests:upgrade_tool_reverse',
 		'colossalchests:colossal_chest_diamond',
 		'colossalchests:interface_diamond',
 		'colossalchests:colossal_chest_obsidian',
 		'colossalchests:interface_gold',
 		'colossalchests:colossal_chest_gold',
+		'colossalchests:interface_wood',
+		'colossalchests:colossal_chest_wood',
 		'colossalchests:interface_silver',
 		'colossalchests:colossal_chest_silver',
 		'colossalchests:interface_iron',
@@ -105,7 +204,7 @@ ServerEvents.recipes(event => {
 		'railways:portable_fuel_interface'
 	].forEach(e => {
 		event.remove({ output: `${e}` })
-	});
+	})
 
 	let cultBan = [
 		'thermal:rice_seeds',
@@ -123,13 +222,188 @@ ServerEvents.recipes(event => {
 		'thermal:apple_block'
 	].forEach(e => {
 		event.remove({ output: `${e}` })
-	});
+	})
+
+	let iafBan = [
+		'iceandfire:silver_ingot',
+		'iceandfire:raw_silver',
+		'iceandfire:copper_nugget',
+		'iceandfire:sapphire_gem',
+		'iceandfire:witherbone',
+		'iceandfire:copper_hoe',
+		'iceandfire:copper_axe',
+		'iceandfire:copper_pickaxe',
+		'iceandfire:copper_shovel',
+		'iceandfire:copper_sword',
+		'iceandfire:hippocampus_slapper',
+		'iceandfire:hippocampus_fin',
+		'iceandfire:siren_flute',
+		'iceandfire:siren_tear', 'iceandfire:shiny_scales',
+		'iceandfire:mountain_troll_leather_boots',
+		'iceandfire:gorgon_head',
+		'iceandfire:stone_statue',
+		'iceandfire:pixie_dust',
+		'iceandfire:pixie_wings',
+		'iceandfire:pixie_wand',
+		'iceandfire:ambrosia',
+		'iceandfire:cyclops_eye',
+		'iceandfire:deathworm_chitin_yellow',
+		'iceandfire:earplugs',
+		'iceandfire:deathworm_white_leggings',
+		'iceandfire:deathworm_white_chestplate',
+		'iceandfire:deathworm_white_helmet',
+		'iceandfire:deathworm_yellow_boots',
+		'iceandfire:deathworm_yellow_leggings',
+		'iceandfire:deathworm_yellow_chestplate',
+		'iceandfire:deathworm_yellow_helmet',
+		'iceandfire:deathworm_chitin_red',
+		'iceandfire:deathworm_chitin_white',
+		'iceandfire:deathworm_gauntlet_yellow',
+		'iceandfire:deathworm_tounge',
+		'iceandfire:deathworm_egg_giant',
+		'iceandfire:deathworm_egg',
+		'iceandfire:deathworm_red_boots',
+		'iceandfire:deathworm_red_leggings',
+		'iceandfire:deathworm_red_chestplate',
+		'iceandfire:deathworm_red_helmet',
+		'iceandfire:deathworm_white_boots',
+		'iceandfire:myrmex_desert_resin',
+		'iceandfire:myrmex_jungle_egg',
+		'iceandfire:myrmex_desert_egg',
+		'iceandfire:troll_tusk',
+		'iceandfire:mountain_troll_leather_leggings',
+		'iceandfire:mountain_troll_leather_chestplate',
+		'iceandfire:mountain_troll_leather_helmet',
+		'iceandfire:deathworm_gauntlet_red',
+		'iceandfire:deathworm_gauntlet_white',
+		'iceandfire:troll_leather_mountain',
+		'iceandfire:myrmex_jungle_swarm',
+		'iceandfire:amphithere_feather',
+		'iceandfire:amphithere_arrow',
+		'iceandfire:amphithere_macuahuitl',
+		'iceandfire:dread_knight_sword',
+		'iceandfire:lich_staff',
+		'iceandfire:dread_shard',
+		'iceandfire:banner_pattern_fae',
+		'iceandfire:banner_pattern_troll',
+		'iceandfire:banner_pattern_weezer',
+		'iceandfire:banner_pattern_dread',
+		'iceandfire:banner_pattern_hippocampus',
+		'iceandfire:cockatrice_skull',
+		'iceandfire:amphithere_skull',
+		'iceandfire:troll_weapon_axe',
+		'iceandfire:troll_weapon_column_forest',
+		'iceandfire:banner_pattern_amphithere',
+		'iceandfire:dread_queen_staff',
+		'iceandfire:dread_queen_sword',
+		'iceandfire:banner_pattern_gorgon',
+		'iceandfire:banner_pattern_mermaid',
+		'iceandfire:cyclops_skull',
+		'iceandfire:dread_sword',
+		'iceandfire:troll_skull',
+		'iceandfire:troll_weapon_column',
+		'iceandfire:dread_key',
+		'iceandfire:banner_pattern_eye',
+		'iceandfire:myrmex_jungle_resin',
+		'iceandfire:myrmex_desert_chitin',
+		'iceandfire:myrmex_jungle_chitin',
+		'iceandfire:myrmex_stinger',
+		'iceandfire:myrmex_desert_sword',
+		'iceandfire:myrmex_desert_sword_venom',
+		'iceandfire:myrmex_desert_shovel',
+		'iceandfire:myrmex_desert_pickaxe',
+		'iceandfire:myrmex_desert_axe',
+		'iceandfire:myrmex_desert_hoe',
+		'iceandfire:myrmex_jungle_sword',
+		'iceandfire:myrmex_jungle_sword_venom',
+		'iceandfire:myrmex_jungle_shovel',
+		'iceandfire:myrmex_jungle_pickaxe',
+		'iceandfire:myrmex_jungle_axe',
+		'iceandfire:myrmex_jungle_hoe',
+		'iceandfire:myrmex_jungle_staff',
+		'iceandfire:myrmex_desert_staff',
+		'iceandfire:myrmex_desert_helmet',
+		'iceandfire:myrmex_desert_chestplate',
+		'iceandfire:myrmex_desert_leggings',
+		'iceandfire:myrmex_desert_boots',
+		'iceandfire:myrmex_jungle_helmet',
+		'iceandfire:myrmex_jungle_chestplate',
+		'iceandfire:myrmex_jungle_leggings',
+		'iceandfire:myrmex_jungle_boots',
+		'iceandfire:myrmex_desert_swarm',
+		'iceandfire:forest_troll_leather_helmet',
+		'iceandfire:forest_troll_leather_chestplate',
+		'iceandfire:forest_troll_leather_leggings',
+		'iceandfire:forest_troll_leather_boots',
+		'iceandfire:troll_weapon_column_frost',
+		'iceandfire:troll_weapon_hammer',
+		'iceandfire:troll_weapon_trunk',
+		'iceandfire:troll_weapon_trunk_frost',
+		'iceandfire:troll_leather_forest',
+		'iceandfire:troll_leather_frost',
+		'iceandfire:frost_troll_leather_helmet',
+		'iceandfire:frost_troll_leather_chestplate',
+		'iceandfire:frost_troll_leather_leggings',
+		'iceandfire:frost_troll_leather_boots',
+		'iceandfire:lectern',
+		'iceandfire:silver_ore',
+		'iceandfire:deepslate_silver_ore',
+		'iceandfire:silver_block',
+		'iceandfire:sapphire_ore',
+		'iceandfire:sapphire_block',
+		'iceandfire:raw_silver_block',
+		'iceandfire:pixie_house_mushroom_red',
+		'iceandfire:pixie_house_mushroom_brown',
+		'iceandfire:pixie_house_oak',
+		'iceandfire:pixie_house_birch',
+		'iceandfire:pixie_house_spruce',
+		'iceandfire:pixie_house_dark_oak',
+		'iceandfire:pixie_jar_empty',
+		'iceandfire:pixie_jar_0',
+		'iceandfire:pixie_jar_1',
+		'iceandfire:pixie_jar_2',
+		'iceandfire:pixie_jar_3',
+		'iceandfire:pixie_jar_4',
+		'iceandfire:myrmex_resin_desert',
+		'iceandfire:myrmex_resin_sticky_desert',
+		'iceandfire:myrmex_resin_jungle',
+		'iceandfire:myrmex_resin_sticky_jungle',
+		'iceandfire:desert_myrmex_cocoon',
+		'iceandfire:jungle_myrmex_cocoon',
+		'iceandfire:myrmex_jungle_biolight',
+		'iceandfire:myrmex_desert_resin_block',
+		'iceandfire:myrmex_desert_resin_glass',
+		'iceandfire:myrmex_jungle_resin_block',
+		'iceandfire:myrmex_jungle_resin_glass',
+		'iceandfire:dread_stone',
+		'iceandfire:dread_stone_bricks',
+		'iceandfire:dread_stone_bricks_chiseled',
+		'iceandfire:dread_stone_bricks_cracked',
+		'iceandfire:dread_stone_bricks_mossy',
+		'iceandfire:dread_stone_tile',
+		'iceandfire:dread_stone_face',
+		'iceandfire:dread_torch',
+		'iceandfire:dread_stone_stairs',
+		'iceandfire:myrmex_desert_biolight',
+		'iceandfire:dread_stone_slab',
+		'iceandfire:dreadwood_log',
+		'iceandfire:burnt_torch',
+		'iceandfire:dreadwood_planks',
+		'iceandfire:dreadwood_planks_lock',
+		'iceandfire:dread_portal',
+		'iceandfire:dread_spawner',
+		'iceandfire:armor_copper_metal_boots',
+		'iceandfire:armor_copper_metal_leggings',
+		'iceandfire:armor_copper_metal_chestplate',
+		'iceandfire:armor_copper_metal_helmet',
+	].forEach(e => {
+		event.remove({ output: `${e}` })
+	})
 
 	event.remove({ output: 'endertanks:ender_tank' })
 	event.remove({ output: 'enderchests:ender_chest' })
 	event.remove({ output: 'endertanks:ender_bucket' })
 	event.remove({ output: 'enderchests:ender_bag' })
-	event.remove({ output: 'enderchests:ender_pouch' })
 	event.remove({ output: 'comforts:rope_and_nail' })
 	event.remove({ output: 'waystones:warp_plate' })
 	event.remove({ output: 'waystones:warp_dust' })
@@ -178,7 +452,6 @@ ServerEvents.recipes(event => {
 	event.remove({ id: 'thermal:machine/biggerreactors/pulverizer_mod_luducrute_ingot' })
 	event.remove({ id: 'create:empty_endertanks_ender_tank_of_minecraft_water' })
 	event.remove({ output: 'clickmachine:auto_clicker' })
-	event.remove({ output: 'botania:spawner_mover' })
 	event.remove({ output: 'botania:mana_bomb'})
 	event.remove({ id: 'create:crafting/appliances/dough' })
 	event.remove({ id: 'create:mixing/dough_by_mixing' })
@@ -191,11 +464,29 @@ ServerEvents.recipes(event => {
 	event.remove({ output: 'elytraboosters:fuel_pellet_fast' })
 	event.remove({ output: 'elytraboosters:fuel_pellet_slow' })
 	event.remove({ output: 'elytraboosters:fuel_pellet_standard' })
-	event.remove({ output: 'aether:iron_ring' })
-	event.remove({ output: 'aether:golden_ring' })
 	event.remove({ id: 'create:mixing/tea' })
 	event.remove({ id: 'aether:skyroot_chest' })
 	event.remove({ output: 'farmersdelight:fried_egg' })
+	event.remove({ output: 'extractinator:extractinator' })
+	event.remove({ id: 'extractinator:extractinating/sand' })
+	event.remove({ id: 'extractinator:extractinating/stone' })
+	event.remove({ id: 'extractinator:extractinating/gravel' })
+	event.remove({ id: 'extractinator:extractinating/cobblestone' })
+	event.remove({ id: 'extractinator:extractinating/silt' })
+	event.remove({ id: 'extractinator:extractinating/slush' })
+	event.remove({ id: 'chisel_chipped_integration:mason_table' })
+	event.remove({ id: 'chisel_chipped_integration:tinkering_table' })
+	event.remove({ id: 'iceandfire:bestiary' })
+	event.remove({ id: 'iceandfire:summoning_crystal_fire' })
+	event.remove({ id: 'iceandfire:silver_ingot_to_silver_nugget' })
+	event.remove({ id: 'iceandfire:dragonforge/dragonsteel_fire_ingot' })
+	event.remove({ id: 'iceandfire:dragonforge/dragonsteel_ice_ingot' })
+	event.remove({ id: 'iceandfire:dragonforge/dragonsteel_lightning_ingot' })
+	event.remove({ id: 'architects_palette:bone_meal' })
+	event.remove({ id: 'create_sa:netherite_jetpack_recipe' })
+
+	event.remove({ type: "sfm:printing_press" })
+	event.remove({ type: "sfm:falling_anvil" })
 
 	removeInAndOut('createdeco:netherite_nugget')
 
@@ -239,6 +530,498 @@ ServerEvents.recipes(event => {
 		'create:copper_nugget'
 	)
 
+	event.replaceOutput(
+		{ output: 'iceandfire:silver_nugget' },
+		'iceandfire:silver_nugget',
+		'thermal:silver_nugget'
+	)
+
+	event.replaceInput(
+		{ input: 'immersive_aircraft:propeller'},
+		'immersive_aircraft:propeller',
+		'create:propeller'
+	)
+
+	event.replaceInput(
+		{ id: 'immersive_aircraft:improved_landing_gear'},
+		'minecraft:coal',
+		'thermal:cured_rubber'
+	)
+
+	event.replaceInput(
+		{ id: 'architects_palette:hadaline_tiles'},
+		'architects_palette:hadaline',
+		'architects_palette:hadaline_bricks'
+	)
+
+	event.replaceInput(
+		{ id: 'chisel_chipped_integration:crafting/futura_block'},
+		'minecraft:redstone',
+		'minecraft:glowstone_dust'
+	)
+
+	event.shaped('6x biomesoplenty:orange_sandstone_slab', [
+		'AAA'
+	], {
+		A: ['biomesoplenty:orange_sandstone', 'biomesoplenty:chiseled_orange_sandstone']
+	})
+
+	event.shaped('6x biomesoplenty:white_sandstone_slab', [
+		'AAA'
+	], {
+		A: ['biomesoplenty:white_sandstone', 'biomesoplenty:chiseled_white_sandstone']
+	})
+
+	event.shaped('6x biomesoplenty:black_sandstone_slab', [
+		'AAA'
+	], {
+		A: ['biomesoplenty:black_sandstone', 'biomesoplenty:chiseled_black_sandstone']
+	})
+
+	event.shaped('immersive_aircraft:industrial_gears', [
+		'  C', 
+		' B ',
+		'A  '
+	], {
+		A: 'thermal:iron_gear',
+		B: 'create:large_cogwheel',
+		C: 'thermal:copper_gear'
+	})
+
+	event.shaped('immersive_aircraft:sturdy_pipes', [
+		'ABA'
+	], {
+		A: 'minecraft:iron_ingot',
+		B: 'create:fluid_pipe',
+	})
+
+	event.shaped('immersive_aircraft:bomb_bay', [
+		'ABA',
+		'ACA'
+	], {
+		A: 'minecraft:iron_ingot',
+		B: 'minecraft:slime_block',
+		C: 'minecraft:tnt'
+	})
+
+	event.shaped('immersive_aircraft:heavy_crossbow', [
+		'AB',
+		'BC'
+	], {
+		A: 'minecraft:crossbow',
+		B: '#minecraft:logs',
+		C: 'minecraft:iron_ingot'
+	})
+
+	event.shaped('immersive_aircraft:hull', [
+		'ABA',
+		'CCC',
+		'ABA'
+	], {
+		A: '#minecraft:logs',
+		B: 'create:brass_ingot',
+		C: 'minecraft:iron_ingot'
+	})
+
+	event.shaped('immersive_aircraft:rotary_cannon', [
+		'DCA',
+		' B ',
+		' A '
+	], {
+		A: 'minecraft:copper_ingot',
+		B: 'immersive_aircraft:industrial_gears',
+		C: 'minecraft:dispenser',
+		D: 'create:precision_mechanism'
+	})
+
+	event.shaped('immersive_aircraft:engine', [
+		'CEC',
+		'ABA',
+		'ADA'
+	], {
+		A: 'minecraft:iron_ingot',
+		B: 'minecraft:blast_furnace',
+		C: 'minecraft:piston',
+		D: 'immersive_aircraft:boiler',
+		E: 'create:precision_mechanism'
+	})
+
+	['man_of_many_planes:economy_plane', 'create:white_sail', 'create:propeller', 'immersive_aircraft:engine', 'immersive_aircraft:hull']
+
+	event.recipes.create.mechanical_crafting('man_of_many_planes:economy_plane',[
+		' HS  ',
+		' HS  ',
+		'PHSHS',
+		' EHHS',
+		'PHSHS',
+		' HS  ',
+		' HS  '
+	],{
+		E: 'immersive_aircraft:engine',
+		P: 'create:propeller',
+		H: 'immersive_aircraft:hull',
+		S: 'create:white_sail'
+	})
+
+	event.recipes.create.mechanical_crafting('immersive_aircraft:biplane',[
+		' HS  ',
+		' HSHS',
+		'PEHHS',
+		' HSHS',
+		' HS  ',
+	],{
+		E: 'immersive_aircraft:engine',
+		P: 'create:propeller',
+		H: 'immersive_aircraft:hull',
+		S: 'create:white_sail'
+	})
+
+	event.recipes.create.mechanical_crafting('man_of_many_planes:scarlet_biplane',[
+		'  II  ',
+		'  HS  ',
+		'  HSII',
+		'IIHSHS',
+		'PEEHHS',
+		'IIHSHS',
+		'  HSII',
+		'  HS  ',
+		'  II  ',
+	],{
+		E: 'immersive_aircraft:engine',
+		P: 'create:propeller',
+		H: 'immersive_aircraft:hull',
+		S: 'create:white_sail',
+		I: 'minecraft:iron_ingot'
+	})
+
+	event.recipes.create.mechanical_crafting('immersive_aircraft:quadrocopter',[
+		'PB BP',
+		'BBHBB',
+		' HHE ',
+		'BBHBB',
+		'PB BP',
+	],{
+		E: 'immersive_aircraft:engine',
+		P: 'create:propeller',
+		H: 'immersive_aircraft:hull',
+		B: 'minecraft:bamboo'
+	})
+
+	event.recipes.create.mechanical_crafting('immersive_aircraft:airship',[
+		'SSSSS',
+		'SSSSS',
+		'RSSSR',
+		' R R ',
+		' HHES',
+		'  HH '
+	],{
+		E: 'immersive_aircraft:engine',
+		H: 'immersive_aircraft:hull',
+		S: 'create:white_sail',
+		R: 'farmersdelight:rope'
+	})
+
+	event.shaped('immersive_aircraft:cargo_airship', [
+		'ABA',
+		'ADA',
+		'CBC'
+	], {
+		A: '#forge:chests/wooden',
+		B: 'immersive_aircraft:hull',
+		C: 'farmersdelight:rope',
+		D: 'immersive_aircraft:airship'
+	})
+
+	let weapons = [
+		'gunswithoutrosesadditions:terra_shotgun',
+		'gunswithoutrosesadditions:manasteel_gun',
+		'gunswithoutroses:diamond_gatling',
+		'gunswithoutroses:diamond_sniper',
+		'gunswithoutroses:diamond_shotgun',
+		'gunswithoutroses:gold_gun',
+		'gunswithoutroses:iron_gun',
+		'meetyourfight:cocktail_shotgun',
+		'meetyourfight:phantasmal_rifle',
+		'gunswithoutrosesadditions:terra_shotgun',
+		'gunswithoutrosesadditions:elementium_gun'
+	].forEach(e => {
+		event.replaceInput(
+			{ id: e},
+			"minecraft:flint",
+			"create:precision_mechanism"
+		)
+	})
+
+	event.replaceInput(
+		{ id: 'reliquary:hammer_assembly'},
+		"minecraft:stone_button",
+		"create:precision_mechanism"
+	)
+
+	event.replaceInput(
+		{ id: 'enderchests:ender_pouch'},
+		"minecraft:ender_eye",
+		"minecraft:ender_chest"
+	)
+
+	event.remove({ id: 'gunswithoutroses:blaze_gun' })
+
+	event.shaped('gunswithoutroses:blaze_gun', [
+		'A  ', 
+		'BAC',
+		' BA'
+	], {
+		A: 'minecraft:nether_brick',
+		B: 'minecraft:blaze_rod',
+		C: 'gunswithoutroses:gold_gun'
+	})
+
+	event.replaceInput(
+		{ id: 'meetyourfight:haunted_bell'},
+		'minecraft:cobbled_deepslate',
+		'minecraft:soul_sand'
+	)
+
+	event.replaceInput(
+		{ input: 'immersive_aircraft:sail'},
+		'immersive_aircraft:sail',
+		'create:white_sail'
+	)
+
+	event.replaceInput(
+		{ id: 'create_sa:brass_jetpack_recipe'},
+		'create_sa:steam_engine',
+		'create:precision_mechanism'
+	)
+
+	event.replaceInput(
+		{ id: 'create_sa:slime_boots_recipe'},
+		'minecraft:slime_ball',
+		'minecraft:slime_block'
+	)
+
+	event.replaceInput(
+		{ id: 'usefulslime:slime_boots'},
+		'minecraft:slime_ball',
+		'#forge:slimeballs'
+	)
+
+	event.replaceInput(
+		{ id: 'usefulslime:slime_sling'},
+		'minecraft:slime_ball',
+		'#forge:slimeballs'
+	)
+
+	event.replaceInput(
+		{ id: 'create_sa:brass_exoskeleton_recipe'},
+		'create_sa:steam_engine',
+		'create:precision_mechanism'
+	)
+
+	event.replaceInput(
+		{ id: 'colossalchests:chest_wall_obsidian'},
+		"#minecraft:logs",
+		'colossalchests:chest_wall_diamond'
+	)
+
+	let collos = [
+		"wood",
+		"copper",
+		"iron",
+		"gold",
+		"diamond",
+		"obsidian"
+	].forEach(e => {
+		event.shaped('colossalchests:interface_'+e, [
+			' B ', 
+			'BAB',
+			' B '
+		], {
+			A: 'colossalchests:chest_wall_'+e,
+			B: '#forge:stone'
+		})
+		event.shaped('colossalchests:colossal_chest_'+e, [
+			' B ', 
+			'BAB',
+			' B '
+		], {
+			A: 'colossalchests:chest_wall_'+e,
+			B: 'minecraft:emerald'
+		})
+	})
+
+	event.shaped('quarryplus:solid_fuel_quarry', [
+		'ABA', 
+		'ACA',
+		'ADA'
+	], {
+		A: 'minecraft:iron_ingot',
+		B: 'minecraft:blast_furnace',
+		C: 'thermal:iron_gear',
+		D: 'minecraft:iron_pickaxe'
+	})
+
+	event.shaped('quarryplus:quarry', [
+		'ADA', 
+		'BEB',
+		'CFC'
+	], {
+		A: 'thermal:iron_gear',
+		B: 'thermal:gold_gear',
+		C: 'thermal:diamond_gear',
+		D: 'thermal:rf_coil',
+		E: 'quarryplus:solid_fuel_quarry',
+		F: 'minecraft:diamond_pickaxe'
+	})
+
+	event.shaped('quarryplus:book_mover', [
+		'ADA', 
+		'BAB',
+		'CEC'
+	], {
+		A: 'thermal:gold_gear',
+		B: 'thermal:diamond_gear',
+		C: 'thermal:enderium_gear',
+		D: 'thermal:rf_coil',
+		E: "minecraft:enchanting_table",
+	})
+
+	event.shaped('quarryplus:pump_module', [
+		'ABA', 
+		'ACA',
+		'ADA'
+	], {
+		A: 'minecraft:copper_ingot',
+		B: '#thermal:glass/hardened',
+		C: 'thermal:gold_gear',
+		D: 'minecraft:cactus'
+	})
+
+	event.shaped('quarryplus:exp_module', [
+		' B ', 
+		'ACA',
+		' A '
+	], {
+		A: 'minecraft:gold_ingot',
+		B: 'thermal:xp_crystal',
+		C: 'quarryplus:pump_module',
+	})
+
+	event.shaped('quarryplus:repeat_tick_module', [
+		'ABA', 
+		'CDC'
+	], {
+		A: 'minecraft:sugar',
+		B: 'thermal:diamond_gear',
+		C: 'thermal:signalum_ingot',
+		D: 'thermal:redstone_servo'
+	})
+
+	event.shaped('quarryplus:marker', [
+		'A', 
+		'B'
+	], {
+		A: 'minecraft:glowstone_dust',
+		B: 'minecraft:redstone_torch'
+	})
+
+	event.shaped('quarryplus:marker16', [
+		'A', 
+		'B'
+	], {
+		A: '#forge:storage_blocks/redstone',
+		B: 'quarryplus:flex_marker'
+	})
+
+	event.shaped('tesseract:tesseract', [
+		'ADA', 
+		'BFC',
+		'AEA'
+	], {
+		A: '#forge:obsidian',
+		B: 'endertanks:ender_tank',
+		C: 'enderchests:ender_chest',
+		D: 'minecraft:redstone',
+		E: 'thermal:rf_coil',
+		F: 'thermal:enderium_block'
+	})
+
+	event.shaped('tesseract:tesseract', [
+		'ADA', 
+		'CFB',
+		'AEA'
+	], {
+		A: '#forge:obsidian',
+		B: 'endertanks:ender_tank',
+		C: 'enderchests:ender_chest',
+		D: 'minecraft:redstone',
+		E: 'thermal:rf_coil',
+		F: 'thermal:enderium_block'
+	})
+
+	event.shaped('sfm:manager', [
+		'CBC', 
+		'BAB',
+		'CBC'
+	], {
+		A: 'kubejs:star_block',
+		B: 'sfm:cable',
+		C: 'minecraft:redstone'
+	})
+
+	event.shaped('sfm:water_tank', [
+		'CBC', 
+		'DAD',
+		'CBC'
+	], {
+		A: 'kubejs:star_block',
+		B: "minecraft:water_bucket",
+		C: "minecraft:iron_ingot",
+		D: "minecraft:gold_ingot"
+	})
+
+	event.shaped('4x sfm:cable', [
+		'CDC', 
+		'BAB',
+		'CDC'
+	], {
+		A: 'pipez:universal_pipe',
+		B: 'minecraft:iron_ingot',
+		C: 'thermal:cured_rubber',
+		D: 'minecraft:gold_ingot'
+	})
+
+	event.shaped('sfm:disk', [
+		'DFG', 
+		'CBC',
+		'AAA'
+	], {
+		A: 'minecraft:redstone',
+		B: 'minecraft:diamond',
+		C: 'minecraft:paper',
+		D: 'minecraft:blue_dye',
+		F: 'minecraft:green_dye',
+		G: 'minecraft:red_dye',
+	})
+
+	event.replaceInput(
+		{ id: 'sfm:labelgun'},
+		'minecraft:blue_dye',
+		'#forge:dyes'
+	)
+
+	event.replaceInput(
+		{ id: 'sfm:labelgun'},
+		'minecraft:black_dye',
+		'#forge:dyes'
+	)
+
+	event.replaceInput(
+		{ id: 'sfm:network_tool'},
+		"minecraft:heavy_weighted_pressure_plate",
+		"minecraft:redstone_lamp"
+	)
+
 	event.shaped('4x thermal:nuke_grenade', [
 			'CBC', 
 			'BAB',
@@ -270,6 +1053,16 @@ ServerEvents.recipes(event => {
 			C: 'botania:glimmering_livingwood_log'
 		}
 	)
+
+	event.shaped('create_sa:slime_helmet', [
+		'ABA', 
+		'C C'
+	], {
+		A: '#forge:slimeballs',
+		B: 'minecraft:slime_block',
+		C: 'create:andesite_alloy'
+	})
+
 	event.shaped('6x pipez:item_pipe', [
 			'ABA'
 		], {
@@ -318,7 +1111,7 @@ ServerEvents.recipes(event => {
 			'ABA',
 			'CDE'
 		], {
-			A: 'minecraft:redstone',
+			A: '#forge:slimeballs',
 			B: 'minecraft:diamond',
 			C: 'pipez:item_pipe',
 			D: 'pipez:fluid_pipe',
@@ -368,6 +1161,23 @@ ServerEvents.recipes(event => {
 		}
 	)
 
+	let supports = [
+		['createdeco:brass_support', 'create:brass_ingot'],
+		['createdeco:andesite_support', 'create:andesite_alloy'],
+		['createdeco:iron_support', 'minecraft:iron_ingot'],
+		['createdeco:copper_support', 'minecraft:copper_ingot'],
+		['createdeco:zinc_support', 'create:zinc_ingot'],
+		['createdeco:industrial_iron_support', 'createdeco:industrial_iron_ingot']
+	].forEach(e => {
+		event.shaped("4x "+e[0], [
+			'A A',
+			' A ',
+			'A A'
+		], {
+			A: e[1]
+		})
+	})
+
 	event.recipes.create.pressing('createdeco:netherite_coin', 'thermal:netherite_nugget',)
 	event.recipes.create.pressing('thermal:tin_plate', 'thermal:tin_ingot',)
 	event.recipes.create.pressing('thermal:lead_plate', 'thermal:lead_ingot')
@@ -382,6 +1192,23 @@ ServerEvents.recipes(event => {
 	event.recipes.create.pressing('thermal:electrum_plate', 'thermal:electrum_ingot')
 
 	event.recipes.create.compacting('thermal:rubber', Fluid.of('thermal:latex',250))
+
+	event.shapeless('kubejs:xp_converter_rel', [
+		"minecraft:gold_ingot",
+		"minecraft:ender_pearl",
+		"minecraft:lapis_lazuli"
+	])
+
+	event.shapeless('kubejs:xp_converter_rel', [
+		"kubejs:xp_converter_knw"
+	])
+
+	event.shapeless("kubejs:xp_converter_knw", [
+		"kubejs:xp_converter_rel"
+	])
+
+	event.recipes.create.mixing(['kubejs:xp_converter_rel',Fluid.of("reliquary:xp_juice_still",250)],['kubejs:xp_converter_rel',Fluid.of("cofh_core:experience",250)])
+	event.recipes.create.mixing(['kubejs:xp_converter_knw',Fluid.of("cofh_core:experience",250)],['kubejs:xp_converter_knw',Fluid.of("reliquary:xp_juice_still",250)])
 
 	event.shapeless('4x thermal:rubber', [
 			'thermal:latex_bucket'
@@ -502,7 +1329,7 @@ ServerEvents.recipes(event => {
 
 	event.shapeless('4x kubejs:dark_stone', [
 			'minecraft:soul_sand',
-			'4x minecraft:smooth_stone',
+			'4x #forge:stone',
 		]
 	)
 
@@ -514,6 +1341,7 @@ ServerEvents.recipes(event => {
 				'#forge:raw_mutton',
 				'#forge:raw_beef',
 				'#forge:raw_fishes',
+				'aquaculture:fish_fillet_raw'
 			], 
 			'#minecraft:powders',
 			'#minecraft:powders'
@@ -616,9 +1444,9 @@ ServerEvents.recipes(event => {
 		], {
 			A: '#forge:plates/iron',
 			B: 'create:andesite_alloy',
-			C: 'createaddition:copper_spool',
+			C: 'kubejs:copper_spool',
 			D: 'createaddition:capacitor',
-			E: 'create:shaft'
+			E: 'createaddition:iron_rod'
 		}
 	)
 
@@ -630,13 +1458,15 @@ ServerEvents.recipes(event => {
 		], {
 			A: '#forge:plates/brass',
 			B: 'create:andesite_alloy',
-			C: 'createaddition:copper_spool',
+			C: 'kubejs:copper_spool',
 			D: 'createaddition:capacitor',
-			E: 'create:shaft'
+			E: 'createaddition:iron_rod'
 		}
 	)
 
 	event.recipes.createCrushing('thermal:diamond_dust', 'minecraft:diamond')
+	event.recipes.createCrushing(["4x kubejs:little_star",Item.of("2x kubejs:little_star").withChance(0.25)], "minecraft:nether_star")
+	event.recipes.thermal.pulverizer(["4x kubejs:little_star",Item.of("2x kubejs:little_star").withChance(0.25)], "minecraft:nether_star").energy(2000)
 
 	event.shapeless('createaddition:diamond_grit_sandpaper', [
 			'minecraft:paper',
@@ -655,6 +1485,16 @@ ServerEvents.recipes(event => {
 			D: 'create:brass_casing'
 		}
 	)
+
+	event.shaped('kubejs:xp_wand', [
+		' BC',
+		' AB',
+		'A  '
+	], {
+		A: "kubejs:reinforced_handle",
+		B: 'minecraft:emerald',
+		C: 'minecraft:experience_bottle'
+	})
 
 	event.shaped('createaddition:capacitor', [
 			'A',
@@ -678,20 +1518,34 @@ ServerEvents.recipes(event => {
 		}
 	)
 
-	event.shaped('8x createaddition:copper_spool', [
-			'AAA',
-			'ABA',
-			'AAA'
-		], {
-			A: '#forge:plates/copper',
-			B: '#minecraft:planks'
-		}
-	)
+	event.shaped('kubejs:copper_spool', [
+		' A ',
+		'ABA',
+		' A '
+	], {
+		A: 'createaddition:copper_wire',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('4x createaddition:iron_rod', [
+		'A',
+		'A'
+	], {
+		A: 'minecraft:iron_ingot'
+	})
+
+	event.shapeless('2x createaddition:copper_wire', [
+		'#forge:plates/copper',
+		'#forge:shears'
+	])
+	.damageIngredient('#forge:shears')
+
+	event.recipes.create.deploying('2x createaddition:copper_wire', ['#forge:plates/copper', '#forge:shears'])
 
 	event.shapeless('createaddition:portable_energy_interface', [
 			'create:brass_casing',
 			'create:chute',
-			'createaddition:copper_spool'
+			'kubejs:copper_spool'
 		]
 	)
 
@@ -888,8 +1742,6 @@ ServerEvents.recipes(event => {
 	event.recipes.botania.orechid_ignem('aether:zanite_ore','aether:holystone',29)
 	event.recipes.botania.orechid_ignem('aether:gravitite_ore','aether:holystone',2)
 
-	event.smelting('kubejs:bread_ingot','minecraft:bread').xp(0.1)
-
 	event.shapeless('3x create:dough', [
 		'minecraft:water_bucket',
 		'3x create:wheat_flour'
@@ -907,8 +1759,12 @@ ServerEvents.recipes(event => {
 		'minecraft:cookie'
 	])
 	
-	event.recipes.botania.mana_infusion('kubejs:magic_wheat','kubejs:powdered_wheat',3000,'kubejs:mutation_catalyst')
+	event.recipes.botania.mana_infusion('kubejs:magic_wheat','kubejs:rich_wheat',3000,'kubejs:mutation_catalyst')
+	event.recipes.botania.mana_infusion('kubejs:magic_beans','kubejs:rich_beans',3000,'kubejs:mutation_catalyst')
 	event.recipes.botania.mana_infusion('kubejs:bloody_tear','kubejs:droplet',3000,'kubejs:spark_catalyst')
+
+	event.recipes.create.filling('kubejs:gue', [Fluid.of("kubejs:heavy_fluid",250), '#forge:slimeballs'])
+	event.recipes.thermal.bottler('kubejs:gue', [Fluid.of("kubejs:heavy_fluid",250), '#forge:slimeballs']).energy(400)
 
 	event.shaped('kubejs:mutation_catalyst', [
 			'ABA',
@@ -935,13 +1791,14 @@ ServerEvents.recipes(event => {
 	)
 
 	event.shaped('kubejs:amplifyer_totem', [
-			'ACA',
+			'ADA',
 			'CBC',
-			'ACA'
+			'ADA'
 		], {
 			A: 'kubejs:dark_stone',
-			B: 'minecraft:redstone_block',
-			C: 'thermal:enderium_ingot'
+			B: 'kubejs:star_ingot',
+			C: 'thermal:enderium_ingot',
+			D: 'minecraft:redstone'
 		}
 	)
 
@@ -985,14 +1842,13 @@ ServerEvents.recipes(event => {
 	)
 
 	event.recipes.create.mixing(Fluid.of('kubejs:bloody_tear_fluid',1000),['4x kubejs:bloody_tear', Fluid.of('water',1000)])
-	event.recipes.create.mixing('kubejs:powdered_wheat',['minecraft:wheat','kubejs:power_dust'])
+	event.recipes.create.mixing('kubejs:powdered_wheat',['minecraft:wheat_seeds','kubejs:power_dust'])
 	event.recipes.create.mixing('kubejs:powdered_beans',['minecraft:cocoa_beans','kubejs:power_dust'])
 
-	event.shapeless('4x kubejs:power_dust', [
-		'minecraft:glowstone_dust',
+	event.shapeless('3x kubejs:power_dust', [
 		'minecraft:bone_meal',
-		'minecraft:bone_meal',
-		'minecraft:glowstone_dust'
+		'minecraft:redstone',
+		'minecraft:nether_wart'
 	])
 
 	event.recipes.botania.mana_infusion('create:ochrum','create:limestone',200,'botania:alchemy_catalyst')
@@ -1010,25 +1866,38 @@ ServerEvents.recipes(event => {
 	event.recipes.botania.mana_infusion('aether:icestone','aether:holystone',200,'botania:alchemy_catalyst')
 	event.recipes.botania.mana_infusion('aether:holystone','aether:icestone',200,'botania:alchemy_catalyst')
 
-	event.recipes.thermal.centrifuge(['2x kubejs:droplet', Item.of('kubejs:droplet').withChance(0.2)], 'minecraft:lapis_lazuli')
-	event.recipes.thermal.centrifuge(['18x kubejs:droplet', Item.of('9x kubejs:droplet').withChance(0.2)], 'minecraft:lapis_block')
+	event.recipes.thermal.centrifuge(['2x kubejs:droplet', Item.of('kubejs:droplet').withChance(0.2)], 'kubejs:gue')
 
-	event.recipes.thermal.insolator('kubejs:rich_beans', 'kubejs:powdered_beans').water(1000).energy(20000)
+	event.recipes.thermal.insolator([Item.of('minecraft:wheat').withChance(2),Item.of('minecraft:wheat_seeds').withChance(1.1),Item.of('kubejs:rich_wheat').withChance(0.1)],"kubejs:powdered_wheat")
+	event.recipes.thermal.insolator([Item.of('minecraft:cocoa_beans').withChance(2.5),Item.of('kubejs:rich_beans').withChance(0.1)],"kubejs:powdered_beans")
 
 	event.shaped('kubejs:super_cookie', [
 			'ABA'
 		], {
 			A: 'kubejs:magic_wheat',
-			B: 'kubejs:rich_beans'
+			B: 'kubejs:magic_beans'
 		}
 	)
 
-	event.recipes.thermal.bottler('kubejs:redstone_ingot',[Fluid.of('thermal:redstone',1000),'kubejs:star_ingot']).energy(4000)
-	event.recipes.thermal.insolator('kubejs:farmer_ingot', 'kubejs:star_ingot').water(1000).energy(40000)
-	event.recipes.thermal.furnace('kubejs:star_ingot','kubejs:star_dust').energy(4000)
+	event.recipes.thermal.bottler('kubejs:redstone_ingot',[Fluid.of('thermal:redstone',1000),'kubejs:star_ingot']).energy(2000)
+	event.recipes.create.filling('kubejs:redstone_ingot',[Fluid.of('thermal:redstone',1000),'kubejs:star_ingot'])
 
-	let inter = 'kubejs:incomplete_galaxy_cookie'
+	event.recipes.thermal.insolator(Item.of('kubejs:farmer_ingot').withChance(1.1), 'kubejs:star_ingot').water(1000).energy(20000)
+	event.recipes.thermal.furnace('kubejs:star_ingot','kubejs:star_dust').energy(2000)
 
+	event.recipes.thermal.furnace('kubejs:tech_ingot','kubejs:tech_dust').energy(2000)
+	event.recipes.thermal.furnace('kubejs:creativ_ingot','kubejs:creativ_dust').energy(2000)
+
+	event.smelting('kubejs:tech_ingot','kubejs:tech_dust')
+	event.blasting('kubejs:tech_ingot','kubejs:tech_dust')
+
+	event.smelting('kubejs:creativ_ingot','kubejs:creativ_dust')
+	event.blasting('kubejs:creativ_ingot','kubejs:creativ_dust')
+
+	event.smelting('kubejs:star_ingot','kubejs:star_dust')
+	event.blasting('kubejs:star_ingot','kubejs:star_dust')
+	
+	inter = 'kubejs:incomplete_galaxy_cookie'
 	event.recipes.create.sequenced_assembly('kubejs:galaxy_cookie', 'kubejs:golden_cookie', [
 			event.recipes.createDeploying(inter, [inter, 'kubejs:charged_matter']),
 			event.recipes.createFilling(inter, [inter, Fluid.of('kubejs:bloody_tear_fluid',250)]),
@@ -1036,7 +1905,9 @@ ServerEvents.recipes(event => {
 	]).transitionalItem(inter).loops(64)
 
 	event.recipes.create.crushing(['2x kubejs:charged_matter', Item.of('kubejs:charged_matter').withChance(0.20)], 'kubejs:charged_cookie')
-	event.recipes.create.crushing([Item.of('kubejs:galaxy_cookie').withChance(0.99), Item.of('kubejs:star_dust').withChance(0.1)], 'kubejs:galaxy_cookie')
+	event.recipes.thermal.pulverizer(['2x kubejs:charged_matter', Item.of('kubejs:charged_matter').withChance(0.20)], 'kubejs:charged_cookie').energy(2000)
+
+	event.recipes.create.crushing([Item.of('kubejs:galaxy_cookie').withChance(0.99), Item.of('kubejs:galaxy_dust').withChance(0.1)], 'kubejs:galaxy_cookie')
 
 	let crossCraft = (id,ing) => {
 		event.shaped(id, [
@@ -1122,17 +1993,19 @@ ServerEvents.recipes(event => {
 
 	event.shapeless('4x elytraboosters:fuel_pellet_standard', [
 		'minecraft:iron_ingot',
-		'2x minecraft:gunpowder'
+		'3x minecraft:gunpowder'
 	])
 
 	event.shapeless('4x elytraboosters:fuel_pellet_fast', [
 		'minecraft:iron_ingot',
-		'2x minecraft:glowstone_dust'
+		'2x minecraft:gunpowder',
+		'1x minecraft:glowstone_dust'
 	])
 
 	event.shapeless('4x elytraboosters:fuel_pellet_slow', [
 		'minecraft:iron_ingot',
-		'2x minecraft:redstone'
+		'2x minecraft:gunpowder',
+		'1x minecraft:redstone'
 	])
 
 	event.shapeless('elytraboosters:forward_launcher', [
@@ -1148,26 +2021,6 @@ ServerEvents.recipes(event => {
 		], {
 			A: 'minecraft:iron_ingot',
 			B: 'minecraft:glass'
-		}
-	)
-
-	event.shaped('aether:iron_ring', [
-			' AB',
-			'A A',
-			' A '
-		], {
-			A: 'minecraft:iron_ingot',
-			B: 'minecraft:iron_nugget'
-		}
-	)
-
-	event.shaped('aether:golden_ring', [
-			' AB',
-			'A A',
-			' A '
-		], {
-			A: 'minecraft:gold_ingot',
-			B: 'minecraft:gold_nugget'
 		}
 	)
 
@@ -1219,6 +2072,8 @@ ServerEvents.recipes(event => {
 		}
 	})
 
+	event.recipes.thermal.tree_extractor(Fluid.of("minecraft:lava",15),'architects_palette:twisted_log','architects_palette:twisted_leaves')
+
 	thermalpackun('farmersdelight:rice_bag', 'farmersdelight:rice')
 	thermalpackun('farmersdelight:rice_bale', 'farmersdelight:rice_panicle')
 	thermalpackun('farmersdelight:onion_crate', 'farmersdelight:onion')
@@ -1242,73 +2097,868 @@ ServerEvents.recipes(event => {
 
 	event.shapeless('9x kubejs:star_ingot', 'kubejs:star_block')
 
-	event.recipes.thermal.pulverizer('kubejs:star_dust', 'kubejs:star_ingot').energy(4000)
+	event.shapeless("thermal:nuke_tnt_minecart", ["thermal:nuke_tnt","minecraft:minecart"])
 
-	event.recipes.thermal.smelter('kubejs:star_ingot', 'kubejs:star_dust').energy(3200)
+	thermalpackun('kubejs:tech_block', 'kubejs:tech_ingot')
 
-	let ingx4 = [
-		'pipez:infinity_upgrade',
-		'thermal:machine_efficiency_creative_augment',
-		'thermal:machine_catalyst_creative_augment',
-		'botania:lens_storm',
-		'refinedstorage:creative_wireless_crafting_monitor',
-		'refinedstorage:creative_wireless_fluid_grid',
-		'refinedstorage:creative_wireless_grid'
-	].forEach((e,i) => {
-		event.shapeless(e, '4x kubejs:star_ingot').id('kubejs:ingx4_'+i+'_manual_only')
-	})
-
-	let ingx6 = [
-		'create:creative_blaze_cake',
-		'createaddition:creative_energy',
-		Item.of('thermal:energy_cell', '{BlockEntityTag:{ItemInv:[{Count:1b,Slot:0b,id:"thermal:rf_coil_creative_augment"}]}}'),
-		'create:creative_motor',
-		Item.of('botania:mana_tablet', '{creative:1b,mana:500000}'),
-		'botania:creative_pool',
-		'refinedstorage:creative_controller',
-		'storagedrawers:creative_storage_upgrade'
-	].forEach((e,i) => {
-		event.shapeless(e, '6x kubejs:star_ingot').id('kubejs:ingx6_'+i+'_manual_only')
-	})
-
-	let ingx8 = [
-		'refinedstorage:creative_fluid_storage_disk', 
-		'refinedstorage:creative_storage_disk',
-		'refinedstorage:4096k_fluid_storage_block',
-		'refinedstorage:creative_storage_block',
-		Item.of('thermal:fluid_cell', '{BlockEntityTag:{ItemInv:[{Count:1b,Slot:0b,id:"thermal:fluid_tank_creative_augment"}]}}'),
-		'create:creative_fluid_tank',
-		'create:creative_crate',
-		'storagedrawers:creative_vending_upgrade',
-		'botania:corporea_spark_creative'
-	].forEach((e,i) => {
-		let num 
-		event.shapeless(e, '8x kubejs:star_ingot').id('kubejs:ingx8_'+i+'_manual_only')
-	})
-
-	event.shaped('create:handheld_worldshaper', [
+	event.shaped('kubejs:tech_block', [
 			'AAA',
-			'ABA',
+			'AAA',
 			'AAA'
 		], {
-			A: 'kubejs:star_ingot',
-			B: 'kubejs:star_block'
+			A: 'kubejs:tech_ingot'
 		}
-	).id('kubejs:worldedit_manual_only')
+	)
 
-	event.shaped('minecraft:debug_stick', [
-			'A',
-			'A'
+	event.shapeless('9x kubejs:tech_ingot', 'kubejs:tech_block')
+
+	thermalpackun('kubejs:creativ_block', 'kubejs:creativ_ingot')
+
+	event.shaped('kubejs:creativ_block', [
+			'AAA',
+			'AAA',
+			'AAA'
 		], {
-			A: 'kubejs:star_block'
+			A: 'kubejs:creativ_ingot'
 		}
-	).id('kubejs:editwand_manual_only')
+	)
 
-	event.shapeless('computercraft:computer_command',['4x kubejs:star_block', ['computercraft:computer_normal', 'computercraft:computer_advanced'], '4x kubejs:star_block']).id('kubejs:cccmd_manual_only')
+	event.shapeless('9x kubejs:creativ_ingot', 'kubejs:creativ_block')
+
+	event.recipes.thermal.pulverizer('kubejs:star_dust', 'kubejs:star_ingot').energy(2000)
+
+	event.recipes.thermal.smelter('kubejs:star_ingot', 'kubejs:star_dust').energy(1600)
+
+	event.recipes.thermal.pulverizer('kubejs:tech_dust', 'kubejs:tech_ingot').energy(2000)
+
+	event.recipes.thermal.smelter('kubejs:tech_ingot', 'kubejs:tech_dust').energy(1600)
+
+	event.recipes.thermal.pulverizer('kubejs:creativ_dust', 'kubejs:creativ_ingot').energy(2000)
+
+	event.recipes.thermal.smelter('kubejs:creativ_ingot', 'kubejs:creativ_dust').energy(1600)
+
+	if (global.getSetting("CreativeCrafting")) {
+
+		let ingx4 = [
+			'pipez:infinity_upgrade',
+			'cloudboots:cloud_boots',
+			'thermal:machine_efficiency_creative_augment',
+			'thermal:machine_catalyst_creative_augment',
+			'botania:lens_storm',
+			'refinedstorage:creative_wireless_crafting_monitor',
+			'refinedstorage:creative_wireless_fluid_grid',
+			'refinedstorage:creative_wireless_grid'
+		].forEach((e,i) => {
+			event.shapeless(e, '4x kubejs:creativ_ingot').id('kubejs:ingx4_'+i+'_manuel_only')
+		})
+
+		let ingx6 = [
+			"iceandfire:creative_dragon_meal",
+			'create:creative_blaze_cake',
+			'createaddition:creative_energy',
+			Item.of('thermal:energy_cell', '{BlockEntityTag:{ItemInv:[{Count:1b,Slot:0b,id:"thermal:rf_coil_creative_augment"}]}}'),
+			'create:creative_motor',
+			Item.of('botania:mana_tablet', '{creative:1b,mana:500000}'),
+			'botania:creative_pool',
+			'refinedstorage:creative_controller',
+			'storagedrawers:creative_storage_upgrade'
+		].forEach((e,i) => {
+			event.shapeless(e, '6x kubejs:creativ_ingot').id('kubejs:ingx6_'+i+'_manual_only')
+		})
+
+		let ingx8 = [
+			'quarryplus:fuel_module_normal',
+			'create:handheld_worldshaper',
+			'create_sa:creative_filling_tank',
+			'refinedstorage:creative_fluid_storage_disk', 
+			'refinedstorage:creative_storage_disk',
+			'refinedstorage:4096k_fluid_storage_block',
+			'refinedstorage:creative_storage_block',
+			Item.of('thermal:fluid_cell', '{BlockEntityTag:{ItemInv:[{Count:1b,Slot:0b,id:"thermal:fluid_tank_creative_augment"}]}}'),
+			'create:creative_fluid_tank',
+			'create:creative_crate',
+			'storagedrawers:creative_vending_upgrade',
+			'botania:corporea_spark_creative'
+		].forEach((e,i) => {
+			let num 
+			event.shapeless(e, '8x kubejs:creativ_ingot').id('kubejs:ingx8_'+i+'_manual_only')
+		})
+	}
 
 	event.recipes.create.mixing(Fluid.of('create:tea',500),['2x thermal:tea',Fluid.of('minecraft:water',250),Fluid.of('minecraft:milk',250)]).heated()
 
 	event.smelting('farmersdelight:fried_egg', ['minecraft:egg', 'naturalist:duck_egg'])
 	event.smoking('farmersdelight:fried_egg', ['minecraft:egg', 'naturalist:duck_egg'])
 	event.campfireCooking('farmersdelight:fried_egg', ['minecraft:egg', 'naturalist:duck_egg'])
+
+	event.shaped('measurements:tape_measure', [
+		' A ',
+		'ABA',
+		' AC'
+	], {
+		A: 'minecraft:gold_nugget',
+		B: 'minecraft:iron_ingot',
+		C: '#minecraft:wool'
+	})
+
+	event.shaped('4x kubejs:needle_magazine', [
+			'B B',
+			'BAB',
+			'BBB'
+		], {
+			A: 'minecraft:iron_ingot',
+			B: 'thermal:cured_rubber',
+		}
+	)
+
+	event.shaped('kubejs:needle_ammo', [
+			'AAA',
+			'AAA',
+			'BCB'
+		], {
+			A: 'minecraft:arrow',
+			B: 'minecraft:gunpowder',
+			C: 'kubejs:needle_magazine'
+		}
+	)
+
+	event.shaped('kubejs:star_hammer', [
+			'BBB',
+			'BAB',
+			' A '
+		], {
+			A: 'kubejs:reinforced_handle',
+			B: 'kubejs:star_ingot'
+		}
+	)
+
+	event.shaped('extractinator:extractinator', [
+			'ABA',
+			'CCC',
+			'DED'
+		], {
+			A: 'minecraft:flint',
+			B: 'minecraft:piston',
+			C: 'minecraft:string',
+			D: 'thermal:copper_gear',
+			E: 'minecraft:cauldron'
+		}
+	)
+
+	event.shaped('4x extractinator:slush', [
+			'AB',
+			'BA'
+		], {
+			A: 'minecraft:sand',
+			B: 'minecraft:ice'
+		}
+	)
+
+	event.shaped('4x extractinator:silt', [
+			'AB',
+			'BA'
+		], {
+			A: 'minecraft:sand',
+			B: 'minecraft:mud'
+		}
+	)
+
+	event.custom({
+		"type": "extractinator:extractinating",
+		"input": {
+			"tag": "kubejs:input_cobblestone"
+		},
+		"drops": [
+			{
+				"drop": "#kubejs:output_cobblestone_common",
+				"drop_chance": 0.45
+			},
+			{
+				"drop": "#kubejs:output_cobblestone_rare",
+				"drop_chance": 0.05
+			}
+		]
+	}).id('kubejs:cobblestone_sive')
+
+	event.custom({
+		"type": "extractinator:extractinating",
+		"input": {
+			"tag": "kubejs:input_gravel"
+		},
+		"drops": [
+			{
+				"drop": "#kubejs:output_gravel_common",
+				"drop_chance": 0.45
+			},
+			{
+				"drop": "#kubejs:output_gravel_rare",
+				"drop_chance": 0.05
+			}
+		]
+	}).id('kubejs:gravel_sive')
+
+	event.custom({
+		"type": "extractinator:extractinating",
+		"input": {
+			"tag": "kubejs:input_sand"
+		},
+		"drops": [
+			{
+				"drop": "#kubejs:output_sand_common",
+				"drop_chance": 0.40
+			},
+			{
+				"drop": "#kubejs:output_sand_rare",
+				"drop_chance": 0.1
+			}
+		]
+	}).id('kubejs:sand_sive')
+
+	event.custom({
+		"type": "extractinator:extractinating",
+		"input": {
+			"tag": "kubejs:input_dust"
+		},
+		"drops": [
+			{
+				"drop": "#kubejs:output_dust",
+				"drop_chance": 0.5
+			},
+
+		]
+	}).id('kubejs:dust_sive')
+
+	event.custom({
+		"type": "extractinator:extractinating",
+		"input": {
+			"tag": "kubejs:input_dirt"
+		},
+		"drops": [
+			{
+				"drop": "#kubejs:output_dirt",
+				"drop_chance": 0.30
+			},
+
+		]
+	}).id('kubejs:dirt_sive')
+
+	event.custom({
+		"type": "extractinator:extractinating",
+		"input": {
+			"tag": "kubejs:input_grass"
+		},
+		"drops": [
+			{
+				"drop": "#kubejs:output_grass",
+				"drop_chance": 0.30
+			},
+
+		]
+	}).id('kubejs:grass_sive')
+
+	event.custom({
+		"type": "extractinator:extractinating",
+		"input": {
+			"tag": "kubejs:input_netherrack"
+		},
+		"drops": [
+			{
+				"drop": "#kubejs:output_netherrack",
+				"drop_chance": 0.05
+			},
+
+		]
+	}).id('kubejs:netherrack_sive')
+
+	event.recipes.create.filling('minecraft:clay',[Fluid.of('water',1000),'kubejs:dust'])
+	event.recipes.thermal.bottler('minecraft:clay',[Fluid.of('water',1000),'kubejs:dust']).energy(400).xp(0.1)
+
+	event.recipes.create.crushing('kubejs:dust','minecraft:sand')
+	event.recipes.thermal.pulverizer('kubejs:dust','minecraft:sand').energy(4000).xp(0.1)
+
+
+	event.recipes.thermal.centrifuge(Fluid.of('cofh_core:experience',100),'create:experience_nugget')
+
+	event.recipes.create.mechanical_crafting('kubejs:creativ_compound', [
+		'   E   ',
+		' EEDEE ',
+		' ECBCE ',
+		'EDBABDE',
+		' ECBCE ',
+		' EEDEE ',
+		'   E   '
+	], {
+		A: 'kubejs:galaxy_cookie',
+		B: 'kubejs:little_star',
+		C: 'botania:life_essence',
+		D: 'minecraft:enchanted_golden_apple',
+		E: 'kubejs:rainbow_ingot'
+	})
+
+	let seal_inter = 'kubejs:incomplete_seal_creativ'
+
+	event.recipes.create.sequenced_assembly('kubejs:seal_creativ', 'kubejs:tech_glass', [
+		event.recipes.createDeploying(seal_inter, [seal_inter, 'kubejs:creativ_unstable']),
+		event.recipes.createDeploying(seal_inter, [seal_inter, 'kubejs:bedrock_dust']),
+		event.recipes.createPressing(seal_inter, seal_inter)
+	]).transitionalItem(seal_inter).loops(1)
+
+	event.shapeless('kubejs:rainbow_ingot',['aether:enchanted_gravitite', 'biggerreactors:blutonium_ingot', 'minecraft:netherite_ingot', 'botania:terrasteel_ingot', 'kubejs:star_ingot', 'thermal:enderium_ingot', 'irons_spellbooks:arcane_ingot'])
+
+	event.shaped('kubejs:star_axe', [
+		'AA ',
+		'AB ',
+		' B '
+	], {
+		A: 'kubejs:star_ingot',
+		B: 'kubejs:reinforced_handle'
+	})
+
+	event.shaped('kubejs:star_shovel', [
+		' A ',
+		' B ',
+		' B '
+	], {
+		A: 'kubejs:star_ingot',
+		B: 'kubejs:reinforced_handle'
+	})
+
+	event.shaped('kubejs:star_hoe', [
+		'AA ',
+		' B ',
+		' B '
+	], {
+		A: 'kubejs:star_ingot',
+		B: 'kubejs:reinforced_handle'
+	})
+
+	event.shaped('kubejs:star_sword', [
+		' A ',
+		' A ',
+		' B '
+	], {
+		A: 'kubejs:star_ingot',
+		B: 'kubejs:reinforced_handle'
+	})
+
+	event.shaped('kubejs:star_helmet', [
+		'A A',
+		'AAA'
+	], {
+		A: 'kubejs:star_ingot'
+	})
+
+	event.shaped('kubejs:star_chestplate', [
+		'A A',
+		'AAA',
+		'AAA'
+	], {
+		A: 'kubejs:star_ingot'
+	})
+
+	event.shaped('kubejs:star_leggings', [
+		'AAA',
+		'A A',
+		'A A'
+	], {
+		A: 'kubejs:star_ingot'
+	})
+
+	event.shaped('kubejs:star_boots', [
+		'   ',
+		'A A',
+		'A A'
+	], {
+		A: 'kubejs:star_ingot'
+	})
+
+	event.shaped('kubejs:tech_axe', [
+		'AA ',
+		'AB ',
+		' B '
+	], {
+		A: 'kubejs:tech_ingot',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:tech_pickaxe', [
+		'AAA',
+		' B ',
+		' B '
+	], {
+		A: 'kubejs:tech_ingot',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:tech_shovel', [
+		' A ',
+		' B ',
+		' B '
+	], {
+		A: 'kubejs:tech_ingot',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:tech_hoe', [
+		'AA ',
+		' B ',
+		' B '
+	], {
+		A: 'kubejs:tech_ingot',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:tech_hammer', [
+		'AAA',
+		'ABA',
+		' B '
+	], {
+		A: 'kubejs:tech_ingot',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:tech_sword', [
+		' A ',
+		' A ',
+		' B '
+	], {
+		A: 'kubejs:tech_ingot',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:tech_helmet', [
+		'AAA',
+		'A A'
+	], {
+		A: 'kubejs:tech_ingot'
+	})
+
+	event.shaped('kubejs:tech_chestplate', [
+		'A A',
+		'AAA',
+		'AAA'
+	], {
+		A: 'kubejs:tech_ingot'
+	})
+
+	event.shaped('kubejs:tech_leggings', [
+		'AAA',
+		'A A',
+		'A A'
+	], {
+		A: 'kubejs:tech_ingot'
+	})
+
+	event.shaped('kubejs:tech_boots', [
+		'   ',
+		'A A',
+		'A A'
+	], {
+		A: 'kubejs:tech_ingot'
+	})
+
+	event.shaped('kubejs:bread_axe', [
+		'AA ',
+		'AB ',
+		' B '
+	], {
+		A: 'kubejs:bread_ingot',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:bread_pickaxe', [
+		'AAA',
+		' B ',
+		' B '
+	], {
+		A: 'kubejs:bread_ingot',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:bread_shovel', [
+		' A ',
+		' B ',
+		' B '
+	], {
+		A: 'kubejs:bread_ingot',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:bread_hoe', [
+		'AA ',
+		' B ',
+		' B '
+	], {
+		A: 'kubejs:bread_ingot',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:bread_hammer', [
+		'AAA',
+		'ABA',
+		' B '
+	], {
+		A: 'kubejs:bread_ingot',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:bread_sword', [
+		' A ',
+		' A ',
+		' B '
+	], {
+		A: 'kubejs:bread_ingot',
+		B: 'minecraft:stick'
+	})
+
+	event.shapeless('kubejs:star_dust',['kubejs:galaxy_dust','kubejs:tech_dust'])
+
+	event.recipes.thermal.smelter('kubejs:star_ingot', ['kubejs:galaxy_dust','kubejs:tech_dust']).energy(3200)
+	event.recipes.thermal.smelter('kubejs:star_ingot', ['kubejs:galaxy_dust','kubejs:tech_ingot']).energy(3200)
+
+	event.recipes.create.filling('kubejs:bloody_helmet',[Fluid.of('kubejs:bloody_tear_fluid',1000),'kubejs:star_helmet'])
+	event.recipes.thermal.bottler('kubejs:bloody_helmet',[Fluid.of('kubejs:bloody_tear_fluid',1000),'kubejs:star_helmet']).energy(2000)
+
+	event.recipes.create.filling('kubejs:bloody_chestplate',[Fluid.of('kubejs:bloody_tear_fluid',1000),'kubejs:star_chestplate'])
+	event.recipes.thermal.bottler('kubejs:bloody_chestplate',[Fluid.of('kubejs:bloody_tear_fluid',1000),'kubejs:star_chestplate']).energy(2000)
+
+	event.recipes.create.filling('kubejs:bloody_leggings',[Fluid.of('kubejs:bloody_tear_fluid',1000),'kubejs:star_leggings'])
+	event.recipes.thermal.bottler('kubejs:bloody_leggings',[Fluid.of('kubejs:bloody_tear_fluid',1000),'kubejs:star_leggings']).energy(2000)
+
+	event.recipes.create.filling('kubejs:bloody_boots',[Fluid.of('kubejs:bloody_tear_fluid',1000),'kubejs:star_boots'])
+	event.recipes.thermal.bottler('kubejs:bloody_boots',[Fluid.of('kubejs:bloody_tear_fluid',1000),'kubejs:star_boots']).energy(2000)
+
+	event.recipes.create.filling('kubejs:jar_of_tears',[Fluid.of('kubejs:bloody_tear_fluid',500),'glass_bottle'])
+	event.recipes.thermal.bottler('kubejs:jar_of_tears',[Fluid.of('kubejs:bloody_tear_fluid',500),'glass_bottle']).energy(800)
+
+	event.shapeless(Item.of('minecraft:elytra', "{CustomModelData:1,Damage:0,display:{Name:'{\"text\":\"Black Wings\",\"italic\":false}'}}"),["minecraft:elytra","#forge:dyes/black"])
+
+	event.shapeless(Item.of('iceandfire:bestiary', '{Pages:[I;0,5,22,21,3,7,24,1,8,6,26,2,4,17,9,25]}'),
+		[
+			'minecraft:leather',
+			'3x iceandfire:manuscript'
+		]
+	)
+
+	event.shapeless('iceandfire:summoning_crystal_fire',
+		[
+			'iceandfire:fire_dragon_blood',
+			'minecraft:ender_pearl',
+			'minecraft:diamond',
+			'thermal:ruby'
+		]
+	)
+
+	event.shaped('kubejs:creativ_pickaxe', [
+		'AAA',
+		' B ',
+		' B '
+	], {
+		A: 'kubejs:creativ_ingot',
+		B: 'kubejs:bedrock_dust'
+	})
+
+	event.shaped('kubejs:lagacy_sword', [
+		' A ',
+		' A ',
+		' B '
+	], {
+		A: 'kubejs:creativ_ingot',
+		B: 'kubejs:bedrock_dust'
+	})
+
+	event.shaped("2x kubejs:lostcity_portal",
+		[
+			"ABA",
+			"ACA",
+			"DDD"
+		],
+		{
+			A: 'minecraft:diamond_block',
+			B: 'minecraft:ender_eye',
+			C: '#minecraft:beds',
+			D: 'minecraft:smooth_stone'
+		}
+	)
+
+	event.shaped('4x kubejs:tech_glass',
+		[
+			"ABA",
+			"BCB",
+			"ABA"
+		],
+		{
+			A: '#forge:glass',
+			B: 'minecraft:quartz',
+			C: 'kubejs:tech_ingot'
+		}
+	)
+
+	event.shapeless('4x kubejs:mud_ball',
+		[
+			'minecraft:mud'
+		]
+	)
+
+	event.shapeless('minecraft:mud',
+		[
+			'4x kubejs:mud_ball'
+		]
+	)
+
+	event.shapeless("kubejs:scattered_sword",
+		[
+			'kubejs:tech_sword',
+			'#kubejs:hammers'
+		]
+	)
+	.damageIngredient('#kubejs:hammers')
+	.id("kubejs:scattered_sword_manual_only")
+
+	event.shaped('kubejs:wooden_hammer', [
+		'AAA',
+		'ABA',
+		' B '
+	], {
+		A: '#minecraft:planks',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:stone_hammer', [
+		'AAA',
+		'ABA',
+		' B '
+	], {
+		A: '#minecraft:stone_tool_materials',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:iron_hammer', [
+		'AAA',
+		'ABA',
+		' B '
+	], {
+		A: 'minecraft:iron_ingot',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:golden_hammer', [
+		'AAA',
+		'ABA',
+		' B '
+	], {
+		A: 'minecraft:gold_ingot',
+		B: 'minecraft:stick'
+	})
+
+	event.shaped('kubejs:diamond_hammer', [
+		'AAA',
+		'ABA',
+		' B '
+	], {
+		A: 'minecraft:diamond',
+		B: 'minecraft:stick'
+	})
+
+	event.custom({
+		"type": "minecraft:smithing_transform",
+		"addition": {
+			"item": "minecraft:netherite_ingot"
+		},
+		"base": {
+			"item": "kubejs:diamond_hammer"
+		},
+		"result": {
+			"item": "kubejs:netherite_hammer"
+		},
+		"template": {
+			"item": "minecraft:netherite_upgrade_smithing_template"
+		}
+	})
+
+	event.shapeless('4x kubejs:sharpnell',
+		[
+			'kubejs:tech_ingot'
+		]
+	)
+
+	event.shaped('kubejs:bedrock_remover',
+		[
+			"BB ",
+			"BBA",
+			" AC"
+		],
+		{
+			A: 'kubejs:star_ingot',
+			B: 'minecraft:tnt',
+			C: 'kubejs:reinforced_handle'
+		}
+	)
+
+	event.recipes.create.splashing("minecraft:paper","iceandfire:manuscript")
+
+	event.shapeless("3x minecraft:paper",
+		[
+			"minecraft:water_bucket",
+			"3x iceandfire:manuscript"
+		]
+	)
+	.replaceIngredient('minecraft:water_bucket', 'minecraft:bucket')
+
+	event.shaped('kubejs:copper_compass',
+		[
+			"ABA",
+			"BCB",
+			"ABA"
+		],
+		{
+			B: 'minecraft:copper_ingot',
+			A: "minecraft:redstone",
+			C: "minecraft:map"
+		}
+	)
+
+	event.shaped('kubejs:ship_locator',
+		[
+			" A ",
+			"DBD",
+			" C "
+		],
+		{
+			A: 'kubejs:tech_ingot',
+			B: "minecraft:map",
+			C: 'thermal:rf_coil',
+			D: 'minecraft:redstone'
+		}
+	)
+
+	//ARCANE TEST
+
+		event.recipes.create.mixing("2x irons_spellbooks:arcane_debris",[Fluid.of("water",1000),"minecraft:ancient_debris","8x irons_spellbooks:arcane_essence"]).heated()
+
+		event.replaceInput(
+			{input: "irons_spellbooks:arcane_salvage"},
+			"irons_spellbooks:arcane_salvage",
+			"#kubejs:scraps"
+		)
+		event.replaceInput(
+			{output: "irons_spellbooks:arcane_salvage"},
+			"irons_spellbooks:arcane_salvage",
+			"#kubejs:scraps"
+		)
+
+		event.remove({id: "thermal:machines/smelter/smelter_ancient_debris"})
+		event.recipes.thermal.smelter(["2x minecraft:netherite_scrap",Item.of("thermal:rich_slag").withChance(0.2)], "minecraft:ancient_debris").energy(3200).xp(2)
+
+		event.recipes.thermal.smelter(["2x irons_spellbooks:arcane_salvage",Item.of("thermal:rich_slag").withChance(0.4)], "irons_spellbooks:arcane_debris").energy(3200).xp(1)
+		event.recipes.thermal.furnace("irons_spellbooks:arcane_salvage","irons_spellbooks:arcane_debris").energy(2000).xp(1)
+
+	//END
+
+	event.recipes.thermal.bottler("thermal:rubber",[Fluid.of("thermal:latex",250),"air"])
+	event.recipes.thermal.press('redstone_arsenal:flux_gear',['4x redstone_arsenal:flux_ingot','thermal:press_gear_die'])
+
+
+	event.custom(	{
+		"type": "iceandfire:dragonforge",
+		"dragon_type": "fire",
+		"cook_time": 1000,
+		"input": {
+			"item": "minecraft:netherite_ingot"
+		},
+		"blood": {
+			"item": "iceandfire:fire_dragon_blood"
+		},
+		"result": {
+			"item": "iceandfire:dragonsteel_fire_ingot"
+		}
+	})
+
+	event.custom(	{
+		"type": "iceandfire:dragonforge",
+		"dragon_type": "lightning",
+		"cook_time": 1000,
+		"input": {
+			"item": "minecraft:netherite_ingot"
+		},
+		"blood": {
+			"item": "iceandfire:lightning_dragon_blood"
+		},
+		"result": {
+			"item": "iceandfire:dragonsteel_lightning_ingot"
+		}
+	})
+
+	event.custom(	{
+		"type": "iceandfire:dragonforge",
+		"dragon_type": "ice",
+		"cook_time": 1000,
+		"input": {
+			"item": "minecraft:netherite_ingot"
+		},
+		"blood": {
+			"item": "iceandfire:ice_dragon_blood"
+		},
+		"result": {
+			"item": "iceandfire:dragonsteel_ice_ingot"
+		}
+	})
+
+	event.shapeless('4x kubejs:stick_blend',['minecraft:blaze_powder', 'thermal:silver_dust', 'thermal:sulfur_dust'])
+	event.recipes.create.mixing(Fluid.of("kubejs:heavy_fluid",1000),['2x thermal:lapis_dust', 'thermal:lead_dust', Fluid.of("lava",1000)])
+	event.recipes.create.compacting('kubejs:tech_stage_1b',['minecraft:iron_ingot', 'kubejs:stick_blend', 'thermal:tin_ingot']).heated()
+	event.recipes.thermal.chiller('kubejs:tech_stage_1a',['thermal:chiller_ingot_cast',Fluid.of("kubejs:heavy_fluid",250)]).energy(2000)
+	event.recipes.create.deploying('kubejs:tech_stage_2', ["kubejs:tech_stage_1a", "kubejs:tech_stage_1b"])
+	event.recipes.thermal.smelter('kubejs:tech_stage_3', ['kubejs:tech_stage_2',"thermal:coal_coke"]).energy(7200)
+
+	inter = 'kubejs:incomplete_tech_ingot'
+	event.recipes.create.sequenced_assembly('kubejs:tech_ingot', 'kubejs:tech_stage_3', [
+		event.recipes.createPressing(inter, inter),
+		event.recipes.createFilling(inter, [inter, Fluid.of('water',250)]),
+	]).transitionalItem(inter).loops(5)
+
+	event.shapeless("minecraft:bone_meal","iceandfire:wither_shard")
+
+	event.replaceInput(
+		{id: 'constructionwand:infinity_wand'},
+		"minecraft:nether_star",
+		"kubejs:creativ_ingot",
+	)
+
+	event.replaceInput(
+		{id: 'constructionwand:core_destruction'},
+		"minecraft:diamond_pickaxe",
+		"minecraft:redstone",
+	)
+
+	event.replaceInput(
+		{id: 'constructionwand:core_destruction'},
+		"#forge:storage_blocks/diamond",
+		"minecraft:diamond_pickaxe",
+	)
+
+	event.recipes.create.filling("thermal:rubber",[Fluid.of("thermal:latex"),"air"])
+
+	event.replaceInput(
+		{id: 'iceandfire:ghost_chest'},
+		"#forge:rods/wooden",
+		"#forge:chests/wooden",
+	)
+
+	event.custom({
+		"type": "minecraft:smithing_transform",
+		"addition": {
+			"item": "minecraft:netherite_ingot"
+		},
+		"base": {
+			"item": "create_sa:brass_jetpack_chestplate"
+		},
+		"result": {
+			"item": "create_sa:netherite_jetpack_chestplate"
+		},
+		"template": {
+			"item": "minecraft:netherite_upgrade_smithing_template"
+		}
+	})
+
 })

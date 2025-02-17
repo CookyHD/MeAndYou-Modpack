@@ -1,6 +1,0 @@
-{
-	"overlay": {
-		"texture": "kubejs:textures/block/mutation_catalyst_overlay_e.png",
-		"emissive": true
-	}
-}

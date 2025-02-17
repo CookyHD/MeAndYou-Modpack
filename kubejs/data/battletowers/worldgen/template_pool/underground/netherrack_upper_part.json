@@ -1,0 +1,15 @@
+{
+	"name": "battletowers:underground/netherrack_upper_part",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"location": "battletowers:underground/netherrack_upper_part",
+				"processors": "battletowers:netherrack_upper_floors",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		}
+	]
+}

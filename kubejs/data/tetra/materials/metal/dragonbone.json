@@ -1,0 +1,35 @@
+{
+  "key": "dragonbone",
+  "category": "bone",
+  "primary": 7.2,
+  "secondary": 3,
+  "tertiary": 2,
+  "durability": 1660,
+  "integrityCost": 2,
+  "integrityGain": 8,
+  "magicCapacity": 133,
+  "toolLevel": "minecraft:netherite",
+  "toolEfficiency": 9,
+  "tints": {
+    "glyph": "948c84",
+    "texture": "948c84"
+  },
+  "textures": [
+    "bone",
+    "crude"
+  ],
+  "material": {
+    "items": [
+      "iceandfire:dragonbone"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:iron"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ]
+}

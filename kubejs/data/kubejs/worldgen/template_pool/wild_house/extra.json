@@ -1,0 +1,33 @@
+{
+	"name": "kubejs:wild_house/extra",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 50,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "kubejs:wild_house/extra/potato",
+				"processors": "minecraft:empty"
+			}
+		},
+		{
+			"weight": 40,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "kubejs:wild_house/extra/wheat",
+				"processors": "minecraft:empty"
+			}
+		},
+		{
+			"weight": 30,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "kubejs:wild_house/extra/extension",
+				"processors": "minecraft:empty"
+			}
+		}
+	]
+}

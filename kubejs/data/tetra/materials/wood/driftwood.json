@@ -1,0 +1,27 @@
+{
+  "key": "driftwood",
+  "category": "wood",
+  "primary": 3.5,
+  "secondary": 2.5,
+  "tertiary": 4,
+  "durability": 212,
+  "integrityCost": 1,
+  "integrityGain": 4,
+  "magicCapacity": 96,
+  "toolLevel": "minecraft:stone",
+  "toolEfficiency": 3.5,
+  "tints": {
+    "glyph": "746c5f",
+    "texture": "746c5f"
+  },
+  "textures": [
+    "crude",
+    "wooden"
+  ],
+  "material": {
+    "tag": "forge:planks/driftwood"
+  },
+  "requiredTools": {
+    "axe_dig": "minecraft:gold"
+  }
+}

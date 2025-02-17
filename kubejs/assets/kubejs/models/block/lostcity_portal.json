@@ -1,0 +1,9 @@
+{
+	"parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"particle": "kubejs:block/lostcity_portal_side",
+		"up": "kubejs:block/lostcity_portal_top",
+		"side": "kubejs:block/lostcity_portal_side",
+		"down": "minecraft:block/smooth_stone"
+	}
+}

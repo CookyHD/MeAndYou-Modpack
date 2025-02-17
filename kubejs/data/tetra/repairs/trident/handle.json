@@ -1,0 +1,20 @@
+
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "upgrade_aquatic"
+    }
+  ],
+  "material": {
+    "items": [
+      "upgrade_aquatic:prismarine_rod"
+    ],
+    "count": 1
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:iron"
+  },
+  "moduleKey": "single/light_handle",
+  "moduleVariant": "light_handle/prismarine"
+}

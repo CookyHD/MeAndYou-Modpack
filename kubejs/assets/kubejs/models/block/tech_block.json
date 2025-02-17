@@ -1,0 +1,9 @@
+{
+	"parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"particle": "kubejs:block/tech_block_side",
+		"up": "kubejs:block/tech_block_top",
+		"side": "kubejs:block/tech_block_side",
+		"down": "kubejs:block/tech_block_bottom"
+	}
+}

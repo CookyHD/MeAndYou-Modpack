@@ -1,0 +1,49 @@
+{
+  "replace": true,
+    "requirement": {
+    "type": "tetra:and",
+    "requirements": [
+      {
+        "type": "tetra:craft_type",
+        "craft": "module"
+      },
+      {
+        "type": "tetra:material",
+        "material": {
+          "items": [
+            "minecraft:cactus"
+          ]
+        }
+      },
+      {
+        "type": "tetra:or",
+        "requirements": [
+          {
+            "type": "tetra:slot",
+            "slot": "double/head_left"
+          },
+          {
+            "type": "tetra:slot",
+            "slot": "double/head_right"
+          },
+          {
+            "type": "tetra:slot",
+            "slot": "single/head"
+          },
+          {
+            "type": "tetra:slot",
+            "slot": "sword/blade"
+          }
+        ]
+      }
+    ]
+  },
+  "outcomes": [
+    {
+      "type": "tetra:apply_improvements",
+      "improvements": {
+        "cactus_bleeding": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+	  {
+		"rolls": 1,
+		"bonus_rolls": 0,
+		"entries": [
+		  {
+			"type": "minecraft:item",
+			"name": "kubejs:nessie_green",
+			"weight": 24
+		  },
+		  {
+			"type": "minecraft:item",
+			"name": "kubejs:nessie_red",
+			"weight": 24
+		  },
+		  {
+			"type": "minecraft:item",
+			"name": "kubejs:nessie_blue",
+			"weight": 24
+		  },
+		  {
+			"type": "minecraft:item",
+			"name": "kubejs:nessie_pink",
+			"weight": 24
+		  },
+		  {
+			"type": "minecraft:item",
+			"name": "kubejs:nessie_green_enchanted",
+			"weight": 1
+		  },
+		  {
+			"type": "minecraft:item",
+			"name": "kubejs:nessie_red_enchanted",
+			"weight": 1
+		  },
+		  {
+			"type": "minecraft:item",
+			"name": "kubejs:nessie_blue_enchanted",
+			"weight": 1
+		  },
+		  {
+			"type": "minecraft:item",
+			"name": "kubejs:nessie_pink_enchanted",
+			"weight": 1
+		  }
+		]
+	  },
+	  {
+		"rolls": {
+			"min": 4,
+			"max": 8
+		},
+		"bonus_rolls": 2,
+		"entries": [
+			{
+				"type": "minecraft:item",
+				"name": "minecraft:grass"
+			}
+		]
+	  }
+	]
+  }

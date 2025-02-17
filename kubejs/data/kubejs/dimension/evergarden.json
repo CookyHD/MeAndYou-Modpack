@@ -1,0 +1,34 @@
+{
+	"type": "lostcities:lostcity",
+	"generator": {
+		"type": "minecraft:flat",
+		"settings": {
+			"biome": "minecraft:forest",
+			"lakes": true,
+			"features": true,
+			"layers": [
+				{
+					"block": "minecraft:bedrock",
+					"height": 1
+				},
+				{
+					"block": "minecraft:deepslate",
+					"height": 63
+				},
+				{
+					"block": "minecraft:stone",
+					"height": 57
+				},
+				{
+					"block": "minecraft:dirt",
+					"height": 4
+				},
+				{
+					"block": "minecraft:grass_block",
+					"height": 1
+				}
+			],
+			"structure_overrides": "#kuebjs:none"
+		}
+	}
+}

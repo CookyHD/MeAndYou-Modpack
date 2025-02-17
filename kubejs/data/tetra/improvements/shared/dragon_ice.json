@@ -1,0 +1,9 @@
+[
+  {
+    "key": "dragon_ice",
+    "effects": {
+      "stun": [25,5],
+      "earthbind": 5
+    }
+  }
+]

@@ -13,7 +13,11 @@
 	"aether:valkyrie_queen",
 	"aether:slider",
 	"aether:sun_spirit",
-	"@botania"
+	"@botania",
+	"@irons_spellbooks",
+	"@iceandfire",
+	"@mowziesmobs",
+	"@meetyourfight"
   ],
   "enable_dispenser_behaviour": true
 }

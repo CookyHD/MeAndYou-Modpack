@@ -1,20 +1,41 @@
 
+["Global Options"]
+	#If TRUE, Redstone Flux will act as its own energy system and will NOT be interoperable with 'Forge Energy' - only enable this if you absolutely know what you are doing and want the Thermal Series to use a unique energy system.
+	"Standalone Redstone Flux" = false
+	#If TRUE, most Thermal Blocks will retain Energy when dropped.
+	#This setting does not control ALL blocks.
+	"Blocks Retain Energy" = true
+	#If TRUE, most Thermal Blocks will retain Inventory Contents when dropped.
+	#This setting does not control ALL blocks.
+	"Blocks Retain Inventory" = false
+	#If TRUE, most Thermal Blocks will retain Tank Contents when dropped.
+	#This setting does not control ALL blocks.
+	"Blocks Retain Tank Contents" = false
+	#If TRUE, Thermal Blocks will retain Augments when dropped.
+	"Blocks Retain Augments" = true
+	#If TRUE, Thermal Blocks will retain Redstone Control configuration when dropped.
+	"Blocks Retain Redstone Control" = true
+	#If TRUE, Thermal Blocks will retain Side configuration when dropped.
+	"Blocks Retain Side Configuration" = true
+	#If TRUE, Thermal Blocks will retain Transfer Control configuration when dropped.
+	"Blocks Retain Transfer Control" = true
+
 [Tools]
+
+	[Tools.Satchel]
+		#A list of Items by Resource Location which are NOT allowed in Satchels.
+		Denylist = ["thermal:satchel", "minecraft:shulker_box", "minecraft:white_shulker_box", "minecraft:orange_shulker_box", "minecraft:magenta_shulker_box", "minecraft:light_blue_shulker_box", "minecraft:yellow_shulker_box", "minecraft:lime_shulker_box", "minecraft:pink_shulker_box", "minecraft:gray_shulker_box", "minecraft:light_gray_shulker_box", "minecraft:cyan_shulker_box", "minecraft:purple_shulker_box", "minecraft:blue_shulker_box", "minecraft:brown_shulker_box", "minecraft:green_shulker_box", "minecraft:red_shulker_box", "minecraft:black_shulker_box",'minecraft:bundle', 'bundle-backportish:white_bundle', 'bundle-backportish:light_gray_bundle', 'bundle-backportish:gray_bundle', 'bundle-backportish:black_bundle', 'bundle-backportish:brown_bundle', 'bundle-backportish:red_bundle', 'bundle-backportish:orange_bundle', 'bundle-backportish:yellow_bundle', 'bundle-backportish:lime_bundle', 'bundle-backportish:green_bundle', 'bundle-backportish:cyan_bundle', 'bundle-backportish:light_blue_bundle', 'bundle-backportish:blue_bundle', 'bundle-backportish:purple_bundle', 'bundle-backportish:magenta_bundle', 'bundle-backportish:pink_bundle','sophisticatedbackpacks:backpack','create:brown_toolbox', 'create:white_toolbox', 'create:orange_toolbox', 'create:magenta_toolbox', 'create:light_blue_toolbox', 'create:yellow_toolbox', 'create:lime_toolbox', 'create:pink_toolbox', 'create:gray_toolbox', 'create:cyan_toolbox', 'create:purple_toolbox', 'create:blue_toolbox', 'create:green_toolbox', 'create:red_toolbox', 'create:light_gray_toolbox', 'create:black_toolbox']
 
 	[Tools.Drill]
 		#This sets the maximum base RF capacity for the Fluxbore.
 		#Range: 1000 ~ 10000000
-		"Base Capacity" = 60000
+		"Base Capacity" = 50000
 		#This sets the base RF/t transfer for the Fluxbore.
 		#Range: 1 ~ 10000000
 		"Base Transfer" = 1000
 		#This sets the energy required to break a single block.
 		#Range: 1 ~ 10000
 		"Energy Per Block" = 200
-
-	[Tools.Satchel]
-		#A list of Items by Resource Location which are NOT allowed in Satchels.
-		Denylist = ["thermal:satchel", "minecraft:shulker_box", "minecraft:white_shulker_box", "minecraft:orange_shulker_box", "minecraft:magenta_shulker_box", "minecraft:light_blue_shulker_box", "minecraft:yellow_shulker_box", "minecraft:lime_shulker_box", "minecraft:pink_shulker_box", "minecraft:gray_shulker_box", "minecraft:light_gray_shulker_box", "minecraft:cyan_shulker_box", "minecraft:purple_shulker_box", "minecraft:blue_shulker_box", "minecraft:brown_shulker_box", "minecraft:green_shulker_box", "minecraft:red_shulker_box", "minecraft:black_shulker_box","create:black_toolbox", "create:pink_toolbox", "create:lime_toolbox", "create:yellow_toolbox", "create:light_blue_toolbox", "create:magenta_toolbox", "create:orange_toolbox", "create:white_toolbox", "create:brown_toolbox", "create:black_toolbox", "create:red_toolbox", "create:green_toolbox", "create:blue_toolbox", "create:purple_toolbox", "create:cyan_toolbox", "create:light_gray_toolbox", "create:gray_toolbox", "sophisticatedbackpacks:backpack"]
 
 	[Tools.Saw]
 		#This sets the maximum base RF capacity for the Fluxsaw.
@@ -74,27 +95,6 @@
 		"Allow Fake Players" = false
 		#If TRUE, the Watering Can consumes source blocks when refilling.
 		"Consume Source Blocks" = true
-
-["Global Options"]
-	#If TRUE, Redstone Flux will act as its own energy system and will NOT be interoperable with "Forge Energy" - only enable this if you absolutely know what you are doing and want the Thermal Series to use a unique energy system.
-	"Standalone Redstone Flux" = false
-	#If TRUE, most Thermal Blocks will retain Energy when dropped.
-	#This setting does not control ALL blocks.
-	"Blocks Retain Energy" = true
-	#If TRUE, most Thermal Blocks will retain Inventory Contents when dropped.
-	#This setting does not control ALL blocks.
-	"Blocks Retain Inventory" = false
-	#If TRUE, most Thermal Blocks will retain Tank Contents when dropped.
-	#This setting does not control ALL blocks.
-	"Blocks Retain Tank Contents" = false
-	#If TRUE, Thermal Blocks will retain Augments when dropped.
-	"Blocks Retain Augments" = true
-	#If TRUE, Thermal Blocks will retain Redstone Control configuration when dropped.
-	"Blocks Retain Redstone Control" = true
-	#If TRUE, Thermal Blocks will retain Side configuration when dropped.
-	"Blocks Retain Side Configuration" = true
-	#If TRUE, Thermal Blocks will retain Transfer Control configuration when dropped.
-	"Blocks Retain Transfer Control" = true
 
 [Mobs]
 	#If TRUE, the Basalz Mob is enabled.
@@ -237,7 +237,7 @@
 		"Energy Multiplier" = 1.0
 
 [Crops]
-	#If TRUE, some Thermal Cultivation seeds will be able to drop from grass. Disabling this will ignore any datapack setting using Thermal"s "seeds_from_grass" Global Loot Modifier.
+	#If TRUE, some Thermal Cultivation seeds will be able to drop from grass. Disabling this will ignore any datapack setting using Thermal's 'seeds_from_grass' Global Loot Modifier.
 	"Drop Seeds From Grass" = true
 	#If TRUE, Glimmercap Mushrooms produce light when fully grown. Disabling this may improve performance.
 	"Glowstone Mushroom Light" = true

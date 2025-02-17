@@ -1,0 +1,19 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "upgrade_aquatic"
+    }
+  ],
+  "material": {
+    "items": [
+      "upgrade_aquatic:thrasher_tooth"
+    ],
+    "count": 3
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:iron"
+  },
+  "moduleKey": "single/trident",
+  "moduleVariant": "trident/trident"
+}

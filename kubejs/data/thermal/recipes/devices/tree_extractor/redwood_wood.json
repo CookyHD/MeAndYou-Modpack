@@ -1,0 +1,22 @@
+{
+	"type": "thermal:tree_extractor",
+	"trunk": {
+		"Name": "biomesoplenty:redwood_wood"
+	},
+	"leaves": {
+		"Name": "biomesoplenty:redwood_leaves",
+		"Properties": {
+			"persistent": "false"
+		}
+	},
+	"sapling": "biomesoplenty:redwood_sapling",
+	"min_height": 1,
+	"max_height": 128,
+	"min_leaves": 1,
+	"max_leaves": 1024,
+	"result": {
+		"fluid": "thermal:resin",
+		"amount": 15 
+	}
+}
+	

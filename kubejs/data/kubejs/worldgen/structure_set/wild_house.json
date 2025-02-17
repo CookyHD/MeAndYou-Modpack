@@ -1,0 +1,20 @@
+{
+	"structures": [
+		{
+			"structure": "kubejs:wild_house",
+			"weight": 1
+		}
+	],
+	"placement": {
+		"type": "minecraft:random_spread",
+		"salt": 800853052,
+		"frequency": 1,
+		"exclusion_zone": {
+			"other_set": "minecraft:villages",
+			"chunk_count": 4
+		},
+		"spread_type": "triangular",
+		"spacing": 34,
+		"separation": 12
+	}
+}

@@ -1,0 +1,55 @@
+{
+  "replace": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "requirement": {
+    "type": "tetra:and",
+    "requirements": [
+      {
+        "type": "tetra:craft_type",
+        "craft": "module"
+      },
+      {
+        "type": "tetra:material",
+        "material": {
+          "items": [
+            "iceandfire:dragonsteel_lightning_ingot"
+          ]
+        }
+      },
+      {
+        "type": "tetra:or",
+        "requirements": [
+          {
+            "type": "tetra:slot",
+            "slot": "double/head_left"
+          },
+          {
+            "type": "tetra:slot",
+            "slot": "double/head_right"
+          },
+          {
+            "type": "tetra:slot",
+            "slot": "single/head"
+          },
+          {
+            "type": "tetra:slot",
+            "slot": "sword/blade"
+          }
+        ]
+      }
+    ]
+  },
+  "outcomes": [
+    {
+      "type": "tetra:apply_improvements",
+      "improvements": {
+        "dragon_lightning": 0
+      }
+    }
+  ]
+}

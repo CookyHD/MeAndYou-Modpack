@@ -1,0 +1,10 @@
+{
+	"athena:loader": "athena:ctm",
+	"ctm_textures": {
+		"center": "kubejs:block/bubble/0",
+		"empty": "kubejs:block/bubble/1",
+		"horizontal": "kubejs:block/bubble/2",
+		"vertical": "kubejs:block/bubble/3",
+		"particle": "kubejs:block/bubble"
+	}
+}

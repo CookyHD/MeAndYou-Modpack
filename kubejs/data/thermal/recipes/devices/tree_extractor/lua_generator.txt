@@ -1,0 +1,55 @@
+
+recipes = {
+	{"twisted","architects_palette:twisted_sapling","architects_palette:twisted_log","architects_palette:twisted_leaves","minecraft:lava",15},
+	{"skyroot",'aether:skyroot_sapling', 'aether:skyroot_log', 'aether:skyroot_leaves',"thermal:resin",15},
+	{"golden_oak",'aether:golden_oak_sapling', 'aether:golden_oak_log', 'aether:golden_oak_leaves',"thermal:resin",15},
+	{"hellbark",'biomesoplenty:hellbark_sapling', 'biomesoplenty:hellbark_log', 'biomesoplenty:hellbark_leaves',"minecraft:lava",15},
+	{"mahogany",'biomesoplenty:mahogany_sapling', 'biomesoplenty:mahogany_log', 'biomesoplenty:mahogany_leaves',"thermal:latex",15},
+	{"magic",'biomesoplenty:magic_sapling', 'biomesoplenty:magic_log', 'biomesoplenty:magic_leaves',"thermal:resin",25},
+	{"palm",'biomesoplenty:palm_sapling', 'biomesoplenty:palm_log', 'biomesoplenty:palm_leaves',"thermal:resin",15},
+	{"maple",'biomesoplenty:maple_sapling', 'minecraft:oak_log', 'biomesoplenty:maple_leaves',"thermal:sap",20},
+	{"orange_autum",'biomesoplenty:orange_autumn_sapling', 'minecraft:dark_oak_log', 'biomesoplenty:orange_autumn_leaves',"thermal:sap",20},
+	{"redwood_log",'biomesoplenty:redwood_sapling', 'biomesoplenty:redwood_log', 'biomesoplenty:redwood_leaves',"thermal:resin",15},
+	{"redwood_wood",'biomesoplenty:redwood_sapling', 'biomesoplenty:redwood_wood', 'biomesoplenty:redwood_leaves',"thermal:resin",15},
+	{"willow",'biomesoplenty:willow_sapling', 'biomesoplenty:willow_log', 'biomesoplenty:willow_leaves',"thermal:resin",15},
+	{"origin",'biomesoplenty:origin_sapling', 'minecraft:oak_log', 'biomesoplenty:origin_leaves',"thermal:resin",15},
+	{"yellow_autumn",'biomesoplenty:yellow_autumn_sapling', 'minecraft:birch_log', 'biomesoplenty:yellow_autumn_leaves',"thermal:sap",20},
+	{"umbran",'biomesoplenty:umbran_sapling', 'biomesoplenty:umbran_log', 'biomesoplenty:umbran_leaves',"thermal:resin",25},
+	{"rainbow_birch",'biomesoplenty:rainbow_birch_sapling', 'minecraft:birch_log', 'biomesoplenty:rainbow_birch_leaves',"thermal:sap",10},
+	{"dead_leaves",'biomesoplenty:dead_sapling', 'biomesoplenty:dead_log', 'biomesoplenty:dead_leaves',"thermal:creosote",5},
+	{"dead_branch",'biomesoplenty:dead_sapling', 'biomesoplenty:dead_log', 'biomesoplenty:dead_branch',"thermal:creosote",5},
+	{"jacaranda",'biomesoplenty:jacaranda_sapling', 'biomesoplenty:jacaranda_log', 'biomesoplenty:jacaranda_leaves',"thermal:resin",15},
+	{"fir",'biomesoplenty:fir_sapling', 'biomesoplenty:fir_log', 'biomesoplenty:fir_leaves',"thermal:resin",25},
+	{"snowblossom",'biomesoplenty:snowblossom_sapling', 'minecraft:cherry_log', 'biomesoplenty:snowblossom_leaves',"thermal:resin",15},
+	{"flowering_azalea",'minecraft:flowering_azalea', 'minecraft:oak_log', 'minecraft:flowering_azalea_leaves',"thermal:resin",15},
+	{"azalea",'minecraft:azalea', 'minecraft:oak_log', 'minecraft:azalea_leaves',"thermal:resin",15},
+	{"flowering_oak",'biomesoplenty:flowering_oak_sapling', 'minecraft:oak_log', 'biomesoplenty:flowering_oak_leaves',"thermal:resin",15}
+}
+
+for _, v in ipairs(recipes) do
+	io.open(v[1]..".json","w")
+	:write([[
+{
+	"type": "thermal:tree_extractor",
+	"trunk": {
+		"Name": "]]..v[3]..[["
+	},
+	"leaves": {
+		"Name": "]]..v[4]..[[",
+		"Properties": {
+			"persistent": "false"
+		}
+	},
+	"sapling": "]]..v[2]..[[",
+	"min_height": 1,
+	"max_height": 128,
+	"min_leaves": 1,
+	"max_leaves": 1024,
+	"result": {
+		"fluid": "]]..v[5]..[[",
+		"amount": ]]..v[6]..[[ 
+	}
+}
+	]])
+	:close()
+end

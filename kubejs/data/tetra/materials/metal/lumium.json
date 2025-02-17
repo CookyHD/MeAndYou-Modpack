@@ -1,0 +1,38 @@
+{
+  "key": "lumium",
+  "category": "metal",
+  "primary": 4,
+  "secondary": 3.8,
+  "tertiary": 2,
+  "durability": 120,
+  "integrityCost": 1,
+  "integrityGain": 5,
+  "magicCapacity": 100,
+  "toolLevel": "minecraft:iron",
+  "toolEfficiency": 10,
+  "effects": {
+    "stabilizing": 10
+  },
+  "tints": {
+    "glyph": "fceea8",
+    "texture": "fceea8"
+  },
+  "textures": [
+    "metal",
+    "shiny"
+  ],
+  "material": {
+    "items": [
+      "thermal:lumium_ingot"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:gold"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal"
+    }
+  ]
+}

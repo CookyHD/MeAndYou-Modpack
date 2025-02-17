@@ -1,0 +1,22 @@
+{
+	"type": "thermal:tree_extractor",
+	"trunk": {
+		"Name": "biomesoplenty:dead_log"
+	},
+	"leaves": {
+		"Name": "biomesoplenty:dead_leaves",
+		"Properties": {
+			"persistent": "false"
+		}
+	},
+	"sapling": "biomesoplenty:dead_sapling",
+	"min_height": 1,
+	"max_height": 128,
+	"min_leaves": 1,
+	"max_leaves": 1024,
+	"result": {
+		"fluid": "thermal:creosote",
+		"amount": 5 
+	}
+}
+	

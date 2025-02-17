@@ -1,0 +1,11 @@
+[
+  {
+    "key": "dragon_fire",
+    "attributes": {
+      "generic.attack_knockback": 2
+    },
+    "effects": {
+      "bleeding": 2
+    }
+  }
+]
