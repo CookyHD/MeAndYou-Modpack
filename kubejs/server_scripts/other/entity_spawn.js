@@ -3,10 +3,10 @@ let ENTITY_SPAWN = {
 
 	creeper_chance : 5,
 	spider_inv_chance : 10,
-	spider_web_chance : 25,
-	skeleton_chance : 25,
-	wither_skeleton_chance : 50,
-	zombie_chance : 25
+	spider_web_chance : 15,
+	skeleton_chance : 15,
+	wither_skeleton_chance : 25,
+	zombie_chance : 15
 }
 
 
@@ -39,57 +39,59 @@ ENTITY_SPAWN.spider_effect = (entity) => {
 
 EntityEvents.spawned(event => {
 
-	let spider = false
-	if (event.entity.type == "minecraft:spider") spider = true
-	if (event.entity.type == "minecraft:cave_spider") spider = true
+	if (global.getSetting("HardMobs")) {
 
-	let skeleton = false
-	if (event.entity.type == "minecraft:skeleton") skeleton = true
-	if (event.entity.type == "minecraft:wither_skeleton") skeleton = true
-	if (event.entity.type == "minecraft:stray") skeleton = true
+		let spider = false
+		if (event.entity.type == "minecraft:spider") spider = true
+		if (event.entity.type == "minecraft:cave_spider") spider = true
 
-	let zombie = false
-	if (event.entity.type == "minecraft:zombie") zombie = true
-	if (event.entity.type == "minecraft:husk") zombie = true
+		let skeleton = false
+		if (event.entity.type == "minecraft:skeleton") skeleton = true
+		if (event.entity.type == "minecraft:wither_skeleton") skeleton = true
+		if (event.entity.type == "minecraft:stray") skeleton = true
 
-	if (event.entity.type == "minecraft:creeper" && global.chance(ENTITY_SPAWN.creeper_chance,100)) {
-		let NBT = event.entity.getNbt()
-		NBT["powered"] = true
-		event.entity.setNbt(NBT)
-	}
-	
-	if (spider && global.chance(ENTITY_SPAWN.spider_inv_chance,100)) {
-		ENTITY_SPAWN.spider_effect(event.entity)
-	}
+		let zombie = false
+		if (event.entity.type == "minecraft:zombie") zombie = true
+		if (event.entity.type == "minecraft:husk") zombie = true
 
-	if (spider && global.chance(ENTITY_SPAWN.spider_web_chance,100)) {
-		event.entity.tags.add("Kubejs_Weber")
-	}
-
-	if (zombie && global.chance(ENTITY_SPAWN.zombie_chance,100)) {
-		if (event.entity.getNbt()["IsBaby"] != 1) {
-			event.entity.tags.add("Kubejs_Buff")
-			event.entity.modifyAttribute("minecraft:generic.movement_speed",global.randomUUID(),0.13,"addition")
-			event.entity.setAttributeBaseValue("minecraft:generic.max_health",40)
-			event.entity.setAttributeBaseValue("minecraft:generic.armor",6)
-			event.entity.setAttributeBaseValue("minecraft:generic.attack_damage",6)
-			event.entity.setAttributeBaseValue("minecraft:generic.attack_knockback",2)
-			event.entity.setHealth(40)
+		if (event.entity.type == "minecraft:creeper" && global.chance(ENTITY_SPAWN.creeper_chance,100)) {
+			let NBT = event.entity.getNbt()
+			NBT["powered"] = true
+			event.entity.setNbt(NBT)
 		}
-	}
-
-	let war = false
-
-	if (skeleton && global.chance(ENTITY_SPAWN.skeleton_chance,100)) {
-		if (!event.entity.getMainHandItem().isEnchanted()) {
-			event.entity.tags.add("Kubejs_Warrior")
-			event.entity.setMainHandItem("minecraft:bow")
-			war = true
+		
+		if (spider && global.chance(ENTITY_SPAWN.spider_inv_chance,100)) {
+			ENTITY_SPAWN.spider_effect(event.entity)
 		}
-	}
 
-	if (!war && event.entity.type == "minecraft:wither_skeleton" && global.chance(ENTITY_SPAWN.wither_skeleton_chance,100)) {
-		if (!event.entity.getMainHandItem().isEnchanted()) event.entity.setMainHandItem("minecraft:bow")
+		if (spider && global.chance(ENTITY_SPAWN.spider_web_chance,100)) {
+			event.entity.tags.add("Kubejs_Weber")
+		}
+
+		if (zombie && global.chance(ENTITY_SPAWN.zombie_chance,100)) {
+			if (event.entity.getNbt()["IsBaby"] != 1) {
+				event.entity.tags.add("Kubejs_Buff")
+				event.entity.setAttributeBaseValue("minecraft:generic.movement_speed",0.3450000062584877)
+				event.entity.setAttributeBaseValue("minecraft:generic.max_health",40)
+				event.entity.setAttributeBaseValue("minecraft:generic.armor",4)
+				event.entity.setAttributeBaseValue("minecraft:generic.attack_damage",5)
+				event.entity.setHealth(40)
+			}
+		}
+
+		let war = false
+
+		if (skeleton && global.chance(ENTITY_SPAWN.skeleton_chance,100)) {
+			if (!event.entity.getMainHandItem().isEnchanted()) {
+				event.entity.tags.add("Kubejs_Warrior")
+				event.entity.setMainHandItem("minecraft:bow")
+				war = true
+			}
+		}
+
+		if (!war && event.entity.type == "minecraft:wither_skeleton" && global.chance(ENTITY_SPAWN.wither_skeleton_chance,100)) {
+			if (!event.entity.getMainHandItem().isEnchanted()) event.entity.setMainHandItem("minecraft:bow")
+		}
 	}
 
 	if (event.entity.type == "iceandfire:dragon_arrow") {

@@ -8,10 +8,10 @@ LevelEvents.tick(event => {
 					let axe = ""
 					let buffer = 0
 					if (entity.type == "minecraft:wither_skeleton") {
-						axe = "minecraft:golden_axe"
+						axe = "minecraft:stone_axe"
 						buffer = 7
 					} else {
-						axe = "minecraft:stone_axe"
+						axe = "minecraft:wooden_axe"
 						buffer = 5
 					}
 					let bow = "minecraft:bow"

@@ -126,6 +126,8 @@ global.SettingsNames = [
 	"CreativeCrafting",
 	"CustomCapes",
 	"CannonHandShot",
+	"RememberMe",
+	"HardMobs"
 ]
 
 /**

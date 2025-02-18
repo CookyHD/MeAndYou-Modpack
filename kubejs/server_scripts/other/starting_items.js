@@ -1,10 +1,8 @@
-let WINGS = Item.of('minecraft:elytra', "{CustomModelData:1,Damage:0,display:{Name:'{\"text\":\"Cana\\'s Wings\"}'}}")
-
-let ITEMS = [
-	Item.of('minecraft:iron_sword', '{Damage:100}'),
-	Item.of('minecraft:bow', '{Damage:184}'),
-	Item.of('minecraft:stone_pickaxe', '{Damage:31}'),
-	Item.of('minecraft:stone_axe', '{Damage:31}'),
+let STARTING_ITEMS = [
+	'minecraft:iron_sword',
+	'minecraft:bow',
+	'minecraft:iron_pickaxe',
+	'minecraft:iron_axe',
 	'kubejs:library',
 	'16x minecraft:bread',
 	'8x minecraft:cooked_beef',
@@ -15,11 +13,11 @@ let ITEMS = [
 PlayerEvents.loggedIn(event => {
 	let player = event.player
 	if (!player.stages.has("Kubejs_StartingItems") && !player.creative && global.getSetting("StartingItems")) {
-		ITEMS.forEach(item => {
+		STARTING_ITEMS.forEach(item => {
 			player.give(item)
 		})
 		if (player.username == "Cana_xd") {
-			player.give(WINGS)
+			player.give(Item.of('minecraft:elytra', "{CustomModelData:1,Damage:0,display:{Name:'{\"text\":\"Cana\\'s Wings\"}'}}"))
 		}
 		player.stages.add("Kubejs_StartingItems")
 	}
@@ -33,11 +31,11 @@ ServerEvents.commandRegistry(event => {
 		.requires(src => src.hasPermission(3))
 		.executes(ctx => {
 			let player = ctx.source.player
-			ITEMS.forEach(item => {
+			STARTING_ITEMS.forEach(item => {
 				player.give(item)
 			})
 			if (player.username == "Cana_xd") {
-				player.give(WINGS)
+				player.give(Item.of('minecraft:elytra', "{CustomModelData:1,Damage:0,display:{Name:'{\"text\":\"Cana\\'s Wings\"}'}}"))
 			}
 			player.tell(Text.yellow("Recived all Starting Items."))
 			return 1

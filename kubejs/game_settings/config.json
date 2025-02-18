@@ -2,5 +2,7 @@
 	"StartingItems": true,
 	"CreativeCrafting": false,
 	"CustomCapes": true,
-	"CannonHandShot": true
+	"CannonHandShot": true,
+	"RememberMe": true,
+	"HardMobs": true
 }

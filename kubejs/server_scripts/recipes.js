@@ -2907,7 +2907,7 @@ ServerEvents.recipes(event => {
 	event.shapeless('4x kubejs:stick_blend',['minecraft:blaze_powder', 'thermal:silver_dust', 'thermal:sulfur_dust'])
 	event.recipes.create.mixing(Fluid.of("kubejs:heavy_fluid",1000),['2x thermal:lapis_dust', 'thermal:lead_dust', Fluid.of("lava",1000)])
 	event.recipes.create.compacting('kubejs:tech_stage_1b',['minecraft:iron_ingot', 'kubejs:stick_blend', 'thermal:tin_ingot']).heated()
-	event.recipes.thermal.chiller('kubejs:tech_stage_1a',['thermal:chiller_ingot_cast',Fluid.of("kubejs:heavy_fluid",250)]).energy(2000)
+	event.recipes.thermal.chiller('kubejs:tech_stage_1a',['thermal:chiller_ingot_cast',Fluid.of("kubejs:heavy_fluid",250)]).energy(20000)
 	event.recipes.create.deploying('kubejs:tech_stage_2', ["kubejs:tech_stage_1a", "kubejs:tech_stage_1b"])
 	event.recipes.thermal.smelter('kubejs:tech_stage_3', ['kubejs:tech_stage_2',"thermal:coal_coke"]).energy(7200)
 
@@ -2960,5 +2960,12 @@ ServerEvents.recipes(event => {
 			"item": "minecraft:netherite_upgrade_smithing_template"
 		}
 	})
+	
+	event.recipes.create.mixing(Fluid.of("kubejs:fluid_bread",250),['3x create:wheat_flour', '2x thermal:barley', '2x minecraft:sugar',Fluid.of("water",250)]).heated()
+	
+	event.recipes.thermal.chiller("kubejs:bread_ingot",['thermal:chiller_ingot_cast',Fluid.of("kubejs:fluid_bread",250)]).energy(20000)
+
+	event.recipes.create.filling('kubejs:beer',[Fluid.of('kubejs:fluid_bread',250),'glass_bottle'])
+	event.recipes.thermal.bottler('kubejs:beer',[Fluid.of('kubejs:fluid_bread',250),'glass_bottle']).energy(800)
 
 })

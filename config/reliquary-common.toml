@@ -328,7 +328,10 @@ mobDropsEnabled = true
 			"iceandfire:dread_beast",
 			"meetyourfight:rose_spirit",
 			"create_sa:brass_drone",
-			"irons_spellbooks:citadel_keeper"
+			"irons_spellbooks:citadel_keeper",
+			"mowziesmobs:umvuthana_crane_player",
+			"mowziesmobs:umvuthana_follower_player",
+			"mowziesmobs:umvuthana_follower_raptor"
 			]
 
 	#Mob Charm Fragment Settings
