@@ -461,7 +461,8 @@ JEIEvents.hideFluids(event => {
 		'createaddition:seed_oil',
 		'createaddition:bioethanol',
 		'biggerreactors:liquid_uranium',
-		'biggerreactors:liquid_obsidian'
+		'biggerreactors:liquid_obsidian',
+		'biomesoplenty:liquid_null'
 	].forEach(e => event.hide(e))
 })
 

@@ -222,15 +222,6 @@ ItemEvents.tooltip(event => {
 	
 	event.add("quarryplus:book_mover", "§7Used for Putting Enchanted Books on Quarry's.")
 
-	event.addAdvanced("thermal:device_tree_extractor",(item, advanced, text) => {
-		if (event.ctrl) {
-			text.add(1,Text.red("Mahogany isn't fully functional yet. However,"))
-			text.add(2,Text.red("placing logs can help make it work."))
-		} else {
-			text.add(1,[Text.gray('Hold '), Text.red("Ctrl ").bold(true), Text.gray("for Warnings.")])
-		}
-	})
-
 	let types = [
 		"ice",
 		"fire",

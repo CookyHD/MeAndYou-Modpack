@@ -10,7 +10,6 @@ ServerEvents.recipes(event => {
 	let inter
 
 	let ban = [
-		'littlelogistics:receiver_component',
 		'littlelogistics:tee_junction_rail',
 		'littlelogistics:car_dock_rail',
 		'littlelogistics:switch_rail',
@@ -2191,6 +2190,7 @@ ServerEvents.recipes(event => {
 			"iceandfire:creative_dragon_meal",
 			'create:creative_blaze_cake',
 			'createaddition:creative_energy',
+			'littlelogistics:creative_capacitor'
 			Item.of('thermal:energy_cell', '{BlockEntityTag:{ItemInv:[{Count:1b,Slot:0b,id:"thermal:rf_coil_creative_augment"}]}}'),
 			'create:creative_motor',
 			Item.of('botania:mana_tablet', '{creative:1b,mana:500000}'),
@@ -3028,6 +3028,12 @@ ServerEvents.recipes(event => {
 		{id: 'littlelogistics:energy_locomotive'},
 		'littlelogistics:vessel_charger',
 		'thermal:rf_coil',
+	)
+	
+	event.replaceInput(
+		{id: 'grapplemod:repeller'},
+		'minecraft:iron_ingot',
+		'minecraft:diamond',
 	)
 
 })

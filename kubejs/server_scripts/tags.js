@@ -104,8 +104,7 @@ ServerEvents.tags('item', event => {
 		"kubejs:golden_hammer",
 		"kubejs:diamond_hammer",
 		"kubejs:netherite_hammer",
-		"kubejs:bread_hammer",
-		'redstone_arsenal:flux_hammer'
+		"kubejs:bread_hammer"
 	])
 
 	event.add("kubejs:scraps",[
