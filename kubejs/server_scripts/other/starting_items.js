@@ -16,9 +16,6 @@ PlayerEvents.loggedIn(event => {
 		STARTING_ITEMS.forEach(item => {
 			player.give(item)
 		})
-		if (player.username == "Cana_xd") {
-			player.give(Item.of('minecraft:elytra', "{CustomModelData:1,Damage:0,display:{Name:'{\"text\":\"Cana\\'s Wings\"}'}}"))
-		}
 		player.stages.add("Kubejs_StartingItems")
 	}
 })
@@ -34,9 +31,6 @@ ServerEvents.commandRegistry(event => {
 			STARTING_ITEMS.forEach(item => {
 				player.give(item)
 			})
-			if (player.username == "Cana_xd") {
-				player.give(Item.of('minecraft:elytra', "{CustomModelData:1,Damage:0,display:{Name:'{\"text\":\"Cana\\'s Wings\"}'}}"))
-			}
 			player.tell(Text.yellow("Recived all Starting Items."))
 			return 1
 		})

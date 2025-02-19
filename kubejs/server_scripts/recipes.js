@@ -10,6 +10,41 @@ ServerEvents.recipes(event => {
 	let inter
 
 	let ban = [
+		'littlelogistics:receiver_component',
+		'littlelogistics:tee_junction_rail',
+		'littlelogistics:car_dock_rail',
+		'littlelogistics:switch_rail',
+		'littlelogistics:tug_route',
+		'littlelogistics:vacuum_barge',
+		'littlelogistics:fluid_barge',
+		'littlelogistics:fishing_barge',
+		'littlelogistics:barrel_barge',
+		'littlelogistics:junction_rail',
+		'littlelogistics:conductors_wrench',
+		'littlelogistics:fluid_hopper',
+		'littlelogistics:guide_rail_tug',
+		'littlelogistics:vessel_detector',
+		'littlelogistics:energy_tug',
+		'littlelogistics:barge_dock',
+		'littlelogistics:tug_dock',
+		'littlelogistics:chest_car',
+		'littlelogistics:rapid_hopper',
+		'littlelogistics:barrel_car',
+		'littlelogistics:vessel_charger',
+		'littlelogistics:tug',
+		'littlelogistics:locomotive_dock_rail',
+		'littlelogistics:seater_barge',
+		'littlelogistics:guide_rail_corner',
+		'littlelogistics:fluid_car',
+		'littlelogistics:barge',
+		'littlelogistics:spring',
+		'biomesoplenty:anomaly',
+		'biomesoplenty:liquid_null_bucket',
+		'biomesoplenty:null_plant',
+		'biomesoplenty:null_leaves',
+		'biomesoplenty:null_block',
+		'biomesoplenty:null_end_stone',
+		'biomesoplenty:unmapped_end_stone',
 		'mace_port:heavy_core',
 		'biomesoplenty:orange_sandstone_slab',
 		'biomesoplenty:white_sandstone_slab',
@@ -2960,12 +2995,39 @@ ServerEvents.recipes(event => {
 			"item": "minecraft:netherite_upgrade_smithing_template"
 		}
 	})
-	
+
 	event.recipes.create.mixing(Fluid.of("kubejs:fluid_bread",250),['3x create:wheat_flour', '2x thermal:barley', '2x minecraft:sugar',Fluid.of("water",250)]).heated()
 	
 	event.recipes.thermal.chiller("kubejs:bread_ingot",['thermal:chiller_ingot_cast',Fluid.of("kubejs:fluid_bread",250)]).energy(20000)
 
 	event.recipes.create.filling('kubejs:beer',[Fluid.of('kubejs:fluid_bread',250),'glass_bottle'])
 	event.recipes.thermal.bottler('kubejs:beer',[Fluid.of('kubejs:fluid_bread',250),'glass_bottle']).energy(800)
+
+	event.replaceInput(
+		{id: 'littlelogistics:automatic_switch_rail'},
+		'littlelogistics:switch_rail',
+		'moreminecarts:rail_turn',
+	)
+
+	event.shaped('littlelogistics:tee_junction_rail',
+		[
+			"AA"
+		],
+		{
+			A: 'minecraft:rail'
+		}
+	)
+
+	event.replaceInput(
+		{id: 'littlelogistics:steam_locomotive'},
+		'minecraft:furnace',
+		'minecraft:blast_furnace',
+	)
+
+	event.replaceInput(
+		{id: 'littlelogistics:energy_locomotive'},
+		'littlelogistics:vessel_charger',
+		'thermal:rf_coil',
+	)
 
 })

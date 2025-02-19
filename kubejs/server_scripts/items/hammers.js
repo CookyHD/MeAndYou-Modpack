@@ -12,7 +12,8 @@ HAMMER.convertBlock = (block) => {
 	let bool = false
 	HAMMER.convert_list.forEach(arr => {
 		if (arr[0] == id) {
-			block.set(arr[1])
+			block.set("air")
+			block.popItem(arr[1])
 			bool = true
 		}
 	})
@@ -23,7 +24,6 @@ BlockEvents.broken(event => {
 	if (event.player.getMainHandItem().hasTag("kubejs:hammers") && !event.player.isShiftKeyDown()) {
 		if (HAMMER.convertBlock(event.block)) {
 			global.itemDamageAndBreak(event.level,event.player,1)
-			event.cancel()
 		}
 	}
 })

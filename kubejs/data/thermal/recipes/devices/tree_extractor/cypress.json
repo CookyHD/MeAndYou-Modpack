@@ -1,0 +1,22 @@
+{
+	"type": "thermal:tree_extractor",
+	"trunk": {
+		"Name": "minecraft:spruce_log"
+	},
+	"leaves": {
+		"Name": "biomesoplenty:cypress_leaves",
+		"Properties": {
+			"persistent": "false"
+		}
+	},
+	"sapling": "biomesoplenty:cypress_sapling",
+	"min_height": 1,
+	"max_height": 128,
+	"min_leaves": 1,
+	"max_leaves": 1024,
+	"result": {
+		"fluid": "thermal:resin",
+		"amount": 15 
+	}
+}
+	

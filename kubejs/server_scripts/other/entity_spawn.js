@@ -39,7 +39,9 @@ ENTITY_SPAWN.spider_effect = (entity) => {
 
 EntityEvents.spawned(event => {
 
-	if (global.getSetting("HardMobs")) {
+	if (global.getSetting("HardMobs") && !event.entity.tags.contains("Kubejs_MobEdit")) {
+
+		let edit = false
 
 		let spider = false
 		if (event.entity.type == "minecraft:spider") spider = true
@@ -58,14 +60,17 @@ EntityEvents.spawned(event => {
 			let NBT = event.entity.getNbt()
 			NBT["powered"] = true
 			event.entity.setNbt(NBT)
+			edit = true
 		}
 		
 		if (spider && global.chance(ENTITY_SPAWN.spider_inv_chance,100)) {
 			ENTITY_SPAWN.spider_effect(event.entity)
+			edit = true
 		}
 
 		if (spider && global.chance(ENTITY_SPAWN.spider_web_chance,100)) {
 			event.entity.tags.add("Kubejs_Weber")
+			edit = true
 		}
 
 		if (zombie && global.chance(ENTITY_SPAWN.zombie_chance,100)) {
@@ -76,6 +81,7 @@ EntityEvents.spawned(event => {
 				event.entity.setAttributeBaseValue("minecraft:generic.armor",4)
 				event.entity.setAttributeBaseValue("minecraft:generic.attack_damage",5)
 				event.entity.setHealth(40)
+				edit = true
 			}
 		}
 
@@ -86,12 +92,18 @@ EntityEvents.spawned(event => {
 				event.entity.tags.add("Kubejs_Warrior")
 				event.entity.setMainHandItem("minecraft:bow")
 				war = true
+				edit = true
 			}
 		}
 
 		if (!war && event.entity.type == "minecraft:wither_skeleton" && global.chance(ENTITY_SPAWN.wither_skeleton_chance,100)) {
-			if (!event.entity.getMainHandItem().isEnchanted()) event.entity.setMainHandItem("minecraft:bow")
+			if (!event.entity.getMainHandItem().isEnchanted()) {
+				event.entity.setMainHandItem("minecraft:bow")
+				edit = true
+			}
 		}
+
+		if (edit) event.entity.tags.add("Kubejs_MobEdit")
 	}
 
 	if (event.entity.type == "iceandfire:dragon_arrow") {
