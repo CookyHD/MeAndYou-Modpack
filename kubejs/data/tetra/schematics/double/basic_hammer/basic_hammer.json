@@ -1,0 +1,26 @@
+{
+	"replace": false,
+	"applicableMaterials": [
+		"!cobalt",
+		"!manyullyn"
+	],
+	"outcomes": [
+		{
+			"materials": [
+				"tetra:metal/cobalt"
+			],
+			"moduleKey": "double/basic_hammer",
+			"moduleVariant": "basic_hammer/"
+		},
+		{
+			"materials": [
+				"tetra:metal/manyullyn"
+			],
+			"requiredTools": {
+				"hammer_dig": 3
+			},
+			"moduleKey": "double/basic_hammer",
+			"moduleVariant": "basic_hammer/"
+		}
+	]
+}

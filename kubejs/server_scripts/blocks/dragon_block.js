@@ -81,11 +81,3 @@ BlockEvents.rightClicked("kubejs:dragon_block", event => {
 	}
 
 })
-
-LevelEvents.tick(event => {
-	event.level.getEntities().forEach(entity => {
-		if (entity.tags.contains("Kubejs_MultItem") && event.level.time % 10 == 0) {
-			event.level.spawnParticles("end_rod",false,entity.x,entity.y+0.2,entity.z,0,0,0,1,0.025)
-		}
-	})
-})

@@ -1,5 +1,11 @@
 {
 
+	"tetra.material.cobalt": "Cobalt",
+	"tetra.material.cobalt.prefix": "Cobalt",
+
+	"tetra.material.manyullyn": "Manyullym",
+	"tetra.material.manyullyn.prefix": "Manyullym",
+
 	"coment":"From SmallTertaAdittions",
 
 	"tetra.material.enderium": "Enderium",

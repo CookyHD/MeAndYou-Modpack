@@ -243,6 +243,10 @@ ItemEvents.tooltip(event => {
 		})
 	})
 
+	event.add("kubejs:cobalt_ingot", "§7Strong Tetra Material.")
+
+	event.add("kubejs:manyullyn_ingot", "§7Even Stronger Tetra Material.")
+
 	function ore(name,min,max) {
 		event.add(name,"§7Y level §6"+min+"§7 to §6"+max)
 	}
@@ -251,7 +255,6 @@ ItemEvents.tooltip(event => {
 		ore(namespace+':'+name,min,max)
 		ore(namespace+':'+'deepslate_'+name,min,max)
 	}
-
 
 	oreSpace('minecraft','coal_ore',0,256,4)
 	oreSpace('minecraft','copper_ore',-16,112)
@@ -262,9 +265,9 @@ ItemEvents.tooltip(event => {
 	oreSpace('minecraft','redstone_ore',-64,16)
 	oreSpace('minecraft','lapis_ore',-64,64)
 
-	ore('minecraft:nether_quartz_ore',10,117)
-	ore('minecraft:nether_gold_ore',10,117)
-	ore('minecraft:ancient_debris',8,119)
+	ore('minecraft:nether_quartz_ore',10,245)
+	ore('minecraft:nether_gold_ore',10,245)
+	ore('minecraft:ancient_debris',8,24)
 
 	oreSpace('biggerreactors','uranium_ore',-64,48)
 	oreSpace('create','zinc_ore',-63,70)
@@ -286,5 +289,8 @@ ItemEvents.tooltip(event => {
 
 	event.add('thermal:oil_sand','§7Spawns in §6Desert')
 	event.add('thermal:oil_red_sand','§7Spawns in §6Desert')
+
+	ore('kubejs:nether_uranium_ore',10,245)
+	ore('kubejs:nether_cobalt_ore',10,245)
 
 })

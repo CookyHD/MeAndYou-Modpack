@@ -1,8 +1,10 @@
 {
 	"entities": [
-		"minecraft:player"
+		"minecraft:player",
+		"minecraft:armor_stand"
 	],
 	"slots": [
-		"tank"
+		"tank",
+		"mod_curio"
 	]
 }

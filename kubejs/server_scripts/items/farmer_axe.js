@@ -16,7 +16,6 @@ FARMER_AXE.randomAnimal = function() {
 	return entity_list[Math.ceil((Math.random()*entity_list.length)-1)]
 }
 
-
 ItemEvents.entityInteracted('kubejs:farmer_axe', event => {
 
 	let player = event.player
@@ -50,22 +49,4 @@ EntityEvents.death(event => {
 		mob.spawn()
 		global.playSound(event.level,[entity.x,entity.y,entity.z],"minecraft:entity.zombie_villager.cure","neutral")
 	}
-})
-
-LevelEvents.tick(event => {
-	event.level.getEntities().forEach(entity => {
-		if (entity.tags.contains("Kubejs_DeathTransform") && event.level.time % 5 == 0) {
-			let width = entity.getBbWidth()
-			let height = entity.getBbHeight()
-			event.level.spawnParticles("dust 1 1 1 1",false,
-				entity.x,
-				entity.y+height/2,
-				entity.z,
-				width/4,
-				height/4,
-				width/4,
-				(height+width)*2,
-			0)
-		}
-	})
 })

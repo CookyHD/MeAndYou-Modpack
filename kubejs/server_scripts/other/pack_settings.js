@@ -21,6 +21,9 @@ ServerEvents.commandRegistry(event => {
 						Utils.server.tell(Text.green("Reload Done."))
 					})
 				}
+				if (arg1 == "DebugTickOff") {
+					//TODO
+				}
 				if (arg1 == "CustomCapes") {
 					player.tell(Text.blue("Setting takes effect after game Reload."))
 				}
@@ -35,7 +38,7 @@ ServerEvents.commandRegistry(event => {
 		.executes(ctx => {
 			let player = ctx.source.player
 			global.SettingsNames.forEach(setting => {
-				player.tell(Text.yellow(setting+" is set to "+global.getSetting(setting)+"."))
+				if (setting != "DebugTickOff") player.tell(Text.yellow(setting+" is set to "+global.getSetting(setting)+"."))
 			})
 			return 1
 		})

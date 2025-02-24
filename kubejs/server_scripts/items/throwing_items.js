@@ -70,11 +70,3 @@ global.projectileImpacts.push(
 		}
 	}
 })
-
-LevelEvents.tick(event => {
-	event.level.getEntities().forEach(entity => {
-		if (entity.tags.contains("Kubejs_Mudball")) {
-			event.level.spawnParticles("item kubejs:mud_ball",false,entity.x,entity.y,entity.z,0.1,0.1,0.1,2,0)
-		}
-	})
-})

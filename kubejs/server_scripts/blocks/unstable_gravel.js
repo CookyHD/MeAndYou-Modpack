@@ -38,20 +38,27 @@ BlockEvents.broken("kubejs:unstable_gravel", event => {
 	event.cancel()
 })
 
+BlockEvents.placed("kubejs:heavy_weight", event => {
+
+	if (event.block.down.id == "kubejs:unstable_gravel") {
+		event.level.destroyBlock(event.block.pos,false)
+		UNSTABLE_CHAIN(event.server,event.block.down)
+	}
+})
+
 LevelEvents.tick(event => {
-
-	event.level.getEntities().forEach(entity => {
-
-		if (entity.type != "minecraft:falling_block") return
-		if (entity.getNbt()["BlockState"]["Name"] != "kubejs:heavy_weight") return
-
-		let target = entity.block.down
-		if (target.id == "kubejs:unstable_gravel") {
-			UNSTABLE_CHAIN(event.server,target)
-			entity.kill()
-			event.level.spawnParticles("minecraft:block kubejs:heavy_weight",false,entity.x,entity.y,entity.z,0.5,0.5,0.5,150,0)
-			global.playSound(event.level,[entity.x,entity.y,entity.z],"minecraft:block.glass.break","neutral",2,0.5)
+	event.level.getEntities().filter(e => e.tags.contains("Kubejs_Heavy")).forEach(entity => {
+		let target_block = entity.block.down
+		let own_block = entity.block
+		if (!global.isAir(target_block)) {
+			event.server.scheduleInTicks(5, () => {
+				if (own_block.id == "kubejs:heavy_weight") {
+					own_block.level.destroyBlock(own_block.pos,false)
+				}
+				UNSTABLE_CHAIN(event.server,target_block)
+			})
 		}
 	})
-
 })
+
+

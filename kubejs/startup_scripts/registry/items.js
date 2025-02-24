@@ -419,6 +419,9 @@ StartupEvents.registry("item", (event) => {
 	event.create('star_dust')
 		.displayName(StarPrefix + "Dust")
 
+	event.create('star_nugget')
+		.displayName(StarPrefix + "Nugget")
+
 	event.create('star_ingot')
 		.displayName(StarPrefix + "Ingot")
 
@@ -436,6 +439,10 @@ StartupEvents.registry("item", (event) => {
 
 	event.create('creativ_ingot')
 	.displayName("Creativium Ingot")
+	.glow(true)
+
+	event.create('creativ_nugget')
+	.displayName("Creativium Nugget")
 	.glow(true)
 
 	event.create('creativ_dust')
@@ -465,6 +472,9 @@ StartupEvents.registry("item", (event) => {
 
 	event.create('tech_ingot')
 	.displayName(TechPrefix + "Ingot")
+
+	event.create('tech_nugget')
+	.displayName(TechPrefix + "Nugget")
 
 	event.create('tech_dust')
 	.displayName(TechPrefix + "Dust")
@@ -581,26 +591,33 @@ StartupEvents.registry("item", (event) => {
 	.useAnimation("drink")
 	.unstackable()
 
+	event.create("cobalt_ingot")
+	.displayName("Cobalt Ingot")
+
+	event.create("cobalt_nugget")
+	.displayName("Cobalt Nugget")
+
+	event.create("cobalt_dust")
+	.displayName("Cobalt Dust")
+
+	event.create("raw_cobalt")
+	.displayName("Raw Cobalt")
+
+	event.create("crushed_raw_cobalt")
+	.displayName("Crushed Raw Cobalt")
+
+	event.create("manyullyn_ingot")
+	.displayName("Manyullyn Ingot")
+
+	event.create("manyullyn_nugget")
+	.displayName("Manyullyn Nugget")
+
+	event.create("manyullyn_dust")
+	.displayName("Manyullyn Dust")
+
 })
 
 ItemEvents.modification(event => {
-
-	let hammers = [
-		"kubejs:wooden_hammer",
-		"kubejs:stone_hammer",
-		"kubejs:iron_hammer",
-		"kubejs:golden_hammer",
-		"kubejs:diamond_hammer",
-		"kubejs:netherite_hammer",
-		"kubejs:star_hammer",
-		"kubejs:tech_hammer",
-		"kubejs:bread_hammer"
-	].forEach(e => {
-		event.modify(e, item => {
-			//Disabled For Now
-			//item.setAttackDamage(item.getAttackDamage() - 2)
-		})
-	})
 
 	event.modify('kubejs:wooden_hammer', item => {
 		item.setBurnTime(200)

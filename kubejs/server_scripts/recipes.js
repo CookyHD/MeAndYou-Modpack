@@ -518,6 +518,7 @@ ServerEvents.recipes(event => {
 	event.remove({ id: 'iceandfire:dragonforge/dragonsteel_lightning_ingot' })
 	event.remove({ id: 'architects_palette:bone_meal' })
 	event.remove({ id: 'create_sa:netherite_jetpack_recipe' })
+	event.remove({ id: 'create:crushing/uranium_ore' })
 
 	event.remove({ type: "sfm:printing_press" })
 	event.remove({ type: "sfm:falling_anvil" })
@@ -1454,8 +1455,7 @@ ServerEvents.recipes(event => {
 	event.recipes.thermal.pulverizer('redstone_arsenal:flux_dust', 'redstone_arsenal:flux_ingot').energy(2000)
 	event.recipes.thermal.smelter('redstone_arsenal:flux_ingot', 'redstone_arsenal:flux_dust').energy(1600)
 
-	event.recipes.thermal.smelter('2x create:brass_ingot', ['create:zinc_ingot','minecraft:copper_ingot']).energy(3200)
-	event.recipes.thermal.smelter('2x create:brass_ingot', ['kubejs:zinc_dust','thermal:copper_dust']).energy(3200)
+	event.recipes.thermal.smelter('2x create:brass_ingot', [['kubejs:zinc_dust','create:zinc_ingot'],['thermal:copper_dust','minecraft:copper_ingot']]).energy(3200)
 
 	event.shaped('mobcapturingtool:mob_capturing_tool', [
 			'ACA',
@@ -1743,7 +1743,9 @@ ServerEvents.recipes(event => {
 		['tin',8],
 		['lead',8],
 		['silver',2.5],
-		['nickel',8]
+		['nickel',8],
+		["ruby",2.5],
+		["sapphire",2.5]
 	]
 
 	orechid_noraml.forEach(e => {
@@ -1756,11 +1758,11 @@ ServerEvents.recipes(event => {
 		event.recipes.botania.orechid('thermal:deepslate_'+e[0]+'_ore', 'minecraft:deepslate', e[1])
 	})
 
-	event.recipes.botania.orechid('thermal:oil_sand', 'minecraft:sand', 60)
-	event.recipes.botania.orechid('minecraft:sandstone', 'minecraft:sand', 40)
+	event.recipes.botania.orechid('thermal:oil_sand', 'minecraft:sand', 8)
+	event.recipes.botania.orechid('minecraft:sandstone', 'minecraft:sand', 2.5)
 
-	event.recipes.botania.orechid('thermal:oil_red_sand', 'minecraft:red_sand', 60)
-	event.recipes.botania.orechid('minecraft:red_sandstone', 'minecraft:red_sand', 40)
+	event.recipes.botania.orechid('thermal:oil_red_sand', 'minecraft:red_sand', 8)
+	event.recipes.botania.orechid('minecraft:red_sandstone', 'minecraft:red_sand', 2.5)
 
 	event.recipes.botania.orechid('create:zinc_ore', 'minecraft:stone', 8)
 	event.recipes.botania.orechid('create:deepslate_zinc_ore', 'minecraft:deepslate', 8)
@@ -1768,13 +1770,15 @@ ServerEvents.recipes(event => {
 	event.recipes.botania.orechid('biggerreactors:uranium_ore', 'minecraft:stone', 10)
 	event.recipes.botania.orechid('biggerreactors:deepslate_uranium_ore', 'minecraft:deepslate', 10)
 
-	event.recipes.botania.orechid_ignem('minecraft:nether_gold_ore','minecraft:netherrack',79.5)
-	event.recipes.botania.orechid_ignem('minecraft:nether_quartz_ore','minecraft:netherrack',19.5)
+	event.recipes.botania.orechid_ignem('minecraft:nether_gold_ore','minecraft:netherrack',10)
+	event.recipes.botania.orechid_ignem('minecraft:nether_quartz_ore','minecraft:netherrack',8)
+	event.recipes.botania.orechid_ignem('kubejs:nether_uranium_ore','minecraft:netherrack',8)
+	event.recipes.botania.orechid_ignem('kubejs:nether_cobalt_ore','minecraft:netherrack',5)
 	event.recipes.botania.orechid_ignem('minecraft:ancient_debris','minecraft:netherrack',1)
 
-	event.recipes.botania.orechid_ignem('aether:ambrosium_ore','aether:holystone',69)
-	event.recipes.botania.orechid_ignem('aether:zanite_ore','aether:holystone',29)
-	event.recipes.botania.orechid_ignem('aether:gravitite_ore','aether:holystone',2)
+	event.recipes.botania.orechid_ignem('aether:ambrosium_ore','aether:holystone',10)
+	event.recipes.botania.orechid_ignem('aether:zanite_ore','aether:holystone',5)
+	event.recipes.botania.orechid_ignem('aether:gravitite_ore','aether:holystone',1)
 
 	event.shapeless('3x create:dough', [
 		'minecraft:water_bucket',
@@ -2063,6 +2067,14 @@ ServerEvents.recipes(event => {
 		'thermal:copper_dust'
 	])
 
+	event.shapeless('2x create:brass_ingot', [
+		['kubejs:zinc_dust',"create:zinc_ingot"],
+		['thermal:copper_dust',"minecraft:copper_ingot"],
+		'minecraft:fire_charge'
+	])
+
+	event.recipes.thermal.centrifuge(['kubejs:zinc_dust', 'thermal:copper_dust'],"2x kubejs:brass_dust").energy(3000)
+
 	event.recipes.thermal.insolator(Item.of('farmersdelight:onion').withChance(2.5),'farmersdelight:onion').xp(0.15)
 	event.recipes.thermal.insolator([Item.of('farmersdelight:tomato').withChance(2),Item.of('farmersdelight:tomato_seeds').withChance(1.1),Item.of('farmersdelight:rotten_tomato').withChance(0.05)],'farmersdelight:tomato_seeds').xp(0.15)
 	event.recipes.thermal.insolator([Item.of('farmersdelight:cabbage').withChance(2),Item.of('farmersdelight:cabbage_seeds').withChance(1.1)],'farmersdelight:cabbage_seeds').xp(0.15)
@@ -2119,45 +2131,72 @@ ServerEvents.recipes(event => {
 	thermalpackun('farmersdelight:straw_bale', 'farmersdelight:straw')
 
 	thermalpackun('kubejs:star_block', 'kubejs:star_ingot')
+	thermalpackun('kubejs:star_ingot', 'kubejs:star_nugget')
 
 	event.shaped('kubejs:star_block', [
-			'AAA',
-			'AAA',
-			'AAA'
-		], {
-			A: 'kubejs:star_ingot'
-		}
-	)
+		'AAA',
+		'AAA',
+		'AAA'
+	], {
+		A: 'kubejs:star_ingot'
+	})
+
+	event.shaped('kubejs:star_ingot', [
+		'AAA',
+		'AAA',
+		'AAA'
+	], {
+		A: 'kubejs:star_nugget'
+	})
 
 	event.shapeless('9x kubejs:star_ingot', 'kubejs:star_block')
+	event.shapeless('9x kubejs:star_nugget', 'kubejs:star_ingot')
 
 	event.shapeless("thermal:nuke_tnt_minecart", ["thermal:nuke_tnt","minecraft:minecart"])
 
 	thermalpackun('kubejs:tech_block', 'kubejs:tech_ingot')
+	thermalpackun('kubejs:tech_ingot', 'kubejs:tech_nugget')
 
 	event.shaped('kubejs:tech_block', [
-			'AAA',
-			'AAA',
-			'AAA'
-		], {
-			A: 'kubejs:tech_ingot'
-		}
-	)
+		'AAA',
+		'AAA',
+		'AAA'
+	], {
+		A: 'kubejs:tech_ingot'
+	})
+
+	event.shaped('kubejs:tech_ingot', [
+		'AAA',
+		'AAA',
+		'AAA'
+	], {
+		A: 'kubejs:tech_nugget'
+	})
 
 	event.shapeless('9x kubejs:tech_ingot', 'kubejs:tech_block')
+	event.shapeless('9x kubejs:tech_nugget', 'kubejs:tech_ingot')
 
 	thermalpackun('kubejs:creativ_block', 'kubejs:creativ_ingot')
+	thermalpackun('kubejs:creativ_ingot', 'kubejs:creativ_nugget')
 
 	event.shaped('kubejs:creativ_block', [
-			'AAA',
-			'AAA',
-			'AAA'
-		], {
-			A: 'kubejs:creativ_ingot'
-		}
-	)
+		'AAA',
+		'AAA',
+		'AAA'
+	], {
+		A: 'kubejs:creativ_ingot'
+	})
+
+	event.shaped('kubejs:creativ_ingot', [
+		'AAA',
+		'AAA',
+		'AAA'
+	], {
+		A: 'kubejs:creativ_nugget'
+	})
 
 	event.shapeless('9x kubejs:creativ_ingot', 'kubejs:creativ_block')
+	event.shapeless('9x kubejs:creativ_nugget', 'kubejs:creativ_ingot')
 
 	event.recipes.thermal.pulverizer('kubejs:star_dust', 'kubejs:star_ingot').energy(2000)
 
@@ -2811,11 +2850,12 @@ ServerEvents.recipes(event => {
 		}
 	})
 
-	event.shapeless('4x kubejs:sharpnell',
-		[
-			'kubejs:tech_ingot'
-		]
-	)
+	event.shaped('8x kubejs:sharpnell', [
+		" A",
+		"A "
+	], {
+		A: 'kubejs:tech_ingot'
+	})
 
 	event.shaped('kubejs:bedrock_remover',
 		[
@@ -2890,7 +2930,6 @@ ServerEvents.recipes(event => {
 
 	//END
 
-	event.recipes.thermal.bottler("thermal:rubber",[Fluid.of("thermal:latex",250),"air"])
 	event.recipes.thermal.press('redstone_arsenal:flux_gear',['4x redstone_arsenal:flux_ingot','thermal:press_gear_die'])
 
 
@@ -2972,8 +3011,6 @@ ServerEvents.recipes(event => {
 		"minecraft:diamond_pickaxe",
 	)
 
-	event.recipes.create.filling("thermal:rubber",[Fluid.of("thermal:latex"),"air"])
-
 	event.replaceInput(
 		{id: 'iceandfire:ghost_chest'},
 		"#forge:rods/wooden",
@@ -3036,4 +3073,182 @@ ServerEvents.recipes(event => {
 		'minecraft:diamond',
 	)
 
+	event.replaceInput(
+		{id: 'minecraft:lodestone'},
+		'minecraft:netherite_ingot',
+		'minecraft:iron_ingot',
+	)
+
+	let alloy = [
+		['4x thermal:bronze_ingot', ['3x minecraft:copper_ingot', 'thermal:tin_ingot']],
+		['2x thermal:electrum_ingot', ['minecraft:gold_ingot', 'thermal:silver_ingot']],
+		['3x thermal:invar_ingot', ['thermal:nickel_ingot', '2x minecraft:iron_ingot']],
+		['2x thermal:constantan_ingot', ['minecraft:copper_ingot', 'thermal:nickel_ingot']],
+		['4x thermal:signalum_ingot', ['3x minecraft:copper_ingot', 'thermal:silver_ingot', '4x minecraft:redstone']],
+		['4x thermal:lumium_ingot', ['3x thermal:tin_ingot', 'thermal:silver_ingot', '2x minecraft:glowstone_dust']],
+		['2x thermal:enderium_ingot', ['3x thermal:lead_ingot', 'thermal:diamond_dust', '2x minecraft:ender_pearl']]
+	].forEach(e => {
+		event.recipes.create.mixing(e[0],e[1]).heated()
+	})
+
+	event.recipes.create.crushing(["create:crushed_raw_uranium",Item.of("create:crushed_raw_uranium").withChance(0.75),Item.of("create:experience_nugget").withChance(0.75),Item.of("minecraft:cobblestone").withChance(0.12)],"biggerreactors:uranium_ore")
+	event.recipes.create.crushing(["create:crushed_raw_uranium",Item.of("create:crushed_raw_uranium").withChance(0.75),Item.of("create:experience_nugget").withChance(0.75),Item.of("minecraft:cobbled_deepslate").withChance(0.12)],"biggerreactors:deepslate_uranium_ore")
+
+	event.recipes.create.crushing(["thermal:sapphire",Item.of("thermal:sapphire").withChance(0.75),Item.of("create:experience_nugget").withChance(0.75),Item.of("minecraft:cobblestone").withChance(0.12)],"thermal:sapphire_ore")
+	event.recipes.create.crushing(["thermal:sapphire",Item.of("thermal:sapphire").withChance(0.75),Item.of("create:experience_nugget").withChance(0.75),Item.of("minecraft:cobbled_deepslate").withChance(0.12)],"thermal:deepslate_sapphire_ore")
+
+	event.recipes.create.crushing(["thermal:ruby",Item.of("thermal:ruby").withChance(0.75),Item.of("create:experience_nugget").withChance(0.75),Item.of("minecraft:cobblestone").withChance(0.12)],"thermal:ruby_ore")
+	event.recipes.create.crushing(["thermal:ruby",Item.of("thermal:ruby").withChance(0.75),Item.of("create:experience_nugget").withChance(0.75),Item.of("minecraft:cobbled_deepslate").withChance(0.12)],"thermal:deepslate_ruby_ore")
+
+	event.smelting("thermal:ruby","#forge:ores/ruby").xp(1.0)
+	event.blasting("thermal:ruby","#forge:ores/ruby").xp(1.0)
+	event.recipes.thermal.pulverizer([Item.of("thermal:ruby").withChance(2.5),Item.of("gravel").withChance(0.2)],"#forge:ores/ruby").energy(4000).xp(0.5)
+	event.recipes.thermal.pulverizer("thermal:ruby_dust","thermal:ruby").energy(4000)
+	event.recipes.thermal.crystallizer("thermal:ruby",["thermal:ruby_dust",Fluid.of("water",2000)]).energy(20000)
+
+	event.smelting("thermal:sapphire","#forge:ores/sapphire").xp(1.0)
+	event.blasting("thermal:sapphire","#forge:ores/sapphire").xp(1.0)
+	event.recipes.thermal.pulverizer([Item.of("thermal:sapphire").withChance(2.5),Item.of("gravel").withChance(0.2)],"#forge:ores/sapphire").energy(4000).xp(0.5)
+	event.recipes.thermal.pulverizer("thermal:sapphire_dust","thermal:sapphire").energy(4000)
+	event.recipes.thermal.crystallizer("thermal:sapphire",["thermal:sapphire_dust",Fluid.of("water",2000)]).energy(20000)
+
+	event.shaped('thermal:ruby_gear',[
+		" A ",
+		"ABA",
+		" A "
+	],
+	{
+		A:"thermal:ruby",
+		B:"minecraft:iron_nugget"
+	})
+
+	event.shaped('thermal:sapphire_gear',[
+		" A ",
+		"ABA",
+		" A "
+	],
+	{
+		A:"thermal:sapphire",
+		B:"minecraft:iron_nugget"
+	})
+
+	event.recipes.thermal.press('thermal:ruby_gear',['4x thermal:ruby','thermal:press_gear_die'])
+	event.recipes.thermal.press('thermal:sapphire_gear',['4x thermal:sapphire','thermal:press_gear_die'])
+
+	event.recipes.thermal.press('thermal:diamond_gear',['4x minecraft:diamond','thermal:press_gear_die'])
+	event.recipes.thermal.press('thermal:emerald_gear',['4x minecraft:emerald','thermal:press_gear_die'])
+	event.recipes.thermal.press('thermal:quartz_gear',['4x minecraft:quartz','thermal:press_gear_die'])
+	event.recipes.thermal.press('thermal:lapis_gear',['4x minecraft:lapis_lazuli','thermal:press_gear_die'])
+
+	event.recipes.create.crushing(["create:crushed_raw_uranium",Item.of("create:crushed_raw_uranium").withChance(0.75),Item.of("create:experience_nugget").withChance(0.75),Item.of("minecraft:netherrack").withChance(0.12)],"kubejs:nether_uranium_ore")
+
+	event.smelting("biggerreactors:uranium_ingot","kubejs:nether_uranium_ore").xp(0.35)
+	event.blasting("biggerreactors:uranium_ingot","kubejs:nether_uranium_ore").xp(0.35)
+	event.recipes.thermal.pulverizer([Item.of("biggerreactors:uranium_dust").withChance(2),Item.of("gravel").withChance(0.2)],"kubejs:nether_uranium_ore").energy(4000).xp(0.35)
+	event.recipes.thermal.smelter([Item.of("biggerreactors:uranium_ingot").withChance(1),Item.of("thermal:rich_slag").withChance(0.2)],"kubejs:nether_uranium_ore").energy(3200)
+
+	thermalpackun('kubejs:cobalt_block','kubejs:cobalt_ingot')
+	thermalpackun('kubejs:cobalt_ingot','kubejs:cobalt_nugget')
+
+	event.shaped('kubejs:cobalt_block', [
+		'AAA',
+		'AAA',
+		'AAA'
+	], {
+		A: 'kubejs:cobalt_ingot'
+	})
+
+	event.shaped('kubejs:cobalt_ingot', [
+		'AAA',
+		'AAA',
+		'AAA'
+	], {
+		A: 'kubejs:cobalt_nugget'
+	})
+
+	event.shapeless("9x kubejs:cobalt_ingot","#chisel_chipped_integration:metals/cobalt_blocks")
+	event.shapeless("9x kubejs:cobalt_nugget","kubejs:cobalt_ingot")
+
+	thermalpackun('kubejs:raw_cobalt_block','kubejs:raw_cobalt')
+
+	event.shaped('kubejs:raw_cobalt_block', [
+		'AAA',
+		'AAA',
+		'AAA'
+	], {
+		A: 'kubejs:raw_cobalt'
+	})
+
+	event.shapeless("9x kubejs:raw_cobalt",'kubejs:raw_cobalt_block')
+
+	event.recipes.create.crushing(["kubejs:crushed_raw_cobalt",Item.of("kubejs:crushed_raw_cobalt").withChance(0.75),Item.of("create:experience_nugget").withChance(0.75),Item.of("minecraft:netherrack").withChance(0.12)],"kubejs:nether_cobalt_ore")
+
+	event.smelting("kubejs:cobalt_ingot","kubejs:nether_cobalt_ore").xp(0.5)
+	event.blasting("kubejs:cobalt_ingot","kubejs:nether_cobalt_ore").xp(0.5)
+	event.recipes.thermal.pulverizer([Item.of("kubejs:cobalt_dust").withChance(2),Item.of("gravel").withChance(0.2)],"kubejs:nether_cobalt_ore").energy(4000).xp(0.5)
+	event.recipes.thermal.smelter([Item.of("kubejs:cobalt_ingot").withChance(1),Item.of("thermal:rich_slag").withChance(0.2)],"kubejs:nether_cobalt_ore").energy(3200).xp(0.5)
+
+	event.recipes.create.crushing(["kubejs:crushed_raw_cobalt",Item.of("create:experience_nugget").withChance(0.75)],"kubejs:raw_cobalt")
+
+	event.smelting("kubejs:cobalt_ingot","kubejs:raw_cobalt").xp(0.5)
+	event.blasting("kubejs:cobalt_ingot","kubejs:raw_cobalt").xp(0.5)
+
+	event.recipes.thermal.pulverizer(Item.of("kubejs:cobalt_dust").withChance(1.25),"kubejs:raw_cobalt").energy(4000).xp(0.5)
+	event.recipes.thermal.smelter(Item.of("kubejs:cobalt_ingot").withChance(1.5),"kubejs:raw_cobalt").energy(3200).xp(0.5)
+
+	event.smelting("kubejs:cobalt_ingot","kubejs:crushed_raw_cobalt").xp(0.5)
+	event.blasting("kubejs:cobalt_ingot","kubejs:crushed_raw_cobalt").xp(0.5)
+	event.recipes.create.splashing("9x kubejs:cobalt_nugget","kubejs:crushed_raw_cobalt")
+
+	event.recipes.thermal.pulverizer("kubejs:cobalt_dust","kubejs:cobalt_ingot").energy(2000)
+
+	event.smelting("kubejs:cobalt_ingot","kubejs:cobalt_dust")
+	event.blasting("kubejs:cobalt_ingot","kubejs:cobalt_dust")
+	event.recipes.thermal.smelter("kubejs:cobalt_ingot","kubejs:cobalt_dust").energy(1600)
+
+	thermalpackun('kubejs:manyullyn_block','kubejs:manyullyn_ingot')
+	thermalpackun('kubejs:manyullyn_ingot','kubejs:manyullyn_nugget')
+
+	event.shaped('kubejs:manyullyn_block', [
+		'AAA',
+		'AAA',
+		'AAA'
+	], {
+		A: 'kubejs:manyullyn_ingot'
+	})
+
+	event.shaped('kubejs:manyullyn_ingot', [
+		'AAA',
+		'AAA',
+		'AAA'
+	], {
+		A: 'kubejs:manyullyn_nugget'
+	})
+
+	event.shapeless("9x kubejs:manyullyn_ingot",'kubejs:manyullyn_block')
+	event.shapeless("9x kubejs:manyullyn_nugget","kubejs:manyullyn_ingot")
+
+	event.recipes.thermal.pulverizer("kubejs:manyullyn_dust","kubejs:manyullyn_ingot").energy(2000)
+
+	event.smelting("kubejs:manyullyn_ingot","kubejs:manyullyn_dust")
+	event.blasting("kubejs:manyullyn_ingot","kubejs:manyullyn_dust")
+	event.recipes.thermal.smelter("kubejs:manyullyn_ingot","kubejs:manyullyn_dust").energy(1600)
+	
+
+	event.recipes.thermal.smelter('2x kubejs:manyullyn_ingot', ["2x #kubejs:cobalt_ingrediant", ['thermal:netherite_dust','minecraft:netherite_ingot']]).energy(3200)
+
+	event.shapeless('2x kubejs:manyullyn_dust', [
+		'2x kubejs:cobalt_dust',
+		'thermal:netherite_dust'
+	])
+
+	event.shapeless('2x kubejs:manyullyn_ingot', [
+		"2x #kubejs:cobalt_ingrediant",
+		['thermal:netherite_dust','minecraft:netherite_ingot'],
+		'minecraft:fire_charge'
+	])
+
+	event.recipes.thermal.centrifuge(['2x kubejs:cobalt_dust', 'thermal:netherite_dust'],'2x kubejs:manyullyn_dust').energy(3000)
+
+	event.recipes.create.mixing('2x kubejs:manyullyn_ingot',['2x kubejs:cobalt_ingot','minecraft:netherite_ingot']).heated()
 })

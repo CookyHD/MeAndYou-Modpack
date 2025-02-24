@@ -33,21 +33,3 @@ EntityEvents.death(event => {
 		item.spawn()
 	}
 })
-
-LevelEvents.tick(event => {
-	event.level.getEntities().forEach(entity => {
-		if (entity.tags.contains("Kubejs_XpDrop") && event.level.time % 5 == 0) {
-			let width = entity.getBbWidth()
-			let height = entity.getBbHeight()
-			event.level.spawnParticles("dust 0.2 1 0.2 1",false,
-				entity.x,
-				entity.y+height/2,
-				entity.z,
-				width/4,
-				height/4,
-				width/4,
-				(height+width)*2,
-			0)
-		}
-	})
-})

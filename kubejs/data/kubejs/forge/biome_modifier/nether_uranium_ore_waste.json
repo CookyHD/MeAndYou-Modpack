@@ -1,0 +1,6 @@
+{
+	"type": "forge:add_features",
+	"biomes": ["minecraft:nether_wastes"],
+	"features": "kubejs:nether_uranium_ore_waste",
+	"step": "underground_ores"
+}

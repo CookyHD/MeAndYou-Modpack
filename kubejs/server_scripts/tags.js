@@ -5,7 +5,6 @@ ServerEvents.tags('block', event => {
 	event.removeAll('cucumber:mineable/paxel')
 	event.add('cucumber:mineable/paxel',Block.getTaggedIds('minecraft:mineable/shovel'))
 	event.add('cucumber:mineable/paxel',Block.getTaggedIds('minecraft:mineable/pickaxe'))
-	event.add("kubejs:ladder",['chipped:mossy_ladder', 'chipped:metal_ladder', 'chipped:crooked_ropeplank_ladder', 'chipped:crooked_plank_ladder', 'chipped:crooked_ladder', 'createdeco:zinc_ladder', 'createdeco:industrial_iron_ladder', 'createdeco:iron_ladder', 'minecraft:ladder', 'create:copper_ladder', 'create:brass_ladder', 'create:andesite_ladder', 'chipped:strong_ladder', 'chipped:roped_ladder', 'chipped:rope_planked_ladder', 'chipped:railed_ladder', 'chipped:plank_ladder'])
 
 })
 
@@ -72,10 +71,10 @@ ServerEvents.tags('item', event => {
 	event.add('kubejs:input_grass','minecraft:grass_block')
 	event.add('kubejs:input_netherrack','minecraft:netherrack')
 
-	event.add('kubejs:output_cobblestone_common',['minecraft:iron_nugget', 'create:copper_nugget', 'minecraft:gold_nugget', 'kubejs:uranium_nugget', 'create:zinc_nugget', 'thermal:nickel_nugget', 'thermal:silver_nugget', 'thermal:lead_nugget', 'thermal:tin_nugget'])
-	event.add('kubejs:output_cobblestone_rare',['create:crushed_raw_tin', 'create:crushed_raw_uranium', 'create:crushed_raw_lead', 'create:crushed_raw_zinc', 'create:crushed_raw_nickel', 'create:crushed_raw_iron', 'create:crushed_raw_gold', 'create:crushed_raw_silver', 'create:crushed_raw_copper'])
+	event.add('kubejs:output_cobblestone_common',['minecraft:iron_nugget', 'create:copper_nugget', 'minecraft:gold_nugget', 'kubejs:uranium_nugget', 'create:zinc_nugget', 'thermal:nickel_nugget', 'thermal:silver_nugget', 'thermal:lead_nugget', 'thermal:tin_nugget', 'kubejs:cobalt_nugget'])
+	event.add('kubejs:output_cobblestone_rare',['create:crushed_raw_tin', 'create:crushed_raw_uranium', 'create:crushed_raw_lead', 'create:crushed_raw_zinc', 'create:crushed_raw_nickel', 'create:crushed_raw_iron', 'create:crushed_raw_gold', 'create:crushed_raw_silver', 'create:crushed_raw_copper', 'kubejs:crushed_raw_cobalt'])
 
-	event.add('kubejs:output_dust',['minecraft:redstone', 'minecraft:gunpowder', 'minecraft:glowstone_dust', 'thermal:nickel_dust', 'thermal:silver_dust', 'thermal:lead_dust', 'thermal:gold_dust', 'thermal:copper_dust', 'thermal:iron_dust', 'kubejs:zinc_dust', 'biggerreactors:uranium_dust', 'thermal:tin_dust'])
+	event.add('kubejs:output_dust',['minecraft:redstone', 'minecraft:gunpowder', 'minecraft:glowstone_dust', 'thermal:nickel_dust', 'thermal:silver_dust', 'thermal:lead_dust', 'thermal:gold_dust', 'thermal:copper_dust', 'thermal:iron_dust', 'kubejs:zinc_dust', 'biggerreactors:uranium_dust', 'thermal:tin_dust', 'kubejs:cobalt_dust'])
 
 	event.add('kubejs:output_gravel_common',['thermal:sulfur', 'minecraft:quartz', 'thermal:cinnabar', 'minecraft:flint', 'minecraft:lapis_lazuli', 'minecraft:amethyst_shard', 'thermal:niter', 'minecraft:coal', 'thermal:apatite'])
 	event.add('kubejs:output_gravel_rare',['minecraft:emerald', 'minecraft:diamond'])
@@ -84,7 +83,7 @@ ServerEvents.tags('item', event => {
 	event.add('kubejs:output_sand_rare',['minecraft:ghast_tear', 'minecraft:blaze_powder', 'thermal:blizz_powder', 'thermal:blitz_powder', 'thermal:basalz_powder'])
 
 	event.add('kubejs:output_dirt',['farmersdelight:tomato_seeds', 'farmersdelight:rice', 'thermal:barley_seeds', 'minecraft:potato', 'minecraft:nether_wart', 'minecraft:beetroot_seeds', 'minecraft:melon_seeds', 'minecraft:pumpkin_seeds', 'minecraft:wheat_seeds', 'thermal:strawberry_seeds', 'thermal:amaranth_seeds', 'thermal:sadiroot_seeds', 'thermal:frost_melon_seeds', 'thermal:flax_seeds', 'thermal:corn_seeds', 'thermal:eggplant_seeds', 'thermal:green_bean_seeds', 'thermal:peanut_seeds', 'thermal:spinach_seeds', 'thermal:bell_pepper_seeds', 'thermal:radish_seeds', 'thermal:tea_seeds', 'minecraft:carrot', 'farmersdelight:onion', 'farmersdelight:cabbage_seeds'])
-	event.add('kubejs:output_grass',['biomesoplenty:dead_sapling', 'minecraft:cherry_sapling', 'minecraft:dark_oak_sapling', 'minecraft:acacia_sapling', 'minecraft:jungle_sapling', 'biomesoplenty:rainbow_birch_sapling', 'biomesoplenty:willow_sapling', 'biomesoplenty:origin_sapling', 'biomesoplenty:magic_sapling', 'biomesoplenty:yellow_autumn_sapling', 'minecraft:oak_sapling', 'minecraft:birch_sapling', 'biomesoplenty:umbran_sapling', 'biomesoplenty:snowblossom_sapling', 'biomesoplenty:redwood_sapling', 'biomesoplenty:mahogany_sapling', 'biomesoplenty:flowering_oak_sapling', 'minecraft:spruce_sapling', 'biomesoplenty:palm_sapling', 'biomesoplenty:jacaranda_sapling', 'biomesoplenty:orange_autumn_sapling', 'biomesoplenty:maple_sapling', 'biomesoplenty:fir_sapling', 'biomesoplenty:hellbark_sapling', 'thermal:rubberwood_sapling'])
+	event.add('kubejs:output_grass',['biomesoplenty:dead_sapling', 'minecraft:cherry_sapling', 'minecraft:dark_oak_sapling', 'minecraft:acacia_sapling', 'minecraft:jungle_sapling', 'biomesoplenty:rainbow_birch_sapling', 'biomesoplenty:willow_sapling', 'biomesoplenty:origin_sapling', 'biomesoplenty:magic_sapling', 'minecraft:oak_sapling', 'minecraft:birch_sapling', 'biomesoplenty:umbran_sapling', 'biomesoplenty:snowblossom_sapling', 'biomesoplenty:redwood_sapling', 'biomesoplenty:mahogany_sapling', 'biomesoplenty:flowering_oak_sapling', 'minecraft:spruce_sapling', 'biomesoplenty:palm_sapling', 'biomesoplenty:jacaranda_sapling', 'biomesoplenty:fir_sapling', 'biomesoplenty:hellbark_sapling', 'thermal:rubberwood_sapling', 'minecraft:mangrove_propagule', 'minecraft:flowering_azalea', 'minecraft:azalea', 'biomesoplenty:cypress_sapling', 'biomesoplenty:pine_sapling', 'biomesoplenty:yellow_maple_sapling', 'biomesoplenty:orange_maple_sapling', 'biomesoplenty:red_maple_sapling'])
 	event.add('kubejs:output_netherrack','minecraft:netherite_scrap')
 
 	event.add('kubejs:heated',['kubejs:tech_stage_3','kubejs:incomplete_tech_ingot'])
@@ -121,8 +120,6 @@ ServerEvents.tags('item', event => {
 		'create_sa:large_fueling_tank',
 		'create_sa:creative_filling_tank'
 	])
-
-	event.add("kubejs:ladder",['chipped:mossy_ladder', 'chipped:metal_ladder', 'chipped:crooked_ropeplank_ladder', 'chipped:crooked_plank_ladder', 'chipped:crooked_ladder', 'createdeco:zinc_ladder', 'createdeco:industrial_iron_ladder', 'createdeco:iron_ladder', 'minecraft:ladder', 'create:copper_ladder', 'create:brass_ladder', 'create:andesite_ladder', 'chipped:strong_ladder', 'chipped:roped_ladder', 'chipped:rope_planked_ladder', 'chipped:railed_ladder', 'chipped:plank_ladder'])
 
 	event.add("forge:planks/driftwood","aquaculture:driftwood")
 	event.add("forge:planks/rubber","thermal:rubberwood_planks")
@@ -398,5 +395,24 @@ ServerEvents.tags('item', event => {
 	event.add('minecraft:tools','redstone_arsenal:flux_trident')
 
 	event.add("create:upright_on_belt",["kubejs:beer","kubejs:jar_of_tears"])
+
+	let slots = [
+		"curios:head",
+		"curios:necklace",
+		"curios:back",
+		"curios:body",
+		"curios:hands",
+		"curios:ring",
+		"curios:belt",
+		"curios:charm",
+		"curios:tank",
+		"curios:spellbook"
+	].forEach(e => {
+		event.add("curios:mod_curio",Ingredient.of("#"+e).itemIds)
+	})
+
+	event.add("chisel_chipped_integration:metals/cobalt_blocks","kubejs:cobalt_block")
+
+	event.add("kubejs:cobalt_ingredient",["kubejs:cobalt_ingot","kubejs:cobalt_dust"])
 
 })

@@ -60,14 +60,6 @@ ItemEvents.rightClicked("kubejs:needle_gun", event => {
 	}
 })
 
-LevelEvents.tick(event => 	{
-	event.level.getEntities().forEach(entity => {
-		if (entity.tags.contains("Kubejs_Arrow")) {
-			event.level.spawnParticles("firework",true,entity.x,entity.y,entity.z,0,0,0,1,0)
-		}
-	})
-})
-
 global.projectileImpacts.push(
 	/**
 	* @param {Internal.ProjectileImpactEvent} event

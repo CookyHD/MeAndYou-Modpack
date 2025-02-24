@@ -1,0 +1,85 @@
+{
+	"replace": false,
+	"variants": [
+		{
+			"materials": [ "tetra:metal/cobalt" ],
+			"key": "basic_hammer/",
+			"attributes": {
+				"generic.attack_speed": -1.1
+			},
+			"aspects": {
+				"block_breaker": 2,
+				"breakable": 2,
+				"blunt_weapon": 1
+			},
+			"tools": {
+				"hammer_dig": 3
+			},
+			"integrity": -1,
+			"extract": {
+				"primaryAttributes": {
+					"generic.attack_damage": 0.5
+				},
+				"secondaryAttributes": {
+					"generic.attack_damage": 1,
+					"generic.attack_speed": -0.08
+				},
+				"tools": {
+					"hammer_dig": [ 0, 0.8333 ]
+				},
+				"durability": 0.55,
+				"integrity": -1,
+				"magicCapacity": 1,
+				"glyph": {
+					"textureX": 64
+				},
+				"availableTextures": [ "metal" ],
+				"models": [
+					{
+						"location": "tetra:item/module/double/head/basic_hammer/"
+					}
+				]
+			}
+		},
+		{
+			"materials": [ "tetra:metal/manyullyn" ],
+			"key": "basic_hammer/",
+			"attributes": {
+				"generic.attack_speed": -1.1
+			},
+			"aspects": {
+				"block_breaker": 2,
+				"breakable": 2,
+				"blunt_weapon": 1
+			},
+			"tools": {
+				"hammer_dig": 5
+			},
+			"integrity": -1,
+			"extract": {
+				"primaryAttributes": {
+					"generic.attack_damage": 0.5
+				},
+				"secondaryAttributes": {
+					"generic.attack_damage": 1,
+					"generic.attack_speed": -0.08
+				},
+				"tools": {
+					"hammer_dig": [ 0, 0.8333 ]
+				},
+				"durability": 0.55,
+				"integrity": -1,
+				"magicCapacity": 1,
+				"glyph": {
+					"textureX": 64
+				},
+				"availableTextures": [ "metal" ],
+				"models": [
+					{
+						"location": "tetra:item/module/double/head/basic_hammer/"
+					}
+				]
+			}
+		}
+	]
+}

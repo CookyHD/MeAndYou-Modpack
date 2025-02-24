@@ -2,7 +2,9 @@
 	"StartingItems": true,
 	"CreativeCrafting": false,
 	"CustomCapes": true,
+	"CustomParticle": true,
 	"CannonHandShot": true,
 	"RememberMe": true,
-	"HardMobs": true
+	"HardMobs": true,
+	"DebugTickOff": false
 }
