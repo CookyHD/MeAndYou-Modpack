@@ -414,5 +414,10 @@ ServerEvents.tags('item', event => {
 	event.add("chisel_chipped_integration:metals/cobalt_blocks","kubejs:cobalt_block")
 
 	event.add("kubejs:cobalt_ingredient",["kubejs:cobalt_ingot","kubejs:cobalt_dust"])
+	
+	event.add("forge:ores",["kubejs:nether_uranium_ore","kubejs:nether_cobalt_ore"])
+	event.add("forge:ores/nether_uranium","kubejs:nether_uranium_ore")
+	event.add("forge:ores/cobalt","kubejs:nether_cobalt_ore")
+
 
 })
