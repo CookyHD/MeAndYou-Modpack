@@ -3235,7 +3235,7 @@ ServerEvents.recipes(event => {
 	event.recipes.thermal.smelter("kubejs:manyullyn_ingot","kubejs:manyullyn_dust").energy(1600)
 	
 
-	event.recipes.thermal.smelter('2x kubejs:manyullyn_ingot', ["2x #kubejs:cobalt_ingrediant", ['thermal:netherite_dust','minecraft:netherite_ingot']]).energy(3200)
+	event.recipes.thermal.smelter('2x kubejs:manyullyn_ingot', ["2x #kubejs:cobalt_ingredient", ['thermal:netherite_dust','minecraft:netherite_ingot']]).energy(3200)
 
 	event.shapeless('2x kubejs:manyullyn_dust', [
 		'2x kubejs:cobalt_dust',
@@ -3243,7 +3243,7 @@ ServerEvents.recipes(event => {
 	])
 
 	event.shapeless('2x kubejs:manyullyn_ingot', [
-		"2x #kubejs:cobalt_ingrediant",
+		"2x #kubejs:cobalt_ingredient",
 		['thermal:netherite_dust','minecraft:netherite_ingot'],
 		'minecraft:fire_charge'
 	])
