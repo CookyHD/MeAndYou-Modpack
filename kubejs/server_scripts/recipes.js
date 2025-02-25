@@ -2088,7 +2088,6 @@ ServerEvents.recipes(event => {
 	event.recipes.thermal.insolator(Item.of('aether:blue_berry').withChance(2),'aether:blue_berry').energy(20000)
 
 	let trees = [
-
 		['architects_palette:twisted_sapling','architects_palette:twisted_log'],
 		['biomesoplenty:origin_sapling', 'minecraft:oak_log'],
 		['biomesoplenty:palm_sapling', 'biomesoplenty:palm_log'],
@@ -2100,16 +2099,19 @@ ServerEvents.recipes(event => {
 		['biomesoplenty:dead_sapling', 'biomesoplenty:dead_log'],
 		['biomesoplenty:redwood_sapling', 'biomesoplenty:redwood_log'],
 		['biomesoplenty:magic_sapling', 'biomesoplenty:magic_log'],
-		['biomesoplenty:orange_autumn_sapling', 'minecraft:dark_oak_log', 'minecraft:apple'],
 		['biomesoplenty:umbran_sapling', 'biomesoplenty:umbran_log'],
 		['biomesoplenty:fir_sapling', 'biomesoplenty:fir_log'],
 		['biomesoplenty:yellow_autumn_sapling', 'minecraft:birch_log', 'minecraft:apple'],
 		['biomesoplenty:hellbark_sapling', 'biomesoplenty:hellbark_log'],
-		['biomesoplenty:maple_sapling', 'minecraft:oak_log', 'minecraft:apple'],
+		['biomesoplenty:red_maple_sapling', 'biomesoplenty:maple_log'],
+		['biomesoplenty:yellow_maple_sapling', 'biomesoplenty:maple_log'],
+		['biomesoplenty:orange_maple_sapling', 'biomesoplenty:maple_log'],
 		['biomesoplenty:rainbow_birch_sapling', 'minecraft:birch_log', 'minecraft:apple'],
 		['biomesoplenty:snowblossom_sapling', 'minecraft:cherry_log'],
-		['biomesoplenty:flowering_oak_sapling', 'minecraft:oak_log', 'minecraft:apple']
-
+		['biomesoplenty:flowering_oak_sapling', 'minecraft:oak_log', 'minecraft:apple'],
+		['biomesoplenty:pine_sapling', 'biomesoplenty:pine_log'],
+		['biomesoplenty:cypress_sapling', 'minecraft:spruce_log'],
+		['biomesoplenty:empyreal_sapling', 'biomesoplenty:empyreal_log']
 	].forEach(e => {
 		if (e[2]) {
 			event.recipes.thermal.insolator([Item.of(e[1]).withChance(6),Item.of(e[0]).withChance(1.1),Item.of(e[2]).withChance(0.5)],e[0]).energy(60000)
