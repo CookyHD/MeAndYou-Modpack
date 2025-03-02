@@ -10,6 +10,17 @@ ServerEvents.recipes(event => {
 	let inter
 
 	let ban = [
+		'copycats:copycat_vertical_slice',
+		'copycats:copycat_slice',
+		'copycats:copycat_corner_slice',
+		'copycats:copycat_slope_layer',
+		'copycats:copycat_ladder',
+		'copycats:copycat_slope',
+		'copycats:copycat_vertical_slope',
+		'copycats:copycat_shaft',
+		'copycats:copycat_cogwheel',
+		'copycats:copycat_fluid_pipe',
+		'copycats:copycat_large_cogwheel',
 		'littlelogistics:tee_junction_rail',
 		'littlelogistics:car_dock_rail',
 		'littlelogistics:switch_rail',
@@ -455,8 +466,6 @@ ServerEvents.recipes(event => {
 	event.remove({ output: 'decorative_blocks:soul_chandelier' })
 	event.remove({ output: 'decorative_blocks:bar_panel' })
 	event.remove({ output: 'decorative_blocks:lattice' })
-	event.remove({ output: 'create:copycat_step' })
-	event.remove({ output: 'create:copycat_panel' })
 	event.remove({ output: 'createdeco:netherite_sheet' })
 	event.remove({ input: 'createdeco:netherite_sheet' })
 	event.remove({ mod: 'pipez' })
