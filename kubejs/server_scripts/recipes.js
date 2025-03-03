@@ -3262,4 +3262,31 @@ ServerEvents.recipes(event => {
 	event.recipes.thermal.centrifuge(['2x kubejs:cobalt_dust', 'thermal:netherite_dust'],'2x kubejs:manyullyn_dust').energy(3000)
 
 	event.recipes.create.mixing('2x kubejs:manyullyn_ingot',['2x kubejs:cobalt_ingot','minecraft:netherite_ingot']).heated()
+	
+	event.recipes.create.sandpaper_polishing(Item.of("create:polished_rose_quartz").withChance(0.5), "biomesoplenty:rose_quartz_chunk")
+
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{
+				"item": "biomesoplenty:rose_quartz_block"
+			}
+		],
+		"result": [
+			{
+				"count": 4,
+				"item": "biomesoplenty:rose_quartz_chunk"
+			}
+		],
+		"tool": {
+			"type": "farmersdelight:tool_action",
+			"action": "pickaxe_dig"
+		}
+	})
+
+	event.recipes.create.crushing(["3x biomesoplenty:rose_quartz_chunk",Item.of("biomesoplenty:rose_quartz_chunk").withChance(0.5)],"biomesoplenty:rose_quartz_block")
+	event.recipes.create.crushing(["7x biomesoplenty:rose_quartz_chunk",Item.of("biomesoplenty:rose_quartz_chunk").withChance(0.5)],"biomesoplenty:rose_quartz_cluster")
+
+	event.recipes.thermal.press("4x biomesoplenty:rose_quartz_chunk",["biomesoplenty:rose_quartz_block","thermal:press_unpacking_die"]).energy(400)
+	
 })

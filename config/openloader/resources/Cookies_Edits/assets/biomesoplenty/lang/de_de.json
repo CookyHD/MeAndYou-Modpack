@@ -3,5 +3,13 @@
 	"item.biomesoplenty.barley": "Wilde Gerste",
 	
 	"biome.biomesoplenty.end_reed": "End Schilf",
-	"biome.biomesoplenty.end_wilds": "End Wildnis"
+	"biome.biomesoplenty.end_wilds": "End Wildnis",
+
+	"item.biomesoplenty.rose_quartz_chunk": "Unreiner Rosenquarzbrocken",
+	"block.biomesoplenty.rose_quartz_block": "Unreiner Rosenquarzblock",
+	"block.biomesoplenty.rose_quartz_cluster": "Unreiner Rosenquarzhaufen",
+
+	"block.biomesoplenty.large_rose_quartz_bud": "Große Unreine Rosenquarzknospe",
+	"block.biomesoplenty.medium_rose_quartz_bud": "Mittlere Unreine Rosenquarzknospe",
+	"block.biomesoplenty.small_rose_quartz_bud": "Kleine Unreine Rosenquarzknospe"
 }

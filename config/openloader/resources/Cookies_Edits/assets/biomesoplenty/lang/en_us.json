@@ -3,5 +3,13 @@
 	"item.biomesoplenty.barley": "Wild Barley",
 	
 	"biome.biomesoplenty.end_reed": "End Reeds",
-	"biome.biomesoplenty.end_wilds": "End Wilds"
+	"biome.biomesoplenty.end_wilds": "End Wilds",
+
+	"item.biomesoplenty.rose_quartz_chunk": "Impure Rose Quartz Chunk",
+	"block.biomesoplenty.rose_quartz_block": "Block of Impure Rose Quartz",
+	"block.biomesoplenty.rose_quartz_cluster": "Impure Rose Quartz Cluster",
+
+	"block.biomesoplenty.large_rose_quartz_bud": "Large Impure Rose Quartz Bud",
+	"block.biomesoplenty.medium_rose_quartz_bud": "Medium Impure Rose Quartz Bud",
+	"block.biomesoplenty.small_rose_quartz_bud": "Small Impure Rose Quartz Bud"
 }

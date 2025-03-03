@@ -58,6 +58,13 @@ LevelEvents.tick(event => {
 				UNSTABLE_CHAIN(event.server,target_block)
 			})
 		}
+		if (target_block.id == "minecraft:water") {
+			if (String(target_block.getProperties()["level"]) == "0") {
+				event.server.scheduleInTicks(15, () => {
+					target_block.set("minecraft:water")
+				})
+			}
+		}
 	})
 })
 

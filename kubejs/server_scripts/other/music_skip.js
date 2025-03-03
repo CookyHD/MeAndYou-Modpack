@@ -6,7 +6,7 @@ ServerEvents.commandRegistry(event => {
 		.requires(src => src.hasPermission(0))
 		.executes(ctx => {
 			let player = ctx.source.player
-			ctx.source.level.runCommandSilent("stopsound "+player.username+" music")
+			ctx.source.server.runCommandSilent("stopsound "+player.username+" music")
 			player.tell("§e<Server> §7Skipped playing music. Music will start again soon.")
 			return 1
 		})
