@@ -53,5 +53,9 @@
 			}
 		}
 	},
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "kubejs:item/redstone_sword"
+	},
 	"gui_light": "front"
 }

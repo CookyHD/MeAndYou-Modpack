@@ -10,11 +10,9 @@ StartupEvents.modifyCreativeTab('kubejs:tab', event => {
 		'kubejs:incomplete_tech_ingot',
 		'kubejs:incomplete_seal_creativ',
 		'kubejs:needle_gun',
-		'kubejs:needle_gun_enchanted',
+		'kubejs:needle_gun_forged',
 		'kubejs:logo',
 		'kubejs:unobtainium',
-		'kubejs:incomplete_galaxy_cookie',
-		'kubejs:ship_locator_uncharged',
 		"kubejs:wooden_hammer",
 		"kubejs:stone_hammer",
 		"kubejs:iron_hammer",
@@ -27,13 +25,17 @@ StartupEvents.modifyCreativeTab('kubejs:tab', event => {
 		'thermal:lumium_glass',
 		'thermal:obsidian_glass',
 		"kubejs:heavy_weight",
-		"kubejs:unstable_gravel"
+		"kubejs:unstable_gravel",
+		"kubejs:mixture_tank_filled",
+		"kubejs:catalyst_prismarine"
 	].forEach(e => {
 		event.remove(e)
 	})
 	
+	event.add(Item.of("kubejs:mixture_tank_filled",{Uses:1000}))
 	event.add(Item.of('minecraft:elytra', "{CustomModelData:1,Damage:0,display:{Name:'{\"text\":\"Black Wings\",\"italic\":false}'}}"))
 	event.add(Item.of('kubejs:needle_gun',{Ammo:0,Damage:0}))
+	event.add(Item.of('kubejs:needle_gun_forged',{Ammo:0,Damage:0}))
 
 })
 

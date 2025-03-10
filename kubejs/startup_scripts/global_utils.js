@@ -188,27 +188,26 @@ global.getSetting = function (name) {
  * @param {Internal.Level} level
  * @param {Internal.Player} player
  * @param {number} laser_lenght
+ * @param {number} laser_width
  * @param {number} laser_damage
  * @param {number} laser_pirce
  * @param {number} cause_fire
  * @param {function(number,number,number,number)} each_func
  * @param {function(Internal.Entity,number,number,number)} entity_func
- * @param {function(number,number,number)} start_func
  * @return {void}
  */
-global.laser = function (level,player,laser_lenght,laser_damage,laser_pirce,cause_fire,each_func,entity_func,start_func,end_func) {
+global.laser = function (level,player,laser_lenght,laser_width,laser_damage,laser_pirce,cause_fire,each_func,entity_func) {
 
 	//Laser Settings
 	let LASER_LENGHT = laser_lenght
 	let LASER_DAMAGE = laser_damage
 	let LASER_PIRCE = laser_pirce
 	let CAUSE_FIRE = cause_fire
+	let LASER_WIDTH = laser_width
 
 	let pos = player.getPosition(1)
 	let angle = player.getLookAngle()
 	let eye = player.getEyeHeight()
-
-	start_func(pos.x(),pos.y(),pos.z())
 
 	for (let i = 1; i < LASER_LENGHT; i += 0.1) {
 
@@ -216,12 +215,11 @@ global.laser = function (level,player,laser_lenght,laser_damage,laser_pirce,caus
 		let y = pos.y() + eye + angle.y() * i
 		let z = pos.z() + angle.z() * i
 
-		let box = AABB.ofSize(new Vec3d(x,y,z),0.5,0.5,0.5)
+		let box = AABB.ofSize(new Vec3d(x,y,z),LASER_WIDTH,LASER_WIDTH,LASER_WIDTH)
 
 		level.getBlockCollisions(player,box).forEach(voxel => {
 			if (box.intersect(voxel.bounds())) {
 				i += LASER_LENGHT
-				end_func()
 			}
 		})
 		level.getEntitiesWithin(box).forEach(e => {
@@ -231,9 +229,9 @@ global.laser = function (level,player,laser_lenght,laser_damage,laser_pirce,caus
 					if (LASER_PIRCE <= 0) i += LASER_LENGHT
 					LASER_PIRCE--
 				}
-				entity_func(e,x,y,z)
+				if (entity_func) entity_func(e,x,y,z)
 			}
 		})
-		each_func(i,x,y,z)
+		if (each_func) each_func(i,x,y,z)
 	}
 }

@@ -10,6 +10,7 @@ ServerEvents.recipes(event => {
 	let inter
 
 	let ban = [
+		"explorerscompass:explorerscompass",
 		'copycats:copycat_vertical_slice',
 		'copycats:copycat_slice',
 		'copycats:copycat_corner_slice',
@@ -39,7 +40,6 @@ ServerEvents.recipes(event => {
 		'littlelogistics:tug_dock',
 		'littlelogistics:chest_car',
 		'littlelogistics:rapid_hopper',
-		'littlelogistics:barrel_car',
 		'littlelogistics:vessel_charger',
 		'littlelogistics:tug',
 		'littlelogistics:locomotive_dock_rail',
@@ -1879,14 +1879,24 @@ ServerEvents.recipes(event => {
 	)
 
 	event.shaped('kubejs:redstone_sword', [
-			'  B',
-			' BB',
-			'AB '
+			' B',
+			'BB',
+			'BA'
 		], {
 			A: 'kubejs:reinforced_handle',
 			B: 'kubejs:redstone_ingot'
 		}
 	)
+
+	event.shaped('kubejs:anchor_pickaxe', [
+		'BBB',
+		' A ',
+		' B '
+	], {
+		A: 'kubejs:reinforced_handle',
+		B: 'kubejs:anchor_ingot'
+	}
+)
 
 	event.recipes.create.mixing(Fluid.of('kubejs:bloody_tear_fluid',1000),['4x kubejs:bloody_tear', Fluid.of('water',1000)])
 	event.recipes.create.mixing('kubejs:powdered_wheat',['minecraft:wheat_seeds','kubejs:power_dust'])
@@ -3288,5 +3298,124 @@ ServerEvents.recipes(event => {
 	event.recipes.create.crushing(["7x biomesoplenty:rose_quartz_chunk",Item.of("biomesoplenty:rose_quartz_chunk").withChance(0.5)],"biomesoplenty:rose_quartz_cluster")
 
 	event.recipes.thermal.press("4x biomesoplenty:rose_quartz_chunk",["biomesoplenty:rose_quartz_block","thermal:press_unpacking_die"]).energy(400)
-	
+
+	event.shaped("explorerscompass:explorerscompass",[
+		"ABA",
+		"BCB",
+		"ABA"
+	],{
+		A: ["minecraft:quartz","minecraft:gold_nugget"],
+		B: ["minecraft:netherrack","biomesoplenty:brimstone","minecraft:blackstone","minecraft:soul_sand",'minecraft:basalt'],
+		C: "minecraft:compass"
+	})
+
+	event.smelting("thermal:cured_rubber","kubejs:needle_magazine_molten")
+
+	event.recipes.botania.mana_infusion('kubejs:anchor_ingot','kubejs:star_ingot',3000,"minecraft:prismarine").id("fake_anchor_ingot")
+	event.recipes.botania.mana_infusion('kubejs:anchor_ingot','kubejs:star_ingot',3000,"kubejs:catalyst_prismarine").id("hidden_anchor_ingot")
+
+	event.custom({
+		"type": "minecraft:smithing_transform",
+		"addition": {
+			"item": "kubejs:space_ingot"
+		},
+		"base": {
+			"item": "kubejs:tech_chestplate"
+		},
+		"result": {
+			"item": "kubejs:space_chestplate"
+		},
+		"template": {
+			"item": "kubejs:space_upgrade"
+		}
+	})
+
+	event.custom({
+		"type": "minecraft:smithing_transform",
+		"addition": {
+			"item": "kubejs:space_ingot"
+		},
+		"base": {
+			"item": "kubejs:tech_boots"
+		},
+		"result": {
+			"item": "kubejs:space_boots"
+		},
+		"template": {
+			"item": "kubejs:space_upgrade"
+		}
+	})
+
+	event.custom({
+		"type": "minecraft:smithing_transform",
+		"addition": {
+			"item": "kubejs:space_ingot"
+		},
+		"base": {
+			"item": "kubejs:tech_leggings"
+		},
+		"result": {
+			"item": "kubejs:space_leggings"
+		},
+		"template": {
+			"item": "kubejs:space_upgrade"
+		}
+	})
+
+	event.custom({
+		"type": "minecraft:smithing_transform",
+		"addition": {
+			"item": "kubejs:space_ingot"
+		},
+		"base": {
+			"item": "kubejs:tech_helmet"
+		},
+		"result": {
+			"item": "kubejs:space_helmet"
+		},
+		"template": {
+			"item": "kubejs:space_upgrade"
+		}
+	})
+
+	event.shaped("2x kubejs:space_upgrade",[
+		"ABA",
+		"ACA",
+		"AAA"
+	],{
+		A: "minecraft:diamond",
+		B: "kubejs:space_upgrade",
+		C: "minecraft:paper"
+	})
+
+	event.custom({
+		"type": "minecraft:smithing_transform",
+		"addition": {
+			"item": "kubejs:space_ingot"
+		},
+		"base": {
+			"item": "create:fluid_tank"
+		},
+		"result": {
+			"item": "kubejs:mixture_tank_empty"
+		},
+		"template": {
+			"item": "kubejs:space_upgrade"
+		}
+	})
+
+	event.recipes.thermal.press("create:brass_sheet","create:brass_ingot").energy(2400)
+
+	event.recipes.thermal.smelter(['7x thermal:cured_rubber',"2x minecraft:iron_nugget",Item.of("2x minecraft:iron_nugget").withChance(0.5)], "4x kubejs:needle_magazine_molten").energy(3200)
+
+	event.recipes.thermal.bottler(Item.of("kubejs:mixture_tank_filled",{Uses:1000}),[Fluid.of('kubejs:mixture',1000),'kubejs:mixture_tank_empty']).energy(400)
+	event.recipes.create.filling(Item.of("kubejs:mixture_tank_filled",{Uses:1000}),[Fluid.of('kubejs:mixture',1000),'kubejs:mixture_tank_empty'])
+
+	event.recipes.create.mixing(Fluid.of("kubejs:mixture",250),["2x sugar","nether_wart",Fluid.of("thermal:glowstone",125),Fluid.of("water",250)])
+
+	//event.replaceOutput(
+	//	{output: 'crabbersdelight:can'},
+	//	'crabbersdelight:can',
+	//	'aquaculture:tin_can'
+	//)
 })

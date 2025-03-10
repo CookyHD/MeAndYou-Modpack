@@ -53,5 +53,9 @@
 			}
 		}
 	},
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "kubejs:item/farmer_axe"
+	},
 	"gui_light": "front"
 }

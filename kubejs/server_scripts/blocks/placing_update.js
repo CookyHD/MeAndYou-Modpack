@@ -101,16 +101,53 @@ function catalyst_broken(event,id) {
 	}
 }
 
+function prismarine_placed(event) {
+
+	if (event.block.id == "minecraft:prismarine" || isPool(event.block.id)) {
+
+		let block = event.block
+		let blockup = block.getUp()
+		let blockdown = block.getDown()
+
+		if (isPool(block.id) && blockdown.id == "minecraft:prismarine") {
+			if (block.id == DILUTED_POOL) blockdown.set("kubejs:catalyst_prismarine",{level:"1"})
+			else blockdown.set("kubejs:catalyst_prismarine",{level:"2"})
+		}
+
+		if (block.id == "minecraft:prismarine" && isPool(blockup.id)) {
+			if (blockup.id == DILUTED_POOL) block.set("kubejs:catalyst_prismarine",{level:"1"})
+			else block.set("kubejs:catalyst_prismarine",{level:"2"})
+		}
+	}
+}
+
+function prismarine_broken(event) {
+
+	if (isPool(event.block.id)) {
+
+		let block = event.block
+		let blockdown = block.getDown()
+
+		if (isPool(block.id) && blockdown.id == "kubejs:catalyst_prismarine") {
+			blockdown.set("minecraft:prismarine")
+		}
+	}
+}
+
 BlockEvents.placed(event => {
 
 	totem_placed(event)
 	catalyst_placed(event,MUTATION)
+	catalyst_placed(event,"minecraft:prismarine")
 	catalyst_placed(event,SPARK)
+	prismarine_placed(event)
 })
 
 BlockEvents.broken(event => {
 
 	totem_broken(event)
 	catalyst_broken(event,MUTATION)
+	catalyst_broken(event,"minecraft:prismarine")
 	catalyst_broken(event,SPARK)
+	prismarine_broken(event)
 })

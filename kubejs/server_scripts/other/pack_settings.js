@@ -22,7 +22,7 @@ ServerEvents.commandRegistry(event => {
 					})
 				}
 				if (arg1 == "DebugTickOff") {
-					//TODO
+					if (global.getSetting("DebugTickOff")) player.tell(Text.red("EXPERIMENTTAL SETTING ONLY USE IF YOU KNOW WHAAT YOU ARE DOING.").bold())
 				}
 				if (arg1 == "CustomCapes") {
 					player.tell(Text.blue("Setting takes effect after game Reload."))

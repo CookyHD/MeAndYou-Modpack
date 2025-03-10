@@ -213,43 +213,6 @@ JEIAddedEvents.registerCategories(event => {
 		})
 	})
 
-	event.custom("kubejsadditions:cloud", category => {
-
-		let guiHelper = category.getJeiHelpers().getGuiHelper()
-
-		category.title("Cloud Interaction")
-		category.background(guiHelper.createBlankDrawable(128, 24))
-		category.icon(guiHelper.createDrawableItemStack(Item.of("minecraft:glass_bottle")))
-
-		category.isRecipeHandled((recipe) => {
-			if (!recipe) return false
-			if (!recipe.data) return false
-			if (!recipe.data.in) return false
-			if (!recipe.data.out) return false
-			return true
-		})
-
-		category.handleLookup((builder, recipe, focuses) => {
-
-			builder.addSlot("INPUT",8,4)
-				.addItemStack(Item.of(recipe.data.in))
-				.setSlotName("input")
-				.setBackground(guiHelper.getSlotDrawable(), -1, -1)
-
-			builder.addSlot("OUTPUT",104,4)
-				.addItemStack(Item.of(recipe.data.out))
-				.setSlotName("output")
-				.setBackground(guiHelper.getSlotDrawable(), -1, -1)
-
-		})
-
-		category.setDrawHandler((recipe, recipeSlotsView, guiGraphics, mouseX, mouseY) => {
-			//guiGraphics.blit("jei:textures/jei/atlas/gui/recipe_arrow.png", 53, 5, 0, 0, 22, 15, 22, 15)
-			guiGraphics.drawWordWrap(Client.font,Text.darkGray("Y: 192-196"),36,9,100,0)
-			guiGraphics.drawWordWrap(Client.font,Text.white("Y: 192-196"),35,8,100,0)
-		})
-	})
-
 	event.custom("kubejsadditions:infusing_block", category => {
 
 		let guiHelper = category.getJeiHelpers().getGuiHelper()
@@ -307,6 +270,8 @@ JEIAddedEvents.registerRecipes((event) => {
 		.add({in: 'kubejs:nugget', out: 'kubejs:enriched_nugget', amp: false, tag: false})
 		.add({in: '#kubejs:gem', out: '#kubejs:nessie', amp: false, tag: true})
 		.add({in: '#kubejs:nessie', out: '#kubejs:nessie_enchanted', amp: true, tag: true})
+		.add({in: 'kubejs:needle_gun', out: 'kubejs:needle_gun_forged', amp: true, tag: false})
+		.add({in: 'kubejs:star_ingot', out: 'kubejs:space_ingot', amp: true, tag: false})
 
 	event.custom("kubejsadditions:explosion")
 		.add({in: 'kubejs:creativ_compound', out: 'kubejs:creativ_unstable'})
@@ -327,8 +292,5 @@ JEIAddedEvents.registerRecipes((event) => {
 	event.custom("kubejsadditions:bedrock_click")
 		.add({in: 'kubejs:creativ_pickaxe', out: 'minecraft:bedrock'})
 		.add({in: 'kubejs:bedrock_remover', out: 'kubejs:bedrock_dust'})
-
-	event.custom("kubejsadditions:cloud")
-		.add({in: 'minecraft:glass_bottle', out: 'minecraft:glowstone'})
 
 })

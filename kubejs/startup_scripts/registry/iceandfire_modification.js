@@ -70,22 +70,25 @@ ItemEvents.modification(event => {
 		//	steel_hoe.setAttackSpeed(5)
 		//	steel_hoe.setAttackDamage(1)
 		//})
-		event.modify("iceandfire:dragonsteel_"+e+"_helmet",helmet => {
-			helmet.setArmorProtection(5)
-			helmet.setArmorKnockbackResistance(0.2)
-		})
-		event.modify("iceandfire:dragonsteel_"+e+"_chestplate",chestplaate => {
-			chestplaate.setArmorProtection(10)
-			chestplaate.setArmorKnockbackResistance(0.2)
-		})
-		event.modify("iceandfire:dragonsteel_"+e+"_leggings",leggings => {
-			leggings.setArmorProtection(8)
-			leggings.setArmorKnockbackResistance(0.2)
-		})
-		event.modify("iceandfire:dragonsteel_"+e+"_boots",boots => {
-			boots.setArmorProtection(5)
-			boots.setArmorKnockbackResistance(0.2)
-		})
+
+		// --- To Be Fixed Not Working! ---
+		//
+		//event.modify("iceandfire:dragonsteel_"+e+"_helmet",helmet => {
+		//	helmet.setArmorProtection(5)
+		//	helmet.setArmorKnockbackResistance(0.2)
+		//})
+		//event.modify("iceandfire:dragonsteel_"+e+"_chestplate",chestplaate => {
+		//	chestplaate.setArmorProtection(10)
+		//	chestplaate.setArmorKnockbackResistance(0.2)
+		//})
+		//event.modify("iceandfire:dragonsteel_"+e+"_leggings",leggings => {
+		//	leggings.setArmorProtection(8)
+		//	leggings.setArmorKnockbackResistance(0.2)
+		//})
+		//event.modify("iceandfire:dragonsteel_"+e+"_boots",boots => {
+		//	boots.setArmorProtection(5)
+		//	boots.setArmorKnockbackResistance(0.2)
+		//})
 	})
 
 	event.modify("iceandfire:dragonbone_sword",item => {

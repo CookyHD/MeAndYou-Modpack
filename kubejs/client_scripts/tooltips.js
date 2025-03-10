@@ -35,9 +35,26 @@ ItemEvents.tooltip(event => {
 		text.add(1,Text.green("Cana_xd's Creator Item."))
 		text.add(2,"")
 		if (event.shift) {
-			text.add(3,Text.yellow("Right Click on Entity to make it Spawn,"))
-			text.add(4,Text.yellow("A Farm Animal on Death. Cost 1 Wheat."))
-			text.add(5,Text.yellow("Cooldown for 5s after Use."))
+			text.add(3,Text.yellow("Right Click to,"))
+			text.add(4,Text.yellow("Enchant Entity's in a 4 Block Radius."))
+			text.add(5,Text.yellow("Entity's Transfrom to random Farm Animal on Death."))
+			text.add(6," ")
+			text.add(7,Text.of("§9Cooldown: §75s"))
+			text.add(8,Text.of("§9Cost: §73 Wheat"))
+		} else {
+			text.add(3,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+		}
+	})
+
+	event.addAdvanced('kubejs:anchor_pickaxe',(item, advanced, text) => {
+		text.add(1,Text.green("Miminator's Creator Item."))
+		text.add(2,"")
+		if (event.shift) {
+			text.add(3,Text.yellow("Right Click to,"))
+			text.add(4,Text.yellow("Slow and Throw Entity's in a 6 Block Radius."))
+			text.add(5," ")
+			text.add(6,Text.of("§9Cooldown: §715s"))
+			text.add(7,Text.of("§9Cost: §73 Lapis Lazuli"))
 		} else {
 			text.add(3,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
 		}
@@ -47,9 +64,12 @@ ItemEvents.tooltip(event => {
 		text.add(1,Text.green("CookyHD's Creator Item."))
 		text.add(2,"")
 		if (event.shift) {
-			text.add(3,Text.yellow("Right Click to Damage Entity's in a,"))
-			text.add(4,Text.yellow("5 Block Radius. Cost 3 Redstone Dust."))
-			text.add(5,Text.yellow("Cooldown for 3s after Use."))
+			text.add(3,Text.yellow("Right Click to,"))
+			text.add(4,Text.yellow("Damage Entity's in a 4 Block Radius and Shoot a Strong Laser."))
+			text.add(5,Text.yellow("Slows down the User for 2,5s."))
+			text.add(6," ")
+			text.add(7,Text.of("§9Cooldown: §75s"))
+			text.add(8,Text.of("§9Cost: §73 Redstone Dust"))
 		} else {
 			text.add(3,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
 		}
@@ -59,6 +79,27 @@ ItemEvents.tooltip(event => {
 	event.addAdvanced('kubejs:needle_gun',(item, advanced, text) => {
 		text.add(1,Text.blue(item.hasNBT() ? "Ammo: " + item.getNbt()["Ammo"] : "Ammo: undefined"))
 	})
+
+	event.addAdvanced('kubejs:mixture_tank_filled',(item, advanced, text) => {
+		text.add(1,Text.of(item.hasNBT() ? "§7Air Mixture: §8" + item.getNbt()["Uses"] + "/1000": "§7Air Mixture: §8undefined"))
+	})
+
+	event.add('kubejs:mixture_tank_empty',Text.of("§7Air Mixture: §80/1000"))
+	
+	event.addAdvanced('kubejs:needle_gun_forged',(item, advanced, text) => {
+		text.add(1,Text.red("Reforged"))
+		text.add(1,Text.blue(item.hasNBT() ? "Ammo: " + item.getNbt()["Ammo"]: "Ammo: undefined"))
+	})
+
+	event.add("kubejs:space_upgrade",[
+		"§7Ancient Space Suit Upgrade",
+		" ",
+		"§7Applies to:",
+		" §9Techit Equipment",
+		"§7Ingredients:",
+		" §9Insulated Ingot"
+	])
+
 
 	event.addAdvanced('kubejs:jar_of_tears',(item, advanced, text) => {
 		if (event.shift) {
@@ -96,8 +137,9 @@ ItemEvents.tooltip(event => {
 
 	event.addAdvanced('kubejs:xp_wand',(item, advanced, text) => {
 		if (event.shift) {
-			text.add(1,Text.yellow("Right Click to Enchant Entity's in a,"))
-			text.add(2,Text.yellow("5 Block Radius. Makes them drop Xp Nuggets on Death."))
+			text.add(1,Text.yellow("Right Click to,"))
+			text.add(2,Text.yellow("Enchant Entity's in a 6 Block Radius."))
+			text.add(3,Text.yellow("Makes them drop Xp Nuggets on Death."))
 		} else {
 			text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
 		}
@@ -194,6 +236,17 @@ ItemEvents.tooltip(event => {
 				text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
 			}
 		})
+
+		event.addAdvanced('kubejs:space_'+e,(item, advanced, text) => {
+			if (event.shift) {
+				text.add(1,Text.yellow("Full set Bonus:"))
+				text.add(2,Text.yellow("    Intense Heat/Freeze Resitance."))
+				text.add(3,Text.red("    Needs Air Mixture Tank for,"))
+				text.add(4,Text.red("    Underwater/lava Oprations!"))
+			} else {
+				text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+			}
+		})
 	})
 
 	event.addAdvanced("kubejs:galaxy_cookie",(item, advanced, text) => {
@@ -246,6 +299,10 @@ ItemEvents.tooltip(event => {
 	event.add("kubejs:cobalt_ingot", "§7Strong Tetra Material.")
 
 	event.add("kubejs:manyullyn_ingot", "§7Even Stronger Tetra Material.")
+
+	Ingredient.of("#kubejs:heated").itemIds.forEach(e => {
+		event.add(e,"§cHeated")
+	})
 
 	function ore(name,min,max) {
 		event.add(name,"§7Y level §6"+min+"§7 to §6"+max)

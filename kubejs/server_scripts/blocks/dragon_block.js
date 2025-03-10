@@ -9,6 +9,7 @@ DRAGON_BLOCK.add = function (input,output,forge) {
 DRAGON_BLOCK.add('kubejs:nugget','kubejs:enriched_nugget',false)
 DRAGON_BLOCK.add('kubejs:super_cookie','kubejs:charged_cookie',false)
 DRAGON_BLOCK.add('kubejs:needle_gun','kubejs:needle_gun_forged',true)
+DRAGON_BLOCK.add('kubejs:star_ingot','kubejs:space_ingot',true)
 
 global.NessieColors.forEach( element => {
 	DRAGON_BLOCK.add('kubejs:gem_'+element,'kubejs:nessie_'+element,false)
@@ -46,6 +47,15 @@ BlockEvents.rightClicked("kubejs:dragon_block", event => {
 					let nbt = entity.getNbt()
 					DRAGON_BLOCK.recipes.forEach(recipe => {
 						if (nbt["Item"]["id"] == recipe.input && totem == recipe.forge) {
+							if (nbt["Item"]["id"] == "kubejs:needle_gun") {
+								if (nbt["Item"]["tag"]["Ammo"] > 0) {
+									nbt["Item"]["tag"]["Ammo"] = 0
+									let new_item = event.level.createEntity("minecraft:item")
+									new_item.setNbt({Item:{id:"kubejs:needle_ammo",Count:1}})
+									new_item.setPos(entity.x,entity.y,entity.z)
+									new_item.spawn()
+								}
+							}
 							nbt["Item"]["id"] = recipe.output
 							nbt["Tags"] = ["Kubejs_MultItem"]
 							global.playSound(level,[entity.x,entity.y,entity.z],"minecraft:entity.item.pickup","neutral")

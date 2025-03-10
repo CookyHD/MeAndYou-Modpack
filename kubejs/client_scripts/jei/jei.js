@@ -3,6 +3,7 @@
 JEIEvents.hideItems(event => {
 
 	event.hide([
+		"kubejs:catalyst_prismarine",
 		'copycats:copycat_vertical_slice',
 		'copycats:copycat_slice',
 		'copycats:copycat_corner_slice',
@@ -32,7 +33,6 @@ JEIEvents.hideItems(event => {
 		'littlelogistics:tug_dock',
 		'littlelogistics:chest_car',
 		'littlelogistics:rapid_hopper',
-		'littlelogistics:barrel_car',
 		'littlelogistics:vessel_charger',
 		'littlelogistics:tug',
 		'littlelogistics:locomotive_dock_rail',
@@ -255,7 +255,6 @@ JEIEvents.hideItems(event => {
 		'biggerreactors:liquid_uranium',
 		'biggerreactors:liquid_obsidian',
 		'createaddition:copper_spool',
-
 		'iceandfire:silver_ingot',
 		'iceandfire:raw_silver',
 		'iceandfire:silver_nugget',
@@ -430,6 +429,10 @@ JEIEvents.hideItems(event => {
 		'iceandfire:armor_copper_metal_helmet',
 		'iceandfire:tide_trident_inventory'
 	])
+})
+
+JEIEvents.removeRecipes(event => {
+	event.remove("botania:mana_pool","minecraft:hidden_anchor_ingot")
 })
 
 JEIEvents.addItems(event => {

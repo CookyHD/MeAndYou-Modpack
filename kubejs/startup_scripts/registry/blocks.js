@@ -220,10 +220,25 @@ StartupEvents.registry("block", (event) => {
 	.tagBlock("minecraft:needs_iron_tool")
 	.requiresTool(true)
 
+	event.create("catalyst_prismarine")
+	.displayName("Catalyst Prismarine")
+	.hardness(1.5)
+	.resistance(6.0)
+	.soundType("stone")
+	.mapColor("color_cyan")
+	.tagBlock("minecraft:mineable/pickaxe")
+	.defaultCutout()
+	.renderType('cutout')
+	.requiresTool(true)
+	.property(BlockProperties.LEVEL)
+
+	//event.create("farmer_plant","crop")
+
 })
 
 //THERMAL CTM FIX
 StartupEvents.registry("block", event => {
+
 
 	event.create("thermal:enderium_glass")
 	.soundType("glass")

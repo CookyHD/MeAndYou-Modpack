@@ -47,6 +47,16 @@ ItemEvents.armorTierRegistry(event => {
 		tier.knockbackResistance = 0.1
 	})
 
+	event.add('space', tier => {
+		tier.durabilityMultiplier = 22
+		tier.slotProtections = [2, 5, 6, 2]
+		tier.enchantmentValue = 15
+		tier.equipSound = 'minecraft:item.armor.equip_iron'
+		tier.repairIngredient = '#kubejs:space_repair'
+		tier.toughness = 0
+		tier.knockbackResistance = 0
+	})
+
 	event.add('tech', tier => {
 		tier.durabilityMultiplier = 22
 		tier.slotProtections = [3, 6, 8, 3]
@@ -95,8 +105,14 @@ StartupEvents.registry("item", (event) => {
 	event.create("needle_gun")
 	.displayName("Needle Gun")
 	.maxDamage(1536)
+	.unstackable()
 	.modifyAttribute("minecraft:generic.attack_damage",global.randomUUID(),1,"addition")
 
+	event.create("needle_gun_forged")
+	.displayName("Needle Gun")
+	.maxDamage(1536)
+	.unstackable()
+	.modifyAttribute("minecraft:generic.attack_damage",global.randomUUID(),1,"addition")
 
 	event.create("needle_ammo")
 	.displayName("Needle Ammo")
@@ -104,6 +120,10 @@ StartupEvents.registry("item", (event) => {
 
 	event.create("needle_magazine")
 	.displayName("Needle Magazine")
+	.maxStackSize(16)
+
+	event.create("needle_magazine_molten")
+	.displayName("Molten Needle Magazine")
 	.maxStackSize(16)
 
 	event.create("sharpnell")
@@ -138,19 +158,28 @@ StartupEvents.registry("item", (event) => {
 	let konckback = global.randomUUID()
 
 	event.create("redstone_sword","sword")
-	.displayName("Redstone Sword")
+	.displayName("Redium Cleaver")
 	.tier('star')
-	.speedBaseline(-3.2)
-	.attackDamageBaseline(7)
+	.speedBaseline(-3.0)
+	.attackDamageBaseline(10)
+	.modifyAttribute("generic.armor",global.randomUUID(),4,"ADDITION")
 	.modifyAttribute("generic.attack_knockback",konckback,0.5,"ADDITION")
-	.modifyAttribute("generic.armor",global.randomUUID(),2,"ADDITION")
 	.modifyAttribute("forge:entity_reach",reach,2,"ADDITION")
 
 	event.create("farmer_axe","axe")
-	.displayName("Farmer Axe")
+	.displayName("Farmit Axe")
 	.tier('star')
-	.speedBaseline(-3.7)
+	.speedBaseline(-3.4)
 	.attackDamageBaseline(12)
+	.modifyAttribute("generic.attack_knockback",konckback,0.5,"ADDITION")
+	.modifyAttribute("forge:entity_reach",reach,2,"ADDITION")
+
+	event.create("anchor_pickaxe","pickaxe")
+	.displayName("Prismatic Anchor")
+	.tier('star')
+	.speedBaseline(-3.2)
+	.attackDamageBaseline(8)
+	.modifyAttribute("forge:block_reach",global.randomUUID(),2,"ADDITION")
 	.modifyAttribute("generic.attack_knockback",konckback,0.5,"ADDITION")
 	.modifyAttribute("forge:entity_reach",reach,2,"ADDITION")
 
@@ -453,7 +482,7 @@ StartupEvents.registry("item", (event) => {
 		["tech_stage_1a","Stage I Part A"],
 		["tech_stage_1b","Stage I Part B"],
 		["tech_stage_2","Stage II"],
-		["tech_stage_3","Stage III §4(Heated!)"],
+		["tech_stage_3","Stage III"],
 	].forEach(e => {
 		event.create(e[0])
 			.displayName("Unfinished " + TechPrefix +  "Ingot")
@@ -487,6 +516,9 @@ StartupEvents.registry("item", (event) => {
 
 	event.create('farmer_ingot')
 	.displayName("Farmit Ingot")
+
+	event.create('anchor_ingot')
+	.displayName("Prismatic Ingot")
 
 	event.create('power_dust')
 	.displayName("Growth Dust")
@@ -614,6 +646,55 @@ StartupEvents.registry("item", (event) => {
 
 	event.create("manyullyn_dust")
 	.displayName("Manyullyn Dust")
+
+	event.create("space_ingot")
+	.displayName("Insulated Ingot")
+
+	event.create("space_helmet", "helmet")
+	.displayName("Ancient Space Suit Helmet")
+	.tier('space')
+
+	event.create("space_chestplate", "chestplate")
+	.displayName("Ancient Space Suit Chestplate")
+	.tier('space')
+
+	event.create("space_leggings", "leggings")
+	.displayName("Ancient Space Suit Leggings")
+	.tier('space')
+
+	event.create("space_boots", "boots")
+	.displayName("Ancient Space Suit Boots")
+	.tier('space')
+
+	event.create("space_upgrade")
+	.displayName("Smithing Blueprint")
+
+	event.create("mixture_tank_filled")
+	.displayName("Filled Air Mixture Tank")
+	.unstackable()
+	.barWidth(item => {
+		if (item.hasNBT()) {
+			let number = (item.getNbt()["Uses"] / 1000.0 ) * 13.0
+			if (number == 13) {
+				return 14
+			} else if (number > (13/2)) {
+				return Math.ceil(number)
+			} else {
+				return Math.floor(number)
+			}
+		} else return 14
+	})
+	.barColor(item => Color.CYAN_DYE)
+
+	event.create("mixture_tank_empty")
+	.displayName("Empty Air Mixture Tank")
+	.unstackable()
+
+	//event.create("crab_claw")
+	//.modifyAttribute("forge:block_reach",global.randomUUID(),2,"addition")
+	//.modifyAttribute("forge:entity_reach",global.randomUUID(),2,"addition")
+	//.maxDamage(128)
+	//.unstackable()
 
 })
 

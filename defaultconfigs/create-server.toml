@@ -467,15 +467,15 @@
 	#.
 	#Maximum length of track that can be placed as one batch or turn.
 	#Range: 16 ~ 128
-	maxTrackPlacementLength = 32
+	maxTrackPlacementLength = 128
 	#.
 	#Maximum length of a Train Stations' assembly track.
 	#Range: > 5
-	maxAssemblyLength = 128
+	maxAssemblyLength = 512
 	#.
 	#Maximum amount of bogeys assembled as a single Train.
 	#Range: > 1
-	maxBogeyCount = 20
+	maxBogeyCount = 50
 	#.
 	#Relative speed of a manually controlled Train compared to a Scheduled one.
 	#Range: 0.0 ~ 3.4028234663852886E38

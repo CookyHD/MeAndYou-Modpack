@@ -39,6 +39,12 @@ StartupEvents.registry("fluid",event => {
 	//heavy_attr.dropOff(3)
 	//heavy_attr.tickDelay(30)
 
+	event.create('mixture')
+	.noBlock()
+	.noBucket()
+	.thickTexture(0x00ffff)
+	.displayName("Air Mixture")
+
 })
 
 //BlockEvents.modification(event => {

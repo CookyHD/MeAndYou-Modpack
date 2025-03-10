@@ -5,6 +5,17 @@ ServerEvents.tags('block', event => {
 	event.removeAll('cucumber:mineable/paxel')
 	event.add('cucumber:mineable/paxel',Block.getTaggedIds('minecraft:mineable/shovel'))
 	event.add('cucumber:mineable/paxel',Block.getTaggedIds('minecraft:mineable/pickaxe'))
+	event.add("forge:relocation_not_supported",[
+		'kubejs:amplifyer_totem',
+		'kubejs:dragon_block',
+		'kubejs:mutation_catalyst',
+		'kubejs:spark_catalyst',
+		'kubejs:seal_creativ',
+		'kubejs:fake_redstone_lamp',
+		'kubejs:unstable_gravel',
+		'kubejs:heavy_weight',
+		'kubejs:catalyst_prismarine'
+	])
 
 })
 
@@ -86,7 +97,7 @@ ServerEvents.tags('item', event => {
 	event.add('kubejs:output_grass',['biomesoplenty:dead_sapling', 'minecraft:cherry_sapling', 'minecraft:dark_oak_sapling', 'minecraft:acacia_sapling', 'minecraft:jungle_sapling', 'biomesoplenty:rainbow_birch_sapling', 'biomesoplenty:willow_sapling', 'biomesoplenty:origin_sapling', 'biomesoplenty:magic_sapling', 'minecraft:oak_sapling', 'minecraft:birch_sapling', 'biomesoplenty:umbran_sapling', 'biomesoplenty:snowblossom_sapling', 'biomesoplenty:redwood_sapling', 'biomesoplenty:mahogany_sapling', 'biomesoplenty:flowering_oak_sapling', 'minecraft:spruce_sapling', 'biomesoplenty:palm_sapling', 'biomesoplenty:jacaranda_sapling', 'biomesoplenty:fir_sapling', 'biomesoplenty:hellbark_sapling', 'thermal:rubberwood_sapling', 'minecraft:mangrove_propagule', 'minecraft:flowering_azalea', 'minecraft:azalea', 'biomesoplenty:cypress_sapling', 'biomesoplenty:pine_sapling', 'biomesoplenty:yellow_maple_sapling', 'biomesoplenty:orange_maple_sapling', 'biomesoplenty:red_maple_sapling'])
 	event.add('kubejs:output_netherrack','minecraft:netherite_scrap')
 
-	event.add('kubejs:heated',['kubejs:tech_stage_3','kubejs:incomplete_tech_ingot'])
+	event.add('kubejs:heated',['kubejs:tech_stage_3','kubejs:incomplete_tech_ingot','kubejs:needle_magazine_molten'])
 
 	event.add('quad:immune/explosion',['kubejs:creativ_block', 'kubejs:seal_creativ', 'kubejs:creativ_compound', 'kubejs:creativ_unstable', 'kubejs:creativ_ingot', 'kubejs:creativ_dust', 'kubejs:creativ_pickaxe', 'kubejs:bedrock_dust'])
 
@@ -118,7 +129,9 @@ ServerEvents.tags('item', event => {
 		'create_sa:small_fueling_tank',
 		'create_sa:medium_fueling_tank',
 		'create_sa:large_fueling_tank',
-		'create_sa:creative_filling_tank'
+		'create_sa:creative_filling_tank'//,
+		//"kubejs:mixture_tank_filled",
+		//"kubejs:mixture_tank_empty"
 	])
 
 	event.add("forge:planks/driftwood","aquaculture:driftwood")
@@ -319,6 +332,7 @@ ServerEvents.tags('item', event => {
 		'kubejs:star_pickaxe',
 		'kubejs:bread_pickaxe',
 		'kubejs:tech_pickaxe',
+		'kubejs:anchor_pickaxe',
 		'create_sa:experience_pickaxe',
 		'create_sa:brass_pickaxe'
 	].forEach(e => {
@@ -394,7 +408,7 @@ ServerEvents.tags('item', event => {
 	event.add('minecraft:breaks_decorated_pots','redstone_arsenal:flux_trident')
 	event.add('minecraft:tools','redstone_arsenal:flux_trident')
 
-	event.add("create:upright_on_belt",["kubejs:beer","kubejs:jar_of_tears"])
+	event.add("create:upright_on_belt",["kubejs:beer","kubejs:jar_of_tears","kubejs:incomplete_seal_creativ","kubejs:oxygen_tank_empty","kubejs:oxygen_tank_filled"])
 
 	let slots = [
 		"curios:head",
@@ -414,10 +428,9 @@ ServerEvents.tags('item', event => {
 	event.add("chisel_chipped_integration:metals/cobalt_blocks","kubejs:cobalt_block")
 
 	event.add("kubejs:cobalt_ingredient",["kubejs:cobalt_ingot","kubejs:cobalt_dust"])
-	
+
 	event.add("forge:ores",["kubejs:nether_uranium_ore","kubejs:nether_cobalt_ore"])
 	event.add("forge:ores/nether_uranium","kubejs:nether_uranium_ore")
 	event.add("forge:ores/cobalt","kubejs:nether_cobalt_ore")
-
 
 })
