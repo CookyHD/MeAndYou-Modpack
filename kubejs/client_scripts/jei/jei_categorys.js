@@ -294,3 +294,7 @@ JEIAddedEvents.registerRecipes((event) => {
 		.add({in: 'kubejs:bedrock_remover', out: 'kubejs:bedrock_dust'})
 
 })
+
+JEIEvents.information(event =>  {
+	event.addItem("kubejs:farmer_ingot",Text.of("Obtain this by shoving a Starrie Ingot into soil!"))
+})

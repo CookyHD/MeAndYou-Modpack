@@ -528,6 +528,8 @@ ServerEvents.recipes(event => {
 	event.remove({ id: 'architects_palette:bone_meal' })
 	event.remove({ id: 'create_sa:netherite_jetpack_recipe' })
 	event.remove({ id: 'create:crushing/uranium_ore' })
+	event.remove({ input: 'aquaculture:tin_can' })
+	event.remove({ input: 'crabbersdelight:can' })
 
 	event.remove({ type: "sfm:printing_press" })
 	event.remove({ type: "sfm:falling_anvil" })
@@ -3411,11 +3413,20 @@ ServerEvents.recipes(event => {
 	event.recipes.thermal.bottler(Item.of("kubejs:mixture_tank_filled",{Uses:1000}),[Fluid.of('kubejs:mixture',1000),'kubejs:mixture_tank_empty']).energy(400)
 	event.recipes.create.filling(Item.of("kubejs:mixture_tank_filled",{Uses:1000}),[Fluid.of('kubejs:mixture',1000),'kubejs:mixture_tank_empty'])
 
-	event.recipes.create.mixing(Fluid.of("kubejs:mixture",250),["2x sugar","nether_wart",Fluid.of("thermal:glowstone",125),Fluid.of("water",250)])
+	event.recipes.create.mixing([Fluid.of("kubejs:mixture",250),Item.of('thermal:electrum_plate').withChance(0.8)],[Fluid.of("water",250),'thermal:electrum_plate','minecraft:nether_wart']).heated()
 
-	//event.replaceOutput(
-	//	{output: 'crabbersdelight:can'},
-	//	'crabbersdelight:can',
-	//	'aquaculture:tin_can'
-	//)
+	event.shaped('aether:chainmail_gloves',[
+		"A A"
+	],{
+		A: 'minecraft:chain'
+	})
+
+	event.shaped('aether:chainmail_gloves',[
+		"A A"
+	],{
+		A: 'tetra:forged_mesh'
+	})
+
+	event.smelting("4x iron_nugget",['crabbersdelight:can','aquaculture:tin_can'])
+
 })

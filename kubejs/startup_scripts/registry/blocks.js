@@ -232,7 +232,27 @@ StartupEvents.registry("block", (event) => {
 	.requiresTool(true)
 	.property(BlockProperties.LEVEL)
 
-	//event.create("farmer_plant","crop")
+	event.create("farmer_crop","crop")
+	.displayName("Farmit Crop")
+	.mapColor(Color.GREEN)
+	.requiresTool()
+	.tagBlock("mineable/pickaxe")
+	.tagBlock("mineable/hoe")
+	.age(4,builder => {
+		builder
+		.shape(0,2,0,2,14,13,14)
+		.shape(1,2,0,2,14,13,14)
+		.shape(2,2,0,2,14,13,14)
+		.shape(3,2,0,2,14,13,14)
+		.shape(4,2,0,2,14,13,14)
+	})
+	.item(item => {
+		item
+		.displayName("Farmit Crop §ePlaceholder")
+		.texture("kubejs:block/farmer_crop_stage_0")
+	})
+	.dropSeed(false)
+	.noDrops()
 
 })
 

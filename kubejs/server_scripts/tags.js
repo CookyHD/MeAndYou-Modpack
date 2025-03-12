@@ -16,7 +16,9 @@ ServerEvents.tags('block', event => {
 		'kubejs:heavy_weight',
 		'kubejs:catalyst_prismarine'
 	])
-
+	
+	event.add("ftbultimine:excluded_blocks","kubejs:farmer_crop")
+	event.add("kubejs:can_grow",["minecraft:farmland", 'thermal:phytosoil_tilled', 'aether:aether_farmland', 'farmersdelight:rich_soil_farmland'])
 })
 
 ServerEvents.loaded(event => {
@@ -152,7 +154,8 @@ ServerEvents.tags('item', event => {
 		'create:copper_diving_helmet',
 		'kubejs:star_helmet',
 		'kubejs:bloody_helmet',
-		'thermal:beekeeper_helmet'
+		'thermal:beekeeper_helmet',
+		'kubejs:space_helmet'
 	].forEach(e => {
 		event.add("forge:armor",e)
 		event.add("forge:armors",e)
@@ -173,7 +176,8 @@ ServerEvents.tags('item', event => {
 		'create_sa:netherite_jetpack_chestplate',
 		'create_sa:brass_exoskeleton_chestplate',
 		'create_sa:brass_jetpack_chestplate',
-		'kubejs:star_chestplate'
+		'kubejs:star_chestplate',
+		'kubejs:space_chestplate'
 	].forEach(e => {
 		event.add("forge:armor",e)
 		event.add("forge:armors",e)
@@ -191,7 +195,8 @@ ServerEvents.tags('item', event => {
 		'thermal:hazmat_leggings',
 		'thermal:diving_leggings',
 		'thermal:beekeeper_leggings',
-		'create_sa:copper_leggings'
+		'create_sa:copper_leggings',
+		'kubejs:space_leggings'
 	].forEach(e => {
 		event.add("forge:armor",e)
 		event.add("forge:armors",e)
@@ -218,7 +223,8 @@ ServerEvents.tags('item', event => {
 		'cloudboots:gold_cloud_boots',
 		'cloudboots:iron_cloud_boots',
 		'cloudboots:cloud_boots',
-		'usefulslime:slime_boots'
+		'usefulslime:slime_boots',
+		'kubejs:space_boots'
 	].forEach(e => {
 		event.add("forge:armor",e)
 		event.add("forge:armors",e)
@@ -275,7 +281,11 @@ ServerEvents.tags('item', event => {
 		'kubejs:bloody_boots',
 		'create:copper_diving_boots',
 		'cloudboots:diamond_cloud_boots',
-		'cloudboots:netherite_cloud_boots'
+		'cloudboots:netherite_cloud_boots',
+		'kubejs:space_helmet',
+		'kubejs:space_chestplate',
+		'kubejs:space_leggings',
+		'kubejs:space_boots'
 	])
 
 	event.add("forge:armor",'redstone_arsenal:flux_elytra')
@@ -432,5 +442,8 @@ ServerEvents.tags('item', event => {
 	event.add("forge:ores",["kubejs:nether_uranium_ore","kubejs:nether_cobalt_ore"])
 	event.add("forge:ores/nether_uranium","kubejs:nether_uranium_ore")
 	event.add("forge:ores/cobalt","kubejs:nether_cobalt_ore")
+
+	event.add("quad:snow/acts_solid",["kubejs:space_boots","kubejs:space_chestpalte","kubejs:space_leggings","kubejs:space_helmet"])
+	event.add("quad:immune/fire",["kubejs:space_boots","kubejs:space_chestpalte","kubejs:space_leggings","kubejs:space_helmet", 'kubejs:space_ingot', 'kubejs:mixture_tank_filled', 'kubejs:mixture_tank_empty'])
 
 })

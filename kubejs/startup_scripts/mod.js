@@ -27,7 +27,8 @@ StartupEvents.modifyCreativeTab('kubejs:tab', event => {
 		"kubejs:heavy_weight",
 		"kubejs:unstable_gravel",
 		"kubejs:mixture_tank_filled",
-		"kubejs:catalyst_prismarine"
+		"kubejs:catalyst_prismarine",
+		"kubejs:farmer_crop_seed"
 	].forEach(e => {
 		event.remove(e)
 	})

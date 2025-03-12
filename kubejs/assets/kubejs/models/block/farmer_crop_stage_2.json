@@ -1,0 +1,7 @@
+{
+	"parent":"kubejs:block/farmer_crop_base",
+	"textures": {
+		"plant": "kubejs:block/farmer_crop_stage_2",
+		"particle": "kubejs:block/farmer_crop_stage_2"
+	}
+}
