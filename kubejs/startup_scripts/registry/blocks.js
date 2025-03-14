@@ -232,7 +232,8 @@ StartupEvents.registry("block", (event) => {
 	.requiresTool(true)
 	.property(BlockProperties.LEVEL)
 
-	event.create("farmer_crop","").randomTick((callback) => {
+	event.create("farmer_crop")
+	.randomTick((callback) => {
 		if (global.farmer_crop_callback) {
 			global.farmer_crop_callback(callback)
 		}
