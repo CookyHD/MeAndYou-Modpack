@@ -27,7 +27,7 @@ ignoreList: ['minecraft:cave_vine', 'minecraft:cave_vine_plant', 'endercrop:ende
   'biomesoplenty:rainbow_birch_sapling', 'biomesoplenty:hellbark_sapling', 'biomesoplenty:palm_sapling',
   'biomesoplenty:dead_sapling', 'biomesoplenty:red_maple_sapling', 'biomesoplenty:orange_maple_sapling',
   'biomesoplenty:yellow_maple_sapling', 'biomesoplenty:cypress_sapling', 'biomesoplenty:pine_sapling',
-  'biomesoplenty:empyreal_sapling', 'kubejs:farmer_crop']
+  'biomesoplenty:empyreal_sapling']
 randomTickMultiplier: 1
 range: 5
 requireHoe: false

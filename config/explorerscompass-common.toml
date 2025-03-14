@@ -43,7 +43,8 @@
 		"bettermineshafts:*",
 		"battletowers:*",
 		"tetra:*",
-		"explorify:*"
+		"explorify:*",
+		"imst:*"
 	]
 	#The maximum number of samples to be taken when searching for a structure.
 	#Range: 0 ~ 100000000

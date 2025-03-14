@@ -25,8 +25,16 @@ recipes = {
 	{"azalea",'minecraft:azalea', 'minecraft:oak_log', 'minecraft:azalea_leaves',"thermal:resin",15},
 	{"flowering_oak",'biomesoplenty:flowering_oak_sapling', 'minecraft:oak_log', 'biomesoplenty:flowering_oak_leaves',"thermal:resin",15},
 	{"pine",'biomesoplenty:pine_sapling', 'biomesoplenty:pine_log', 'biomesoplenty:pine_leaves',"thermal:resin",35},
-	{"cypress",'biomesoplenty:cypress_sapling', 'minecraft:spruce_log', 'biomesoplenty:cypress_leaves',"thermal:resin",15},
-	{"empyreal",'biomesoplenty:empyreal_sapling', 'biomesoplenty:empyreal_log', 'biomesoplenty:empyreal_leaves',"thermal:ender",5}
+	{"cypress",'biomesoplenty:cypress_sapling', 'minecraft:spruce_log', 'biomesoplenty:cypress_leaves',"thermal:resin",25},
+	{"empyreal",'biomesoplenty:empyreal_sapling', 'biomesoplenty:empyreal_log', 'biomesoplenty:empyreal_leaves',"thermal:ender",5},
+
+	{"tree_extractor_acacia","minecraft:acacia_sapling","minecraft:acacia_log","minecraft:acacia_leaves","thermal:resin",15},
+	{"tree_extractor_birch","minecraft:birch_sapling","minecraft:birch_log","minecraft:birch_leaves","thermal:sap",10},
+	{"tree_extractor_oak","minecraft:oak_sapling","minecraft:oak_log","minecraft:oak_leaves","thermal:resin",15},
+	{"tree_extractor_dark_oak","minecraft:dark_oak_sapling","minecraft:dark_oak_log","minecraft:dark_oak_leaves","thermal:sap",20},
+	{"tree_extractor_cherry","minecraft:cherry_sapling","minecraft:cherry_log","minecraft:cherry_leaves","thermal:resin",15},
+	{"tree_extractor_jungle","minecraft:jungle_sapling","minecraft:jungle_log","minecraft:jungle_leaves","thermal:latex",15},
+	{"tree_extractor_spruce","minecraft:spruce_sapling","minecraft:spruce_log","minecraft:spruce_leaves","thermal:resin",25}
 }
 
 print("\nSTARTING GENERATION\n")

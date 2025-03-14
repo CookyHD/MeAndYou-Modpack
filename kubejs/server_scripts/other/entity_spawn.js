@@ -96,6 +96,14 @@ EntityEvents.spawned(event => {
 		}
 	}
 
+	if (event.entity.type == "minecraft:wolf" && !event.entity.tags.contains("Kubejs_MobEdit")) {
+		let NBT = event.entity.getNbt()
+		if (NBT["Age"] >= 0) {
+			NBT["Variant"] = global.random(8)
+			event.entity.setNbt(NBT)
+		}
+	}
+
 	if (event.entity.type == "iceandfire:dragon_arrow") {
 		let NBT = event.entity.getNbt()
 		NBT["damage"] *= 0.4
@@ -108,6 +116,7 @@ EntityEvents.spawned(event => {
 	}
 
 	let edit_mobs = [
+		"minecraft:wolf",
 		"minecraft:spider",
 		"minecraft:cave_spider",
 		"minecraft:skeleton",

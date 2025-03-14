@@ -3,6 +3,11 @@
 JEIEvents.hideItems(event => {
 
 	event.hide([
+		'dragonfinder:coocked_fire_dragon_flesh',
+		'dragonfinder:coocked_ice_dragon_flesh',
+		'dragonfinder:coocked_lightning_dragon_flesh',
+		'dragonfinder:ice_dragon_eye',
+		'dragonfinder:lightning_dragon_eye',
 		"kubejs:catalyst_prismarine",
 		'copycats:copycat_vertical_slice',
 		'copycats:copycat_slice',

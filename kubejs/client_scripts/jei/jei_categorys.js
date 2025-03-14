@@ -295,6 +295,7 @@ JEIAddedEvents.registerRecipes((event) => {
 
 })
 
-JEIEvents.information(event =>  {
-	event.addItem("kubejs:farmer_ingot",Text.of("Obtain this by shoving a Starrie Ingot into soil!"))
+JEIEvents.information(event => {
+	event.addItem("kubejs:farmer_ingot",Text.of("Obtain this by placing a §6Starrite Ingot§0 in soft soil and letting it rust."))
+	event.addItem("kubejs:star_ingot",Text.of("Put this into soft soil and let it rust to obtain a §2Farmit Ingot§0."))
 })

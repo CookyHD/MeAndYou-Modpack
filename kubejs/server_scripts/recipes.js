@@ -10,6 +10,13 @@ ServerEvents.recipes(event => {
 	let inter
 
 	let ban = [
+		'dragonfinder:coocked_fire_dragon_flesh',
+		'dragonfinder:coocked_ice_dragon_flesh',
+		'dragonfinder:coocked_lightning_dragon_flesh',
+		'dragonfinder:fire_dragon_eye',
+		'dragonfinder:ice_dragon_eye',
+		'dragonfinder:lightning_dragon_eye',
+		'iceandfire:ghost_chest',
 		"explorerscompass:explorerscompass",
 		'copycats:copycat_vertical_slice',
 		'copycats:copycat_slice',
@@ -1941,7 +1948,7 @@ ServerEvents.recipes(event => {
 	event.recipes.thermal.bottler('kubejs:redstone_ingot',[Fluid.of('thermal:redstone',1000),'kubejs:star_ingot']).energy(2000)
 	event.recipes.create.filling('kubejs:redstone_ingot',[Fluid.of('thermal:redstone',1000),'kubejs:star_ingot'])
 
-	event.recipes.thermal.insolator(Item.of('kubejs:farmer_ingot').withChance(1.1), 'kubejs:star_ingot').water(1000).energy(20000)
+	event.recipes.thermal.insolator('kubejs:farmer_ingot', 'kubejs:star_ingot').water(1000).energy(20000)
 	event.recipes.thermal.furnace('kubejs:star_ingot','kubejs:star_dust').energy(2000)
 
 	event.recipes.thermal.furnace('kubejs:tech_ingot','kubejs:tech_dust').energy(2000)
@@ -3034,11 +3041,13 @@ ServerEvents.recipes(event => {
 		"minecraft:diamond_pickaxe",
 	)
 
-	event.replaceInput(
-		{id: 'iceandfire:ghost_chest'},
-		"#forge:rods/wooden",
-		"#forge:chests/wooden",
-	)
+	event.shaped('iceandfire:ghost_chest',[
+		"A",
+		"B"
+	],{
+		A: 'iceandfire:ectoplasm',
+		B: "#forge:chests/wooden"
+	})
 
 	event.custom({
 		"type": "minecraft:smithing_transform",
@@ -3428,5 +3437,7 @@ ServerEvents.recipes(event => {
 	})
 
 	event.smelting("4x iron_nugget",['crabbersdelight:can','aquaculture:tin_can'])
+
+	event.shapeless('dragonfinder:fire_dragon_eye',["minecraft:ender_eye",["iceandfire:fire_dragon_heart","iceandfire:ice_dragon_heart","iceandfire:lightning_dragon_heart"]])
 
 })

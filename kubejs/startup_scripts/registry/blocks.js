@@ -232,27 +232,25 @@ StartupEvents.registry("block", (event) => {
 	.requiresTool(true)
 	.property(BlockProperties.LEVEL)
 
-	event.create("farmer_crop","crop")
+	event.create("farmer_crop","").randomTick((callback) => {
+		if (global.farmer_crop_callback) {
+			global.farmer_crop_callback(callback)
+		}
+	})
+	.canBeWaterlogged()
+	.resistance(0)
+	.hardness(0)
+	.soundType(SoundType.METAL)
+	.box(2,0,2,14,14,14)
+	.noCollision()
+	.property(BlockProperties.AGE_4)
 	.displayName("Farmit Crop")
 	.mapColor(Color.GREEN)
 	.requiresTool()
 	.tagBlock("mineable/pickaxe")
-	.tagBlock("mineable/hoe")
-	.age(4,builder => {
-		builder
-		.shape(0,2,0,2,14,13,14)
-		.shape(1,2,0,2,14,13,14)
-		.shape(2,2,0,2,14,13,14)
-		.shape(3,2,0,2,14,13,14)
-		.shape(4,2,0,2,14,13,14)
-	})
-	.item(item => {
-		item
-		.displayName("Farmit Crop §ePlaceholder")
-		.texture("kubejs:block/farmer_crop_stage_0")
-	})
-	.dropSeed(false)
-	.noDrops()
+	.lightLevel(global.calcLight(4))
+	.defaultCutout()
+	.renderType("cutout")
 
 })
 

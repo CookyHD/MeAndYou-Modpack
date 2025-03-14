@@ -14,11 +14,43 @@ ServerEvents.tags('block', event => {
 		'kubejs:fake_redstone_lamp',
 		'kubejs:unstable_gravel',
 		'kubejs:heavy_weight',
-		'kubejs:catalyst_prismarine'
+		'kubejs:catalyst_prismarine',
+		"kubejs:farmer_crop"
 	])
 	
-	event.add("ftbultimine:excluded_blocks","kubejs:farmer_crop")
-	event.add("kubejs:can_grow",["minecraft:farmland", 'thermal:phytosoil_tilled', 'aether:aether_farmland', 'farmersdelight:rich_soil_farmland'])
+	event.add("create:non_movable",[
+		'kubejs:amplifyer_totem',
+		'kubejs:dragon_block',
+		'kubejs:mutation_catalyst',
+		'kubejs:spark_catalyst',
+		'kubejs:seal_creativ',
+		'kubejs:fake_redstone_lamp',
+		'kubejs:unstable_gravel',
+		'kubejs:heavy_weight',
+		'kubejs:catalyst_prismarine',
+		"kubejs:farmer_crop"
+	])
+
+	event.add('kubejs:can_grow',Block.getTaggedIds('minecraft:dirt'))
+	event.add('kubejs:can_grow',Block.getTaggedIds('forge:gravel'))
+	event.add('kubejs:can_grow',Block.getTaggedIds('forge:sand'))
+	event.add('kubejs:can_grow',Block.getTaggedIds('forge:aether_dirt'))
+	event.add('kubejs:can_grow',[
+		'minecraft:farmland',
+		'thermal:phytosoil_tilled',
+		'farmersdelight:rich_soil_farmland',
+		'thermal:phytosoil',
+		'aether:aether_farmland',
+		'farmersdelight:rich_soil'
+	])
+
+	event.remove("iceandfire:dragon_cave_uncommon_ores","iceandfire:silver_ore")
+	event.remove("iceandfire:fire_dragon_cave_ores","minecraft:emerald_ore")
+	event.remove("iceandfire:ice_dragon_cave_ores","iceandfire:sapphire_ore")
+
+	event.add("iceandfire:dragon_cave_uncommon_ores","thermal:silver_ore")
+	event.add("iceandfire:fire_dragon_cave_ores","thermal:ruby_ore")
+	event.add("iceandfire:ice_dragon_cave_ores","thermal:sapphire_ore")
 })
 
 ServerEvents.loaded(event => {
@@ -443,6 +475,7 @@ ServerEvents.tags('item', event => {
 	event.add("forge:ores/nether_uranium","kubejs:nether_uranium_ore")
 	event.add("forge:ores/cobalt","kubejs:nether_cobalt_ore")
 
+	event.add("quad:snow/boots",'kubejs:space_boots')
 	event.add("quad:snow/acts_solid",["kubejs:space_boots","kubejs:space_chestpalte","kubejs:space_leggings","kubejs:space_helmet"])
 	event.add("quad:immune/fire",["kubejs:space_boots","kubejs:space_chestpalte","kubejs:space_leggings","kubejs:space_helmet", 'kubejs:space_ingot', 'kubejs:mixture_tank_filled', 'kubejs:mixture_tank_empty'])
 
