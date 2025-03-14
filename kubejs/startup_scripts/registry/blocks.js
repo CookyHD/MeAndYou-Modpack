@@ -238,7 +238,7 @@ StartupEvents.registry("block", (event) => {
 			global.farmer_crop_callback(callback)
 		}
 	})
-	.canBeWaterlogged()
+	.waterlogged()
 	.resistance(0)
 	.hardness(0)
 	.soundType(SoundType.METAL)
