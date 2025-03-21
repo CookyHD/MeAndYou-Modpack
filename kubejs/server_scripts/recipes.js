@@ -10,6 +10,99 @@ ServerEvents.recipes(event => {
 	let inter
 
 	let ban = [
+		'bbb:rope',
+		"naturalist:teddy_bear",
+		'another_furniture:furniture_hammer',
+		//Departed
+		'decorative_blocks:warped_palisade',
+		'everycomp:db/biomesoplenty/fir_palisade',
+		'everycomp:db/biomesoplenty/pine_palisade',
+		'everycomp:db/biomesoplenty/willow_palisade',
+		'everycomp:db/botania/dreamwood_palisade',
+		'decorative_blocks:acacia_palisade',
+		'everycomp:db/biomesoplenty/hellbark_palisade',
+		'decorative_blocks:dark_oak_palisade',
+		'decorative_blocks:crimson_palisade',
+		'decorative_blocks:brazier',
+		'decorative_blocks:birch_palisade',
+		'decorative_blocks:cherry_palisade',
+		'everycomp:db/biomesoplenty/jacaranda_palisade',
+		'decorative_blocks:bamboo_palisade',
+		'decorative_blocks:mangrove_palisade',
+		'everycomp:db/botania/livingwood_palisade',
+		'everycomp:db/biomesoplenty/jacaranda_beam',
+		'everycomp:db/biomesoplenty/mahogany_beam',
+		'everycomp:db/biomesoplenty/redwood_beam',
+		'everycomp:db/biomesoplenty/maple_beam',
+		'everycomp:db/biomesoplenty/pine_beam',
+		'decorative_blocks:soul_brazier',
+		'everycomp:db/biomesoplenty/magic_palisade',
+		'everycomp:db/biomesoplenty/umbran_palisade', 
+		'everycomp:db/biomesoplenty/mahogany_palisade',
+		'everycomp:db/biomesoplenty/maple_palisade',
+		'decorative_blocks:spruce_palisade',
+		'everycomp:db/biomesoplenty/dead_palisade', 
+		'everycomp:db/biomesoplenty/empyreal_palisade',
+		'everycomp:db/aether/skyroot_palisade',
+		'everycomp:db/architects_palette/twisted_palisade',
+		'everycomp:db/biomesoplenty/redwood_palisade',
+		'everycomp:db/biomesoplenty/palm_palisade',
+		'everycomp:db/thermal/rubberwood_palisade',
+		'decorative_blocks:jungle_palisade',
+		'decorative_blocks:oak_palisade',
+		'everycomp:db/thermal/rubberwood_beam',
+		'everycomp:db/biomesoplenty/empyreal_beam',
+		'everycomp:db/biomesoplenty/hellbark_beam',
+		'everycomp:db/biomesoplenty/umbran_beam',
+		'everycomp:db/biomesoplenty/magic_beam',
+		'decorative_blocks:crimson_beam',
+		'decorative_blocks:warped_beam',
+		'everycomp:db/botania/dreamwood_beam',
+		'everycomp:db/biomesoplenty/fir_beam',
+		'everycomp:db/biomesoplenty/palm_beam',
+		'everycomp:db/aether/skyroot_beam',
+		'everycomp:db/botania/livingwood_beam',
+		'decorative_blocks:acacia_beam',
+		'decorative_blocks:mangrove_beam',
+		'decorative_blocks:cherry_beam',
+		'decorative_blocks:oak_beam',
+		'decorative_blocks:birch_beam',
+		'decorative_blocks:spruce_beam',
+		'decorative_blocks:jungle_beam',
+		'decorative_blocks:dark_oak_beam',
+		'everycomp:db/biomesoplenty/willow_beam',
+		'everycomp:db/biomesoplenty/dead_beam',
+		'everycomp:db/architects_palette/twisted_beam',
+		'decorative_blocks:cherry_support',
+		'everycomp:db/botania/livingwood_support',
+		'decorative_blocks:warped_support',
+		'everycomp:db/botania/dreamwood_support',
+		'everycomp:db/biomesoplenty/palm_support',
+		'everycomp:db/biomesoplenty/dead_support',
+		'everycomp:db/biomesoplenty/umbran_support',
+		'everycomp:db/biomesoplenty/empyreal_support',
+		'decorative_blocks:bamboo_support',
+		'decorative_blocks:crimson_support',
+		'decorative_blocks:mangrove_support',
+		'everycomp:db/biomesoplenty/pine_support',
+		'everycomp:db/biomesoplenty/redwood_support',
+		'decorative_blocks:oak_support',
+		'decorative_blocks:jungle_support',
+		'decorative_blocks:spruce_support',
+		'decorative_blocks:birch_support',
+		'everycomp:db/biomesoplenty/mahogany_support',
+		'everycomp:db/biomesoplenty/willow_support',
+		'everycomp:db/biomesoplenty/magic_support',
+		'everycomp:db/biomesoplenty/hellbark_support',
+		'everycomp:db/aether/skyroot_support',
+		'decorative_blocks:acacia_support',
+		'decorative_blocks:dark_oak_support',
+		'everycomp:db/thermal/rubberwood_support',
+		'everycomp:db/architects_palette/twisted_support',
+		'everycomp:db/biomesoplenty/jacaranda_support',
+		'everycomp:db/biomesoplenty/maple_support',
+		'everycomp:db/biomesoplenty/fir_support',
+		//
 		'dragonfinder:coocked_fire_dragon_flesh',
 		'dragonfinder:coocked_ice_dragon_flesh',
 		'dragonfinder:coocked_lightning_dragon_flesh',
@@ -537,6 +630,7 @@ ServerEvents.recipes(event => {
 	event.remove({ id: 'create:crushing/uranium_ore' })
 	event.remove({ input: 'aquaculture:tin_can' })
 	event.remove({ input: 'crabbersdelight:can' })
+	event.remove({ id: 'architects_palette:blasting/nether_brass_ingot_from_nether_brass_blend_blasting' })
 
 	event.remove({ type: "sfm:printing_press" })
 	event.remove({ type: "sfm:falling_anvil" })
@@ -1757,7 +1851,7 @@ ServerEvents.recipes(event => {
 		['apatite',5],
 		['cinnabar',5],
 		['niter',5],
-		['sulfure',5],
+		['sulfur',5],
 		['tin',8],
 		['lead',8],
 		['silver',2.5],
@@ -2147,8 +2241,6 @@ ServerEvents.recipes(event => {
 			event.recipes.thermal.insolator([Item.of(e[1]).withChance(6),Item.of(e[0]).withChance(1.1)],e[0]).energy(60000)
 		}
 	})
-
-	event.recipes.thermal.tree_extractor(Fluid.of("minecraft:lava",15),'architects_palette:twisted_log','architects_palette:twisted_leaves')
 
 	thermalpackun('farmersdelight:rice_bag', 'farmersdelight:rice')
 	thermalpackun('farmersdelight:rice_bale', 'farmersdelight:rice_panicle')
@@ -3438,6 +3530,114 @@ ServerEvents.recipes(event => {
 
 	event.smelting("4x iron_nugget",['crabbersdelight:can','aquaculture:tin_can'])
 
+	event.smelting('naturalist:cooked_bushmeat','naturalist:bushmeat')
+	event.smoking('naturalist:cooked_bushmeat','naturalist:bushmeat')
+
 	event.shapeless('dragonfinder:fire_dragon_eye',["minecraft:ender_eye",["iceandfire:fire_dragon_heart","iceandfire:ice_dragon_heart","iceandfire:lightning_dragon_heart"]])
+
+	event.shaped('grapplemod:longfallboots',[
+		"A A",
+		"B B",
+		"C C"
+	],{
+		A: 'minecraft:iron_ingot',
+		B: 'minecraft:diamond',
+		C: 'minecraft:obsidian'
+	})
+
+	let support_convert_normal = [
+		"oak",
+		"cherry",
+		"spruce",
+		"dark_oak",
+		"birch",
+		"jungle",
+		"mangrove",
+		"acacia",
+		"bamboo",
+		"crimson",
+		"warped"
+	].forEach(e => {
+		event.shapeless('bbb:'+e+'_support', 'decorative_blocks:'+e+'_support')
+		event.shapeless('decorative_blocks:'+e+'_support', 'bbb:'+e+'_support')
+	})
+
+	let support_convert_compat = [
+		"botania/livingwood",
+		"botania/dreamwood",
+		"architects_palette/twisted",
+		"aether/skyroot",
+		"thermal/rubberwood",
+		"biomesoplenty/fir",
+		"biomesoplenty/pine",
+		"biomesoplenty/maple",
+		"biomesoplenty/redwood",
+		"biomesoplenty/mahogany",
+		"biomesoplenty/jacaranda",
+		"biomesoplenty/palm",
+		"biomesoplenty/willow",
+		"biomesoplenty/dead",
+		"biomesoplenty/magic",
+		"biomesoplenty/umbran",
+		"biomesoplenty/hellbark",
+		"biomesoplenty/empyreal"
+	].forEach(e => {
+		event.shapeless('everycomp:bbb/'+e+'_support', 'everycomp:db/'+e+'_support')
+		event.shapeless('everycomp:db/'+e+'_support', 'everycomp:bbb/'+e+'_support')
+	})
+
+	event.shaped("naturalist:teddy_bear",[
+		" A ",
+		"ABA",
+		" A "
+	],{
+		A: "naturalist:fur",
+		B: "#minecraft:wool"
+	})
+
+	event.replaceInput(
+		{id: "copycats:crafting/copycat_vertical_stairs_from_conversion"},
+		"#copycats:copycat_stairs",
+		"copycats:copycat_stairs"
+	)
+
+	event.replaceInput(
+		{id: "hearth_and_home:bamboo_parquet"},
+		"minecraft:bamboo_slab",
+		"minecraft:bamboo_mosaic_slab"
+	)
+
+	event.replaceInput(
+		{id: "architects_palette:calcite_bricks"},
+		'minecraft:calcite',
+		"hearth_and_home:polished_calcite"
+	)
+
+	event.shaped("flint",[
+		"AA",
+		"AA"
+	],{
+		A: "gravel"
+	})
+
+	event.shaped("naturalist:fur",[
+		"AA",
+		"AA"
+	],{
+		A: "biomesoplenty:cattail"
+	})
+
+	let frogglass = [
+		"azure",
+		"verdant",
+		"crimson"
+	].forEach(e => {
+		event.shaped("16x naturalist:"+e+"_froglass_pane",[
+			"AAA",
+			"AAA"
+		],{
+			A: "naturalist:"+e+"_froglass"
+		})
+	})
 
 })

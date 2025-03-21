@@ -122,6 +122,50 @@
 					}
 				}
 			]
+		},
+		{
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 2,
+								"min": 0
+							},
+							"function": "minecraft:set_count"
+						},
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 1,
+								"min": 0
+							},
+							"function": "minecraft:looting_enchant"
+						}
+					],
+					"name": "minecraft:arrow"
+				}
+			],
+			"rolls": 1,
+			"conditions": [
+				{
+					"condition": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"equipment": {
+							"mainhand": {
+								"items": [
+									"minecraft:stone_axe"
+								]
+							}
+						}
+					}
+				}
+			]
 		}
 	],
 	"random_sequence": "minecraft:entities/wither_skeleton"

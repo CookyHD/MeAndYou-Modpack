@@ -690,12 +690,6 @@ StartupEvents.registry("item", (event) => {
 	.displayName("Empty Air Mixture Tank")
 	.unstackable()
 
-	//event.create("crab_claw")
-	//.modifyAttribute("forge:block_reach",global.randomUUID(),2,"addition")
-	//.modifyAttribute("forge:entity_reach",global.randomUUID(),2,"addition")
-	//.maxDamage(128)
-	//.unstackable()
-
 })
 
 ItemEvents.modification(event => {
@@ -711,4 +705,24 @@ ItemEvents.modification(event => {
 	event.modify('quarryplus:fuel_module_normal', item => {
 		item.maxStackSize = 4
 	})
+
+	event.modify('naturalist:bushmeat',item => {
+		item.foodProperties = food => {
+			food.hunger(3)
+			food.saturation(0.3)
+		}
+	})
+
+	event.modify('naturalist:cooked_bushmeat',item => {
+		item.foodProperties = food => {
+			food.hunger(8)
+			food.saturation(0.3)
+		}
+	})
+
+	event.modify('bbb:hammer',item => {
+		item.setMaxDamage(892)
+	})
+
+
 })

@@ -288,7 +288,7 @@ ItemEvents.tooltip(event => {
 		].forEach(item => {
 			event.addAdvanced("iceandfire:dragonsteel_"+element+"_"+item,(item, advanced, text) => {
 				if (event.ctrl) {
-					text.add(2,Text.red("Armor stats are subject to change."))
+					text.add(2,Text.red("Stats Not Finalised."))
 				} else {
 					text.add(2,[Text.gray('Hold '), Text.red("Ctrl ").bold(true), Text.gray("for Warnings.")])
 				}
@@ -303,6 +303,78 @@ ItemEvents.tooltip(event => {
 	Ingredient.of("#kubejs:heated").itemIds.forEach(e => {
 		event.add(e,"§cHeated")
 	})
+
+	let departed = [
+		'decorative_blocks:warped_palisade',
+		'everycomp:db/biomesoplenty/fir_palisade',
+		'everycomp:db/biomesoplenty/pine_palisade',
+		'everycomp:db/biomesoplenty/willow_palisade',
+		'everycomp:db/botania/dreamwood_palisade',
+		'decorative_blocks:acacia_palisade',
+		'everycomp:db/biomesoplenty/hellbark_palisade',
+		'decorative_blocks:dark_oak_palisade',
+		'decorative_blocks:crimson_palisade',
+		'decorative_blocks:brazier',
+		'decorative_blocks:birch_palisade',
+		'decorative_blocks:cherry_palisade',
+		'everycomp:db/biomesoplenty/jacaranda_palisade',
+		'decorative_blocks:bamboo_palisade',
+		'decorative_blocks:mangrove_palisade',
+		'everycomp:db/botania/livingwood_palisade',
+		'everycomp:db/biomesoplenty/jacaranda_beam',
+		'everycomp:db/biomesoplenty/mahogany_beam',
+		'everycomp:db/biomesoplenty/redwood_beam',
+		'everycomp:db/biomesoplenty/maple_beam',
+		'everycomp:db/biomesoplenty/pine_beam',
+		'decorative_blocks:soul_brazier',
+		'everycomp:db/biomesoplenty/magic_palisade',
+		'everycomp:db/biomesoplenty/umbran_palisade', 
+		'everycomp:db/biomesoplenty/mahogany_palisade',
+		'everycomp:db/biomesoplenty/maple_palisade',
+		'decorative_blocks:spruce_palisade',
+		'everycomp:db/biomesoplenty/dead_palisade', 
+		'everycomp:db/biomesoplenty/empyreal_palisade',
+		'everycomp:db/aether/skyroot_palisade',
+		'everycomp:db/architects_palette/twisted_palisade',
+		'everycomp:db/biomesoplenty/redwood_palisade',
+		'everycomp:db/biomesoplenty/palm_palisade',
+		'everycomp:db/thermal/rubberwood_palisade',
+		'decorative_blocks:jungle_palisade',
+		'decorative_blocks:oak_palisade',
+		'everycomp:db/thermal/rubberwood_beam',
+		'everycomp:db/biomesoplenty/empyreal_beam',
+		'everycomp:db/biomesoplenty/hellbark_beam',
+		'everycomp:db/biomesoplenty/umbran_beam',
+		'everycomp:db/biomesoplenty/magic_beam',
+		'decorative_blocks:crimson_beam',
+		'decorative_blocks:warped_beam',
+		'everycomp:db/botania/dreamwood_beam',
+		'everycomp:db/biomesoplenty/fir_beam',
+		'everycomp:db/biomesoplenty/palm_beam',
+		'everycomp:db/aether/skyroot_beam',
+		'everycomp:db/botania/livingwood_beam',
+		'decorative_blocks:acacia_beam',
+		'decorative_blocks:mangrove_beam',
+		'decorative_blocks:cherry_beam',
+		'decorative_blocks:oak_beam',
+		'decorative_blocks:birch_beam',
+		'decorative_blocks:spruce_beam',
+		'decorative_blocks:jungle_beam',
+		'decorative_blocks:dark_oak_beam',
+		'everycomp:db/biomesoplenty/willow_beam',
+		'everycomp:db/biomesoplenty/dead_beam',
+		'everycomp:db/architects_palette/twisted_beam',
+	].forEach(e => {
+		event.addAdvanced(e,(item, advanced, text) => {
+			if (event.ctrl) {
+				text.add(1,Text.red("Departed."))
+			} else {
+				text.add(1,[Text.gray('Hold '), Text.red("Ctrl ").bold(true), Text.gray("for Warnings.")])
+			}
+		})
+	})
+
+	event.add("crabbersdelight:crab_claw",[" ",Text.gray("When in Hand:"),Text.blue("+2 Block Reach"),Text.blue("+2 Entity Reach")])
 
 	function ore(name,min,max) {
 		event.add(name,"§7Y level §6"+min+"§7 to §6"+max)

@@ -51,6 +51,12 @@ ServerEvents.tags('block', event => {
 	event.add("iceandfire:dragon_cave_uncommon_ores","thermal:silver_ore")
 	event.add("iceandfire:fire_dragon_cave_ores","thermal:ruby_ore")
 	event.add("iceandfire:ice_dragon_cave_ores","thermal:sapphire_ore")
+
+	event.add("minecraft:campfires",["bbb:brazier","bbb:soul_brazier"])
+	event.add("create:fan_transparent",["bbb:brazier","bbb:soul_brazier"])
+	event.add("create:passive_boiler_heaters",["bbb:brazier","bbb:soul_brazier"])
+	event.add("create:fan_processing_catalysts/smoking","bbb:brazier")
+	event.add("create:fan_processing_catalysts/haunting","bbb:soul_brazier")
 })
 
 ServerEvents.loaded(event => {
@@ -460,6 +466,7 @@ ServerEvents.tags('item', event => {
 		"curios:hands",
 		"curios:ring",
 		"curios:belt",
+		"curios:feet",
 		"curios:charm",
 		"curios:tank",
 		"curios:spellbook"
@@ -478,5 +485,7 @@ ServerEvents.tags('item', event => {
 	event.add("quad:snow/boots",'kubejs:space_boots')
 	event.add("quad:snow/acts_solid",["kubejs:space_boots","kubejs:space_chestpalte","kubejs:space_leggings","kubejs:space_helmet"])
 	event.add("quad:immune/fire",["kubejs:space_boots","kubejs:space_chestpalte","kubejs:space_leggings","kubejs:space_helmet", 'kubejs:space_ingot', 'kubejs:mixture_tank_filled', 'kubejs:mixture_tank_empty'])
+
+	event.add("another_furniture:furniture_hammers",'bbb:hammer')
 
 })

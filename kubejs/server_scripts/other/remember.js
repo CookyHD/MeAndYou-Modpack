@@ -1,5 +1,5 @@
 let REMEMEBR_TICKS = 0
-let REMEMBER_SETTING = (20*60)*60
+let REMEMBER_SETTING = 72000
 let REMEMBER_PAST = 0
 
 ServerEvents.tick(event => {

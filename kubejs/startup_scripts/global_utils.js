@@ -18,7 +18,8 @@ global.playSound = function (level,pos,sound_name,type,volume,pitch,target) {
 	if (volume == null) volume = 1
 	if (pitch == null) pitch = 1
 	if (target == null) target = "@a"
-	level.runCommandSilent(`playsound ${sound_name} ${type} ${target} ${pos[0]} ${pos[1]} ${pos[2]} ${volume} ${pitch}`)
+	//Temp Fix
+	level.server.runCommandSilent(`execute in ${level.dimension} run playsound ${sound_name} ${type} ${target} ${pos[0]} ${pos[1]} ${pos[2]} ${volume} ${pitch}`)
 }
 
 /**
@@ -125,6 +126,7 @@ global.SettingsNames = [
 	"StartingItems",
 	"CreativeCrafting",
 	"CustomCapes",
+	"CustomParticle",
 	"CannonHandShot",
 	"RememberMe",
 	"HardMobs",

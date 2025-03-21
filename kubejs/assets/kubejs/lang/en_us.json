@@ -1,4 +1,6 @@
 {
 	"curios.identifier.tank": "Create Tank",
-	"curios.identifier.mod_curio": "Curio*"
+
+	"curios.identifier.mod_curio": "Curio*",
+	"curios.modifiers.mod_curio": "When in Curio* Slot:"
 }

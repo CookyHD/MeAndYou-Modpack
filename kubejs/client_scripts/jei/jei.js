@@ -3,6 +3,8 @@
 JEIEvents.hideItems(event => {
 
 	event.hide([
+		'bbb:rope',
+		'another_furniture:furniture_hammer',
 		'dragonfinder:coocked_fire_dragon_flesh',
 		'dragonfinder:coocked_ice_dragon_flesh',
 		'dragonfinder:coocked_lightning_dragon_flesh',
@@ -20,7 +22,6 @@ JEIEvents.hideItems(event => {
 		'copycats:copycat_cogwheel',
 		'copycats:copycat_fluid_pipe',
 		'copycats:copycat_large_cogwheel',
-		'crabbersdelight:crab_claw',
 		'littlelogistics:car_dock_rail',
 		'littlelogistics:switch_rail',
 		'littlelogistics:tug_route',
