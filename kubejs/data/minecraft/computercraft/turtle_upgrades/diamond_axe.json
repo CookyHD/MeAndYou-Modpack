@@ -1,0 +1,7 @@
+{
+	"type": "computercraft:tool",
+	"damageMultiplier": 9,
+	"item": "minecraft:diamond_axe",
+	"allowEnchantments": true,
+	"consumeDurability": "always"
+}

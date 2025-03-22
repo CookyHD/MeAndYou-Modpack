@@ -1,0 +1,8 @@
+{
+	"type": "computercraft:tool",
+	"breakable": "computercraft:turtle_sword_harvestable",
+	"damageMultiplier": 7,
+	"item": "minecraft:diamond_sword",
+	"allowEnchantments": true,
+	"consumeDurability": "always"
+}

@@ -6,12 +6,14 @@ JEIEvents.removeCategories(event => {
 
 JEIAddedEvents.registerCategories(event => {
 
+	const guiHelper = event.JEI_HELPERS.guiHelper
+
 	event.custom("kubejsadditions:dragon_casting", category => {
 
-		let guiHelper = category.getJeiHelpers().getGuiHelper()
-
 		category.title("Dragon Casting")
-		category.background(guiHelper.createBlankDrawable(128, 24))
+		category.background(guiHelper.createBlankDrawable(1,1))
+		category.setWidth(128)
+		category.setHeight(24)
 		category.icon(guiHelper.createDrawableItemStack(Item.of('kubejs:dragon_block')))
 
 		category.isRecipeHandled((recipe) => {
@@ -73,10 +75,10 @@ JEIAddedEvents.registerCategories(event => {
 
 	event.custom("kubejsadditions:explosion", category => {
 
-		let guiHelper = category.getJeiHelpers().getGuiHelper()
-
 		category.title("Blasting Transform")
-		category.background(guiHelper.createBlankDrawable(128, 24))
+		category.background(guiHelper.createBlankDrawable(1,1))
+		category.setWidth(128)
+		category.setHeight(24)
 		category.icon(guiHelper.createDrawableItemStack(Item.of('minecraft:tnt')))
 
 		category.isRecipeHandled((recipe) => {
@@ -109,10 +111,10 @@ JEIAddedEvents.registerCategories(event => {
 
 	event.custom("kubejsadditions:nessie_loot", category => {
 
-		let guiHelper = category.getJeiHelpers().getGuiHelper()
-
 		category.title("Nessie Loot")
-		category.background(guiHelper.createBlankDrawable(64+12, 20))
+		category.background(guiHelper.createBlankDrawable(1,1))
+		category.setWidth(76)
+		category.setHeight(20)
 		category.icon(guiHelper.createDrawableItemStack(Item.of('kubejs:nessie_green')))
 
 		category.isRecipeHandled((recipe) => {
@@ -141,10 +143,10 @@ JEIAddedEvents.registerCategories(event => {
 
 	event.custom("kubejsadditions:hammer", category => {
 
-		let guiHelper = category.getJeiHelpers().getGuiHelper()
-
 		category.title("Smasher Breaking")
-		category.background(guiHelper.createBlankDrawable(128, 24))
+		category.background(guiHelper.createBlankDrawable(1,1))
+		category.setWidth(128)
+		category.setHeight(24)
 		category.icon(guiHelper.createDrawableItemStack(Item.of('kubejs:iron_hammer')))
 
 		category.isRecipeHandled((recipe) => {
@@ -178,10 +180,10 @@ JEIAddedEvents.registerCategories(event => {
 
 	event.custom("kubejsadditions:bedrock_click", category => {
 
-		let guiHelper = category.getJeiHelpers().getGuiHelper()
-
 		category.title("Bedrock Interaction")
-		category.background(guiHelper.createBlankDrawable(128, 24))
+		category.background(guiHelper.createBlankDrawable(1,1))
+		category.setWidth(128)
+		category.setHeight(24)
 		category.icon(guiHelper.createDrawableItemStack(Item.of('minecraft:bedrock')))
 
 		category.isRecipeHandled((recipe) => {
@@ -215,10 +217,10 @@ JEIAddedEvents.registerCategories(event => {
 
 	event.custom("kubejsadditions:infusing_block", category => {
 
-		let guiHelper = category.getJeiHelpers().getGuiHelper()
-
 		category.title("Infusing Block")
-		category.background(guiHelper.createBlankDrawable(128, 84))
+		category.background(guiHelper.createBlankDrawable(1,1))
+		category.setWidth(128)
+		category.setHeight(84)
 		category.icon(guiHelper.createDrawableItemStack(Item.of('create:spout')))
 
 		category.isRecipeHandled((recipe) => {

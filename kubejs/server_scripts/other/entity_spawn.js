@@ -108,6 +108,12 @@ EntityEvents.spawned(event => {
 		event.entity.setNbt(NBT)
 	}
 
+	if (event.entity.type == "iceandfire:hydra_arrow") {
+		let NBT = event.entity.getNbt()
+		NBT["damage"] = 3
+		event.entity.setNbt(NBT)
+	}
+
 	if (event.entity.type == "iceandfire:stymphalian_arrow") {
 		let NBT = event.entity.getNbt()
 		NBT["damage"] = 3

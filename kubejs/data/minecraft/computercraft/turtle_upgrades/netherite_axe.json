@@ -1,0 +1,8 @@
+{
+	"type": "computercraft:tool",
+	"item": "netherite_axe",
+	"adjective": "upgrade.minecraft.diamond_axe.adjective",
+	"damageMultiplier": 10,
+	"allowEnchantments": true,
+	"consumeDurability": "always"
+}

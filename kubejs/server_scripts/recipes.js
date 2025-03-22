@@ -10,6 +10,7 @@ ServerEvents.recipes(event => {
 	let inter
 
 	let ban = [
+		"railways:conductor_vent",
 		'bbb:rope',
 		"naturalist:teddy_bear",
 		'another_furniture:furniture_hammer',
@@ -3133,14 +3134,6 @@ ServerEvents.recipes(event => {
 		"minecraft:diamond_pickaxe",
 	)
 
-	event.shaped('iceandfire:ghost_chest',[
-		"A",
-		"B"
-	],{
-		A: 'iceandfire:ectoplasm',
-		B: "#forge:chests/wooden"
-	})
-
 	event.custom({
 		"type": "minecraft:smithing_transform",
 		"addition": {
@@ -3639,5 +3632,11 @@ ServerEvents.recipes(event => {
 			A: "naturalist:"+e+"_froglass"
 		})
 	})
+
+	event.replaceInput(
+		{id: "iceandfire:ghost_sword"},
+		'iceandfire:dragonbone_sword',
+		'iceandfire:stymphalian_bird_dagger'
+	)
 
 })

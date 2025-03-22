@@ -363,7 +363,7 @@ ItemEvents.tooltip(event => {
 		'decorative_blocks:dark_oak_beam',
 		'everycomp:db/biomesoplenty/willow_beam',
 		'everycomp:db/biomesoplenty/dead_beam',
-		'everycomp:db/architects_palette/twisted_beam',
+		'everycomp:db/architects_palette/twisted_beam'
 	].forEach(e => {
 		event.addAdvanced(e,(item, advanced, text) => {
 			if (event.ctrl) {

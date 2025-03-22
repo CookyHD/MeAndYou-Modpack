@@ -1,0 +1,34 @@
+[
+  {
+    "soundEventId": "aether:block.aether_portal.ambient",
+    "volumeScale": 50
+  },
+  {
+    "soundEventId": "aether:block.aether_portal.travel",
+    "volumeScale": 50
+  },
+  {
+    "soundEventId": "aether:block.aether_portal.trigger",
+    "volumeScale": 50
+  },
+  {
+    "soundEventId": "aether:music.aether",
+    "volumeScale": 50
+  },
+  {
+    "soundEventId": "aether:music.boss.slider",
+    "volumeScale": 50
+  },
+  {
+    "soundEventId": "aether:music.boss.sun_spirit",
+    "volumeScale": 50
+  },
+  {
+    "soundEventId": "aether:music.boss.valkyrie_queen",
+    "volumeScale": 50
+  },
+  {
+    "soundEventId": "aether:music.menu",
+    "volumeScale": 50
+  }
+]
