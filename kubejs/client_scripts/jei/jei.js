@@ -494,6 +494,22 @@ JEIEvents.removeRecipes(event => {
 JEIEvents.addItems(event => {
 
 	event.add([
+		'dried_ghast:blue_harness',
+		'dried_ghast:black_harness',
+		'dried_ghast:brown_harness',
+		'dried_ghast:cyan_harness',
+		'dried_ghast:gray_harness',
+		'dried_ghast:green_harness',
+		'dried_ghast:light_blue_harness',
+		'dried_ghast:light_gray_harness',
+		'dried_ghast:lime_harness',
+		'dried_ghast:yellow_harness',
+		'dried_ghast:white_harness',
+		'dried_ghast:red_harness',
+		'dried_ghast:purple_harness',
+		'dried_ghast:pink_harness',
+		'dried_ghast:orange_harness',
+		'dried_ghast:magenta_harness',
 		'thermal:rf_coil',
 		'thermal:redstone_servo',
 		'thermal:press_unpacking_die',
