@@ -1,0 +1,49 @@
+{
+	"parent":"minecraft:block/cube_all",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "kubejs:item/pizza_slice",
+		"particle": "kubejs:item/pizza_particle"
+	},
+	"elements": [
+		{
+			"from": [4, 1, 12],
+			"to": [12, 3, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4, 3, 12]},
+			"faces": {
+				"north": {"uv": [0, 5, 4, 6], "texture": "#0"},
+				"east": {"uv": [5, 6, 6, 7], "texture": "#0"},
+				"south": {"uv": [0, 8, 4, 7], "texture": "#0"},
+				"west": {"uv": [4, 6, 5, 7], "texture": "#0"},
+				"up": {"uv": [4, 7, 0, 6], "texture": "#0"},
+				"down": {"uv": [4, 8, 0, 9], "texture": "#0"}
+			}
+		},
+		{
+			"from": [5, 1, 7],
+			"to": [11, 2, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 3, 6]},
+			"faces": {
+				"north": {"uv": [6, 1, 9, 1.5], "texture": "#0"},
+				"east": {"uv": [6, 2, 8.5, 2.5], "texture": "#0"},
+				"south": {"uv": [6, 1.5, 9, 2], "texture": "#0"},
+				"west": {"uv": [6, 2.5, 8.5, 3], "texture": "#0"},
+				"up": {"uv": [3, 2.5, 0, 0], "texture": "#0"},
+				"down": {"uv": [3, 2.5, 0, 5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [5, 2, 2],
+			"to": [11, 2, 7],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 2, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 0], "texture": "#0"},
+				"east": {"uv": [0, 0, 2.5, 0], "texture": "#0"},
+				"south": {"uv": [0, 0, 3, 0], "texture": "#0"},
+				"west": {"uv": [0, 0, 2.5, 0], "texture": "#0"},
+				"up": {"uv": [6, 2.5, 3, 0], "texture": "#0"},
+				"down": {"uv": [6, 2.5, 3, 5], "texture": "#0"}
+			}
+		}
+	]
+}

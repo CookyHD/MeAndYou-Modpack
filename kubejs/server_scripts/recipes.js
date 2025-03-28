@@ -10,6 +10,23 @@ ServerEvents.recipes(event => {
 	let inter
 
 	let ban = [
+		'zipline:zipline',
+		'dried_ghast:blue_harness',
+		'dried_ghast:black_harness',
+		'dried_ghast:brown_harness',
+		'dried_ghast:cyan_harness',
+		'dried_ghast:gray_harness',
+		'dried_ghast:green_harness',
+		'dried_ghast:light_blue_harness',
+		'dried_ghast:light_gray_harness',
+		'dried_ghast:lime_harness',
+		'dried_ghast:yellow_harness',
+		'dried_ghast:white_harness',
+		'dried_ghast:red_harness',
+		'dried_ghast:purple_harness',
+		'dried_ghast:pink_harness',
+		'dried_ghast:orange_harness',
+		'dried_ghast:magenta_harness',
 		"railways:conductor_vent",
 		'bbb:rope',
 		"naturalist:teddy_bear",
@@ -1591,7 +1608,7 @@ ServerEvents.recipes(event => {
 		], {
 			A: '#forge:plates/iron',
 			B: 'create:andesite_alloy',
-			C: 'kubejs:copper_spool',
+			C: 'createaddition:copper_spool',
 			D: 'createaddition:capacitor',
 			E: 'createaddition:iron_rod'
 		}
@@ -1605,11 +1622,21 @@ ServerEvents.recipes(event => {
 		], {
 			A: '#forge:plates/brass',
 			B: 'create:andesite_alloy',
-			C: 'kubejs:copper_spool',
+			C: 'createaddition:copper_spool',
 			D: 'createaddition:capacitor',
 			E: 'createaddition:iron_rod'
 		}
 	)
+
+	event.shaped('zipline:zipline',[
+		" G ",
+		" SG",
+		"A  "
+	],{
+		A: 'create:andesite_alloy',
+		S: "shears",
+		G: "createaddition:gold_spool"
+	})
 
 	event.recipes.createCrushing('thermal:diamond_dust', 'minecraft:diamond')
 	event.recipes.createCrushing(["4x kubejs:little_star",Item.of("2x kubejs:little_star").withChance(0.25)], "minecraft:nether_star")
@@ -1628,14 +1655,14 @@ ServerEvents.recipes(event => {
 		], {
 			A: 'createaddition:capacitor',
 			B: '#forge:plates/copper',
-			C: ['#forge:plates/gold','#forge:plates/electrum'],
+			C: '#forge:plates/gold',
 			D: 'create:brass_casing'
 		}
 	)
 
 	event.shaped('kubejs:xp_wand', [
-		' BC',
-		' AB',
+		' CB',
+		' AC',
 		'A  '
 	], {
 		A: "kubejs:reinforced_handle",
@@ -1665,34 +1692,88 @@ ServerEvents.recipes(event => {
 		}
 	)
 
-	event.shaped('kubejs:copper_spool', [
+	event.shaped('createaddition:copper_spool', [
 		' A ',
 		'ABA',
 		' A '
 	], {
 		A: 'createaddition:copper_wire',
-		B: 'minecraft:stick'
+		B: 'createaddition:spool'
 	})
 
-	event.shaped('4x createaddition:iron_rod', [
+	event.shaped('createaddition:gold_spool', [
+		' A ',
+		'ABA',
+		' A '
+	], {
+		A: 'createaddition:gold_wire',
+		B: 'createaddition:spool'
+	})
+
+	event.shaped('8x createaddition:spool', [
 		'A',
+		'B',
 		'A'
 	], {
-		A: 'minecraft:iron_ingot'
+		A: '#forge:plates/iron',
+		B: 'iron_nugget'
 	})
 
-	event.shapeless('2x createaddition:copper_wire', [
-		'#forge:plates/copper',
-		'#forge:shears'
-	])
-	.damageIngredient('#forge:shears')
+	event.shaped('createaddition:redstone_relay', [
+		' A ',
+		'BCB',
+		'DDD'
+	], {
+		A: 'redstone',
+		B: 'createaddition:connector',
+		C: 'create:electron_tube',
+		D: '#forge:stone'
+	})
 
-	event.recipes.create.deploying('2x createaddition:copper_wire', ['#forge:plates/copper', '#forge:shears'])
+	event.shapeless('4x createaddition:connector', [
+		"createaddition:copper_rod",
+		'create:andesite_alloy',
+		'#forge:slimeballs'
+
+	])
+
+	event.shapeless('2x createaddition:large_connector', [
+		"createaddition:gold_rod",
+		'2x create:andesite_alloy',
+		'#forge:slimeballs'
+	])
+
+	event.shapeless('createaddition:small_light_connector', [
+		"createaddition:iron_wire",
+		'#forge:glass',
+		'createaddition:connector'
+	])
+
+	let wire_rod = [
+		"iron",
+		"copper",
+		"gold"
+	].forEach(e => {
+		event.shapeless("2x createaddition:"+e+"_wire", [
+			'#forge:plates/'+e,
+			'#forge:shears'
+		])
+		.damageIngredient('#forge:shears')
+	
+		event.recipes.create.deploying('2x createaddition:'+e+'_wire', ['#forge:plates/'+e, '#forge:shears'])
+	
+		event.shaped('4x createaddition:'+e+'_rod', [
+			'A',
+			'A'
+		], {
+			A: 'minecraft:'+e+'_ingot'
+		})
+	})
 
 	event.shapeless('createaddition:portable_energy_interface', [
 			'create:brass_casing',
 			'create:chute',
-			'kubejs:copper_spool'
+			'createaddition:copper_spool'
 		]
 	)
 
@@ -3407,8 +3488,8 @@ ServerEvents.recipes(event => {
 
 	event.smelting("thermal:cured_rubber","kubejs:needle_magazine_molten")
 
-	event.recipes.botania.mana_infusion('kubejs:anchor_ingot','kubejs:star_ingot',3000,"minecraft:prismarine").id("fake_anchor_ingot")
-	event.recipes.botania.mana_infusion('kubejs:anchor_ingot','kubejs:star_ingot',3000,"kubejs:catalyst_prismarine").id("hidden_anchor_ingot")
+	event.recipes.botania.mana_infusion('kubejs:anchor_ingot','kubejs:star_ingot',3000,"minecraft:prismarine").id("kubejs:fake_anchor_ingot")
+	event.recipes.botania.mana_infusion('kubejs:anchor_ingot','kubejs:star_ingot',3000,"kubejs:catalyst_prismarine").id("kubejs:hidden_anchor_ingot")
 
 	event.custom({
 		"type": "minecraft:smithing_transform",
@@ -3638,5 +3719,99 @@ ServerEvents.recipes(event => {
 		'iceandfire:dragonbone_sword',
 		'iceandfire:stymphalian_bird_dagger'
 	)
+
+	event.shapeless("kubejs:raw_pizza",[['farmersdelight:tomato_sauce','thermal:tomato_sauce'], 'create:dough', 'thermal:cheese_wedge', 'farmersdelight:ham']).replaceIngredient('farmersdelight:tomato_sauce',"bowl")
+
+	event.smelting("kubejs:pizza","kubejs:raw_pizza")
+	event.smoking("kubejs:pizza","kubejs:raw_pizza")
+
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{
+				"item": "kubejs:pizza"
+			}
+		],
+		"result": [
+			{
+				"count": 4,
+				"item": "kubejs:pizza_slice"
+			}
+		],
+		"tool": {
+			"tag": "forge:tools/knives"
+		}
+	})
+
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{
+				"item": "kubejs:pizza"
+			}
+		],
+		"result": [
+			{
+				"count": 8,
+				"item": "kubejs:pizza_slice"
+			}
+		],
+		"tool": {
+			"tag": "minecraft:swords"
+		}
+	})
+
+	event.recipes.create.mixing("2x kubejs:pizza_slice","kubejs:pizza")
+
+	event.shapeless("4x kubejs:pizza_slice",["kubejs:pizza","#forge:tools/knives"]).damageIngredient("#forge:tools/knives")
+	event.shapeless("8x kubejs:pizza_slice",["kubejs:pizza","#minecraft:swords"]).damageIngredient("#minecraft:swords")
+
+	let dyes = [
+		"blue",
+		"cyan",
+		"light_blue",
+		"red",
+		"orange",
+		"yellow",
+		"magenta",
+		"purple",
+		"pink",
+		"black",
+		"white",
+		"gray",
+		"light_gray",
+		"lime",
+		"green",
+		"brown"
+	].forEach(e => {
+		event.shaped("dried_ghast:"+e+"_harness",[
+			"CBC",
+			"DAD"
+		],{
+			A: "leather",
+			B: "saddle",
+			C: e+"_wool",
+			D: "#forge:glass"
+		})
+	})
+
+	event.shaped("kubejs:dried_ghast",[
+		"BAB",
+		"AAA",
+		"BAB"
+	],{
+		A: "#chipped:bone_block",
+		B: "ghast_tear"
+	})
+
+	event.shaped('kubejs:fire_wand', [
+		'BC',
+		'AD'
+	], {
+		A: "stick",
+		B: 'minecraft:fire_charge',
+		C: 'minecraft:diamond',
+		D: 'ghast_tear'
+	})
 
 })

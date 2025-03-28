@@ -1,4 +1,5 @@
 Platform.setModName("kubejs","CookiesCrafts")
+Platform.setModName("dried_ghast","Happy Ghast's")
 
 StartupEvents.modifyCreativeTab('kubejs:tab', event => {
 	
@@ -28,7 +29,8 @@ StartupEvents.modifyCreativeTab('kubejs:tab', event => {
 		"kubejs:unstable_gravel",
 		"kubejs:mixture_tank_filled",
 		"kubejs:catalyst_prismarine",
-		"kubejs:farmer_crop"
+		"kubejs:farmer_crop",
+		"kubejs:dried_ghast"
 	].forEach(e => {
 		event.remove(e)
 	})
@@ -50,5 +52,12 @@ StartupEvents.modifyCreativeTab('tools_and_utilities', event => {
 		"kubejs:diamond_hammer",
 		"kubejs:netherite_hammer"
 	])
+
+})
+
+StartupEvents.modifyCreativeTab('building_blocks', event => {
+
+	event.remove("dried_ghast:dried_ghast")
+	event.add("kubejs:dried_ghast")
 
 })

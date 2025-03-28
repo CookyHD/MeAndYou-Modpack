@@ -59,10 +59,6 @@ ServerEvents.tags('block', event => {
 	event.add("create:fan_processing_catalysts/haunting","bbb:soul_brazier")
 })
 
-ServerEvents.loaded(event => {
-	event.server.runCommandSilent("reload") //Block Tags Fix, Makes Worlds Load Longer Tho
-})
-
 ServerEvents.tags('item', event => {
 
 	event.add('forge:slimeballs','thermal:tar')
@@ -386,7 +382,7 @@ ServerEvents.tags('item', event => {
 	].forEach(e => {
 		event.add('forge:tools',e)
 		event.add('forge:tools/wrench',e)
-		event.add('minecraft:swords',e)
+		event.add('minecraft:pickaxes',e)
 		event.add('minecraft:tools',e)
 		event.add('minecraft:breaks_decorated_pots',e)
 		event.add('aether:slider_damaging_items',e)

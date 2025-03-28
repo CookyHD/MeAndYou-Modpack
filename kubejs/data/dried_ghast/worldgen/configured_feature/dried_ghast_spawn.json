@@ -1,0 +1,67 @@
+{
+	"type": "minecraft:random_patch",
+	"config": {
+		"tries": 1,
+		"y_spread": 3,
+		"feature": {
+			"feature": {
+				"type": "minecraft:block_column",
+				"config": {
+					"allowed_placement": {
+						"type": "minecraft:matching_blocks",
+						"blocks": "minecraft:air"
+					},
+					"direction": "up",
+					"layers": [
+						{
+							"height": {
+								"type": "biased_to_bottom",
+								"value": {
+									"min_inclusive": 1,
+									"max_inclusive": 1
+								}
+							},
+							"provider": {
+								"type": "minecraft:simple_state_provider",
+								"state": {
+									"Name": "kubejs:dried_ghast",
+									"Properties": {
+										"waterlogged": "false",
+										"facing": "north"
+									}
+								}
+							}
+						}
+					],
+					"prioritize_tip": false
+				}
+			},
+			"placement": [
+				{
+					"type": "minecraft:block_predicate_filter",
+					"predicate": {
+						"type": "minecraft:all_of",
+						"predicates": [
+							{
+								"type": "minecraft:matching_blocks",
+								"blocks": "minecraft:air"
+							},
+							{
+								"type": "minecraft:matching_blocks",
+								"blocks": [
+									"minecraft:soul_sand",
+									"minecraft:soul_soil"
+								],
+								"offset": [
+									0,
+									-1,
+									0
+								]
+							}
+						]
+					}
+				}
+			]
+		}
+	}
+}

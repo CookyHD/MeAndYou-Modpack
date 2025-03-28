@@ -20,7 +20,7 @@ BlockEvents.rightClicked(event => {
 	}
 	if (event.block.id == "kubejs:farmer_crop" && event.hand == "MAIN_HAND") {
 		if (event.item.hasTag("minecraft:pickaxes") || event.player.creative) {
-			let stage = Number(event.block.getProperties()["age"])
+			let stage = Number(event.block.getProperties().get("age"))
 			if (stage == 4) {
 				event.level.destroyBlock(event.block.pos,true)
 				event.player.swing()
@@ -39,12 +39,11 @@ BlockEvents.rightClicked(event => {
  */
 global.farmer_crop_callback = (callback) => {
 	let block = callback.block
+	let age = Number(block.getProperties().get("age"))
 	if (!block.down.hasTag("kubejs:can_grow")) {
 		callback.level.destroyBlock(block.pos,true)
-	}
-	let age = Number(block.getProperties()["age"])
-	let age_up = String(age + 1)
-	if (true) {
-		block.set(block.id,{"age":age_up})
+	} else {
+		let str = String(age + 1)
+		block.set(block.id,{"age":str})
 	}
 }

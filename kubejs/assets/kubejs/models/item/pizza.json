@@ -1,0 +1,7 @@
+{
+	"parent":"kubejs:item/pizza_base",
+	"textures": {
+		"1": "kubejs:item/pizza",
+		"particle": "kubejs:item/pizza_particle"
+	}
+}

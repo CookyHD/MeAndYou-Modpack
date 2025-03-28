@@ -238,7 +238,6 @@ StartupEvents.registry("block", (event) => {
 			global.farmer_crop_callback(callback)
 		}
 	})
-	.waterlogged()
 	.resistance(0)
 	.hardness(0)
 	.soundType(SoundType.METAL)
@@ -252,6 +251,25 @@ StartupEvents.registry("block", (event) => {
 	.lightLevel(global.calcLight(4))
 	.defaultCutout()
 	.renderType("cutout")
+
+	event.create("dried_ghast","cardinal")
+	.displayName("Dried Ghast")
+	.randomTick((callback) => {
+		if (global.dried_ghast_random_tick) {
+			global.dried_ghast_random_tick(callback)
+		}
+	})
+	.placementState(event => event.set(BlockProperties.FACING, event.nearestLookingDirection.facing))
+	.property(BlockProperties.AGE_2)
+	.box(3,0,3,13,10,13)
+	.waterlogged()
+	.soundType(SoundType.SNOW)
+	.defaultCutout()
+	.renderType("cutout")
+	.mapColor(Color.WHITE)
+	.resistance(0)
+	.hardness(0)
+	
 
 })
 

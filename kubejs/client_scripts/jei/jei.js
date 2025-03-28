@@ -3,6 +3,7 @@
 JEIEvents.hideItems(event => {
 
 	event.hide([
+		'dried_ghast:dried_ghast',
 		"railways:conductor_vent",
 		'bbb:rope',
 		'another_furniture:furniture_hammer',
@@ -214,18 +215,13 @@ JEIEvents.hideItems(event => {
 		'createdeco:netherite_sheet',
 		'railways:remote_lens',
 		'railways:conductor_whistle',
-		'createaddition:gold_rod',
+		'createaddition:digital_adapter',
 		'createaddition:electrum_rod',
 		'createaddition:brass_rod',
 		'createaddition:straw',
 		'createaddition:seed_oil_bucket',
 		'createaddition:bioethanol_bucket',
-		'createaddition:capacitor',
 		'createaddition:biomass_pellet_block',
-		'createaddition:redstone_relay',
-		'createaddition:large_connector',
-		'createaddition:small_light_connector',
-		'createaddition:connector',
 		'createaddition:rolling_mill',
 		'createaddition:barbed_wire',
 		'createaddition:tesla_coil',
@@ -237,14 +233,9 @@ JEIEvents.hideItems(event => {
 		'createaddition:biomass_pellet',
 		'createaddition:biomass',
 		'createaddition:diamond_grit',
-		'createaddition:copper_rod',
 		'createaddition:festive_spool',
 		'createaddition:electrum_spool',
-		'createaddition:gold_spool',
-		'createaddition:spool',
 		'createaddition:electrum_wire',
-		'createaddition:gold_wire',
-		'createaddition:iron_wire',
 		'biggerreactors:heat_exchanger_casing',
 		'biggerreactors:liquid_obsidian_bucket',
 		'biggerreactors:heat_exchanger_condenser_channel',
@@ -320,7 +311,6 @@ JEIEvents.hideItems(event => {
 		'createaddition:bioethanol',
 		'biggerreactors:liquid_uranium',
 		'biggerreactors:liquid_obsidian',
-		'createaddition:copper_spool',
 		'iceandfire:silver_ingot',
 		'iceandfire:raw_silver',
 		'iceandfire:silver_nugget',
@@ -498,7 +488,7 @@ JEIEvents.hideItems(event => {
 })
 
 JEIEvents.removeRecipes(event => {
-	event.remove("botania:mana_pool","minecraft:hidden_anchor_ingot")
+	event.remove("botania:mana_pool","kubejs:hidden_anchor_ingot")
 })
 
 JEIEvents.addItems(event => {

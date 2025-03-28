@@ -145,6 +145,19 @@ ItemEvents.tooltip(event => {
 		}
 	})
 
+	event.addAdvanced('kubejs:fire_wand',(item, advanced, text) => {
+		if (event.shift) {
+			text.add(1,Text.yellow("Right Click While,"))
+			text.add(2,Text.yellow("Riding a Happy Ghast to,"))
+			text.add(3,Text.yellow("Let the Ghast shoot a Fire Ball."))
+			text.add(4,Text.gray("Tip: Aim a Little Higher."))
+			text.add(5,Text.yellow("Right Click in Air to,"))
+			text.add(6,Text.yellow("Pull any Happy Ghast to You."))
+		} else {
+			text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info.')])
+		}
+	})
+
 	event.addAdvanced('kubejs:copper_compass',(item, advanced, text) => {
 		if (event.shift) {
 			text.add(1,Text.yellow("Right Click to Locate the Nearest,"))
@@ -375,6 +388,8 @@ ItemEvents.tooltip(event => {
 	})
 
 	event.add("crabbersdelight:crab_claw",[" ",Text.gray("When in Hand:"),Text.blue("+2 Block Reach"),Text.blue("+2 Entity Reach")])
+
+	event.add("kubejs:pizza",Text.gray("Slice it before Eating!"))
 
 	function ore(name,min,max) {
 		event.add(name,"§7Y level §6"+min+"§7 to §6"+max)

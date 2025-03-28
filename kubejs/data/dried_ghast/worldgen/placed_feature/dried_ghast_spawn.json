@@ -1,0 +1,16 @@
+{
+	"feature": "dried_ghast:dried_ghast_spawn",
+	"placement": [
+		{
+			"type": "minecraft:rarity_filter",
+			"chance": 50
+		},
+		{
+			"type": "minecraft:count",
+			"count": 4
+		},
+		{
+			"type": "minecraft:biome"
+		}
+	]
+}

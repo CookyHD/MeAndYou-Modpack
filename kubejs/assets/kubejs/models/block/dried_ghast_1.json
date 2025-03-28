@@ -1,0 +1,6 @@
+{
+	"parent":"kubejs:block/dried_ghast_base",
+	"textures": {
+		"texture": "kubejs:block/dried_ghast_1"
+	}
+}

@@ -135,6 +135,11 @@ StartupEvents.registry("item", (event) => {
 	.maxDamage(512)
 	.unstackable()
 
+	event.create("fire_wand")
+	.displayName("Ghast Control Rod")
+	.maxDamage(512)
+	.unstackable()
+
 	event.create("mud_ball")
 	.displayName("Mud Ball")
 	.maxStackSize(16)
@@ -418,9 +423,6 @@ StartupEvents.registry("item", (event) => {
 	.displayName("Charged Matter")
 	.maxStackSize(16)
 
-	event.create('copper_spool')
-	.displayName("Copper Spool")
-
 	event.create('incomplete_galaxy_cookie', 'create:sequenced_assembly')
 	.displayName("Incomplete Galaxy Cookie")
 
@@ -689,6 +691,22 @@ StartupEvents.registry("item", (event) => {
 	event.create("mixture_tank_empty")
 	.displayName("Empty Air Mixture Tank")
 	.unstackable()
+
+	event.create("pizza")
+	.displayName("Pizza")
+	.unstackable()
+
+	event.create("raw_pizza")
+	.displayName("Uncooked Pizza")
+	.unstackable()
+
+	event.create("pizza_slice")
+	.displayName("Pizza Slice")
+	.maxStackSize(16)
+	.food(food => {
+		food.hunger(14)
+		food.saturation(0.8)
+	})
 
 })
 

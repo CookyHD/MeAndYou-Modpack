@@ -331,7 +331,9 @@ mobDropsEnabled = true
 			"irons_spellbooks:citadel_keeper",
 			"mowziesmobs:umvuthana_crane_player",
 			"mowziesmobs:umvuthana_follower_player",
-			"mowziesmobs:umvuthana_follower_raptor"
+			"mowziesmobs:umvuthana_follower_raptor",
+			"dried_ghast:happy_ghast",
+			"dried_ghast:ghastling"
 			]
 
 	#Mob Charm Fragment Settings
