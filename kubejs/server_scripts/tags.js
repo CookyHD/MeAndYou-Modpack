@@ -134,6 +134,7 @@ ServerEvents.tags('item', event => {
 	event.add('kubejs:output_netherrack','minecraft:netherite_scrap')
 
 	event.add('kubejs:heated',['kubejs:tech_stage_3','kubejs:incomplete_tech_ingot','kubejs:needle_magazine_molten'])
+	event.add("kubejs:radioactive",['kubejs:nether_uranium_ore', 'create:crushed_raw_uranium', 'biggerreactors:uranium_dust', 'chisel_chipped_integration:metal_uranium_bolted', 'biggerreactors:deepslate_uranium_ore', 'biggerreactors:uranium_ore', 'chisel_chipped_integration:metal_uranium_thermal', 'biggerreactors:uranium_ingot', 'biggerreactors:ludicrite_dust', 'biggerreactors:cyanite_dust', 'biggerreactors:ludicrite_ingot', 'biggerreactors:blutonium_block', 'biggerreactors:cyanite_ingot', 'biggerreactors:cyanite_block', 'biggerreactors:ludicrite_block', 'chisel_chipped_integration:metal_uranium_shipping_crate', 'chisel_chipped_integration:metal_uranium_scaffold', 'biggerreactors:uranium_chunk', 'biggerreactors:raw_uranium_block', 'biggerreactors:uranium_block', 'chisel_chipped_integration:metal_uranium_caution', 'kubejs:uranium_nugget', 'chisel_chipped_integration:metal_uranium_industrial_relic', 'chisel_chipped_integration:metal_uranium_egregious','biggerreactors:blutonium_dust'])
 
 	event.add('quad:immune/explosion',['kubejs:creativ_block', 'kubejs:seal_creativ', 'kubejs:creativ_compound', 'kubejs:creativ_unstable', 'kubejs:creativ_ingot', 'kubejs:creativ_dust', 'kubejs:creativ_pickaxe', 'kubejs:bedrock_dust'])
 
@@ -268,7 +269,8 @@ ServerEvents.tags('item', event => {
 
 	let wrenches = [
 		"kubejs:key_wrench",
-		'redstone_arsenal:flux_wrench'
+		'redstone_arsenal:flux_wrench',
+		'morphtool:tool'
 	].forEach(e => {
 		event.add('forge:tools',e)
 		event.add('forge:tools/wrench',e)

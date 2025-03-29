@@ -692,12 +692,13 @@ StartupEvents.registry("item", (event) => {
 	.displayName("Empty Air Mixture Tank")
 	.unstackable()
 
-	event.create("pizza")
-	.displayName("Pizza")
-	.unstackable()
-
+	
 	event.create("raw_pizza")
 	.displayName("Uncooked Pizza")
+	.unstackable()
+
+	event.create("pizza")
+	.displayName("Pizza")
 	.unstackable()
 
 	event.create("pizza_slice")
@@ -707,6 +708,10 @@ StartupEvents.registry("item", (event) => {
 		food.hunger(14)
 		food.saturation(0.8)
 	})
+
+	event.create("pizza_box")
+	.displayName("Boxed Delivery Pizza ")
+	.maxStackSize(16)
 
 })
 

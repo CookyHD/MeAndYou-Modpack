@@ -262,15 +262,7 @@ ItemEvents.tooltip(event => {
 		})
 	})
 
-	event.addAdvanced("kubejs:galaxy_cookie",(item, advanced, text) => {
-		if (global.getServerSetting == null) return
-		if (global.getServerSetting("UnstableGalaxyCookie")) {
-			text.add(1,Text.red("Do not eat! It could lead to severe consequences."))
-		} else {
-			text.add(1,Text.yellow("Nourishment at it Finest."))
-			text.add(2,Text.darkGray("Stats are not as Shown!"))
-		}
-	})
+	event.add("kubejs:galaxy_cookie",Text.yellow("Nourishment at it Finest."))
 
 	event.add('kubejs:dragon_food',"§eUsed For Dragon Casting.")
 
@@ -315,6 +307,10 @@ ItemEvents.tooltip(event => {
 
 	Ingredient.of("#kubejs:heated").itemIds.forEach(e => {
 		event.add(e,"§cHeated")
+	})
+
+	Ingredient.of("#kubejs:radioactive").itemIds.forEach(e => {
+		event.add(e,"§aRadioactive")
 	})
 
 	let departed = [
@@ -390,6 +386,7 @@ ItemEvents.tooltip(event => {
 	event.add("crabbersdelight:crab_claw",[" ",Text.gray("When in Hand:"),Text.blue("+2 Block Reach"),Text.blue("+2 Entity Reach")])
 
 	event.add("kubejs:pizza",Text.gray("Slice it before Eating!"))
+	event.add("kubejs:pizza_box",Text.gray("Receive 4x Pizza Slices upon opening!"))
 
 	function ore(name,min,max) {
 		event.add(name,"§7Y level §6"+min+"§7 to §6"+max)

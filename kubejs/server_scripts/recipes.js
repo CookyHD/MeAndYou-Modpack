@@ -3720,7 +3720,7 @@ ServerEvents.recipes(event => {
 		'iceandfire:stymphalian_bird_dagger'
 	)
 
-	event.shapeless("kubejs:raw_pizza",[['farmersdelight:tomato_sauce','thermal:tomato_sauce'], 'create:dough', 'thermal:cheese_wedge', 'farmersdelight:ham']).replaceIngredient('farmersdelight:tomato_sauce',"bowl")
+	event.shapeless("kubejs:raw_pizza",[['farmersdelight:tomato_sauce','thermal:tomato_sauce'], 'create:dough', 'thermal:cheese_wedge', 'farmersdelight:ham']).replaceIngredient('farmersdelight:tomato_sauce',"bowl").replaceIngredient('thermal:tomato_sauce','thermal:jar')
 
 	event.smelting("kubejs:pizza","kubejs:raw_pizza")
 	event.smoking("kubejs:pizza","kubejs:raw_pizza")
@@ -3752,7 +3752,7 @@ ServerEvents.recipes(event => {
 		],
 		"result": [
 			{
-				"count": 8,
+				"count": 6,
 				"item": "kubejs:pizza_slice"
 			}
 		],
@@ -3761,10 +3761,10 @@ ServerEvents.recipes(event => {
 		}
 	})
 
-	event.recipes.create.mixing("2x kubejs:pizza_slice","kubejs:pizza")
+	event.recipes.create.mixing("4x kubejs:pizza_slice","kubejs:pizza")
 
 	event.shapeless("4x kubejs:pizza_slice",["kubejs:pizza","#forge:tools/knives"]).damageIngredient("#forge:tools/knives")
-	event.shapeless("8x kubejs:pizza_slice",["kubejs:pizza","#minecraft:swords"]).damageIngredient("#minecraft:swords")
+	event.shapeless("6x kubejs:pizza_slice",["kubejs:pizza","#minecraft:swords"]).damageIngredient("#minecraft:swords")
 
 	let dyes = [
 		"blue",
@@ -3813,5 +3813,24 @@ ServerEvents.recipes(event => {
 		C: 'minecraft:diamond',
 		D: 'ghast_tear'
 	})
+
+	event.smelting('thermal:apatite', 'thermal:deepslate_apatite_ore').xp(0.5)
+	event.blasting('thermal:apatite', 'thermal:deepslate_apatite_ore').xp(0.5)
+
+	event.smelting('thermal:cinnabar', 'thermal:deepslate_cinnabar_ore').xp(0.5)
+	event.blasting('thermal:cinnabar', 'thermal:deepslate_cinnabar_ore').xp(0.5)
+
+	event.smelting('thermal:sulfur', 'thermal:deepslate_sulfur_ore').xp(0.5)
+	event.blasting('thermal:sulfur', 'thermal:deepslate_sulfur_ore').xp(0.5)
+
+	event.smelting('thermal:niter', 'thermal:deepslate_niter_ore').xp(0.5)
+	event.blasting('thermal:niter', 'thermal:deepslate_niter_ore').xp(0.5)
+
+	event.recipes.create.crushing(["2x thermal:cinnabar",Item.of("thermal:cinnabar").withChance(0.25),Item.of("create:experience_nugget").withChance(0.75),Item.of("minecraft:cobbled_deepslate").withChance(0.12)],"thermal:deepslate_cinnabar_ore")
+	event.recipes.create.crushing(["2x thermal:apatite",Item.of("thermal:apatite").withChance(0.25),Item.of("create:experience_nugget").withChance(0.75),Item.of("minecraft:cobbled_deepslate").withChance(0.12)],"thermal:deepslate_apatite_ore")
+	event.recipes.create.crushing(["2x thermal:niter",Item.of("thermal:niter").withChance(0.25),Item.of("create:experience_nugget").withChance(0.75),Item.of("minecraft:cobbled_deepslate").withChance(0.12)],"thermal:deepslate_niter_ore")
+	event.recipes.create.crushing(["2x thermal:sulfur",Item.of("thermal:sulfur").withChance(0.25),Item.of("create:experience_nugget").withChance(0.75),Item.of("minecraft:cobbled_deepslate").withChance(0.12)],"thermal:deepslate_sulfur_ore")
+
+	event.shapeless("kubejs:pizza_box",["2x paper","4x kubejs:pizza_slice"])
 
 })

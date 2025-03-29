@@ -1,5 +1,4 @@
 {
-	"parent":"minecraft:block/cube_all",
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "kubejs:item/pizza_slice",
@@ -7,9 +6,9 @@
 	},
 	"elements": [
 		{
-			"from": [4, 1, 12],
-			"to": [12, 3, 14],
-			"rotation": {"angle": 0, "axis": "y", "origin": [4, 3, 12]},
+			"from": [4, 6, 12],
+			"to": [12, 8, 14],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 8, 8]},
 			"faces": {
 				"north": {"uv": [0, 5, 4, 6], "texture": "#0"},
 				"east": {"uv": [5, 6, 6, 7], "texture": "#0"},
@@ -20,9 +19,9 @@
 			}
 		},
 		{
-			"from": [5, 1, 7],
-			"to": [11, 2, 12],
-			"rotation": {"angle": 0, "axis": "y", "origin": [3, 3, 6]},
+			"from": [5, 6, 7],
+			"to": [11, 7, 12],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 8, 8]},
 			"faces": {
 				"north": {"uv": [6, 1, 9, 1.5], "texture": "#0"},
 				"east": {"uv": [6, 2, 8.5, 2.5], "texture": "#0"},
@@ -33,9 +32,9 @@
 			}
 		},
 		{
-			"from": [5, 2, 2],
-			"to": [11, 2, 7],
-			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 2, 7]},
+			"from": [5, 7.4588, 1.69344],
+			"to": [11, 7.4588, 6.69344],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 8, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 3, 0], "texture": "#0"},
 				"east": {"uv": [0, 0, 2.5, 0], "texture": "#0"},
@@ -45,5 +44,110 @@
 				"down": {"uv": [6, 2.5, 3, 5], "texture": "#0"}
 			}
 		}
-	]
+	],
+	"gui_light": "front",
+	"display": {
+		"gui": {
+			"rotation": [
+				30,
+				225,
+				0
+			],
+			"translation": [
+				0.75,
+				-1,
+				0
+			],
+			"scale": [
+				0.9375,
+				0.9375,
+				0.9375
+			]
+		},
+		"ground": {
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"translation": [
+				0,
+				1.5,
+				0
+			],
+			"scale": [
+				0.5,
+				0.5,
+				0.5
+			]
+		},
+		"fixed": {
+			"rotation": [
+				-90,
+				-45,
+				0
+			],
+			"translation": [
+				0,
+				0,
+				-2
+			],
+			"scale": [
+				1,
+				1,
+				1
+			]
+		},
+		"thirdperson_righthand": {
+			"rotation": [
+				75,
+				45,
+				0
+			],
+			"translation": [
+				0,
+				5,
+				0
+			],
+			"scale": [
+				0.75,
+				0.75,
+				0.75
+			]
+		},
+		"firstperson_righthand": {
+			"rotation": [
+				0,
+				45,
+				0
+			],
+			"translation": [
+				0,
+				2.5,
+				0
+			],
+			"scale": [
+				0.6,
+				0.6,
+				0.6
+			]
+		},
+		"firstperson_lefthand": {
+			"rotation": [
+				0,
+				45,
+				0
+			],
+			"translation": [
+				0,
+				2.5,
+				0
+			],
+			"scale": [
+				0.6,
+				0.6,
+				0.6
+			]
+		}
+	}
 }

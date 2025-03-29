@@ -285,8 +285,10 @@ JEIAddedEvents.registerRecipes((event) => {
 	event.custom("kubejsadditions:hammer")
 		.add({in: 'minecraft:cobblestone', out: 'minecraft:gravel'})
 		.add({in: 'minecraft:gravel', out: 'minecraft:sand'})
+		.add({in: 'minecraft:sandstone', out: 'minecraft:sand'})
+		.add({in: 'minecraft:chiseled_sandstone', out: 'minecraft:sand'})
 		.add({in: 'minecraft:sand', out: 'kubejs:dust'})
-		.add({in:'minecraft:stone_bricks', out: 'minecraft:cracked_stone_bricks'})
+		.add({in: 'minecraft:stone_bricks', out: 'minecraft:cracked_stone_bricks'})
 
 	event.custom("kubejsadditions:infusing_block")
 		.add({})

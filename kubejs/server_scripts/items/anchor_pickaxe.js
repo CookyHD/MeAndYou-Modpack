@@ -32,6 +32,7 @@ ItemEvents.rightClicked('kubejs:anchor_pickaxe', event => {
 			global.playSound(level,[player.x,player.y,player.z],"minecraft:item.trident.return","player",1,0.5)
 			level.spawnParticles("dust_color_transition 0 0.5 1 1 0 1 1",false,player.x,player.y+0.5,player.z,half_cast_range,0.25,half_cast_range,300,0)
 			level.spawnParticles("cloud",false,player.x,player.y+0.5,player.z,half_cast_range,0.25,half_cast_range,20,0.1)
+			player.potionEffects.add("slowness",ANCHOR_PICKAXE.cooldown / 2,1,false,false)
 			player.swing()
 			player.sweepAttack()
 		} else {

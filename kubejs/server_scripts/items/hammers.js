@@ -3,6 +3,8 @@ let HAMMER = {}
 HAMMER.convert_list = [
 	["minecraft:cobblestone","minecraft:gravel"],
 	["minecraft:gravel","minecraft:sand"],
+	['minecraft:sandstone', 'minecraft:sand'],
+	['minecraft:chiseled_sandstone', 'minecraft:sand'],
 	["minecraft:sand","kubejs:dust"],
 	['minecraft:stone_bricks', 'minecraft:cracked_stone_bricks']
 ]
