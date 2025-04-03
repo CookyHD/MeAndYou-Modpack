@@ -7,7 +7,9 @@ LevelEvents.tick(event => {
 			e.tags.contains("Kubejs_Cobweb") ||
 			e.tags.contains("Kubejs_Mudball") ||
 			e.tags.contains("Kubejs_Arrow") ||
-			e.tags.contains("Kubejs_MultItem")
+			e.tags.contains("Kubejs_MultItem") ||
+			e.tags.contains("Kubejs_BrickWeapon") ||
+			e.tags.contains("Kubejs_Amethyst")
 		) return true
 		if (e.isLiving()) if (
 			e.potionEffects.isActive("kubejs:xp_transform") ||
@@ -93,6 +95,22 @@ LevelEvents.tick(event => {
 		//MUDBALL
 		if (entity.tags.contains("Kubejs_Mudball")) {
 			event.level.spawnParticles("item kubejs:mud_ball",false,entity.x,entity.y,entity.z,0.1,0.1,0.1,2,0)
+		}
+
+		//MUDBALL
+		if (entity.tags.contains("Kubejs_Amethyst")) {
+			event.level.spawnParticles("item amethyst_shard",false,entity.x,entity.y,entity.z,0,0,0,1,0)
+		}
+
+		//BRICK WEAPON
+		if (entity.tags.contains("Kubejs_BrickWeapon")) {
+			let pat = "smoke"
+			if (entity.tags.contains("Kubejs_!Cluster")) pat = "large_smoke"
+			event.level.spawnParticles(pat,false,entity.x,entity.y+0.5,entity.z,0,0,0,1,0)
+			if (event.level.time % 4 == 0) {
+				event.level.spawnParticles("flame",false,entity.x,entity.y+0.5,entity.z,0,0,0,1,0)
+			}
+			if (entity.tags.contains("Kubejs_!Amethyst")) event.level.spawnParticles("item amethyst_shard",false,entity.x,entity.y+0.25,entity.z,0,0,0,1,0)
 		}
 
 		//NEEDLE

@@ -1,0 +1,30 @@
+{
+	"key": "electrum_wire",
+	"category": "fibre",
+	"primary": 5,
+	"secondary": 4.6,
+	"tertiary": 1,
+	"durability": 58,
+	"integrityCost": 2,
+	"integrityGain": 5,
+	"magicCapacity": 148,
+	"toolLevel": 0,
+	"toolEfficiency": 0,
+	"effects": {
+	  "stabilizing": 15
+	},
+	"tints": {
+	  "glyph": "e39f53",
+	  "texture": "e39f53"
+	},
+	"textures": [
+	  "crude",
+	  "default"
+	],
+	"material": {
+	  "tag": "forge:wires/gold"
+	},
+	"requiredTools": {
+	  "cut": "minecraft:iron"
+	}
+  }

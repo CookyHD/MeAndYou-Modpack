@@ -1,0 +1,30 @@
+{
+	"key": "animal_fur",
+	"category": "fibre",
+	"primary": 1.2,
+	"secondary": 1.6,
+	"tertiary": 4.8,
+	"durability": 320,
+	"integrityCost": 1,
+	"integrityGain": 5,
+	"magicCapacity": 106,
+	"toolLevel": 0,
+	"toolEfficiency": 0,
+	"tints": {
+	  "glyph": "3c2c24",
+	  "texture": "3c2c24"
+	},
+	"textures": [
+	  "crude",
+	  "default"
+	],
+	"material": {
+	  "items": [
+		"naturalist:fur"
+	  ],
+	  "count": 2
+	},
+	"requiredTools": {
+	  "cut": "minecraft:stone"
+	}
+  }

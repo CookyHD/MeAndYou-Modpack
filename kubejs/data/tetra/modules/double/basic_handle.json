@@ -1,6 +1,7 @@
 {
   "replace": false,
   "improvements": [
-    "tetra:rubber_grips/double"
+    "tetra:rubber_grips/double",
+	"tetra:ghostly_wrapping/double"
   ]
 }

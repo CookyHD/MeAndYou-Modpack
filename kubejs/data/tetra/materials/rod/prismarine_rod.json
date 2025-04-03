@@ -19,7 +19,10 @@
     "default"
   ],
   "material": {
-    "tag": "forge:rods/prismarine"
+	"items": [
+		"minecraft:prismarine_shard"
+	],
+	"count": 2
   },
   "requiredTools": {
     "hammer_dig": "minecraft:iron"

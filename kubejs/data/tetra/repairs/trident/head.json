@@ -1,13 +1,7 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "upgrade_aquatic"
-    }
-  ],
   "material": {
     "items": [
-      "upgrade_aquatic:thrasher_tooth"
+		"minecraft:quartz"
     ],
     "count": 3
   },

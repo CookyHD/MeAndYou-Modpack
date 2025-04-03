@@ -1,0 +1,25 @@
+[
+  {
+    "key": "stave_grip/ghostly_wrapping",
+    "level": 1,
+    "durability": 120,
+    "group": "wrap",
+    "integrity": -1,
+    "attributes": {
+      "tetra:draw_speed": -0.3
+    },
+    "effects": {
+      "howling": [
+        1,
+        10
+      ]
+    },
+    "models": [
+      {
+        "type": "static",
+        "location": "tetra:item/module/bow/stave/improvements/wrap",
+        "tint": "95c6a8"
+      }
+    ]
+  }
+]

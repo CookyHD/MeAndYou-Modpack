@@ -3833,4 +3833,9 @@ ServerEvents.recipes(event => {
 
 	event.shapeless("kubejs:pizza_box",["2x paper","4x kubejs:pizza_slice"])
 
+	event.shapeless('4x kubejs:brick_weapon', [
+		'tnt',
+		'4x brick'
+	])
+
 })

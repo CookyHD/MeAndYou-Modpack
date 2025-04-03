@@ -26,6 +26,18 @@
       "improvements": {
         "basic_hilt/rubber_grip": 1
       }
-    }
+    },
+	{
+		"material": {
+		  "tag": "forge:ectoplasm",
+		  "count": 2
+		},
+		"requiredTools": {
+		  "cut": "minecraft:gold"
+		},
+		"improvements": {
+		  "basic_handle/ghostly_wrapping": 1
+		}
+	}
   ]
 }

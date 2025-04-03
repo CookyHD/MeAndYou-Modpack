@@ -174,6 +174,7 @@ ServerEvents.tags('item', event => {
 	event.add("forge:planks/driftwood","aquaculture:driftwood")
 	event.add("forge:planks/rubber","thermal:rubberwood_planks")
 	event.add("forge:rubber","thermal:cured_rubber")
+	event.add("forge:ectoplasm","iceandfire:ectoplasm")
 
 	let helmets = [
 		'mowziesmobs:wrought_helmet',

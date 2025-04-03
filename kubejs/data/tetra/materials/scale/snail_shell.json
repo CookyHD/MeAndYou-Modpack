@@ -1,0 +1,32 @@
+{
+	"key": "snail_shell",
+	"category": "scale",
+	"primary": 5,
+	"secondary": 0.4,
+	"tertiary": 1,
+	"durability": 225,
+	"integrityCost": 1,
+	"integrityGain": 5,
+	"magicCapacity": 84,
+	"toolLevel": 0,
+	"toolEfficiency": 0,
+	"attributes": {
+	  "generic.knockback_resistance": 0.4
+	},
+	"tints": {
+	  "glyph": "985a33",
+	  "texture": "985a33"
+	},
+	"textures": [
+	  "crude",
+	  "default"
+	],
+	"material": {
+	  "items": [
+		"naturalist:snail_shell"
+	  ]
+	},
+	"requiredTools": {
+	  "cut": "minecraft:stone"
+	}
+  }

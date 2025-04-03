@@ -1,0 +1,37 @@
+{
+	"replace": true,
+	"requirement": {
+	  "type": "tetra:and",
+	  "requirements": [
+		{
+		  "type": "tetra:craft_type",
+		  "craft": "module"
+		},
+		{
+		  "type": "tetra:material",
+		  "material": {
+			"items": [
+			  "iceandfire:hippogryph_talon"
+			]
+		  }
+		},
+		{
+		  "type": "tetra:or",
+		  "requirements": [
+			{
+			  "type": "tetra:slot",
+			  "slot": "sword/blade"
+			}
+		  ]
+		}
+	  ]
+	},
+	"outcomes": [
+	  {
+		"type": "tetra:apply_improvements",
+		"improvements": {
+		  "slashing": 0
+		}
+	  }
+	]
+  }

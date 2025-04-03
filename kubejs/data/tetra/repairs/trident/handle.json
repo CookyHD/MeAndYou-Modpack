@@ -1,16 +1,10 @@
 
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "upgrade_aquatic"
-    }
-  ],
   "material": {
     "items": [
-      "upgrade_aquatic:prismarine_rod"
+		"minecraft:prismarine_shard"
     ],
-    "count": 1
+    "count": 2
   },
   "requiredTools": {
     "hammer_dig": "minecraft:iron"

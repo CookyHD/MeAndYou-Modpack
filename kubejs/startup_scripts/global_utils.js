@@ -26,15 +26,17 @@ global.playSound = function (level,pos,sound_name,type,volume,pitch,target) {
  * @param {Internal.Player} player
  * @param {Internal.Item_} id
  * @param {number} amount
+ * @param {boolean} take
  * @returns {boolean}
  */
-global.consumePlayerItem = function (player,id,amount) {
+global.consumePlayerItem = function (player,id,amount,take) {
+	if (take == null) take = true
 	let bool = false
 	if (!player.creative) {
 		player.inventory.getAllItems().forEach(item => {
 			if(!bool && item.id == id && item.count >= amount) {
 				bool = true
-				item.count -= amount
+				if (take) item.count -= amount
 			}
 		})
 	} else {

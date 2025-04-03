@@ -273,7 +273,7 @@ StartupEvents.registry("block", (event) => {
 
 })
 
-//THERMAL CTM FIX
+//THERMAL
 StartupEvents.registry("block", event => {
 
 
@@ -320,4 +320,13 @@ StartupEvents.registry("block", event => {
 	.resistance(1000.0)
 	.defaultCutout()
 	.renderType('cutout')
+
+	event.create("thermal:sulfur_ore_netherrack")
+	.displayName("Nether Sulfur Ore")
+	.hardness(3)
+	.resistance(3)
+	.soundType("nether_ore")
+	.mapColor("color_red")
+	.tagBlock("minecraft:mineable/pickaxe")
+	.requiresTool(true)
 })

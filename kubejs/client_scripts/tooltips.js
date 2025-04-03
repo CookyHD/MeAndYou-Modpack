@@ -388,16 +388,31 @@ ItemEvents.tooltip(event => {
 	event.add("kubejs:pizza",Text.gray("Slice it before Eating!"))
 	event.add("kubejs:pizza_box",Text.gray("Receive 4x Pizza Slices upon opening!"))
 
-	function ore(name,min,max) {
-		event.add(name,"§7Y level §6"+min+"§7 to §6"+max)
+	event.addAdvanced("aether:gravitite_ore",(item, advanced, text) => {
+		text.add(1,"§7Y level §6-58§7 to §674")
+		if (event.ctrl) {
+			text.add(2,Text.red("Floating Texture Broken."))
+		} else {
+			text.add(2,[Text.gray('Hold '), Text.red("Ctrl ").bold(true), Text.gray("for Warnings.")])
+		}
+	})
+
+	event.add("kubejs:brick_weapon",["§7Sneak to throw four at once","§7Creating a Cluster Bomb","§7Also Offhand Items effect Results"])
+
+	function ore(name,min,max,extra) {
+		let text = ["§7Y level §6"+min+"§7 to §6"+max]
+		if (extra) {
+			text.push(extra)
+		}
+		event.add(name,text)
 	}
 
-	function oreSpace(namespace,name,min,max) {
-		ore(namespace+':'+name,min,max)
-		ore(namespace+':'+'deepslate_'+name,min,max)
+	function oreSpace(namespace,name,min,max,extra) {
+		ore(namespace+':'+name,min,max,extra)
+		ore(namespace+':'+'deepslate_'+name,min,max,extra)
 	}
 
-	oreSpace('minecraft','coal_ore',0,256,4)
+	oreSpace('minecraft','coal_ore',0,256,"§7No §8Glow")
 	oreSpace('minecraft','copper_ore',-16,112)
 	oreSpace('minecraft','iron_ore',-64,256)
 	oreSpace('minecraft','gold_ore',-64,32)
@@ -408,14 +423,14 @@ ItemEvents.tooltip(event => {
 
 	ore('minecraft:nether_quartz_ore',10,245)
 	ore('minecraft:nether_gold_ore',10,245)
-	ore('minecraft:ancient_debris',8,24)
+	ore('minecraft:ancient_debris',8,24,"§7No §8Glow")
 
 	oreSpace('biggerreactors','uranium_ore',-64,48)
 	oreSpace('create','zinc_ore',-63,70)
 
 	ore('aether:ambrosium_ore',0,128)
 	ore('aether:zanite_ore',0,75)
-	ore('aether:gravitite_ore',-58,74)
+	//ore('aether:gravitite_ore',-58,74)
 
 	oreSpace("thermal",'tin_ore',-40,60)
 	oreSpace("thermal",'lead_ore',-60,40)
@@ -428,8 +443,10 @@ ItemEvents.tooltip(event => {
 	oreSpace("thermal",'cinnabar_ore',-16,48)
 	oreSpace("thermal",'apatite_ore',-16,96)
 
-	event.add('thermal:oil_sand','§7Spawns in §6Desert')
-	event.add('thermal:oil_red_sand','§7Spawns in §6Desert')
+	event.add('thermal:oil_sand',['§7Spawns in §6Desert',"§7No §8Glow"])
+	event.add('thermal:oil_red_sand',['§7Spawns in §6Desert',"§7No §8Glow"])
+
+	ore("thermal:sulfur_ore_netherrack",10,245)
 
 	ore('kubejs:nether_uranium_ore',10,245)
 	ore('kubejs:nether_cobalt_ore',10,245)

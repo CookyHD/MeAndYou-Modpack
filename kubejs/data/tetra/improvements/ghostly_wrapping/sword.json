@@ -1,0 +1,24 @@
+[
+  {
+    "key": "basic_hilt/ghostly_wrapping",
+    "level": 1,
+    "durability": 120,
+    "group": "wrap",
+    "integrity": -1,
+    "attributes": {
+      "generic.attack_speed": 0.2
+    },
+    "effects": {
+      "howling": [
+        1,
+        10
+      ]
+    },
+    "models": [
+      {
+        "location": "tetra:item/module/double/handle/basic/improvements/wrap",
+        "tint": "95c6a8"
+      }
+    ]
+  }
+]

@@ -1,13 +1,5 @@
 {
 
-	"tetra.material.cobalt": "Cobalt",
-	"tetra.material.cobalt.prefix": "Cobalt",
-
-	"tetra.material.manyullyn": "Manyullym",
-	"tetra.material.manyullyn.prefix": "Manyullym",
-
-	"coment":"From SmallTertaAdittions",
-
 	"tetra.material.enderium": "Enderium",
 	"tetra.material.enderium.prefix": "Enderium",
 	"tetra.material.cloth": "Cloth",
@@ -43,6 +35,10 @@
 	"tetra.material.koboleton_bone.prefix": "Koboleton Bone",
 	"tetra.material.amethyst_crab_shell": "Amethyst Crab Shell",
 	"tetra.material.amethyst_crab_shell.prefix": "Amethyst Crab Shell",
+	"tetra.material.black_steel": "Black Steel",
+	"tetra.material.black_steel.prefix": "Black Steel",
+	"tetra.material.cursium": "Cursium",
+	"tetra.material.cursium.prefix": "Cursium",
 	"tetra.material.socket_abyssal_sacrifice": "Abyssal socket",
 	"tetra.material.socket_abyssal_sacrifice.prefix": "Abyssal Sacrifice",
   
@@ -65,10 +61,10 @@
 	"tetra.material.ersatz_leather.prefix": "Ersatz Leather",
 	"tetra.material.copper_wire": "Copper Wire",
 	"tetra.material.copper_wire.prefix": "Copper Wire",
-	"tetra.material.electrum_wire": "Electrum Wire",
-	"tetra.material.electrum_wire.prefix": "Electrum Wire",
-	"tetra.material.steel_wire": "Steel Wire",
-	"tetra.material.steel_wire.prefix": "Steel Wire",
+	"tetra.material.electrum_wire": "Gold Wire",
+	"tetra.material.electrum_wire.prefix": "Gold Wire",
+	"tetra.material.steel_wire": "Iron Wire",
+	"tetra.material.steel_wire.prefix": "Iron Wire",
 	"tetra.material.constantan": "Constantan",
 	"tetra.material.constantan.prefix": "Constantan",
 	"tetra.material.aluminum": "Aluminum",
@@ -79,12 +75,12 @@
 	"tetra.material.treated_stick.prefix": "Treated Stick",
 	"tetra.material.aluminum_rod": "Aluminum Rod",
 	"tetra.material.aluminum_rod.prefix": "Aluminum Rod",
-	"tetra.material.steel_rod": "Steel Rod",
-	"tetra.material.steel_rod.prefix": "Steel Rod",
+	"tetra.material.steel_rod": "Iron Rod",
+	"tetra.material.steel_rod.prefix": "Iron Rod",
 	"tetra.material.copper_rod": "Copper Rod",
 	"tetra.material.copper_rod.prefix": "Copper Rod",
-	"tetra.material.electrum_rod": "Electrum Rod",
-	"tetra.material.electrum_rod.prefix": "Electrum Rod",
+	"tetra.material.electrum_rod": "Gold Rod",
+	"tetra.material.electrum_rod.prefix": "Gold Rod",
   
 	"tetra.material.animal_fur": "Animal Fur",
 	"tetra.material.animal_fur.prefix": "Animal Fur",
@@ -174,6 +170,8 @@
   
 	"tetra.material.dawnstone": "Dawnstone",
 	"tetra.material.dawnstone.prefix": "Dawnstone",
+	"tetra.material.ashen_fabric": "Ashen Fabric",
+	"tetra.material.ashen_fabric.prefix": "Ashen Fabric",
   
 	"tetra.material.opal": "Opal",
 	"tetra.material.opal.prefix": "Opal",
@@ -190,6 +188,18 @@
 	"tetra.material.dark_metal.prefix": "Dark Metal",
 	"tetra.material.bone_handle": "Bone Handle",
 	"tetra.material.bone_handle.prefix": "Bone Handle",
+	"tetra.material.nightmare_claw": "Nightmare Claw",
+	"tetra.material.nightmare_claw.prefix": "Nightmare Claw",
+  
+	"tetra.material.necromium": "Necromium",
+	"tetra.material.necromium.prefix": "Necromium",
+	"tetra.material.spinel": "Spinel",
+	"tetra.material.spinel.prefix": "Spinel",
+  
+	"tetra.improvement.ignitium_enflame.name": "Ignition",
+	"tetra.improvement.ignitium_enflame.description": "Ignites attacked enemies.",
+	"tetra.material.feature.enflame": "Enflame",
+	"tetra.material.feature.enflame.tooltip": "Tools with the Enflame effect set attacked entities ablaze.",
   
 	"tetra.improvement.basic_handle/rubber_grip.name": "Rubber Grip",
 	"tetra.improvement.basic_handle/rubber_grip.description": "Greatly increases speed, slightly increases damage, and greatly reduces reverb.",
@@ -197,6 +207,13 @@
 	"tetra.improvement.basic_hilt/rubber_grip.description": "Greatly increases speed, slightly increases damage, and greatly reduces reverb.",
 	"tetra.improvement.stave_grip/rubber_grip.name": "Rubber Grip",
 	"tetra.improvement.stave_grip/rubber_grip.description": "Increases draw speed and durability.",
+  
+	"tetra.improvement.basic_handle/ghostly_wrapping.name": "Ghostly Wrapping",
+	"tetra.improvement.basic_handle/ghostly_wrapping.description": "A ghostly force lightens the tool, and sometimes protects you from attacks.",
+	"tetra.improvement.basic_hilt/ghostly_wrapping.name": "Ghostly Wrapping",
+	"tetra.improvement.basic_hilt/ghostly_wrapping.description": "A ghostly force lightens the tool, and sometimes protects you from attacks.",
+	"tetra.improvement.stave_grip/ghostly_wrapping.name": "Ghostly Wrapping",
+	"tetra.improvement.stave_grip/ghostly_wrapping.description": "A ghostly force lightens the tool, and sometimes protects you from attacks.",
   
 	"tetra.improvement.cactus_bleeding.name": "Cactus Bleeding",
 	"tetra.improvement.cactus_bleeding.description": "Applies bleeding 2",
@@ -219,19 +236,24 @@
 	"tetra.material.feature.evil_embodied.tooltip": "Tool heads and blades crafted from Nefarious will have\ntheir damage increased to compensate for the fourth curse.\nEnemies will also suffer debuffs when attacked.",
   
 	"tetra.improvement.dragon_fire.name": "Dragon Fire",
-	"tetra.improvement.dragon_fire.description": "Placeholder for custom effect, currently increases knockback and adds bleading 2",
+	"tetra.improvement.dragon_fire.description": "Increases knockback and sets attacked entities on fire.",
 	"tetra.material.feature.dragon_fire": "Dragon Fire",
-	"tetra.material.feature.dragon_fire.tooltip": "Tool heads and blades crafted from Fire Dragonsteel will\nhave increased knockback, and inflict bleeding 2.\n",
+	"tetra.material.feature.dragon_fire.tooltip": "Tool heads and blades crafted from Fire Dragonsteel will\nhave increased knockback, and set attacked entities on fire.\n",
   
 	"tetra.improvement.dragon_ice.name": "Dragon Ice",
-	"tetra.improvement.dragon_ice.description": "Placeholder for custom effect, currently adds chance to stun and earthbind",
+	"tetra.improvement.dragon_ice.description": "Slows attacked entities.",
 	"tetra.material.feature.dragon_ice": "Dragon Ice",
-	"tetra.material.feature.dragon_ice.tooltip": "Tool heads and blades crafted from Ice Dragonsteel will have\na chance to stun or slow enemies when attacking.\n",
+	"tetra.material.feature.dragon_ice.tooltip": "Tool heads and blades crafted from Ice Dragonsteel will apply slowness to enemies when attacking.\n",
+  
+	"tetra.improvement.necromium_slowness.name": "Slow",
+	"tetra.improvement.necromium_slowness.description": "Slows attacked entities.",
+	"tetra.material.feature.necromium_slowness": "Slow",
+	"tetra.material.feature.necromium_slowness.tooltip": "Tool heads and blades crafted from necromium will apply slowness to enemies when attacking.\n",
   
 	"tetra.improvement.dragon_lightning.name": "Dragon Lightning",
-	"tetra.improvement.dragon_lightning.description": "Placeholder for custom effect, currently increases damage and adds bleeding",
+	"tetra.improvement.dragon_lightning.description": "Summons a lightning bolt on any attacked entity.",
 	"tetra.material.feature.dragon_lightning": "Dragon Lightning",
-	"tetra.material.feature.dragon_lightning.tooltip": "Tool heads and blades crafted from Lightning Dragonsteel\nwill have increased knockback, and inflict bleeding and extra damage.\n",
+	"tetra.material.feature.dragon_lightning.tooltip": "Tools crafted from Lightning Dragonsteel\nwill summon a lightning bolt when attacking an entity.\n",
   
   
 	"tetra.improvement.salted_wound.name": "Salted Wound",

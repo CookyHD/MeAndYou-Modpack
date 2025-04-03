@@ -143,6 +143,10 @@ StartupEvents.registry("item", (event) => {
 	event.create("mud_ball")
 	.displayName("Mud Ball")
 	.maxStackSize(16)
+	
+	event.create("brick_weapon")
+	.displayName("Weaponized Brick")
+	.maxStackSize(16)
 
 	event.create("ship_locator")
 	.displayName("Ship Locator")
