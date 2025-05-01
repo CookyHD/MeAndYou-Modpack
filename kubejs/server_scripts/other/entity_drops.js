@@ -5,3 +5,9 @@ EntityEvents.drops("wither_skeleton", event => {
 		}
 	})
 })
+
+EntityEvents.drops("player", event => {
+	if (event.entity.username == "CookyHD") {
+		event.addDrop(Item.of("cookie"))
+	}
+})

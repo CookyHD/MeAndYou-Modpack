@@ -111,6 +111,10 @@ LevelEvents.tick(event => {
 				event.level.spawnParticles("flame",false,entity.x,entity.y+0.5,entity.z,0,0,0,1,0)
 			}
 			if (entity.tags.contains("Kubejs_!Amethyst")) event.level.spawnParticles("item amethyst_shard",false,entity.x,entity.y+0.25,entity.z,0,0,0,1,0)
+			if (entity.tags.contains("Kubejs_!Fire")) event.level.spawnParticles("item fire_charge",false,entity.x,entity.y+0.25,entity.z,0,0,0,1,0)
+			if (entity.tags.contains("Kubejs_!Mud")) event.level.spawnParticles("item kubejs:mud_ball",false,entity.x,entity.y+0.25,entity.z,0,0,0,1,0)
+			if (entity.tags.contains("Kubejs_!Arrow")) event.level.spawnParticles("crit",false,entity.x,entity.y+0.25,entity.z,0,0,0,1,0)
+			if (entity.tags.contains("Kubejs_!Smoke")) event.level.spawnParticles("item black_dye",false,entity.x,entity.y+0.25,entity.z,0,0,0,1,0)
 		}
 
 		//NEEDLE

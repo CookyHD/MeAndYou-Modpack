@@ -239,3 +239,69 @@ global.laser = function (level,player,laser_lenght,laser_width,laser_damage,lase
 		if (each_func) each_func(i,x,y,z)
 	}
 }
+
+/**
+ * @param {Internal.AABB} aabb
+ * @param {Internal.Level} level
+ * @return {void}
+ */
+global.visualBox = function (level,aabb,size_ow) {
+
+	if (size_ow == null) size_ow = 3
+
+	let c = aabb.center
+	let xx = aabb.xsize/2
+	let yy = aabb.ysize/2
+	let zz = aabb.zsize/2
+
+	let part_at = function (x,y,z,r,g,b,s) {
+		if (r == null) r = 1
+		if (g == null) g = 0
+		if (b == null) b = 0
+		if (s == null) s = size_ow
+		level.spawnParticles("dust "+r+" "+g+" "+b+" "+s,true,x,y,z,0,0,0,1,0)
+	}
+
+	part_at(c.x(),c.y(),c.z(),0,0,1)
+
+	part_at(
+		c.x()-xx,
+		c.y()-yy,
+		c.z()-zz
+	)
+	part_at(
+		c.x()-xx,
+		c.y()+yy,
+		c.z()-zz
+	)
+	part_at(
+		c.x()+xx,
+		c.y()+yy,
+		c.z()+zz
+	)
+	part_at(
+		c.x()+xx,
+		c.y()-yy,
+		c.z()+zz
+	)
+	part_at(
+		c.x()-xx,
+		c.y()+yy,
+		c.z()+zz
+	)
+	part_at(
+		c.x()-xx,
+		c.y()-yy,
+		c.z()+zz
+	)
+	part_at(
+		c.x()+xx,
+		c.y()+yy,
+		c.z()-zz
+	)
+	part_at(
+		c.x()+xx,
+		c.y()-yy,
+		c.z()-zz
+	)
+}

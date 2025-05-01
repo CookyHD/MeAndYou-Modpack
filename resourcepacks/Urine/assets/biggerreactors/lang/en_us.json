@@ -1,0 +1,9 @@
+{
+	"block.biggerreactors.uranium_ore": "Urine Ore",
+	"block.biggerreactors.deepslate_uranium_ore": "Deepslate Urine Ore",
+	"block.biggerreactors.uranium_block": "Urine Block",
+	"block.biggerreactors.raw_uranium_block": "Raw Urine Block",
+	"item.biggerreactors.uranium_dust": "Urine Dust",
+	"item.biggerreactors.uranium_ingot": "Urine Ingot",
+	"item.biggerreactors.uranium_chunk": "Urine Chunk"
+}

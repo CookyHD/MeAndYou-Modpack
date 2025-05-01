@@ -7,7 +7,7 @@ const UUID_NAMES = {
 
 if (global.getSetting("CustomCapes")) {
 	CapeJS.addCapes(event => {
-		event.register(UUID_NAMES.CookyHD, "cookyhd")
+		//event.register(UUID_NAMES.CookyHD, "cookyhd") I YEARN THE MINES
 		event.register(UUID_NAMES.Cana_xd, "cana_xd")
 		event.register(UUID_NAMES.MiminatorCraft, "miminatorcraft")
 	})

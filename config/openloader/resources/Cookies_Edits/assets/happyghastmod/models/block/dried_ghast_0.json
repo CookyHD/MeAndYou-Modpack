@@ -1,0 +1,6 @@
+{
+	"parent":"happyghastmod:block/dried_ghast_base",
+	"textures": {
+		"texture": "happyghastmod:block/dried_ghast_0"
+	}
+}

@@ -126,24 +126,8 @@ EntityEvents.spawned(event => {
 		event.entity.setHealth(10)
 	}
 
-	if (event.entity.type == "dried_ghast:happy_ghast") {
-		event.entity.setAttributeBaseValue("minecraft:generic.flying_speed",0.699999988079071/2)
-		event.entity.setAttributeBaseValue("minecraft:generic.movement_speed",0)
-		event.entity.setAttributeBaseValue("minecraft:generic.max_health",30)
-		event.entity.setHealth(30)
-	}
-
-	if (event.entity.type == "dried_ghast:ghastling") {
-		event.entity.setAttributeBaseValue("minecraft:generic.flying_speed",0.699999988079071/2)
-		event.entity.setAttributeBaseValue("minecraft:generic.movement_speed",0)
-		event.entity.setAttributeBaseValue("minecraft:generic.max_health",20)
-		event.entity.setHealth(20)
-	}
-
 	let edit_mobs = [
 		"iceandfire:ghost",
-		"dried_ghast:happy_ghast",
-		"dried_ghast:ghastling",
 		"minecraft:spider",
 		"minecraft:cave_spider",
 		"minecraft:skeleton",

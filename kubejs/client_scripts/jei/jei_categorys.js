@@ -302,4 +302,24 @@ JEIAddedEvents.registerRecipes((event) => {
 JEIEvents.information(event => {
 	event.addItem("kubejs:farmer_ingot",Text.of("Obtain this by placing a §6Starrite Ingot§0 in soft soil and letting it rust."))
 	event.addItem("kubejs:star_ingot",Text.of("Put this into soft soil and let it rust to obtain a §2Farmit Ingot§0."))
+
+	let brick = [
+		"kubejs:brick_weapon",
+		"kubejs:multi_brick_weapon"
+	].forEach(e => {
+		event.addItem(e,[
+			"§8Offhand Cheat Sheet:",
+			"  §eFire Charge:",
+			"    §8Inferno Explosions",
+			"  §eMud:",
+			"    §8Mud Ball Sharpnell",
+			"  §eAmethyst:",
+			"    §8Amethyst Sharpnell",
+			"  §eArrow x 4:",
+			"    §8Arrow Sharpnell",
+			"  §eInk Sac:",
+			"    §8Smoke Bombs"
+		])
+	})
+
 })

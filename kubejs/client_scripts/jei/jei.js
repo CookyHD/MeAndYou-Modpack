@@ -3,7 +3,9 @@
 JEIEvents.hideItems(event => {
 
 	event.hide([
-		'dried_ghast:dried_ghast',
+		'happyghastmod:moddy_harness',
+		'happyghastmod:pwgoods_harness',
+		'happyghastmod:pwgood_harness',
 		"railways:conductor_vent",
 		'bbb:rope',
 		'another_furniture:furniture_hammer',

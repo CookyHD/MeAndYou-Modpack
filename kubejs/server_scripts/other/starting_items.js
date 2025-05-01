@@ -16,6 +16,12 @@ PlayerEvents.loggedIn(event => {
 		STARTING_ITEMS.forEach(item => {
 			player.give(item)
 		})
+		if (player.username == "MiminatorCraft") {
+			player.give("2x kubejs:lostcity_portal")
+		}
+		if (player.username == "Cana_xd") {
+			player.give(Item.of('minecraft:elytra', "{CustomModelData:1,Damage:0,display:{Name:'{\"text\":\"Black Wings\",\"italic\":false}'}}"))
+		}
 		player.stages.add("Kubejs_StartingItems")
 	}
 })

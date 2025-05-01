@@ -13,7 +13,7 @@ global.ghast_shoot = (entity,player,distance) => {
 ItemEvents.rightClicked("kubejs:fire_wand",event => {
 	if (event.hand == "MAIN_HAND") {
 		let player = event.player
-		if (event.player.vehicle) {
+		if (event.player.vehicle && event.player.vehicle.type == "happyghastmod:happy_ghast") {
 			let entity = event.player.getVehicle()
 			let obj = global.ghast_shoot(entity,player,3)
 			let snowball = event.level.createEntity("fireball")
@@ -29,13 +29,13 @@ ItemEvents.rightClicked("kubejs:fire_wand",event => {
 		} else {
 			let box = AABB.ofSize(player.getPosition(1),32,128,32)
 			let entitys = event.level.getEntitiesWithin(box).filter(e => {
-				return (e.type == "dried_ghast:happy_ghast" || e.type == "dried_ghast:ghastling")
+				return (e.type == "happyghastmod:happy_ghast" || e.type == "happyghastmod:ghastling")
 			})
 			if (!entitys.isEmpty()) {
 				entitys.forEach(entity => {
 					let distance = entity.distanceToEntity(player)
 					let angle = entity.getPosition(1).vectorTo(player.getPosition(1))
-					entity.setMotion((angle.x()*distance)*0.01,(angle.y()*distance)*0.01,(angle.z()*distance)*0.01)
+					entity.setMotion((angle.x()*distance)*0.008,(angle.y()*distance)*0.008,(angle.z()*distance)*0.008)
 				})
 				player.swing()
 				global.playSound(event.level,[player.x,player.y,player.z],"minecraft:entity.ghast.shoot","player")

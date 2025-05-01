@@ -20,6 +20,7 @@ StartupEvents.registry("block", (event) => {
 	.lightLevel(global.calcLight(8))
 	.property(BlockProperties.ENABLED)
 	.requiresTool(true)
+	.createProperties().pushReaction("block")
 	
 	event.create("amplifyer_totem")
 	.displayName("Amplifyer Forge")
@@ -31,6 +32,7 @@ StartupEvents.registry("block", (event) => {
 	.lightLevel(global.calcLight(4))
 	.property(BlockProperties.ENABLED)
 	.requiresTool(true)
+	.createProperties().pushReaction("block")
 	
 	event.create("dark_stone")
 	.displayName("Darkend Stone")
@@ -60,6 +62,7 @@ StartupEvents.registry("block", (event) => {
 	.renderType("cutout")
 	.property(BlockProperties.LEVEL)
 	.requiresTool(true)
+	.createProperties().pushReaction("block")
 	
 	event.create("spark_catalyst")
 	.displayName("Spark Catalyst")
@@ -71,6 +74,7 @@ StartupEvents.registry("block", (event) => {
 	.renderType("cutout")
 	.property(BlockProperties.LEVEL)
 	.requiresTool(true)
+	.createProperties().pushReaction("block")
 
 	event.create("star_block")
 	.displayName("Block of Starrite")
@@ -130,6 +134,7 @@ StartupEvents.registry("block", (event) => {
 	.tagBlock("minecraft:mineable/pickaxe")
 	.tagBlock("minecraft:needs_iron_tool")
 	.requiresTool(true)
+	.createProperties().pushReaction("block")
 
 	event.create("tech_glass")
 	.defaultCutout()
@@ -231,8 +236,9 @@ StartupEvents.registry("block", (event) => {
 	.renderType('cutout')
 	.requiresTool(true)
 	.property(BlockProperties.LEVEL)
+	.createProperties().pushReaction("block")
 
-	event.create("farmer_crop")
+	event.create("kubejs:farmer_crop")
 	.randomTick((callback) => {
 		if (global.farmer_crop_callback) {
 			global.farmer_crop_callback(callback)
@@ -251,27 +257,30 @@ StartupEvents.registry("block", (event) => {
 	.lightLevel(global.calcLight(4))
 	.defaultCutout()
 	.renderType("cutout")
+	.createProperties().pushReaction("destroy")
 
-	event.create("dried_ghast","cardinal")
-	.displayName("Dried Ghast")
-	.randomTick((callback) => {
-		if (global.dried_ghast_random_tick) {
-			global.dried_ghast_random_tick(callback)
-		}
-	})
-	.placementState(event => event.set(BlockProperties.FACING, event.nearestLookingDirection.facing))
-	.property(BlockProperties.AGE_2)
-	.box(3,0,3,13,10,13)
-	.waterlogged()
-	.soundType(SoundType.SNOW)
-	.defaultCutout()
-	.renderType("cutout")
-	.mapColor(Color.WHITE)
-	.resistance(0)
-	.hardness(0)
-	
+	//REMOVED
+
+	//event.create("dried_ghast","cardinal")
+	//.displayName("Dried Ghast")
+	//.randomTick((callback) => {
+	//	if (global.dried_ghast_random_tick) {
+	//		global.dried_ghast_random_tick(callback)
+	//	}
+	//})
+	//.placementState(event => event.set(BlockProperties.FACING, event.nearestLookingDirection.facing))
+	//.property(BlockProperties.AGE_2)
+	//.box(3,0,3,13,10,13)
+	//.waterlogged()
+	//.soundType(SoundType.SNOW)
+	//.defaultCutout()
+	//.renderType("cutout")
+	//.mapColor(Color.WHITE)
+	//.resistance(0)
+	//.hardness(0)
 
 })
+
 
 //THERMAL
 StartupEvents.registry("block", event => {

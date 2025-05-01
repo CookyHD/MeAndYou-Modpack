@@ -158,30 +158,6 @@ ItemEvents.tooltip(event => {
 		}
 	})
 
-	event.addAdvanced('kubejs:copper_compass',(item, advanced, text) => {
-		if (event.shift) {
-			text.add(1,Text.yellow("Right Click to Locate the Nearest,"))
-			text.add(2,Text.yellow("Trial Chambers."))
-		} else if (event.ctrl) {
-			text.add(1,Text.red("Can give Multible Location,"))
-			text.add(2,Text.red("tho all are Valid Locations."))
-		} else {
-			text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info, or '), Text.red("Ctrl ").bold(true), Text.gray("for Warnings.")])
-		}
-	})
-
-	event.addAdvanced('kubejs:ship_locator',(item, advanced, text) => {
-		if (event.shift) {
-			text.add(1,Text.yellow("Right Click to Locate the Nearest,"))
-			text.add(2,Text.yellow("Crashed Ship."))
-		} else if (event.ctrl) {
-			text.add(1,Text.red("Can give Multible Location,"))
-			text.add(2,Text.red("tho all are Valid Locations."))
-		} else {
-			text.add(1,[Text.gray('Hold '), Text.yellow('Shift ').bold(true), Text.gray('for more info, or '), Text.red("Ctrl ").bold(true), Text.gray("for Warnings.")])
-		}
-	})
-
 	event.addAdvanced('kubejs:library',(item, advanced, text) => {
 		if (event.shift) {
 			text.add(1,Text.yellow("Right Click to Obtain all the Guide Books"))
@@ -291,13 +267,7 @@ ItemEvents.tooltip(event => {
 			"leggings",
 			"boots"
 		].forEach(item => {
-			event.addAdvanced("iceandfire:dragonsteel_"+element+"_"+item,(item, advanced, text) => {
-				if (event.ctrl) {
-					text.add(2,Text.red("Stats Not Finalised."))
-				} else {
-					text.add(2,[Text.gray('Hold '), Text.red("Ctrl ").bold(true), Text.gray("for Warnings.")])
-				}
-			})
+			event.add("iceandfire:dragonsteel_"+element+"_"+item,Text.red("*: Unfinalized Stats."))
 		})
 	})
 
@@ -374,13 +344,7 @@ ItemEvents.tooltip(event => {
 		'everycomp:db/biomesoplenty/dead_beam',
 		'everycomp:db/architects_palette/twisted_beam'
 	].forEach(e => {
-		event.addAdvanced(e,(item, advanced, text) => {
-			if (event.ctrl) {
-				text.add(1,Text.red("Departed."))
-			} else {
-				text.add(1,[Text.gray('Hold '), Text.red("Ctrl ").bold(true), Text.gray("for Warnings.")])
-			}
-		})
+		event.add(e,Text.red("*: Departed."))
 	})
 
 	event.add("crabbersdelight:crab_claw",[" ",Text.gray("When in Hand:"),Text.blue("+2 Block Reach"),Text.blue("+2 Entity Reach")])
@@ -388,16 +352,13 @@ ItemEvents.tooltip(event => {
 	event.add("kubejs:pizza",Text.gray("Slice it before Eating!"))
 	event.add("kubejs:pizza_box",Text.gray("Receive 4x Pizza Slices upon opening!"))
 
-	event.addAdvanced("aether:gravitite_ore",(item, advanced, text) => {
-		text.add(1,"§7Y level §6-58§7 to §674")
-		if (event.ctrl) {
-			text.add(2,Text.red("Floating Texture Broken."))
-		} else {
-			text.add(2,[Text.gray('Hold '), Text.red("Ctrl ").bold(true), Text.gray("for Warnings.")])
-		}
+	let brick = [
+		"kubejs:brick_weapon",
+		"kubejs:multi_brick_weapon"
+	].forEach(e => {
+		event.add(e,["§7Throwable Explosive,","§7Offhand Items effect Outcome"])
 	})
 
-	event.add("kubejs:brick_weapon",["§7Sneak to throw four at once","§7Creating a Cluster Bomb","§7Also Offhand Items effect Results"])
 
 	function ore(name,min,max,extra) {
 		let text = ["§7Y level §6"+min+"§7 to §6"+max]
@@ -412,7 +373,7 @@ ItemEvents.tooltip(event => {
 		ore(namespace+':'+'deepslate_'+name,min,max,extra)
 	}
 
-	oreSpace('minecraft','coal_ore',0,256,"§7No §8Glow")
+	oreSpace('minecraft','coal_ore',0,256)
 	oreSpace('minecraft','copper_ore',-16,112)
 	oreSpace('minecraft','iron_ore',-64,256)
 	oreSpace('minecraft','gold_ore',-64,32)
@@ -423,14 +384,14 @@ ItemEvents.tooltip(event => {
 
 	ore('minecraft:nether_quartz_ore',10,245)
 	ore('minecraft:nether_gold_ore',10,245)
-	ore('minecraft:ancient_debris',8,24,"§7No §8Glow")
+	ore('minecraft:ancient_debris',8,24)
 
 	oreSpace('biggerreactors','uranium_ore',-64,48)
 	oreSpace('create','zinc_ore',-63,70)
 
 	ore('aether:ambrosium_ore',0,128)
 	ore('aether:zanite_ore',0,75)
-	//ore('aether:gravitite_ore',-58,74)
+	ore('aether:gravitite_ore',-58,74)
 
 	oreSpace("thermal",'tin_ore',-40,60)
 	oreSpace("thermal",'lead_ore',-60,40)
@@ -443,8 +404,8 @@ ItemEvents.tooltip(event => {
 	oreSpace("thermal",'cinnabar_ore',-16,48)
 	oreSpace("thermal",'apatite_ore',-16,96)
 
-	event.add('thermal:oil_sand',['§7Spawns in §6Desert',"§7No §8Glow"])
-	event.add('thermal:oil_red_sand',['§7Spawns in §6Desert',"§7No §8Glow"])
+	event.add('thermal:oil_sand',['§7Spawns in §6Desert'])
+	event.add('thermal:oil_red_sand',['§7Spawns in §6Desert'])
 
 	ore("thermal:sulfur_ore_netherrack",10,245)
 

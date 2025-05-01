@@ -151,3 +151,5 @@ BlockEvents.broken(event => {
 	catalyst_broken(event,SPARK)
 	prismarine_broken(event)
 })
+
+BlockEvents.rightClicked("happyghastmod:ghastling_incubator",e => {e.cancel()})

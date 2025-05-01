@@ -10,23 +10,25 @@ ServerEvents.recipes(event => {
 	let inter
 
 	let ban = [
+		'happyghastmod:pwgoods_harness',
+		'happyghastmod:pwgood_harness',
 		'zipline:zipline',
-		'dried_ghast:blue_harness',
-		'dried_ghast:black_harness',
-		'dried_ghast:brown_harness',
-		'dried_ghast:cyan_harness',
-		'dried_ghast:gray_harness',
-		'dried_ghast:green_harness',
-		'dried_ghast:light_blue_harness',
-		'dried_ghast:light_gray_harness',
-		'dried_ghast:lime_harness',
-		'dried_ghast:yellow_harness',
-		'dried_ghast:white_harness',
-		'dried_ghast:red_harness',
-		'dried_ghast:purple_harness',
-		'dried_ghast:pink_harness',
-		'dried_ghast:orange_harness',
-		'dried_ghast:magenta_harness',
+		'happyghastmod:blue_harness',
+		'happyghastmod:black_harness',
+		'happyghastmod:brown_harness',
+		'happyghastmod:cyan_harness',
+		'happyghastmod:gray_harness',
+		'happyghastmod:green_harness',
+		'happyghastmod:light_blue_harness',
+		'happyghastmod:light_gray_harness',
+		'happyghastmod:lime_harness',
+		'happyghastmod:yellow_harness',
+		'happyghastmod:white_harness',
+		'happyghastmod:red_harness',
+		'happyghastmod:purple_harness',
+		'happyghastmod:pink_harness',
+		'happyghastmod:orange_harness',
+		'happyghastmod:magenta_harness',
 		"railways:conductor_vent",
 		'bbb:rope',
 		"naturalist:teddy_bear",
@@ -2549,11 +2551,11 @@ ServerEvents.recipes(event => {
 		"drops": [
 			{
 				"drop": "#kubejs:output_cobblestone_common",
-				"drop_chance": 0.45
+				"drop_chance": 0.33
 			},
 			{
 				"drop": "#kubejs:output_cobblestone_rare",
-				"drop_chance": 0.05
+				"drop_chance": 0.1
 			}
 		]
 	}).id('kubejs:cobblestone_sive')
@@ -2566,11 +2568,11 @@ ServerEvents.recipes(event => {
 		"drops": [
 			{
 				"drop": "#kubejs:output_gravel_common",
-				"drop_chance": 0.45
+				"drop_chance": 0.33
 			},
 			{
 				"drop": "#kubejs:output_gravel_rare",
-				"drop_chance": 0.05
+				"drop_chance": 0.1
 			}
 		]
 	}).id('kubejs:gravel_sive')
@@ -2583,7 +2585,7 @@ ServerEvents.recipes(event => {
 		"drops": [
 			{
 				"drop": "#kubejs:output_sand_common",
-				"drop_chance": 0.40
+				"drop_chance": 0.33
 			},
 			{
 				"drop": "#kubejs:output_sand_rare",
@@ -2600,7 +2602,7 @@ ServerEvents.recipes(event => {
 		"drops": [
 			{
 				"drop": "#kubejs:output_dust",
-				"drop_chance": 0.5
+				"drop_chance": 0.33
 			},
 
 		]
@@ -2614,7 +2616,7 @@ ServerEvents.recipes(event => {
 		"drops": [
 			{
 				"drop": "#kubejs:output_dirt",
-				"drop_chance": 0.30
+				"drop_chance": 0.66
 			},
 
 		]
@@ -2628,7 +2630,7 @@ ServerEvents.recipes(event => {
 		"drops": [
 			{
 				"drop": "#kubejs:output_grass",
-				"drop_chance": 0.30
+				"drop_chance": 0.66
 			},
 
 		]
@@ -2642,7 +2644,7 @@ ServerEvents.recipes(event => {
 		"drops": [
 			{
 				"drop": "#kubejs:output_netherrack",
-				"drop_chance": 0.05
+				"drop_chance": 0.01
 			},
 
 		]
@@ -3784,7 +3786,7 @@ ServerEvents.recipes(event => {
 		"green",
 		"brown"
 	].forEach(e => {
-		event.shaped("dried_ghast:"+e+"_harness",[
+		event.shaped("happyghastmod:"+e+"_harness",[
 			"CBC",
 			"DAD"
 		],{
@@ -3795,12 +3797,12 @@ ServerEvents.recipes(event => {
 		})
 	})
 
-	event.shaped("kubejs:dried_ghast",[
+	event.shaped('happyghastmod:ghastling_incubator',[
+		"BBB",
 		"BAB",
-		"AAA",
-		"BAB"
+		"BBB"
 	],{
-		A: "#chipped:bone_block",
+		A: "#chipped:soul_sand",
 		B: "ghast_tear"
 	})
 
@@ -3837,5 +3839,36 @@ ServerEvents.recipes(event => {
 		'tnt',
 		'4x brick'
 	])
+
+	event.shapeless('kubejs:multi_brick_weapon', [
+		['#forge:slimeballs',"create:super_glue"],
+		'4x kubejs:brick_weapon'
+	]).damageIngredient("create:super_glue")
+
+	event.smelting("kubejs:fries","kubejs:potato_cuts")
+	event.smoking("kubejs:fries","kubejs:potato_cuts")
+	event.campfireCooking("kubejs:fries","kubejs:potato_cuts")
+
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{
+				"item": "minecraft:potato"
+			}
+		],
+		"result": [
+			{
+				"count": 2,
+				"item": "kubejs:potato_cuts"
+			}
+		],
+		"tool": {
+			"tag": "forge:tools/knives"
+		}
+	})
+
+	event.shapeless("2x kubejs:potato_cuts",["minecraft:potato","#forge:tools/knives"]).damageIngredient("#forge:tools/knives")
+
+	event.shapeless("amethyst_shard","8x kubejs:amethyst_piece")
 
 })

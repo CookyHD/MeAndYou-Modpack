@@ -30,7 +30,6 @@ StartupEvents.modifyCreativeTab('kubejs:tab', event => {
 		"kubejs:mixture_tank_filled",
 		"kubejs:catalyst_prismarine",
 		"kubejs:farmer_crop",
-		"kubejs:dried_ghast",
 		"thermal:sulfur_ore_netherrack"
 	].forEach(e => {
 		event.remove(e)
@@ -58,8 +57,6 @@ StartupEvents.modifyCreativeTab('tools_and_utilities', event => {
 
 StartupEvents.modifyCreativeTab('building_blocks', event => {
 
-	event.remove("dried_ghast:dried_ghast")
-	event.add("kubejs:dried_ghast")
 	event.add("thermal:sulfur_ore_netherrack")
 
 })

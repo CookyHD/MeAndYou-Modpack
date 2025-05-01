@@ -148,6 +148,10 @@ StartupEvents.registry("item", (event) => {
 	.displayName("Weaponized Brick")
 	.maxStackSize(16)
 
+	event.create("multi_brick_weapon")
+	.displayName("Weaponized Brick (Cluster)")
+	.maxStackSize(4)
+
 	event.create("ship_locator")
 	.displayName("Ship Locator")
 	.maxDamage(12)
@@ -440,8 +444,10 @@ StartupEvents.registry("item", (event) => {
 		.effect('minecraft:regeneration', 400, 2, 1)
 		.effect('minecraft:speed', 400, 2, 1)
 		.effect("minecraft:fire_resistance", 12000, 0, 1)
+		.effect("farmersdelight:comfort", 12000, 0, 1)
+		.effect("farmersdelight:nourishment", 12000, 0, 1)
 		.hunger(20)
-		.saturation(1)
+		.saturation(5)
 		.alwaysEdible()
 	})
 
@@ -714,8 +720,25 @@ StartupEvents.registry("item", (event) => {
 	})
 
 	event.create("pizza_box")
-	.displayName("Boxed Delivery Pizza ")
+	.displayName("Boxed Delivery Pizza")
 	.maxStackSize(16)
+
+	event.create("fries")
+	.displayName("French Fries")
+	.food(food => {
+		food.hunger(5)
+		food.saturation(0.65)
+	})
+
+	event.create("potato_cuts")
+	.displayName("Potato Cuts")
+	.food(food => {
+		food.hunger(1)
+		food.saturation(0.5)
+	})
+
+	event.create("amethyst_piece")
+	.displayName("Amethyst Piece")
 
 })
 
